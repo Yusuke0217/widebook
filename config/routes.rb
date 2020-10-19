@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'shops#b-type'
+  root 'shops#show'
 end
