@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'shops#show'
+  root 'shops#index'
 end
