@@ -63,8 +63,8 @@
           height: 70vh;
           width: 90vw;
           margin: 30px auto;
-          // background-image: url("/app/assets/images/bg_image1.jpeg");
-          background-color: $deepgreen;
+          background-image: url("/assets/bg_image2.jpeg");
+          background-size: contain;
           border-radius: 20px;
         }
         .main__view__cp {
@@ -97,29 +97,66 @@
       }
     }
     .main__content {
-      h1 {
-      }
       .content__list {
+        position: relative;
+        margin: 50px 30px;
         h1 {
         }
         p {
-        }
-        a {
+          color: $darkgray;
+          font-size: 1.2rem;
         }
         ul.content__box {
-          li {
-            a {
+          list-style: none;
+          display: flex;
+          flex-wrap: nowrap;
+          margin-bottom: 20px;
+          a {
+            @include link;
+            margin: 20px;
+            li {
+              height: 45vh;
+              width: 500px;
+              border: 1px solid darkgray;
+              border-radius: 20px;
               .content__wrapper {
+                height: 100%;
                 .content__img {
+                  height: 70%;
                   img {
+                    border-radius: 20px 20px 0 0;
+                    height: 100%;
+                    width: 500px;
                   }
                 }
                 .content__cp {
+                  padding: 15px;
                   h2 {
                   }
                   p {
+                    color: $darkgray;
+                    padding: 5px;
                   }
                 }
+              }
+            }
+          }
+        }
+        .detail__btn {
+          display: none;
+          text-align: center;
+          margin-bottom: 50px;
+          a {
+            height: 50px;
+            width: 80vw;
+            display: block;
+            border: 1px solid $darkgray;
+            border-radius: 20px;
+            @include link;
+            span {
+              font-size: 1.2rem;
+              line-height: 3rem;
+              i {
               }
             }
           }
