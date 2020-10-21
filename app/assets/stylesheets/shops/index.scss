@@ -19,7 +19,8 @@
     .main__view {
       .searchbox__wrapper {
         form {
-          width: 80%;
+          width: 80vw;
+          margin: 10px auto;
           text-align: center;
           box-sizing: border-box;
           position: relative;
@@ -56,19 +57,41 @@
         }
       }
       &__img {
-        height: 80vh;
-        width: 500px;
+        text-align: center;
+        position: relative;
         .bg__img {
-          height: 500px;
-          width: 500px;
+          height: 70vh;
+          width: 90vw;
+          margin: 30px auto;
           // background-image: url("/app/assets/images/bg_image1.jpeg");
-          // background-color: $deepgreen;
-          background-size: 300px 100px;
+          background-color: $deepgreen;
+          border-radius: 20px;
         }
-        button {
+        .main__view__cp {
+          position: absolute;
+          top: 10vh;
+          left: 30vw;
+          h1 {
+            color: white;
+          }
+          p {
+            color: white;
+          }
+        }
+        .place__btn {
           a {
+            height: 50px;
+            width: 30vw;
+            border: 1px solid $beige;
+            box-sizing: border-box;
+            background-color: $beige;
+            border-radius: 20px;
+            position: absolute;
+            top: 30vh;
+            left: 35vw;
+            outline: none;
             @include link;
-            color: $green;
+            font-size: 1.7rem;
           }
         }
       }
