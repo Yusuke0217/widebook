@@ -2,57 +2,62 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
-  .hd__wrapper {
-    height: 100px;
-    width: 100vw;
-    display: flex;
-    .hd__logo {
-      margin: 0 30px;
-      a {
-        img {
-          height: 100px;
-          width: 20vw;
-        }
-      }
-    }
-    .hd__search__box {
-      form {
-        border-radius: 50px;
-        margin: 20px 10px;
-        box-shadow: 0 0 4px 0px $darkgray;
-        height: 60px;
-        width: 75vw;
-        input {
-          height: 100%;
-          width: calc(100% - 65.3px);
-          outline: none;
-        }
-        button {
-          height: 60px;
-          width: 60px;
-          background-color: $yellow;
-          border-radius: 50px;
-          cursor: pointer;
-          outline : none;
-          i {
-            color: $white;
-            font-weight:bold;
+  header {
+    .hd__wrapper {
+      height: 100px;
+      width: 100vw;
+      display: flex;
+      justify-content: space-around;
+      box-shadow: 0px 0px 3px 0px #544C59;
+      .hd__logo {
+        margin: 10px 30px;
+        a {
+          img {
+            height: 80px;
+            width: 10vw;
           }
         }
       }
-    }
-    .hd__nav {
-      // display: none;
-      line-height: 7.5rem;
-      ul {
-        li {
-          margin: 0 30px;
-          a {
-            @include link;
-            color: $darkgray;
+      .hd__search__box {
+        form {
+          border-radius: 50px;
+          margin: 20px 10px;
+          box-shadow: 0 0 4px 0px $darkgray;
+          height: 60px;
+          width: 50vw;
+          input {
+            height: 100%;
+            width: calc(100% - 65.3px);
+            outline: none;
+          }
+          button {
+            height: 60px;
+            width: 60px;
+            background-color: $plum;
+            border-radius: 50px;
+            cursor: pointer;
+            outline : none;
             i {
-              @include awesome;
-              font-size: 3rem;
+              color: $white;
+              font-weight:bold;
+            }
+          }
+        }
+      }
+      .hd__nav {
+        // display: none;
+        line-height: 7.5rem;
+        ul {
+          display: flex;
+          li {
+            margin: 0 20px;
+            a {
+              @include link;
+              color: $darkgray;
+              i {
+                @include awesome;
+                font-size: 3rem;
+              }
             }
           }
         }

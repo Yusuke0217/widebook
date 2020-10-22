@@ -33,7 +33,7 @@
           button {
             height: 60px;
             width: 60px;
-            background-color: $yellow;
+            background-color: $plum;
             border-radius: 50px;
             cursor: pointer;
             outline : none;
@@ -56,6 +56,9 @@
               i {
                 @include awesome;
                 font-size: 3rem;
+              }
+              i.fa-user-alt {
+                display: none;
               }
             }
           }

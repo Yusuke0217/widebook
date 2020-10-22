@@ -7,6 +7,7 @@
       height: 100px;
       width: 100vw;
       display: flex;
+      justify-content: space-around;
       .hd__logo {
         display: none;
         margin: 0 30px;
@@ -23,7 +24,7 @@
           margin: 20px 10px;
           box-shadow: 0 0 4px 0px $darkgray;
           height: 60px;
-          width: 75vw;
+          width: 65vw;
           input {
             height: 100%;
             width: calc(100% - 65.3px);
@@ -32,7 +33,7 @@
           button {
             height: 60px;
             width: 60px;
-            background-color: $yellow;
+            background-color: $plum;
             border-radius: 50px;
             cursor: pointer;
             outline : none;
@@ -44,11 +45,11 @@
         }
       }
       .hd__nav {
-        // display: none;
         line-height: 7.5rem;
         ul {
+          display: flex;
           li {
-            margin: 0 30px;
+            margin: 0 15px;
             a {
               @include link;
               color: $darkgray;
