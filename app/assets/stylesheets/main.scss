@@ -1,1 +1,22 @@
 @import "layouts/base_color.scss";
+
+
+
+@mixin link($color: black) {
+  color: $color;
+  text-decoration: none;
+}
+
+@mixin awesome {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+}
+// @mixin awesome($content) {
+//   font-family: "Font Awesome 5 Free";
+//   font-weight: bold;
+//   content: $content;
+// }
+
+// @mixin form {
+//   outline: none;
+// }
