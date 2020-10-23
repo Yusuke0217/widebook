@@ -7,6 +7,7 @@
       height: 100%;
       width: 100%;
       .main__view {
+        padding-top: 100px;
         .searchbox__wrapper {
           display: none;
           form {
@@ -194,12 +195,12 @@
             }
           }
         }
-        .category {
+        #category {
           ul {
             flex-wrap: wrap;
           }
         }
-        .special {
+        #special {
           background-color: #9E7A7A;
           // background-color: $plum;
           margin: 50px 0;

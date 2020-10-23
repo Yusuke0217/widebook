@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="main__content">
-        <div class="content__list category">
+        <div class="content__list" id="category">
           <h1>カテゴリから探す</h1>
           <a href=""><i></i></a>
           <ul class="content__box">
@@ -111,7 +111,7 @@
             </a>
           </ul>
         </div>
-        <div class="content__list area">
+        <div class="content__list" id="area">
           <h1>エリアから探す</h1>
           <p>範囲を絞って検索できます！</p>
           <a href=""><i></i></a>
@@ -120,7 +120,7 @@
               <li>
                 <div class="content__wrapper">
                   <div class="content__img">
-                    <%= image_tag "" %>
+                    <%= image_tag "/assets/instagram1.jpeg" %>
                   </div>
                   <div class="content__cp">
                     <h2>金沢市</h2>
@@ -133,10 +133,62 @@
               <li>
                 <div class="content__wrapper">
                   <div class="content__img">
-                    <%= image_tag "" %>
+                    <%= image_tag "/assets/bg_image1" %>
                   </div>
                   <div class="content__cp">
-                    <h1></h1>
+                    <h1>長野市</h1>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/bg_image2" %>
+                  </div>
+                  <div class="content__cp">
+                    <h1>松本市</h1>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/bg_image3" %>
+                  </div>
+                  <div class="content__cp">
+                    <h1>中野市</h1>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/bg_image4" %>
+                  </div>
+                  <div class="content__cp">
+                    <h1>佐久市</h1>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/bg_image" %>
+                  </div>
+                  <div class="content__cp">
+                    <h1>飯田市</h1>
                     <p></p>
                   </div>
                 </div>
@@ -145,11 +197,11 @@
           </ul>
           <div class="detail__btn">
             <a href="">
-              <span>すべて表示<i></i></span>
+              <span>他のエリアから探す<i></i></span>
             </a>
           </div>
         </div>
-        <div class="content__list special">
+        <div class="content__list" id="special">
           <h1>特集</h1>
           <p>ガイドブックならではの特集を皆様にお届けします！</p>
           <div class="move__btn">
