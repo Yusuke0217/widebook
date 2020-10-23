@@ -1,9 +1,8 @@
-@import "../main.scss";
+@import "../../main.scss";
 
 
-
-@media screen and (max-width: 559px) {
-  // Mobile用のレスポンシブ
+@media screen and (min-width: 560px) and (max-width: 959px) {
+  // Tablet用のレスポンシブ
   .wrapper {
     .main__wrapper {
       height: 100%;
@@ -163,12 +162,4 @@
       }
     }
   }
-}
-
-@media screen and (min-width: 560px) and (max-width: 959px) {
-  // Tablet用のレスポンシブ
-}
-
-@media screen and (min-width: 960px) {
-  // PC用のレスポンシブ
 }
