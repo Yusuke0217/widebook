@@ -1,0 +1,127 @@
+@import "../main.scss";
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .wrapper {
+    .main__wrapper {
+      .main__view {
+        .searchbox_wrapper {
+          form {
+            .input__area {
+              input {
+              }
+              button {
+                i.fas.fa-search {
+                }
+              }
+            }
+          }
+        }
+        .ggrmap__wrapper {
+        }
+        .main__view__img {
+          .bg__img {
+            .main__view__cp {
+              h1 {
+              }
+              p {
+              }
+            }
+          }
+        }
+      }
+      .main__content {
+        #category.content__list {
+          h1 {
+          }
+          .move__btn {
+            .btn--left {
+              a {
+                i.fas.fa-chevron-left {
+                }
+              }
+            }
+            .btn--right {
+              a {
+                i.fas.fa-chevron-right {
+                }
+              }
+            }
+          }
+          a {
+            i {
+            }
+          }
+          ul.content__box {
+            a {
+              li {
+                .content__wrapper {
+                  .content__img {
+                  }
+                  .content__cp {
+                    h2 {
+                    }
+                    p {
+                    }
+                    h1 {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .content__list {
+          h1 {
+          }
+          p {
+          }
+          .move__btn {
+            .btn--left {
+              a {
+                i.fas.fa-chevron-left {
+                }
+              }
+            }
+            .btn--right {
+              a {
+                i.fas.fa-chevron-right {
+                }
+              }
+            }
+          }
+          a {
+            i {
+            }
+          }
+          ul.content__box {
+            a {
+              li {
+                .content__wrapper {
+                  .content__img {
+                  }
+                  .content__cp {
+                    h2 {
+                    }
+                    p {
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .detail__btn {
+            a {
+              span {
+                i {
+                  h1 {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

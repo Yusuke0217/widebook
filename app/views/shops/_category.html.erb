@@ -1,255 +1,330 @@
 <%# ビジネスモデルのパネルをクリックしたときのページ %>
+<%= render 'layouts/header' %>
 <div class="wrapper">
   <div class="main__wrapper">
     <div class="main__view">
-      <div class="search__box">
-        <form action="" method="post">
-          <input type="search" placeholder="キーワード">
+      <div class="searchbox_wrapper">
+        <form id="search-form" action="" method="post">
+          <div class="input__area">
+            <input id="" type="search" name="search" placeholder="キーワード">
+            <button type="submit" form="search-form" name="">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
         </form>
       </div>
       <div class="ggrmap__wrapper">
       </div>
-      <div class="main__cp">
-        <div class="main__ttl">
-          <h1>ホテル</h1>
+      <div class="main__view__img">
+          <div class="bg__img">
+            <div class="main__view__cp">
+              <h1>ホテル</h1>
+              <p>都会の喧騒を離れて、もっとゆったり。</p>
+            </div>
+          </div>
         </div>
-        <div class="main__read">
-          <p>旅館や宿泊などを集めました。</p>
-        </div>
-      </div>
     </div>
     <div class="main__content">
-      <h1>カテゴリから探す</h1>
-      <div class="content__list">
-        <ul>
-          <li>
+        <div class="content__list" id="category">
+          <h1>カテゴリから探す</h1>
+          <div class="move__btn">
+            <div class="btn--left">
+              <a href="">
+                <i class="fas fa-chevron-left"></i>
+              </a>
+            </div>
+            <div class="btn--right">
+              <a href="">
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+          <a href=""><i></i></a>
+          <ul class="content__box">
             <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="content">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "gurume.jpeg"%>
+                  </div>
+                  <div class="content__cp">
+                    <h2>駅近</h2>
+                    <p></p>
+                  </div>
                 </div>
-                <div class="content__cp">
-                  <h2>駅近</h2>
-                  <p></p>
-                </div>
-              </div>
+              </li>
             </a>
-          </li>
-          <li>
             <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="content">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "shopping.jpeg" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
                 </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
+              </li>
             </a>
-          </li>
-          <li>
             <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="content">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "stayhome.jpeg" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
                 </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
+              </li>
             </a>
-          </li>
-          <li>
             <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="content">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "ocean-view.jpeg" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
                 </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
+              </li>
             </a>
-          </li>
-          <li>
             <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="content">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "event2.jpeg" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
                 </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
+              </li>
             </a>
-          </li>
-        </ul>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "" %>
+                  </div>
+                  <div class="content__cp">
+                    <h1></h1>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
+        <div class="content__list" id="">
+          <h1>ユニークなお部屋が特徴のホテル</h1>
+          <p></p>
+          <div class="move__btn">
+            <div class="btn--left">
+              <a href="">
+                <i class="fas fa-chevron-left"></i>
+              </a>
+            </div>
+            <div class="btn--right">
+              <a href="">
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+          <a href=""><i></i></a>
+          <ul class="content__box">
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/instagram1.jpeg" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/bg_image1" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/bg_image2" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/bg_image3" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/bg_image4" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "/assets/bg_image" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+          </ul>
+          <div class="detail__btn">
+            <a href="">
+              <span>全て表示<i></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="content__list" id="">
+          <h1>Caming soon</h1>
+          <p></p>
+          <div class="move__btn">
+            <div class="btn--left">
+              <a href="">
+                <i class="fas fa-chevron-left"></i>
+              </a>
+            </div>
+            <div class="btn--right">
+              <a href="">
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+          <ul class="content__box">
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "christmas-market.jpeg" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "ramen.jpeg" %>
+                  </div>
+                  <div class="content__cp">
+                    <h2></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "" %>
+                  </div>
+                  <div class="content__cp">
+                    <h1></h1>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "" %>
+                  </div>
+                  <div class="content__cp">
+                    <h1></h1>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "" %>
+                  </div>
+                  <div class="content__cp">
+                    <h1></h1>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "" %>
+                  </div>
+                  <div class="content__cp">
+                    <h1></h1>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            </a>
+          </ul>
+          <div class="detail__btn">
+            <a href="">
+              <span>すべて表示<i></i></span>
+            </a>
+          </div>
+        </div>
       </div>
-      <h1>ユニークなお部屋が特徴のホテル</h1>
-      <div class="content__list">
-        <ul>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <a href="">リストを全て表示</a>
-      </div>
-      <h1>観光に便利なロケーション</h1>
-      <div class="content__list">
-        <ul>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <a href="">リストを全て表示</a>
-      </div>
-      <h1>悠久の時を感じる旅館</h1>
-      <div class="content__list">
-        <ul>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <a href="">リストを全て表示</a>
-      </div>
-    </div>
   </div>
 </div>
+<%= render 'layputs/footer' %>
