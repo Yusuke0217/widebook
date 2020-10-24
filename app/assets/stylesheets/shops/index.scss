@@ -60,37 +60,34 @@
             background-image: url("/assets/bg_image2.jpeg");
             background-size: contain;
             border-radius: 20px;
-          }
-          .main__view__cp {
-            position: absolute;
-            top: 25%;
-            margin: 0 auto;
-            left: 5%;
-            width: 90%;
-            h1 {
-              font-size: 1.6rem;
-              color: $white;
+            .main__view__cp {
+              padding-top: 120px;
+              h1 {
+                font-size: 1.3rem;
+                color: $white;
+              }
+              p {
+                color: $white;
+              }
             }
-            p {
-              color: $white;
-            }
-          }
-          .place__btn {
-            a {
-              height: 40px;
-              width: 50%;
-              border: 1px solid $darkgray;
-              box-sizing: border-box;
-              background-color: $plum;
-              border-radius: 20px;
-              position: absolute;
-              top: 45%;
-              left: 25%;
-              outline: none;
-              @include link;
-              color: $white;
-              font-size: 1.2rem;
-              line-height: 2.3rem;
+            .place__btn {
+              padding-top: 30px;
+              a {
+                height: 30px;
+                width: 50%;
+                border: 1px solid $darkgray;
+                box-sizing: border-box;
+                background-color: $plum;
+                border-radius: 20px;
+                outline: none;
+                @include link;
+                display: inline-block;
+                color: $white;
+                span {
+                  line-height: 1.8rem;
+                  font-size: 1.1rem;
+                }
+              }
             }
           }
         }
@@ -102,7 +99,7 @@
           position: relative;
           margin: 20px 12px;
           h1 {
-            font-size: 1.5rem
+            font-size: 1.2rem
           }
           p {
             color: $darkgray;
@@ -153,8 +150,8 @@
               @include link;
               margin: 10px 5px;
               li {
-                height: 250px;
-                width: 250px;
+                height: 200px;
+                width: 200px;
                 border: 1px solid darkgray;
                 border-radius: 20px;
                 .content__wrapper {
@@ -221,8 +218,8 @@
             a {
               margin: 1px;
               li {
-                height: 150px;
-                width: 145px;
+                height: 110px;
+                width: 105px;
                 border: none;
                 .content__wrapper {
                   .content__img {

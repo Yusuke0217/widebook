@@ -6,7 +6,7 @@
   header {
     .hd__wrapper {
       height: 100px;
-      width: 100vw;
+      width: 100%;
       display: flex;
       position: fixed;
       z-index: 1;
@@ -18,7 +18,7 @@
         a {
           img {
             height: 100px;
-            width: 20vw;
+            width: 20%;
           }
         }
       }
@@ -28,7 +28,7 @@
           margin: 20px 10px;
           box-shadow: 0 0 4px 0px $darkgray;
           height: 60px;
-          width: 75vw;
+          width: 100%;
           input {
             height: 100%;
             width: calc(100% - 65.3px);

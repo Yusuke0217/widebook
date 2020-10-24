@@ -56,38 +56,32 @@
             height: 70vh;
             background-image: url("/assets/bg_image2.jpeg");
             background-size: contain;
-          }
-          .main__view__cp {
-            position: absolute;
-            top: 25%;
-            left: 30vw;
-            h1 {
-              color: $white;
-            }
-            p {
-              color: $white;
-            }
-          }
-          .place__btn {
-            a {
-              height: 50px;
-              width: 30vw;
-              border: 1px solid $darkgray;
-              box-sizing: border-box;
-              background-color: $plum;
-              border-radius: 20px;
-              position: absolute;
-              top: 40%;
-              left: 35vw;
-              @include link;
-              outline: none;
-              color: $white;
-              font-size: 1.7rem;
-              span {
-                line-height: 3rem;
+            .main__view__cp {
+              h1 {
+                color: $white;
+              }
+              p {
+                color: $white;
               }
             }
-            a:hover {
+            .place__btn {
+              a {
+                height: 50px;
+                width: 30vw;
+                border: 1px solid $darkgray;
+                box-sizing: border-box;
+                background-color: $plum;
+                border-radius: 20px;
+                @include link;
+                outline: none;
+                color: $white;
+                font-size: 1.7rem;
+                span {
+                  line-height: 3rem;
+                }
+              }
+              a:hover {
+              }
             }
           }
         }
@@ -174,6 +168,9 @@
                 }
               }
             }
+          }
+          ul::-webkit-scrollbar {
+            display: none;
           }
           .detail__btn {
             display: none;

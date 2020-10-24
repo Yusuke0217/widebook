@@ -12,7 +12,7 @@
         .searchbox__wrapper {
           display: none;
           form {
-            width: 80vw;
+            width: 80%;
             margin: 10px auto;
             text-align: center;
             box-sizing: border-box;
@@ -53,41 +53,38 @@
           text-align: center;
           position: relative;
           .bg__img {
-            height: 75vh;
-            width: 90vw;
+            height: 600px;
+            width: 95%;
             margin: 20px auto;
             background-image: url("/assets/bg_image2.jpeg");
             background-size: contain;
             border-radius: 20px;
-          }
-          .main__view__cp {
-            position: absolute;
-            top: 25%;
-            left: 30vw;
-            h1 {
-              color: white;
+            .main__view__cp {
+              padding-top: 150px;
+              h1 {
+                color: white;
+              }
+              p {
+                color: white;
+              }
             }
-            p {
-              color: white;
-            }
-          }
-          .place__btn {
-            a {
-              height: 50px;
-              width: 30vw;
-              border: 1px solid $darkgray;
-              box-sizing: border-box;
-              background-color: $plum;
-              border-radius: 20px;
-              position: absolute;
-              top: 40%;
-              left: 35vw;
-              @include link;
-              outline: none;
-              color: $white;
-              font-size: 1.5rem;
-              span {
-                line-height: 3rem;
+            .place__btn {
+              padding-top: 50px;
+              a {
+                height: 50px;
+                width: 300px;
+                border: 1px solid $darkgray;
+                box-sizing: border-box;
+                background-color: $plum;
+                border-radius: 20px;
+                @include link;
+                display: inline-block;
+                outline: none;
+                color: $white;
+                font-size: 1.5rem;
+                span {
+                  line-height: 3rem;
+                }
               }
             }
           }
@@ -96,12 +93,12 @@
       .main__content {
         .content__list {
           position: relative;
-          margin: 50px 10px;
+          margin: 30px 10px;
           h1 {
+            font-size: 1.75rem;
           }
           p {
             color: $darkgray;
-            font-size: 1.2rem;
           }
           .move__btn {
             a {
@@ -142,11 +139,12 @@
           ul.content__box {
             list-style: none;
             display: flex;
+            margin-top: 20px;
             a {
               @include link;
               li {
-                height: 25vh;
-                width: 25vw;
+                height: 250px;
+                width: 250px;
                 border: 1px solid darkgray;
                 border-radius: 20px;
                 .content__wrapper {
@@ -174,6 +172,9 @@
               }
             }
           }
+          ul::-webkit-scrollbar {
+            display: none;
+          }
           .detail__btn {
             display: none;
             text-align: center;
@@ -197,22 +198,78 @@
         #category {
           ul {
             flex-wrap: wrap;
+            justify-content: space-around;
             a {
-              margin: 15px auto 5px;
+              margin-top: 5px;
+              margin-right: 5px;
+              margin-left: 5px;
+              margin-bottom: 5px;
+              li {
+                height: 200px;
+                width: 200px;
+                .content__wrapper {
+                  .content__img {
+                    img {
+                    }
+                  }
+                  .content__cp {
+                    h2 {
+                    }
+                    p {
+                    }
+                  }
+                }
+              }
             }
           }
         }
         #area {
           ul {
+            flex-wrap: wrap;
+            justify-content: space-around;
+            overflow: scroll;
             a {
-              margin: 15px 10px 5px;
+              margin-top: 5px;
+              margin-right: 5px;
+              margin-left: 5px;
+              margin-bottom: 5px;
+              li {
+                height: 130px;
+                width: 300px;
+                border: none;
+                .content__wrapper {
+                  display: flex;
+                  .content__img {
+                    height: 100%;
+                    img {
+                      border-radius: 20px;
+                    }
+                  }
+                  .content__cp {
+                    flex-direction: column;
+                    padding-top: 15px;
+                    padding-right: 5px;
+                    padding-bottom: 5px;
+                    padding-left: 5px;
+                    width: 400px;
+                    h2 {
+                    }
+                    p {
+                      padding: 0;
+                    }
+                  }
+                }
+              }
             }
           }
         }
         #special {
           background-color: #9E7A7A;
           // background-color: $plum;
-          margin: 50px 0;
+          margin-top: 30px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+          margin-left: 0px;
           height: 400px;
           h1 {
             color: $white;
@@ -222,10 +279,27 @@
             margin: 0 10px;
           }
           ul {
-            justify-content: space-around;
-            margin: 0 20px 20px;
+            overflow: scroll;
+            margin-right: 20px;
+            margin-left: 20px;
             a {
-              margin: 15px 10px 5px;
+              margin-right: 10px;
+              margin-bottom: 10px;
+              margin-left: 10px;
+              li {
+                .content__wrapper {
+                  .content__img {
+                    img {
+                    }
+                  }
+                  .content__cp {
+                    h2 {
+                    }
+                    p {
+                    }
+                  }
+                }
+              }
             }
           }
         }
