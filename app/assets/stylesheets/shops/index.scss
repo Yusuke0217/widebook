@@ -203,6 +203,43 @@
         }
         #category {
           order: 2;
+          .move__btn {
+            display: none;
+            a {
+              @include awesome;
+              height: 44px;
+              width: 44px;
+              border-radius: 50%;
+              background-color: $darkgray;
+              position: absolute;
+              opacity: 0.9;
+              color: $white;
+              i {
+                @include awesome;
+                position: absolute;
+              }
+            }
+            .btn--left {
+              a {
+                left: 0%;
+                top: 40%;
+                i {
+                  right: 40%;
+                  top: 35%;
+                }
+              }
+            }
+            .btn--right {
+              a {
+                right: 0%;
+                top: 40%;
+                i {
+                  right: 35%;
+                  top: 35%;
+                }
+              }
+            }
+          }
           ul {
             overflow: scroll;
           }
@@ -211,6 +248,43 @@
           order: 1;
           margin: 30px 12px;
           h1 {
+          }
+          .move__btn {
+            display: none;
+            a {
+              @include awesome;
+              height: 44px;
+              width: 44px;
+              border-radius: 50%;
+              background-color: $darkgray;
+              position: absolute;
+              opacity: 0.9;
+              color: $white;
+              i {
+                @include awesome;
+                position: absolute;
+              }
+            }
+            .btn--left {
+              a {
+                left: 0%;
+                top: 40%;
+                i {
+                  right: 40%;
+                  top: 35%;
+                }
+              }
+            }
+            .btn--right {
+              a {
+                right: 0%;
+                top: 40%;
+                i {
+                  right: 35%;
+                  top: 35%;
+                }
+              }
+            }
           }
           ul {
             flex-wrap: wrap;

@@ -14,14 +14,16 @@
       background-color: $white;
       .hd__logo {
         margin: 10px 30px;
+        width: 130px;
         a {
           img {
             height: 80px;
-            width: 15%;
+            width: 100%;
           }
         }
       }
       .hd__search__box {
+        width: 65%;
         form {
           border-radius: 50px;
           margin: 20px 10px;
