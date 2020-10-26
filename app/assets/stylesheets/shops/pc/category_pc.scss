@@ -52,7 +52,7 @@
           text-align: center;
           position: relative;
           .bg__img.b-type {
-            height: 600px;
+            height: 700px;
             width: 100%;
             margin: 0px;
             background-image: url("/assets/bg_image3.jpeg");
@@ -63,11 +63,9 @@
               h1 {
                 color: $white;
                 padding-top: 200px;
-                font-size: 1.3rem;
               }
               p {
                 padding: 5px;
-                word-break: keep-all;
                 color: $white;
               }
             }
