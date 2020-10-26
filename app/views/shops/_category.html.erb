@@ -1,35 +1,30 @@
 <%# ビジネスモデルのパネルをクリックしたときのページ %>
-<% content_for(:css) do %>
-  <%= stylesheet_link_tag '/assets/shops/category', media: "screen and (max-width: 559px)" %>
-  <%= stylesheet_link_tag '/assets/shops/pc/category_pc', media: "screen and (min-width: 960px)" %>
-  <%= stylesheet_link_tag '/assets/shops/tablet/category_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
-<% end %>
 <%= render 'layouts/header' %>
-<div class="wrapper">
-  <div class="main__wrapper">
-    <div class="main__view">
-      <div class="searchbox__wrapper">
-        <form id="search-form" action="" method="post">
-          <div class="input__area">
-            <input id="" type="search" name="search" placeholder="キーワード">
-            <button type="submit" form="search-form" name="">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-      <div class="main__view__img">
-          <div class="bg__img">
-            <div class="main__view__cp">
-              <h1>グルメ</h1>
-              <p>食の聖地、和歌山のグルメスポットをご紹介。</p>
+  <div class="wrapper">
+    <div class="main__wrapper">
+      <div class="main__view">
+        <div class="searchbox__wrapper">
+          <form id="search-form" action="" method="post">
+            <div class="input__area">
+              <input id="" type="search" name="search" placeholder="キーワード">
+              <button type="submit" form="search-form" name="">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="main__view__img">
+            <div class="bg__img b-type">
+              <div class="main__view__cp">
+                <h1>グルメ</h1>
+                <p>食の聖地、和歌山のグルメスポットをご紹介。</p>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="main__content">
+      </div>
+      <div class="main__content">
         <div class="content__list" id="category">
-          <h1>Caming soon</h1>
+          <h1>カテゴリから探す</h1>
           <p></p>
           <div class="move__btn">
             <div class="btn--left">
@@ -43,10 +38,6 @@
               </a>
             </div>
           </div>
-          <a href="">
-            <i></i>
-            <span>すべて表示</span>
-          </a>
           <ul class="content__box">
             <a href="">
               <li>
@@ -128,7 +119,7 @@
             </a>
           </ul>
           <div class="detail__btn">
-            <a href="">
+            <a href="" class="detail">
               <span>すべて表示<i></i></span>
             </a>
           </div>
@@ -148,10 +139,6 @@
               </a>
             </div>
           </div>
-          <a href="">
-            <i></i>
-            <span>すべて表示</span>
-          </a>
           <ul class="post__box">
             <a href="">
               <li>
@@ -161,7 +148,7 @@
                   </div>
                   <div class="post__info">
                     <div class="post__review">
-                        <i></i>
+                        <i class="fas fa-star"></i>
                         <span></span>
                     </div>
                     <div class="post__info__basic">
@@ -179,6 +166,9 @@
                           <span></span>
                         </div>
                       </div>
+                      <div class="post__budget">
+                        <span>¥</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -192,7 +182,7 @@
                   </div>
                   <div class="post__info">
                     <div class="post__review">
-                        <i></i>
+                        <i class="fas fa-star"></i>
                         <span></span>
                     </div>
                     <div class="post__info__basic">
@@ -223,7 +213,7 @@
                   </div>
                   <div class="post__info">
                     <div class="post__review">
-                        <i></i>
+                        <i class="fas fa-star"></i>
                         <span></span>
                     </div>
                     <div class="post__info__basic">
@@ -254,7 +244,7 @@
                   </div>
                   <div class="post__info">
                     <div class="post__review">
-                        <i></i>
+                        <i class="fas fa-star"></i>
                         <span></span>
                     </div>
                     <div class="post__info__basic">
@@ -285,7 +275,7 @@
                   </div>
                   <div class="post__info">
                     <div class="post__review">
-                        <i></i>
+                        <i class="fas fa-star"></i>
                         <span></span>
                     </div>
                     <div class="post__info__basic">
@@ -310,7 +300,7 @@
             </a>
           </ul>
           <div class="detail__btn">
-            <a href="">
+            <a href="" class="detail">
               <span>すべて表示<i></i></span>
             </a>
           </div>
@@ -330,10 +320,6 @@
               </a>
             </div>
           </div>
-          <a href="">
-            <i></i>
-            <span>すべて表示</span>
-          </a>
           <ul class="post__box">
             <a href="">
               <li>
@@ -343,7 +329,7 @@
                   </div>
                   <div class="post__info">
                     <div class="post__review">
-                        <i></i>
+                        <i class="fas fa-star"></i>
                         <span></span>
                     </div>
                     <div class="post__info__basic">
@@ -361,6 +347,9 @@
                           <span></span>
                         </div>
                       </div>
+                      <div class="post__budget">
+                        <span>¥</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -368,7 +357,7 @@
             </a>
           </ul>
           <div class="detail__btn">
-            <a href="">
+            <a href="" class="detail">
               <span>すべて表示<i></i></span>
             </a>
           </div>
@@ -388,10 +377,6 @@
               </a>
             </div>
           </div>
-          <a href="">
-            <i></i>
-            <span>すべて表示</span>
-          </a>
           <ul class="post__box">
             <a href="">
               <li>
@@ -401,7 +386,7 @@
                   </div>
                   <div class="post__info">
                     <div class="post__review">
-                        <i></i>
+                        <i class="fas fa-star"></i>
                         <span></span>
                     </div>
                     <div class="post__info__basic">
@@ -419,6 +404,9 @@
                           <span></span>
                         </div>
                       </div>
+                      <div class="post__budget">
+                        <span>¥</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -426,12 +414,12 @@
             </a>
           </ul>
           <div class="detail__btn">
-            <a href="">
+            <a href="" class="detail">
               <span>すべて表示<i></i></span>
             </a>
           </div>
         </div>
       </div>
+    </div>
   </div>
-</div>
 <%= render 'layouts/footer' %>

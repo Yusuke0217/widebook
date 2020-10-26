@@ -3,4 +3,391 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
+  .wrapper {
+    .main__wrapper {
+      height: 100%;
+      width: 100%;
+      .main__view {
+        .searchbox__wrapper {
+          display: none;
+          form {
+            width: 80%;
+            margin: 10px auto;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+            display: block;
+            overflow: hidden;
+            border-radius: 50px;
+            box-shadow: 1px 1px 2px 1px rgb(180, 180, 180);
+            .input__area {
+              display: block;
+              input {
+                height: 50px;
+                width: 100%;
+                background-color: $white;
+                border-radius: 50px;
+              }
+              input:focus {
+                outline: none;
+              }
+              button {
+                height: 50px;
+                width: 50px;
+                background-color: $plum;
+                border-radius: 50px;
+                cursor: pointer;
+                position: absolute;
+                right:0px;
+                outline : none;
+                i {
+                  color: $white;
+                  font-weight:bold;
+                }
+              }
+            }
+          }
+        }
+        &__img {
+          text-align: center;
+          position: relative;
+          .bg__img.b-type {
+            height: 600px;
+            width: 100%;
+            margin: 0px;
+            background-image: url("/assets/bg_image3.jpeg");
+            background-size: contain;
+            background-repeat: repeat;
+            border-radius: 0%;
+            & .main__view__cp {
+              h1 {
+                color: $white;
+                padding-top: 200px;
+                font-size: 1.3rem;
+              }
+              p {
+                padding: 5px;
+                word-break: keep-all;
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+      .main__content {
+        display: flex;
+        flex-direction: column;
+        .content__list#category {
+          position: relative;
+          margin: 20px 12px;
+          & h1 {
+            font-size: 1.2rem;
+          }
+          & p {
+            color: $darkgray;
+          }
+          .move__btn {
+            display: none;
+            a {
+              @include awesome;
+              height: 44px;
+              width: 44px;
+              border-radius: 50%;
+              background-color: $darkgray;
+              position: absolute;
+              opacity: 0.9;
+              color: $white;
+              i {
+                @include awesome;
+                position: absolute;
+              }
+            }
+            .btn--left {
+              a {
+                right: 12%;
+                top: 5%;
+                i.fas.fa-chevron-left {
+                  right: 40%;
+                  top: 35%;
+                }
+              }
+            }
+            .btn--right {
+              a {
+                right: 5%;
+                top: 5%;
+                i.fas.fa-chevron-right {
+                  right: 35%;
+                  top: 35%;
+                }
+              }
+            }
+          }
+          & ul.content__box {
+            overflow: scroll;
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 20px;
+            a {
+              @include link;
+              margin: 10px 5px;
+              li {
+                height: 200px;
+                width: 200px;
+                border: 1px solid darkgray;
+                border-radius: 20px;
+                .content__wrapper {
+                  height: 100%;
+                  .content__img {
+                    height: 70%;
+                    img {
+                      border-radius: 20px 20px 0 0;
+                      height: 100%;
+                      width: 100%;
+                    }
+                  }
+                  .content__cp {
+                    padding: 10px;
+                    h2 {
+                      font-size: 1.1rem;
+                    }
+                    p {
+                      color: $darkgray;
+                      padding: 2px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          & .detail__btn {
+            text-align: center;
+            a.detail {
+              @include link;
+              height: 50px;
+              width: 200px;
+              border: 1px solid $darkgray;
+              border-radius: 20px;
+              line-height: 50px;;
+              display: inline-block;
+              span {
+                font-size: 1.2rem;
+                i {
+                }
+              }
+            }
+          }
+        }
+        .post__list {
+          position: relative;
+          margin: 20px 12px;
+          & h1 {
+            font-size: 1.2rem;
+          }
+          & p {
+            color: $darkgray;
+          }
+          & .move__btn {
+            display: none;
+            a {
+              @include awesome;
+              height: 44px;
+              width: 44px;
+              border-radius: 50%;
+              background-color: $darkgray;
+              position: absolute;
+              opacity: 0.9;
+              color: $white;
+              i {
+                @include awesome;
+                position: absolute;
+              }
+            }
+            .btn--left {
+              a {
+                right: 12%;
+                top: 5%;
+                i {
+                  right: 40%;
+                  top: 35%;
+                }
+              }
+            }
+            .btn--right {
+              a {
+                right: 5%;
+                top: 5%;
+                i {
+                  right: 35%;
+                  top: 35%;
+                }
+              }
+            }
+          }
+          & ul.post__box {
+            overflow: scroll;
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 20px;
+            a {
+              @include link;
+              margin: 10px 5px;
+              li {
+                height: 300px;
+                width: 300px;
+                border-radius: 20px;
+                .post__wrapper {
+                  height: 100%;
+                  .post__img {
+                    height: 65%;
+                    img {
+                      border-radius: 20px 20px 0 0;
+                      height: 100%;
+                      width: 100%;
+                    }
+                  }
+                  .post__info {
+                    padding-top: 5px;
+                    padding-right: 0px;
+                    padding-bottom: 3px;
+                    padding-left: 5px;
+                    .post__review {
+                      i {
+                        color: $plum;
+                      }
+                      span {
+                        color: $darkgray;
+                        padding: 2px;
+                      }
+                    }
+                    &__basic {
+                      .post__name {
+                        h2 {
+                          font-size: 1rem;
+                        }
+                      }
+                      .post__about {
+                        display: flex;
+                        .post__place {
+                          .address {
+                            span {
+                              color: $darkgray;
+                              padding: 2px;
+                            }
+                          }
+                        }
+                        span {
+                          font-size: 12px;
+                        }
+                        .post__category {
+                          span {
+                            color: $darkgray;
+                          }
+                        }
+                      }
+                      .post__budget {
+                        span {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          & .detail__btn {
+            text-align: center;
+            a.detail {
+              @include link;
+              height: 50px;
+              width: 200px;
+              border: 1px solid $darkgray;
+              border-radius: 20px;
+              line-height: 50px;;
+              display: inline-block;
+              span {
+                font-size: 1.2rem;
+                i {
+                }
+              }
+            }
+          }
+        }
+        .post__list {
+          h1 {
+          }
+          p {
+          }
+          .move__btn {
+            .btn--left {
+              a {
+                i.fas.fa-chevron-left {
+                }
+              }
+            }
+            .btn--right {
+              a {
+                i.fas.fa-chevron-right {
+                }
+              }
+            }
+          }
+          a {
+            i {
+            }
+          }
+          ul.post__box {
+            a {
+              li {
+                .post__wrapper {
+                  .post__img {
+                    img {
+                    }
+                  }
+                  .post__info {
+                    .post__review {
+                      i {
+                      }
+                      span {
+                      }
+                    }
+                    &__basic {
+                      .post__name {
+                        h2 {
+                        }
+                      }
+                      .post__about {
+                        .post__place {
+                          .address {
+                            span {
+                            }
+                          }
+                        }
+                        span {
+                        }
+                        .post__category {
+                          span {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .detail__btn {
+            a {
+              span {
+                i {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

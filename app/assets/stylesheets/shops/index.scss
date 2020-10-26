@@ -53,7 +53,7 @@
         &__img {
           text-align: center;
           position: relative;
-          .bg__img {
+          .bg__img.index {
             height: 400px;
             width: 95%;
             margin: 20px auto;
@@ -95,13 +95,13 @@
       .main__content {
         display: flex;
         flex-direction: column;
-        .content__list {
+        .content__list.common {
           position: relative;
           margin: 20px 12px;
-          h1 {
+          & h1 {
             font-size: 1.2rem;
           }
-          p {
+          & p {
             color: $darkgray;
           }
           .move__btn {
@@ -141,7 +141,7 @@
               }
             }
           }
-          ul.content__box {
+          & ul.content__box {
             list-style: none;
             display: flex;
             flex-wrap: nowrap;
@@ -181,7 +181,7 @@
           ul::-webkit-scrollbar {
             display: none;
           }
-          .detail__btn {
+          & .detail__btn {
             display: none;
             text-align: center;
             margin-bottom: 50px;
