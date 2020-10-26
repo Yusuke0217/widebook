@@ -24,3 +24,7 @@ body {
 ul {
   list-style: none;
 }
+
+ul::-webkit-scrollbar {
+  display: none;
+}

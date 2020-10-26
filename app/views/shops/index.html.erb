@@ -1,3 +1,9 @@
+<% content_for(:css) do %>
+  <%= stylesheet_link_tag '/assets/shops/index', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/shops/pc/index_pc', media: "screen and (min-width: 960px)" %>
+  <%= stylesheet_link_tag '/assets/shops/tablet/index_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+<% end %>
+
 <body>
   <%= render 'layouts/header' %>
   <div class="wrapper">

@@ -47,18 +47,16 @@
             }
           }
         }
-        .ggrmap__wrapper {
-        }
         &__img {
           text-align: center;
           position: relative;
           .bg__img {
             height: 500px;
-            width: 95%;
-            margin: 20px auto;
+            width: 100%;
+            margin: 0px;
             background-image: url("/assets/bg_image3.jpeg");
             background-size: contain;
-            border-radius: 20px;
+            border-radius: 0%;
             .main__view__cp {
               padding-top: 120px;
               h1 {
@@ -66,6 +64,8 @@
                 color: $white;
               }
               p {
+                padding: 5px;
+                word-break: keep-all;
                 color: $white;
               }
             }
@@ -73,46 +73,6 @@
         }
       }
       .main__content {
-        #category.content__list {
-          h1 {
-          }
-          .move__btn {
-            .btn--left {
-              a {
-                i.fas.fa-chevron-left {
-                }
-              }
-            }
-            .btn--right {
-              a {
-                i.fas.fa-chevron-right {
-                }
-              }
-            }
-          }
-          a {
-            i {
-            }
-          }
-          ul.content__box {
-            a {
-              li {
-                .content__wrapper {
-                  .content__img {
-                  }
-                  .content__cp {
-                    h2 {
-                    }
-                    p {
-                    }
-                    h1 {
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
         .content__list {
           h1 {
           }
@@ -137,10 +97,13 @@
             }
           }
           ul.content__box {
+            overflow: scroll;
             a {
               li {
                 .content__wrapper {
                   .content__img {
+                    img {
+                    }
                   }
                   .content__cp {
                     h2 {
@@ -152,11 +115,247 @@
               }
             }
           }
-          .detail__btn {
+        }
+        #category {
+          h1 {
+          }
+          p {
+          }
+          .move__btn {
+            .btn--left {
+              a {
+                i.fas.fa-chevron-left {
+                }
+              }
+            }
+            .btn--right {
+              a {
+                i.fas.fa-chevron-right {
+                }
+              }
+            }
+          }
+          a {
+            i {
+            }
+          }
+          ul.content__box {
+            overflow: scroll;
             a {
-              span {
+              li {
+                .content__wrapper {
+                  .content__img {
+                    img {
+                    }
+                  }
+                  .content__info {
+                    .content__review {
+                      i {
+                      }
+                      span {
+                      }
+                    }
+                    &__basic {
+                      .content__name {
+                        h2 {
+                        }
+                      }
+                      .content__about {
+                        .content__place {
+                          .address {
+                            span {
+                            }
+                          }
+                        }
+                        span {
+                        }
+                        .content__category {
+                          span {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .post__list {
+          position: relative;
+          margin: 20px 12px;
+          h1 {
+            font-size: 1.2rem;
+          }
+          p {
+            color: $darkgray;
+          }
+          .move__btn {
+            display: none;
+            a {
+              @include awesome;
+              height: 44px;
+              width: 44px;
+              border-radius: 50%;
+              background-color: $darkgray;
+              position: absolute;
+              opacity: 0.9;
+              color: $white;
+              i {
+                @include awesome;
+                position: absolute;
+              }
+            }
+            .btn--left {
+              a {
+                right: 12%;
+                top: 5%;
                 i {
-                  h1 {
+                  right: 40%;
+                  top: 35%;
+                }
+              }
+            }
+            .btn--right {
+              a {
+                right: 5%;
+                top: 5%;
+                i {
+                  right: 35%;
+                  top: 35%;
+                }
+              }
+            }
+          }
+          a {
+            i {
+            }
+          }
+          ul.post__box {
+            overflow: scroll;
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 20px;
+            a {
+              @include link;
+              margin: 10px 5px;
+              li {
+                height: 300px;
+                width: 300px;
+                border-radius: 20px;
+                .post__wrapper {
+                  height: 100%;
+                  .post__img {
+                    height: 65%;
+                    img {
+                      border-radius: 20px 20px 0 0;
+                      height: 100%;
+                      width: 100%;
+                    }
+                  }
+                  .post__info {
+                    padding-top: 5px;
+                    padding-right: 0px;
+                    padding-bottom: 3px;
+                    padding-left: 5px;
+                    .post__review {
+                      i {
+                      }
+                      span {
+                        color: $darkgray;
+                        padding: 2px;
+                      }
+                    }
+                    &__basic {
+                      .post__name {
+                        h2 {
+                          font-size: 1.1rem;
+                        }
+                      }
+                      .post__about {
+                        .post__place {
+                          .address {
+                            span {
+                              color: $darkgray;
+                              padding: 2px;
+                            }
+                          }
+                        }
+                        span {
+                        }
+                        .post__category {
+                          span {
+                            color: $darkgray;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .post__list {
+          h1 {
+          }
+          p {
+          }
+          .move__btn {
+            .btn--left {
+              a {
+                i.fas.fa-chevron-left {
+                }
+              }
+            }
+            .btn--right {
+              a {
+                i.fas.fa-chevron-right {
+                }
+              }
+            }
+          }
+          a {
+            i {
+            }
+          }
+          ul.post__box {
+            overflow: scroll;
+            a {
+              li {
+                .post__wrapper {
+                  .post__img {
+                    img {
+                    }
+                  }
+                  .post__info {
+                    .post__review {
+                      i {
+                      }
+                      span {
+                      }
+                    }
+                    &__basic {
+                      .post__name {
+                        h2 {
+                        }
+                      }
+                      .post__about {
+                        .post__place {
+                          .address {
+                            span {
+                            }
+                          }
+                        }
+                        span {
+                        }
+                        .post__category {
+                          span {
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
