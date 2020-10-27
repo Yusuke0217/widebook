@@ -122,11 +122,7 @@
             }
           }
           & ul.content__box {
-            overflow: scroll;
-            list-style: none;
-            display: flex;
-            flex-wrap: nowrap;
-            margin-bottom: 20px;
+            @include content-box;
             a {
               @include link;
               margin: 10px 5px;
@@ -233,8 +229,8 @@
               @include link;
               margin: 10px 5px;
               li {
-                height: 300px;
-                width: 300px;
+                height: 250px;
+                width: 250px;
                 border-radius: 20px;
                 .post__wrapper {
                   height: 100%;
@@ -251,13 +247,20 @@
                     padding-right: 0px;
                     padding-bottom: 3px;
                     padding-left: 5px;
-                    .post__review {
-                      i {
-                        color: $plum;
+                    &__deco {
+                      display: flex;
+                      .post__review {
+                        i.fas.fa-star {
+                          color: $plum;
+                        }
+                        span {
+                          padding: 2px;
+                        }
                       }
-                      span {
-                        color: $darkgray;
-                        padding: 2px;
+                      .post__tag {
+                        i {
+                          
+                        }
                       }
                     }
                     &__basic {

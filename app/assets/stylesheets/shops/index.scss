@@ -142,10 +142,7 @@
             }
           }
           & ul.content__box {
-            list-style: none;
-            display: flex;
-            flex-wrap: nowrap;
-            margin-bottom: 20px;
+            @include content-box;
             a {
               @include link;
               margin: 10px 5px;
