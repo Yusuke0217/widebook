@@ -1,0 +1,442 @@
+@import "../main.scss";
+
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .wrapper {
+    .main__wrapper.shop__page__wrapper {
+      .shop__page {
+        .shop__view {
+          .shop__img {
+            img {
+            }
+          }
+          .shop__event {
+            .shere__btn {
+              a {
+                i.fas.fa-upload {
+                }
+              }
+            }
+            .like__btn {
+              a {
+                i.far.fa-heart {
+                }
+                i.fas.fa-heart {
+                }
+              }
+            }
+          }
+          .img__move__btn {
+            a {
+              li {
+              }
+            }
+          }
+        }
+        .shop__info {
+          .shop__info__profile {
+            .shop__about {
+              .shop__review {
+                i.fas.fa-star {
+                }
+                span {
+                }
+              }
+              .shop__tag {
+                i.fas.fa-tag {
+                }
+                span {
+                }
+              }
+            }
+            .shop__name {
+              h2 {
+              }
+            }
+            .shop__ggrmap {
+              .ggrmap__link {
+                p {
+                }
+                a {
+                }
+              }
+            }
+            .shop__address {
+              i.fas.fa-map-marker-alt {
+              }
+              p {
+              }
+              span {
+              }
+            }
+            .shop__hours {
+              i.far.fa-clock {
+              }
+              p {
+              }
+              span {
+              }
+            }
+            .shop__budget {
+              i.fas.fa-yen-sign {
+              }
+              p {
+              }
+              span {
+              }
+            }
+          }
+          .shop__info__summary {
+            .summary__list {
+              ul.table {
+                li {
+                  .table__name {
+                    i {
+                    }
+                    p {
+                    }
+                  }
+                  .table__category {
+                    i {
+                    }
+                    p {
+                    }
+                  }
+                  .table__phone {
+                    i {
+                    }
+                    p {
+                    }
+                  }
+                  .table__address {
+                    i {
+                    }
+                    p {
+                    }
+                  }
+                  .table__booking {
+                    i {
+                    }
+                    p {
+                    }
+                  }
+                  .table__time {
+                    i {
+                    }
+                    p {
+                    }
+                    .time-info {
+                      h4 {
+                      }
+                      p {
+                      }
+                    }
+                    .rest-info {
+                      h4 {
+                      }
+                      p {
+                      }
+                    }
+                  }
+                  .table__budget {
+                    i {
+                    }
+                    p {
+                    }
+                  }
+                  .table__payment {
+                    i {
+                    }
+                    p {
+                    }
+                    .credit {
+                      p {
+                      }
+                    }
+                    .ele-pay {
+                      p {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .shop__info__usp {
+            .shop__cp {
+              .shop__read {
+                h1 {
+                }
+                p {
+                }
+              }
+            }
+          }
+          .shop__info__amenity {
+            h2 {
+            }
+            .amenity__detail {
+              .amenity__list {
+                p {
+                }
+                i {
+                }
+              }
+            }
+            .detail__btn {
+              a.detail {
+                span {
+                  i {
+                  }
+                }
+              }
+            }
+          }
+          .shop__info__sns {
+            h1 {
+            }
+            .sns__link {
+              p {
+              }
+              a {
+              }
+              .facebook {
+                i {
+                }
+                p {
+                }
+                a {
+                }
+              }
+              .instagram {
+                i {
+                }
+                p {
+                }
+                a {
+                }
+              }
+              .twitter {
+                i {
+                }
+                p {
+                }
+                a {
+                }
+              }
+            }
+            .phone__num {
+              i.fas.fa-phone-alt {
+              }
+              p {
+              }
+            }
+          }
+        }
+        .review__box {
+          i {
+          }
+          p {
+          }
+          .review {
+            ul {
+              li {
+                .review__header {
+                  .user__profile {
+                    img {
+                    }
+                    h4 {
+                    }
+                    .review__date {
+                      p {
+                      }
+                    }
+                  }
+                  .review__contents {
+                    p {
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .detail__btn {
+            a.detail {
+              span {
+                i {
+                }
+              }
+            }
+          }
+        }
+        .shop__other__info {
+          h1 {
+          }
+           {
+            p {
+            }
+          }
+        }
+        .ggrmap__wrapper {
+          h1 {
+          }
+          p {
+          }
+          .ggrmap {
+            a {
+            }
+          }
+        }
+        .other__list.near-event {
+          h1 {
+          }
+          p {
+          }
+          .move__btn {
+            .btn--left {
+              a {
+                i.fas.fa-chevron-left {
+                }
+              }
+            }
+            .btn--right {
+              a {
+                i.fas.fa-chevron-right {
+                }
+              }
+            }
+          }
+          ul.post__box {
+            a {
+              li {
+                .post__wrapper {
+                  .post__img {
+                  }
+                  .post__info {
+                    .post__info__deco {
+                      .post__review {
+                        i.fas.fa-star {
+                        }
+                        span {
+                        }
+                      }
+                      .post__tag {
+                        i {
+                        }
+                        span {
+                        }
+                      }
+                    }
+                    .post__info__basic {
+                      .post__name {
+                        h2 {
+                        }
+                      }
+                      .post__about {
+                        .post__place {
+                          .address {
+                            span {
+                            }
+                          }
+                        }
+                      }
+                      .post__budget {
+                        i.fas.fa-yen-sign {
+                        }
+                        span {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .detail__btn {
+            a.detail {
+              span {
+                i {
+                }
+              }
+            }
+          }
+        }
+        .other__list {
+          h1 {
+          }
+          p {
+          }
+          .move__btn {
+            .btn--left {
+              a {
+                i.fas.fa-chevron-left {
+                }
+              }
+            }
+            .btn--right {
+              a {
+                i.fas.fa-chevron-right {
+                }
+              }
+            }
+          }
+          ul.post__box {
+            a {
+              li {
+                .post__wrapper {
+                  .post__img {
+                  }
+                  .post__info {
+                    .post__info__deco {
+                      .post__review {
+                        i.fas.fa-star {
+                        }
+                        span {
+                        }
+                      }
+                      .post__tag {
+                        i {
+                        }
+                        span {
+                        }
+                      }
+                    }
+                    .post__info__basic {
+                      .post__name {
+                        h2 {
+                        }
+                      }
+                      .post__about {
+                        .post__place {
+                          .address {
+                            span {
+                            }
+                          }
+                        }
+                      }
+                      .post__budget {
+                        i.fas.fa-yen-sign {
+                        }
+                        span {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .detail__btn {
+            a.detail {
+              span {
+                i {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
