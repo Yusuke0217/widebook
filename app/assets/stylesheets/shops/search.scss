@@ -5,6 +5,7 @@
   .wrapper {
     .main__wrapper {
       .ggrmap__wrapper {
+        display: none;
         .ggrmap {
           background-color: $green;
           height: 600px;
@@ -35,6 +36,7 @@
             height: 50px;
             border-radius: 20px 20px 0 0;
             text-align: center;
+            margin-bottom: 20px;
             p {
               width: 300px;
               display: inline-block;
@@ -111,14 +113,11 @@
                           display: flex;
                           .post__place {
                             .address {
+                              white-space: nowrap;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
                               span {
                               }
-                            }
-                          }
-                          span {
-                          }
-                          .post__category {
-                            span {
                             }
                           }
                         }
@@ -290,18 +289,13 @@
                           display: flex;
                           .post__place {
                             .address {
+                              white-space: nowrap;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
                               span {
                                 color: $darkgray;
                                 padding: 2px;
                               }
-                            }
-                          }
-                          span {
-                            font-size: 12px;
-                          }
-                          .post__category {
-                            span {
-                              color: $darkgray;
                             }
                           }
                         }
@@ -385,12 +379,6 @@
                             .address {
                               span {
                               }
-                            }
-                          }
-                          span {
-                          }
-                          .post__category {
-                            span {
                             }
                           }
                         }
@@ -481,14 +469,11 @@
                           display: flex;
                           .post__place {
                             .address {
+                              white-space: nowrap;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
                               span {
                               }
-                            }
-                          }
-                          span {
-                          }
-                          .post__category {
-                            span {
                             }
                           }
                         }
