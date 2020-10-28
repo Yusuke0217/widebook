@@ -3,6 +3,7 @@
 
 @media screen and (max-width: 560px) {
   // Mobile用のレスポンシブ
+  // トップページのheader
   header {
     .hd__wrapper {
       height: 100px;
@@ -65,6 +66,62 @@
               i.fa-user-alt {
                 display: none;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // お店の詳細ページ用のheader
+  header {
+    .hd__wrapper {
+      height: 100px;
+      width: 100%;
+      display: flex;
+      position: fixed;
+      z-index: 1;
+      box-shadow: 0px 0px 3px 0px #544C59;
+      background-color: $white;
+      .back__btn {
+        a {
+          i.fas.fa-times {
+          }
+        }
+      }
+      .event__btn {
+        width: 100px;
+        position: absolute;
+        left: 70%;
+        top: 3%;
+        display: flex;
+        a {
+          // common
+          @include awesome;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          background-color: $white;
+          opacity: 0.9;
+          margin-right: 10px;
+          display: block;
+          i {
+            // common
+            margin: 12px;
+            color: $darkgray;
+          }
+        }
+        .shere__btn {
+          a {
+            i.fas.fa-upload {
+            }
+          }
+        }
+        .like__btn {
+          a {
+            i.far.fa-heart {
+            }
+            i.fas.fa-heart {
             }
           }
         }

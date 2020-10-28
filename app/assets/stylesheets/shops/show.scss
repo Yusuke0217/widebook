@@ -5,157 +5,347 @@
   // Mobile用のレスポンシブ
   .wrapper {
     .main__wrapper.shop__page__wrapper {
-      .shop__page {
-        .shop__view {
-          .shop__img {
+      .shop__view {
+        position: relative;
+        .shop__img {
+          height: 250px;
+          a {
             img {
+              height: 100%;
+              width: 100%;
             }
           }
-          .shop__event {
-            .shere__btn {
-              a {
-                i.fas.fa-upload {
-                }
-              }
+        }
+        .shop__event {
+          width: 100px;
+          position: absolute;
+          left: 70%;
+          top: 3%;
+          display: flex;
+          a {
+            // common
+            @include awesome;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: $white;
+            opacity: 0.9;
+            margin-right: 10px;
+            display: block;
+            i {
+              margin: 12px;
+              color: $darkgray;
             }
-            .like__btn {
-              a {
-                i.far.fa-heart {
-                }
-                i.fas.fa-heart {
-                }
+          }
+          .shere__btn {
+            & a {
+              i.fas.fa-upload {
               }
             }
           }
-          .img__move__btn {
-            a {
-              li {
+          .like__btn {
+            & a {
+              i.far.fa-heart {
+              }
+              i.fas.fa-heart {
+                display: none;
               }
             }
           }
         }
+        .detail__btn {
+          display: none;
+          a.detail {
+            span {
+              i {
+              }
+            }
+          }
+        }
+        .img__move__btn {
+          display: none;
+          a {
+            li {
+            }
+          }
+        }
+      }
+      .shop__page {
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
         .shop__info {
           .shop__info__profile {
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             .shop__about {
+              display: flex;
               .shop__review {
+                margin-right: 10px;
                 i.fas.fa-star {
+                  color: $plum;
+                  margin-right: 3px;
                 }
                 span {
                 }
               }
               .shop__tag {
-                i.fas.fa-tag {
+                margin-right: 10px;
+                i.fas.fa-hashtag {
+                  color: $darkgray;
                 }
                 span {
                 }
               }
             }
             .shop__name {
+              margin-top: 15px;
               h2 {
+                font-size: 1.3rem;
               }
             }
             .shop__ggrmap {
               .ggrmap__link {
-                p {
-                }
+                display: flex;
+                flex-direction: row-reverse;
                 a {
+                  @include link;
+                  .map {
+                    height: 65px;
+                    width: 65px;
+                    background-color: $deepgreen;
+                    color: white;
+                  }
                 }
               }
             }
             .shop__address {
-              i.fas.fa-map-marker-alt {
+              display: flex;
+              margin-top: 15px;
+              &__ttl {
+                display: flex;
+                i.fas.fa-map-marker-alt {
+                  color: $darkgray;
+                  font-size: 1.3rem;
+                  margin-right: 10px;
+                  width: 20px;
+                  padding-top: 3px;
+                }
+                p {
+                  margin-right: 5px;
+                }
               }
-              p {
-              }
-              span {
+              &__import {
+                span {
+                  margin-right: 5px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
               }
             }
             .shop__hours {
-              i.far.fa-clock {
+              display: flex;
+              margin-top: 15px;
+              &__ttl {
+                display: flex;
+                i.far.fa-clock {
+                  color: $darkgray;
+                  font-size: 1.3rem;
+                  margin-right: 10px;
+                  width: 20px;
+                  padding-top: 3px;
+                }
+                p {
+                  margin-right: 5px;
+                }
               }
-              p {
-              }
-              span {
+              &__import {
+                span {
+                }
               }
             }
             .shop__budget {
+              margin-top: 15px;
+              display: flex;
               i.fas.fa-yen-sign {
+                color: $darkgray;
+                font-size: 1.3rem;
+                margin-right: 10px;
+                width: 20px;
+                padding-top: 3px;
               }
               p {
+                margin-right: 10px;
               }
               span {
               }
             }
           }
           .shop__info__summary {
+            margin-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+            h2 {
+              margin-bottom: 10px;
+            }
             .summary__list {
               ul.table {
                 li {
-                  .table__name {
-                    i {
-                    }
-                    p {
-                    }
-                  }
-                  .table__category {
-                    i {
-                    }
-                    p {
-                    }
-                  }
-                  .table__phone {
-                    i {
-                    }
-                    p {
-                    }
-                  }
-                  .table__address {
-                    i {
-                    }
-                    p {
-                    }
-                  }
-                  .table__booking {
-                    i {
-                    }
-                    p {
-                    }
-                  }
-                  .table__time {
-                    i {
-                    }
-                    p {
-                    }
-                    .time-info {
-                      h4 {
-                      }
-                      p {
+                  margin-top: 20px;
+                  margin-bottom: 20px;
+                  .table__force {
+                    display: flex;
+                    justify-content: space-between;
+                    .table__ttl {
+                      display: flex;
+                      i {
+                        color: $darkgray;
+                        font-size: 1.3rem;
+                        margin-right: 15px;
+                        width: 20px;
+                        padding-top: 3px;
                       }
                     }
-                    .rest-info {
-                      h4 {
+                    .table__import {
+                    }
+                    p,span {
+                      margin-right: 5px;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                    }
+                  }
+                  .table__force.name {
+                    & .table__ttl {
+                      i.fas.fa-signature {
                       }
-                      p {
+                      & p {
+                      }
+                    }
+                    & .table__import {
+                      & span {
                       }
                     }
                   }
-                  .table__budget {
-                    i {
-                    }
-                    p {
-                    }
-                  }
-                  .table__payment {
-                    i {
-                    }
-                    p {
-                    }
-                    .credit {
-                      p {
+                  .table__force.category {
+                    & .table__ttl {
+                      i.fas.fa-tag {
+                      }
+                      & p {
                       }
                     }
-                    .ele-pay {
-                      p {
+                    & .table__import {
+                      & span {
+                      }
+                    }
+                  }
+                  .table__force.phone {
+                    & .table__ttl {
+                      i.fas.fa-phone {
+                      }
+                      & p {
+                      }
+                    }
+                    & .table__import {
+                      & span {
+                      }
+                    }
+                  }
+                  .table__force.address {
+                    & .table__ttl {
+                      i.fas.fa-map-marker-alt {
+                      }
+                      & p {
+                      }
+                    }
+                    & .table__import {
+                      & span {
+                      }
+                    }
+                  }
+                  .table__force.booking {
+                    & .table__ttl {
+                      i.fas.fa-book {
+                      }
+                      & p {
+                      }
+                    }
+                    & .table__import {
+                      & span {
+                      }
+                    }
+                  }
+                  .table__force.budget {
+                    & .table__ttl {
+                      i.fas.fa-yen-sign {
+                      }
+                      & p {
+                      }
+                    }
+                    & .table__import {
+                      & span {
+                      }
+                    }
+                  }
+                  .table__force.time {
+                    & .table__ttl {
+                      i.far.fa-clock {
+                      }
+                      & p {
+                      }
+                    }
+                    & .table__import {
+                      .time-info {
+                        display: flex;
+                        margin-bottom: 5px;
+                        h4 {
+                          margin-right: 5px;
+                        }
+                        span {
+                        }
+                      }
+                      .rest-info {
+                        display: flex;
+                        margin-bottom: 5px;
+                        h4 {
+                        }
+                        span {
+                        }
+                      }
+                    }
+                  }
+                  .table__force.payment {
+                    .table__ttl {
+                      i.far.fa-credit-card {
+                      }
+                      & p {
+                      }
+                    }
+                    .table__import {
+                      .credit {
+                        display: flex;
+                        & p {
+                          margin-right: 10px;
+                        }
+                        & span {
+                          border-bottom: 1px solid $darkgray;
+                        }
+                      }
+                      & ul.card__list {
+                        display: flex;
+                        & li {
+                        }
+                      }
+                      .ele-pay {
+                        display: flex;
+                        & p {
+                          margin-right: 10px;
+                        }
+                        & span {
+                          border-bottom: 1px solid $darkgray;
+                        }
                       }
                     }
                   }
@@ -271,6 +461,7 @@
           }
         }
         .shop__other__info {
+          display: none;
           h1 {
           }
            div {
@@ -288,12 +479,15 @@
             }
           }
         }
-        .other__list.near-event {
+        .other__list {
+          // .near-event
           h1 {
+            font-size: 1.5rem;
           }
           p {
           }
-          .move__btn {
+          & .move__btn {
+            display: none;
             .btn--left {
               a {
                 i.fas.fa-chevron-left {
@@ -307,16 +501,36 @@
               }
             }
           }
-          ul.post__box {
+          & ul.post__box {
+            @include content-box;
+            overflow: scroll;
             a {
+              @include link;
+              margin: 10px 5px;
               li {
+                height: 250px;
+                width: 250px;
+                border-radius: 20px;
                 .post__wrapper {
+                  height: 100%;
                   .post__img {
+                    height: 65%;
+                    img {
+                      border-radius: 20px 20px 0 0;
+                      height: 100%;
+                      width: 100%;
+                    }
                   }
                   .post__info {
-                    .post__info__deco {
+                    padding-top: 5px;
+                    padding-right: 0px;
+                    padding-bottom: 3px;
+                    padding-left: 5px;
+                    &__deco {
+                      display: flex;
                       .post__review {
                         i.fas.fa-star {
+                          color: $plum;
                         }
                         span {
                         }
@@ -331,12 +545,19 @@
                     .post__info__basic {
                       .post__name {
                         h2 {
+                          font-size: 1rem;
                         }
                       }
                       .post__about {
+                        display: flex;
                         .post__place {
                           .address {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                             span {
+                              color: $darkgray;
+                              padding: 2px;
                             }
                           }
                         }
@@ -353,7 +574,8 @@
               }
             }
           }
-          .detail__btn {
+          & .detail__btn {
+            display: none;
             a.detail {
               span {
                 i {
