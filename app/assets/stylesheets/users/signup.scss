@@ -1,0 +1,105 @@
+@import "../main.scss";
+
+.wrapper {
+  .main__wrapper {
+    .signup__wrapper {
+      height: 100%;
+      .signup__logo {
+        height: 100px;
+        width: 150px;
+        margin-top: 30px;
+        margin-right: auto;
+        margin-bottom: 15px;
+        margin-left: auto;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .signup__ttl {
+        text-align: center;
+        margin-bottom: 15px;
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+        }
+      }
+      .signup__form {
+        form {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          .input__ttl {
+            margin-bottom: 3px;
+            width: 200px;
+            i.fas.fa-asterisk {
+              color: $darkgray;
+              font-size: 10px;
+            }
+            label {
+              font-size: 13px;
+            }
+          }
+          input {
+            height: 40px;
+            width: 200px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border: 1px solid $darkgray;
+            border-radius: 20px;
+            outline: none;
+          }
+          input.submit {
+            margin-top: 15px;
+            background-color: $plum;
+            color: $white;
+          }
+        }
+        .announce {
+          height: 20px;
+          width: 300px;
+          display: flex;
+          text-align: center;
+          margin: 0 auto;
+          i.fas.fa-exclamation-circle {
+            color: $plum;
+          }
+          p {
+            font-size: 13px;
+            line-height: 20px;
+            a {
+              text-decoration: none;
+            }
+          }
+        }
+        .signup__form__login {
+          margin-top: 50px;
+          p {
+            text-align: center;
+          }
+          .login__btn {
+            text-align: center;
+            margin-top: 10px;
+            a {
+              @include link;
+              color: $plum;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+}
+
+@media screen and (min-width: 560px) and (max-width: 959px) {
+  // Tablet用のレスポンシブ
+}
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+}
