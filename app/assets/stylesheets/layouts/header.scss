@@ -6,7 +6,7 @@
   // トップページのheader
   header {
     .hd__wrapper {
-      height: 100px;
+      height: 80px;
       width: 100%;
       display: flex;
       position: fixed;
@@ -29,16 +29,17 @@
           border-radius: 50px;
           margin: 20px 10px;
           box-shadow: 0 0 4px 0px $darkgray;
-          height: 60px;
+          height: 40px;
           width: 100%;
           input {
             height: 100%;
-            width: calc(100% - 65.3px);
+            padding-left: 10px;
+            width: calc(100% - 45.3px);
             outline: none;
           }
           button {
-            height: 60px;
-            width: 60px;
+            height: 40px;
+            width: 40px;
             background-color: $plum;
             border-radius: 50px;
             cursor: pointer;
@@ -52,7 +53,7 @@
       }
       .hd__nav {
         // display: none;
-        line-height: 7.5rem;
+        line-height: 6.5rem;
         ul {
           li {
             margin: 0 30px;
@@ -76,7 +77,7 @@
   // お店の詳細ページ用のheader
   header {
     .hd__wrapper {
-      height: 100px;
+      height: 80px;
       width: 100%;
       display: flex;
       position: fixed;
