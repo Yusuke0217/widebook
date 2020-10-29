@@ -205,10 +205,19 @@
         </div>
         <div class="shop__info__usp">
           <div class="shop__cp">
-            <div class="shop__read">
+            <div class="shop__ttl">
               <h1>個室あり リーズナブルな価格で楽しめるモダンなイタリアンレストラン</h1>
               <p>この世には、二種類の男しかいない。俺か、俺以外か。</p>
             </div>
+            <div class="shop__read">
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+          <div class="detail__btn">
+            <a href="" class="detail">
+              <span><i></i></span>
+            </a>
           </div>
         </div>
         <div class="shop__info__amenity">
@@ -236,64 +245,124 @@
         <div class="shop__info__sns">
           <h1>お店の関連情報</h1>
           <div class="sns__link">
-            <p>ホームページ</p>
-            <a href="">リンク</a>
+            <div class="sns__link__ttl">
+              <i class="fas fa-home"></i>
+              <p>ホームページ</p>
+            </div>
+            <div class="sns__link__import">
+              <a href=""><span></span></a>
+            </div>
           </div>
           <div class="sns__link">
-            <div class="facebook">
-              <i></i>
-              <p></p>
-              <a href=""></a>
+            <div class="sns__link__ttl">
+              <i class="fas fa-share-alt"></i>
+              <p>公式アカウント</p>
             </div>
-            <div class="instagram">
-              <i></i>
-              <p></p>
-              <a href=""></a>
+            <div class="sns__link__import">
+              <div class="facebook">
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+              </div>
+              <div class="instagram">
+                <a href=""><i class="fab fa-instagram"></i></a>
+              </div>
+              <div class="twitter">
+                <a href=""><i class="fab fa-twitter"></i></a>
+              </div>
             </div>
-            <div class="twitter">
-              <i></i>
-              <p></p>
-              <a href=""></a>
-            </div>
-          </div>
-          <div class="phone__num">
-            <i class="fas fa-phone-alt"></i>
-            <p></p>
           </div>
         </div>
       </div>
       <div class="review__box">
-        <i></i>
-        <p></p>
-        <p></p>
-        <p>件のレビュー</p>
-        <div class="review">
+        <div class="review__count">
+          <i class="fas fa-star"></i>
+          <span></span>
+        </div>
+        <div class="review__list">
           <ul>
             <li>
-              <div class="review__header">
-                <div class="user__profile">
-                  <img src="" alt="">
-                  <h4></h4>
-                  <div class="review__date">
-                    <p>6カ月前</p>
+              <div class="review__wrapper">
+                <div class="review__header">
+                  <div class="user__profile">
+                    <div class="user__profile__left">
+                      <div class="user__img">
+                        <img src="" alt="">
+                      </div>
+                    </div>
+                    <div class="user__profile__right">
+                      <div class="user__name">
+                        <h4></h4>
+                      </div>
+                      <div class="review__date">
+                        <p></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="review__contents">
-                  <p></p>
+                  <div class="review__txt">
+                    <p></p>
+                  </div>
+                  <div class="more__btn">
+                    <a href=""><span>続きを読む</span></a>
+                  </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="review__header">
-                <div class="user__profile">
-                  <img src="" alt="">
-                  <h4></h4>
-                  <div class="review__date">
-                    <p>2カ月前</p>
+              <div class="review__wrapper">
+                <div class="review__header">
+                  <div class="user__profile">
+                    <div class="user__profile__left">
+                      <div class="user__img">
+                        <img src="" alt="">
+                      </div>
+                    </div>
+                    <div class="user__profile__right">
+                      <div class="user__name">
+                        <h4></h4>
+                      </div>
+                      <div class="review__date">
+                        <p></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="review__contents">
-                  <p></p>
+                  <div class="review__txt">
+                    <p></p>
+                  </div>
+                  <div class="more__btn">
+                    <a href=""><span>続きを読む</span></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="review__wrapper">
+                <div class="review__header">
+                  <div class="user__profile">
+                    <div class="user__profile__left">
+                      <div class="user__img">
+                        <img src="" alt="">
+                      </div>
+                    </div>
+                    <div class="user__profile__right">
+                      <div class="user__name">
+                        <h4></h4>
+                      </div>
+                      <div class="review__date">
+                        <p></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="review__contents">
+                  <div class="review__txt">
+                    <p></p>
+                  </div>
+                  <div class="more__btn">
+                    <a href=""><span>続きを読む</span></a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -301,7 +370,7 @@
         </div>
         <div class="detail__btn">
           <a href="" class="detail">
-            <span><i></i></span>
+            <span>レビューをすべて表示</span>
           </a>
         </div>
       </div>
@@ -458,3 +527,4 @@
     </div>
   </div>
 </div>
+<%= render 'layouts/footer' %>

@@ -22,6 +22,7 @@
           left: 70%;
           top: 3%;
           display: flex;
+          display: none;
           a {
             // common
             @include awesome;
@@ -188,11 +189,12 @@
             padding-bottom: 20px;
             border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             h2 {
+              font-size: 1.3rem;
               margin-bottom: 10px;
             }
             .summary__list {
-              ul.table {
-                li {
+              & ul.table {
+                & li {
                   margin-top: 20px;
                   margin-bottom: 20px;
                   .table__force {
@@ -324,18 +326,23 @@
                       }
                     }
                     .table__import {
-                      .credit {
+                      & .credit {
                         display: flex;
                         & p {
                           margin-right: 10px;
                         }
                         & span {
                           border-bottom: 1px solid $darkgray;
+                          margin-right: 30px;
                         }
                       }
                       & ul.card__list {
                         display: flex;
+                        margin-bottom: 10px;
                         & li {
+                          margin-top: 0px;
+                          margin-right: 10px;
+                          margin-bottom: 0px;
                         }
                       }
                       .ele-pay {
@@ -354,17 +361,40 @@
             }
           }
           .shop__info__usp {
+            margin-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             .shop__cp {
-              .shop__read {
+              .shop__ttl {
                 h1 {
+                  font-size: 1rem;
+                  margin-bottom: 15px;
                 }
                 p {
+                }
+              }
+              .shop__read {
+                p {
+                }
+              }
+            }
+            .detail__btn {
+              text-align: center;
+              a.detail {
+                span {
+                  i {
+                  }
                 }
               }
             }
           }
           .shop__info__amenity {
+            display: none;
+            margin-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             h2 {
+              font-size: 1.3rem;
             }
             .amenity__detail {
               .amenity__list {
@@ -384,67 +414,159 @@
             }
           }
           .shop__info__sns {
+            margin-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             h1 {
+              font-size: 1.3rem;
             }
             .sns__link {
-              p {
-              }
-              a {
-              }
-              .facebook {
-                i {
+              display: flex;
+              margin-top: 20px;
+              margin-bottom: 20px;
+              &__ttl {
+                display: flex;
+                margin-right: 20px;
+                i.fas.fa-home {
+                  color: $darkgray;
+                  font-size: 1.3rem;
+                  margin-right: 10px;
+                  width: 20px;
+                  padding-top: 3px;
                 }
-                p {
+                i.fas.fa-share-alt {
+                  color: $darkgray;
+                  font-size: 1.3rem;
+                  margin-right: 10px;
+                  width: 20px;
+                  padding-top: 3px;
                 }
-                a {
-                }
-              }
-              .instagram {
-                i {
-                }
-                p {
-                }
-                a {
-                }
-              }
-              .twitter {
-                i {
-                }
-                p {
-                }
-                a {
+                & p {
                 }
               }
-            }
-            .phone__num {
-              i.fas.fa-phone-alt {
-              }
-              p {
+              &__import {
+                display: flex;
+                max-width: 200px;
+                word-break: break-all;
+                .facebook {
+                  margin: 0px 10px;
+                  a {
+                    i.fab.fa-facebook-square {
+                      color: $darkgray;
+                      font-size: 1.5rem;
+                    }
+                  }
+                }
+                .instagram {
+                  margin: 0px 10px;
+                  a {
+                    i.fab.fa-instagram {
+                      color: $darkgray;
+                      font-size: 1.5rem;
+                    }
+                  }
+                }
+                .twitter {
+                  margin: 0px 10px;
+                  a {
+                    i.fab.fa-twitter {
+                      color: $sora;
+                      font-size: 1.5rem;
+                    }
+                  }
+                }
+                & a {
+                  & i {
+                  }
+                }
               }
             }
           }
         }
         .review__box {
-          i {
+          margin-top: 20px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+          & .review__count {
+            margin-bottom: 10px;
+            i.fas.fa-star {
+              color: $plum;
+              font-size: 1.2rem;
+              span {
+              }
+            }
           }
-          p {
-          }
-          .review {
-            ul {
-              li {
-                .review__header {
-                  .user__profile {
-                    img {
-                    }
-                    h4 {
-                    }
-                    .review__date {
-                      p {
+          & .review__list {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            & ul {
+              display: flex;
+              // flex-wrap: nowrap;
+              overflow: scroll;
+              & li {
+                padding-top: 20px;
+                padding-right: 10px;
+                padding-bottom: 20px;
+                padding-left: 10px;
+                margin-top: 10px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                border-radius: 20px;
+                border: 1px solid $darkgray;
+                .review__wrapper {
+                  height: 200px;
+                  width: 250px;
+                  .review__header {
+                    .user__profile {
+                      display: flex;
+                      &__left {
+                        .user__img {
+                          margin-right: 20px;
+                          margin-left: 15px;
+                          img {
+                            height: 50px;
+                            width: 50px;
+                            border-radius: 50%;
+                          }
+                        }
+                      }
+                      &__right {
+                        flex-direction: column;
+                        & .user__name {
+                          h4 {
+                          }
+                        }
+                        & .review__date {
+                          p {
+                            color: $darkgray;
+                            font-size: 13px;
+                          }
+                        }
                       }
                     }
                   }
                   .review__contents {
-                    p {
+                    height: 150px;
+                    .review__txt {
+                      word-break: break-all;
+                      & p {
+                        height: 130px;
+                        padding-top: 10px;
+                        padding-right: 10px;
+                        padding-bottom: 10px;
+                        padding-left: 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                      }
+                    }
+                    .more__btn {
+                      text-align: right;
+                      & a {
+                        color: $darkgray;
+                        & span {
+                        }
+                      }
                     }
                   }
                 }
@@ -452,10 +574,18 @@
             }
           }
           .detail__btn {
+            text-align: center;
+            margin-top: 10px;
             a.detail {
+              @include link;
+              height: 50px;
+              width: 200px;
+              border: 1px solid $darkgray;
+              border-radius: 20px;
+              line-height: 50px;;
+              display: inline-block;
               span {
-                i {
-                }
+                font-size: 1rem;
               }
             }
           }
