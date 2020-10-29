@@ -1,0 +1,110 @@
+@import "../main.scss";
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  footer {
+    .ft__wrapper {
+      .ft__nav {
+        height: 60px;
+        width: 100%;
+        border-top: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+        & ul {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 5px;
+          li {
+            width: 20%;
+            .ft__btn__wrapper {
+              a {
+                @include link;
+                .nav__btn {
+                  text-align: center;
+                  i {
+  
+                    font-size: 2rem;
+                  }
+                  i.fas.fa-search {
+                  }
+                  i.far.fa-heart {
+                  }
+                  i.fas.fa-book-open {
+                  }
+                  i {
+                  }
+                  i.fas.fa-user {
+                  }
+                  & p {
+                    font-size: 11px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 560px) and (max-width: 959px) {
+  // Tablet用のレスポンシブ
+}
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  footer {
+    .ft__wrapper {
+      .ft__nav {
+        background-color: gray;
+        ul.nav__list {
+          text-align: center;
+          li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .ft__nav__how {
+              a {
+                @include link;
+                color: $darkgray;
+                .app__info {
+                  p {
+                  }
+                }
+              }
+            }
+            .ft__nav__rule {
+              a {
+                @include link;
+                color: $darkgray;
+                .rule {
+                  p {
+                  }
+                }
+              }
+            }
+            .ft__nav__privacy {
+              a {
+                @include link;
+                color: $darkgray;
+                .privacy {
+                  p {
+                  }
+                }
+              }
+            }
+            .ft__nav__query {
+              a {
+                @include link;
+                color: $darkgray;
+                .query {
+                  p {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
