@@ -8,40 +8,48 @@
       .shop__view {
         position: relative;
         .shop__img__list {
-          .shop__img.1 {
-            height: 250px;
-            a {
-              img {
-                height: 100%;
-                width: 100%;
+          .main__img {
+            .shop__img.no-1 {
+              height: 250px;
+              a {
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
               }
             }
           }
-          .shop__img.2 {
-            display: none;
-            a {
-              img {
-              }
-            }
-          }
-          .shop__img.3 {
-            display: none;
-            a {
-              img {
-              }
-            }
-          }
-          .shop__img.4 {
-            display: none;
-            a {
-              img {
-              }
-            }
-          }
-          .shop__img.5 {
-            display: none;
-            a {
-              img {
+          .sub__img {
+            ul.sub__img__list {
+              li {
+                .shop__img.no-2 {
+                  display: none;
+                  a {
+                    img {
+                    }
+                  }
+                }
+                .shop__img.no-3 {
+                  display: none;
+                  a {
+                    img {
+                    }
+                  }
+                }
+                .shop__img.no-4 {
+                  display: none;
+                  a {
+                    img {
+                    }
+                  }
+                }
+                .shop__img.no-5 {
+                  display: none;
+                  a {
+                    img {
+                    }
+                  }
+                }
               }
             }
           }
@@ -73,19 +81,26 @@
               margin: 12px;
               color: $darkgray;
             }
+            span {
+              display: none;
+            }
           }
-          .shere__btn {
+          .share__btn {
             & a {
-              i.fas.fa-upload {
+              .share__icon {
+                i.fas.fa-upload {
+                }
               }
             }
           }
           .like__btn {
             & a {
-              i.far.fa-heart {
-              }
-              i.fas.fa-heart {
-                display: none;
+              .like__icon {
+                i.far.fa-heart {
+                }
+                i.fas.fa-heart {
+                  display: none;
+                }
               }
             }
           }
@@ -137,7 +152,7 @@
               }
             }
             .shop__name {
-              margin-top: 15px;
+              margin-top: 10px;
               h2 {
                 font-size: 1.3rem;
               }
@@ -639,12 +654,18 @@
           }
         }
         .ggrmap__wrapper {
+          display: none;
+          border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
           h1 {
           }
           p {
           }
           .ggrmap {
             a {
+            }
+          }
+          .ggrmap__info {
+            p {
             }
           }
         }
