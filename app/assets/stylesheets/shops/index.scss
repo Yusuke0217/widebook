@@ -9,7 +9,7 @@
       height: 100%;
       width: 100%;
       .main__view {
-        padding-top: 100px;
+        padding-top: 80px;
         .searchbox__wrapper {
           display: none;
           form {
@@ -77,8 +77,8 @@
                 width: 50%;
                 border: 1px solid $darkgray;
                 box-sizing: border-box;
-                background-color: $plum;
                 border-radius: 20px;
+                background-color: $plum;
                 outline: none;
                 @include link;
                 display: inline-block;
@@ -107,16 +107,8 @@
           .move__btn {
             display: none;
             a {
-              @include awesome;
-              height: 44px;
-              width: 44px;
-              border-radius: 50%;
-              background-color: $darkgray;
-              position: absolute;
-              opacity: 0.9;
-              color: $white;
+              @include move-btn;
               i {
-                @include awesome;
                 position: absolute;
               }
             }
@@ -145,12 +137,14 @@
             @include content-box;
             a {
               @include link;
-              margin: 10px 5px;
+              margin-top: 10px;
+              margin-right: 5px;
+              margin-bottom: 10px;
+              margin-left: 5px;
               li {
+                @include flame;
                 height: 200px;
                 width: 200px;
-                border: 1px solid darkgray;
-                border-radius: 20px;
                 .content__wrapper {
                   height: 100%;
                   .content__img {
@@ -183,12 +177,11 @@
             text-align: center;
             margin-bottom: 50px;
             a {
+              @include flame;
+              @include link;
               height: 50px;
               width: 200px;
               display: block;
-              border: 1px solid $darkgray;
-              border-radius: 20px;
-              @include link;
               span {
                 font-size: 1.2rem;
                 line-height: 3rem;
@@ -200,19 +193,11 @@
         }
         #b-type {
           order: 2;
-          .move__btn {
-            display: none;
+          & .move__btn {
+            // display: none;
             a {
-              @include awesome;
-              height: 44px;
-              width: 44px;
-              border-radius: 50%;
-              background-color: $darkgray;
-              position: absolute;
-              opacity: 0.9;
-              color: $white;
+              @include move-btn;
               i {
-                @include awesome;
                 position: absolute;
               }
             }
@@ -249,16 +234,8 @@
           .move__btn {
             display: none;
             a {
-              @include awesome;
-              height: 44px;
-              width: 44px;
-              border-radius: 50%;
-              background-color: $darkgray;
-              position: absolute;
-              opacity: 0.9;
-              color: $white;
+              @include move-btn;
               i {
-                @include awesome;
                 position: absolute;
               }
             }
@@ -283,15 +260,17 @@
               }
             }
           }
-          ul {
+          & ul {
             flex-wrap: wrap;
             margin-top: 20px;
+            justify-content: center;
             a {
               margin: 1px;
               li {
-                height: 110px;
-                width: 105px;
+                height: 115px;
+                width: 110px;
                 border: none;
+                position: relative;
                 .content__wrapper {
                   .content__img {
                     height: 100%;
@@ -300,7 +279,11 @@
                     }
                   }
                   .content__cp {
+                    position: absolute;
+                    top: 35%;
+                    left: 20%;
                     h2 {
+                      color: $white;
                     }
                   }
                 }

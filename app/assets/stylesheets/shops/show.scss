@@ -7,12 +7,48 @@
     .main__wrapper.shop__page__wrapper {
       .shop__view {
         position: relative;
-        .shop__img {
-          height: 250px;
-          a {
-            img {
-              height: 100%;
-              width: 100%;
+        .shop__img__list {
+          .shop__img.1 {
+            height: 250px;
+            a {
+              img {
+                height: 100%;
+                width: 100%;
+              }
+            }
+          }
+          .shop__img.2 {
+            display: none;
+            a {
+              img {
+              }
+            }
+          }
+          .shop__img.3 {
+            display: none;
+            a {
+              img {
+              }
+            }
+          }
+          .shop__img.4 {
+            display: none;
+            a {
+              img {
+              }
+            }
+          }
+          .shop__img.5 {
+            display: none;
+            a {
+              img {
+              }
+            }
+          }
+          .shop__img {
+            a {
+              img {
+              }
             }
           }
         }
@@ -71,12 +107,12 @@
           }
         }
       }
-      .shop__page {
-        margin-top: 10px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        margin-left: 10px;
-        .shop__info {
+      .shop__info.main {
+        .shop__info__head {
+          margin-top: 10px;
+          margin-right: 10px;
+          margin-bottom: 50px;
+          margin-left: 10px;
           .shop__info__profile {
             padding-bottom: 20px;
             border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
@@ -127,10 +163,10 @@
               &__ttl {
                 display: flex;
                 i.fas.fa-map-marker-alt {
+                  width: 20px;
                   color: $darkgray;
                   font-size: 1.3rem;
                   margin-right: 10px;
-                  width: 20px;
                   padding-top: 3px;
                 }
                 p {
@@ -139,10 +175,8 @@
               }
               &__import {
                 span {
+                  @include word-el;
                   margin-right: 5px;
-                  overflow: hidden;
-                  text-overflow: ellipsis;
-                  white-space: nowrap;
                 }
               }
             }
@@ -152,10 +186,10 @@
               &__ttl {
                 display: flex;
                 i.far.fa-clock {
+                  width: 20px;
                   color: $darkgray;
                   font-size: 1.3rem;
                   margin-right: 10px;
-                  width: 20px;
                   padding-top: 3px;
                 }
                 p {
@@ -171,10 +205,10 @@
               margin-top: 15px;
               display: flex;
               i.fas.fa-yen-sign {
+                width: 20px;
                 color: $darkgray;
                 font-size: 1.3rem;
                 margin-right: 10px;
-                width: 20px;
                 padding-top: 3px;
               }
               p {
@@ -184,6 +218,14 @@
               }
             }
           }
+        }
+      }
+      .shop__info__sub {
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 50px;
+        margin-left: 10px;
+        .shop__info__body {
           .shop__info__summary {
             margin-top: 20px;
             padding-bottom: 20px;
@@ -203,10 +245,10 @@
                     .table__ttl {
                       display: flex;
                       i {
+                        width: 20px;
                         color: $darkgray;
                         font-size: 1.3rem;
                         margin-right: 15px;
-                        width: 20px;
                         padding-top: 3px;
                       }
                     }
@@ -214,9 +256,7 @@
                     }
                     p,span {
                       margin-right: 5px;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                      white-space: nowrap;
+                      @include word-el;
                     }
                   }
                   .table__force.name {
@@ -512,8 +552,7 @@
                 margin-right: 10px;
                 margin-bottom: 10px;
                 margin-left: 10px;
-                border-radius: 20px;
-                border: 1px solid $darkgray;
+                @include flame;
                 .review__wrapper {
                   height: 200px;
                   width: 250px;
@@ -633,10 +672,14 @@
           }
           & ul.post__box {
             @include content-box;
+            margin-top: 10px;
             overflow: scroll;
             a {
               @include link;
-              margin: 10px 5px;
+              margin-top: 10px;
+              margin-right: 5px;
+              margin-bottom: 10px;
+              margin-left: 5px;
               li {
                 height: 250px;
                 width: 250px;
@@ -682,9 +725,7 @@
                         display: flex;
                         .post__place {
                           .address {
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
+                            @include word-el;
                             span {
                               color: $darkgray;
                               padding: 2px;

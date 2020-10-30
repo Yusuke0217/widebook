@@ -62,22 +62,21 @@
             .main__view__cp {
               padding-top: 150px;
               h1 {
-                color: white;
+                color: $white;
               }
               p {
-                color: white;
+                color: $white;
               }
             }
             .place__btn {
               padding-top: 50px;
               a {
+                @include flame;
+                @include link;
                 height: 50px;
                 width: 300px;
-                border: 1px solid $darkgray;
                 box-sizing: border-box;
                 background-color: $plum;
-                border-radius: 20px;
-                @include link;
                 display: inline-block;
                 outline: none;
                 color: $white;
@@ -102,16 +101,8 @@
           }
           .move__btn {
             a {
-              @include awesome;
-              height: 44px;
-              width: 44px;
-              border-radius: 50%;
-              background-color: $darkgray;
-              position: absolute;
-              opacity: 0.9;
-              color: $white;
+              @include move-btn;
               i {
-                @include awesome;
                 position: absolute;
               }
             }
@@ -145,8 +136,7 @@
               li {
                 height: 250px;
                 width: 250px;
-                border: 1px solid darkgray;
-                border-radius: 20px;
+                @include flame;
                 .content__wrapper {
                   height: 100%;
                   .content__img {
@@ -199,14 +189,7 @@
           .move__btn {
             display: none;
             a {
-              @include awesome;
-              height: 44px;
-              width: 44px;
-              border-radius: 50%;
-              background-color: $darkgray;
-              position: absolute;
-              opacity: 0.9;
-              color: $white;
+              @include move-btn;
               i {
                 @include awesome;
                 position: absolute;
@@ -264,14 +247,7 @@
           .move__btn {
             display: none;
             a {
-              @include awesome;
-              height: 44px;
-              width: 44px;
-              border-radius: 50%;
-              background-color: $darkgray;
-              position: absolute;
-              opacity: 0.9;
-              color: $white;
+              @include move-btn;
               i {
                 @include awesome;
                 position: absolute;
@@ -347,7 +323,10 @@
           height: 400px;
           h1 {
             color: $white;
-            margin: 0 10px;
+            margin-top: 0px;
+            margin-right: 10px;
+            margin-bottom: 0px;
+            margin-left: 10px;
           }
           p {
             margin: 0 10px;

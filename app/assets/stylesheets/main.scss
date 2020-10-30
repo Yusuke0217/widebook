@@ -31,11 +31,32 @@
 //   content: $content;
 // }
 
-@mixin content-box {
+@mixin content-box($display: flex) {
   list-style: none;
-  display: flex;
+  display: $display;
   flex-wrap: nowrap;
   margin-bottom: 20px;
+}
+
+@mixin flame {
+  border: 1px solid $darkgray;
+  border-radius: 20px;
+}
+
+@mixin move-btn {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background-color: $darkgray;
+  position: absolute;
+  opacity: 0.9;
+  color: $white;
+}
+
+@mixin word-el {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 // @mixin form {

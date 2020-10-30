@@ -1,5 +1,7 @@
 @import "../../main.scss";
 
+
+
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
   .wrapper {
@@ -52,9 +54,10 @@
           text-align: center;
           position: relative;
           margin-bottom: 30px;
-          .bg__img.index {
+          .bg__img.place {
             height: 700px;
-            background-image: url("/assets/bg_image2.jpeg");
+            width: 100%;
+            background-image: url("/assets/bg_image1.jpeg");
             background-size: contain;
             background-repeat: repeat;
             .main__view__cp {
@@ -67,41 +70,24 @@
                 color: $white;
               }
             }
-            .place__btn {
-              padding-top: 50px;
-              a {
-                height: 50px;
-                width: 500px;
-                border: 1px solid $darkgray;
-                box-sizing: border-box;
-                background-color: $plum;
-                border-radius: 20px;
-                @include link;
-                outline: none;
-                color: $white;
-                font-size: 1.7rem;
-                display: inline-block;
-                span {
-                  line-height: 3rem;
-                }
-              }
-              a:hover {
-              }
-            }
           }
         }
       }
       .main__content {
         .content__list {
           position: relative;
-          margin: 50px 10px;
+          margin-top: 50px;
+          margin-right: 10px;
+          margin-bottom: 50px;
+          margin-left: 10px;
           h1 {
+            font-size: 1.5rem;
           }
           p {
             color: $darkgray;
             font-size: 1.2rem;
           }
-          .move__btn {
+          & .move__btn {
             a {
               @include move-btn;
               i {
@@ -129,13 +115,16 @@
               }
             }
           }
-          ul.content__box {
+          & ul.content__box {
             list-style: none;
             display: flex;
             margin-bottom: 20px;
             a {
               @include link;
-              margin: 15px 10px 5px;
+              margin-top: 15px;
+              margin-right: 10px;
+              margin-bottom: 5px;
+              margin-left: 10px;
               li {
                 height: 250px;
                 width: 250px;
@@ -151,7 +140,10 @@
                     }
                   }
                   .content__cp {
-                    padding: 15px 10px;
+                    padding-top: 15px;
+                    padding-right: 10px;
+                    padding-bottom: 15px;
+                    padding-left: 10px;
                     text-align: center;
                     h2 {
                       font-size: 1.2rem;
@@ -165,16 +157,13 @@
               }
             }
           }
-          ul::-webkit-scrollbar {
-            display: none;
-          }
           .detail__btn {
             display: none;
             text-align: center;
             margin-bottom: 50px;
             a {
               height: 50px;
-              width: 80vw;
+              width: 200px;
               display: block;
               @include flame;
               @include link;
@@ -187,8 +176,19 @@
             }
           }
         }
-        #b-type {
-          .move__btn {
+        .other__list.place {
+          position: relative;
+          margin-top: 20px;
+          margin-right: 12px;
+          margin-bottom: 20px;
+          margin-left: 12px;
+          & h1 {
+            font-size: 1.5rem;
+          }
+          & p {
+            color: $darkgray;
+          }
+          & .move__btn {
             a {
               @include move-btn;
               i {
@@ -198,115 +198,185 @@
             .btn--left {
               a {
                 right: 12%;
-                top: 0%;
+                top: 5%;
                 i {
                   right: 40%;
-                  top: 30%;
+                  top: 35%;
                 }
               }
             }
             .btn--right {
               a {
                 right: 5%;
-                top: 0%;
+                top: 5%;
                 i {
                   right: 35%;
-                  top: 30%;
+                  top: 35%;
                 }
               }
             }
           }
-          ul {
-            overflow-x: scroll;
-            a {
-              li {
-                .content__wrapper {
-                  .content__img {
-                    img {
-                    }
-                  }
-                  .content__cp {
-                    h2 {
-                    }
-                    p {
-
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        #area {
-          ul {
-            overflow: scroll;
+          & ul.post__box {
+            @include content-box;
             margin-top: 20px;
+            overflow: scroll;
             a {
-              margin-top: 5px;
+              @include link;
+              margin-top: 10px;
               margin-right: 5px;
+              margin-bottom: 10px;
               margin-left: 5px;
-              margin-bottom: 5px;
               li {
-                .content__wrapper {
-                  .content__img {
-                    height: 70%;
+                height: 300px;
+                width: 300px;
+                border-radius: 20px;
+                .post__wrapper {
+                  height: 100%;
+                  .post__img {
+                    height: 65%;
                     img {
                       border-radius: 20px 20px 0 0;
+                      height: 100%;
+                      width: 100%;
                     }
                   }
-                  .content__cp {
-                    flex-direction: column;
+                  .post__info {
                     padding-top: 5px;
-                    padding-right: 5px;
-                    padding-bottom: 5px;
+                    padding-right: 0px;
+                    padding-bottom: 3px;
                     padding-left: 5px;
-                    h2 {
+                    .post__review {
+                      i {
+                        color: $plum;
+                      }
+                      span {
+                        color: $darkgray;
+                        padding: 2px;
+                      }
                     }
-                    p {
-                      padding: 0;
+                    &__basic {
+                      .post__name {
+                        h2 {
+                          font-size: 1rem;
+                        }
+                      }
+                      .post__about {
+                        display: flex;
+                        .post__place {
+                          .address {
+                            span {
+                              color: $darkgray;
+                              padding: 2px;
+                            }
+                          }
+                        }
+                        span {
+                          font-size: 12px;
+                        }
+                        .post__category {
+                          span {
+                            color: $darkgray;
+                          }
+                        }
+                      }
+                      .post__budget {
+                        span {
+                        }
+                      }
                     }
                   }
                 }
               }
             }
           }
+          & .detail__btn {
+            text-align: center;
+            a.detail {
+              @include link;
+              @include flame;
+              height: 50px;
+              width: 200px;
+              line-height: 50px;;
+              display: inline-block;
+              span {
+                font-size: 1.2rem;
+                i {
+                }
+              }
+            }
+          }
         }
-        #special {
-          background-color: #9E7A7A;
-          // background-color: $plum;
-          margin-top: 30px;
-          margin-right: 0px;
-          margin-bottom: 0px;
-          margin-left: 0px;
-          height: 400px;
-          h1 {
-            color: $white;
-            margin: 0 10px;
+        .other__list {
+          & h1 {
           }
-          p {
-            margin: 0 10px;
+          & p {
           }
-          ul {
-            overflow: scroll;
-            margin-right: 20px;
-            margin-bottom: 0px;
-            margin-left: 20px;
+          & .move__btn {
             a {
-              margin-right: 10px;
-              margin-bottom: 10px;
-              margin-left: 10px;
+              i {
+              }
+            }
+            .btn--left {
+              a {
+                i {
+                }
+              }
+            }
+            .btn--right {
+              a {
+                i {
+                }
+              }
+            }
+          }
+          & ul.post__box {
+            a {
               li {
-                .content__wrapper {
-                  .content__img {
+                .post__wrapper {
+                  .post__img {
                     img {
                     }
                   }
-                  .content__cp {
-                    h2 {
+                  .post__info {
+                    .post__review {
+                      i {
+                      }
+                      span {
+                      }
                     }
-                    p {
+                    &__basic {
+                      .post__name {
+                        h2 {
+                        }
+                      }
+                      .post__about {
+                        .post__place {
+                          .address {
+                            span {
+                            }
+                          }
+                        }
+                        span {
+                        }
+                        .post__category {
+                          span {
+                          }
+                        }
+                      }
+                      .post__budget {
+                        span {
+                        }
+                      }
                     }
                   }
+                }
+              }
+            }
+          }
+          & .detail__btn {
+            a.detail {
+              span {
+                i {
                 }
               }
             }

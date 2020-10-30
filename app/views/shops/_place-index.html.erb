@@ -1,126 +1,127 @@
 <%# 現在地から探すボタンをクリックした時のページ %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/shops/place-index', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/shops/tablet/place-index_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/shops/pc/place-index_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<%= render 'layouts/header' %>
 <div class="wrapper">
   <div class="main__wrapper">
     <div class="main__view">
-      <div class="search__box">
-        <form action="" method="post">
-          <input type="search" placeholder="キーワード">
+      <div class="searchbox__wrapper">
+        <form id="search-form" action="" method="post">
+          <div class="input__area">
+            <input id="" type="search" name="search" placeholder="キーワード">
+            <button type="submit" form="search-form" name="">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
         </form>
       </div>
-      <div class="main__img">
-        <div class="bg__img"></div>
-      </div>
-      <div class="main__cp">
-        <div class="main__ttl">
-          <h1>近場であなたの望むスポットを。</h1>
-        </div>
-        <div class="main__read">
-          <p>私がピアノの前に立つと、皆が笑いました。でも、私がピアノを引き始めると...</p>
+      <div class="main__view__img">
+        <div class="bg__img place">
+          <div class="main__view__cp">
+            <h1>近場であなたの望むスポットを。</h1>
+            <p>私がピアノの前に立つと、皆が笑いました。でも、私がピアノを引き始めると...</p>
+          </div>
         </div>
       </div>
     </div>
     <div class="main__content">
-      <h1>地域から探す</h1>
-      <div class="content__list">
-        <ul>
-          <li>
+      <div class="content__list common" id="">
+        <h1>エリアから探す</h1>
+        <p></p>
+        <div class="move__btn">
+          <div class="btn--left">
             <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="content">
-                </div>
-                <div class="content__cp">
-                  <h2>金沢市</h2>
-                  <p></p>
-                </div>
-              </div>
+              <i class="fas fa-chevron-left"></i>
             </a>
-          </li>
-          <li>
+          </div>
+          <div class="btn--right">
             <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
+              <i class="fas fa-chevron-right"></i>
             </a>
-          </li>
-          <li>
-            <a href="">
+          </div>
+        </div>
+        <ul class="content__box">
+          <a href="">
+            <li>
               <div class="content__wrapper">
                 <div class="content__img">
-                  <img src="" alt="content">
+                  <%= image_tag ""%>
                 </div>
                 <div class="content__cp">
                   <h2></h2>
                   <p></p>
                 </div>
               </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
+            </li>
+          </a>
+          <a href="">
+            <li>
               <div class="content__wrapper">
                 <div class="content__img">
-                  <img src="" alt="content">
+                  <%= image_tag ""%>
                 </div>
                 <div class="content__cp">
                   <h2></h2>
                   <p></p>
                 </div>
               </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
+            </li>
+          </a>
+          <a href="">
+            <li>
               <div class="content__wrapper">
                 <div class="content__img">
-                  <img src="" alt="content">
+                  <%= image_tag ""%>
                 </div>
                 <div class="content__cp">
                   <h2></h2>
                   <p></p>
                 </div>
               </div>
-            </a>
-          </li>
+            </li>
+          </a>
         </ul>
+        <div class="detail__btn">
+          <a href="">
+            <span>他のエリアから探す<i></i></span>
+          </a>
+        </div>
       </div>
-      <h1>条件から探す</h1>
-      <div class="content__list">
-        <ul>
-          <li>
-            <a href="">
+      <div class="content__list common" id="purpose">
+        <h1>条件から探す</h1>
+        <p></p>
+        <div class="move__btn">
+            <div class="btn--left">
+              <a href="">
+                <i class="fas fa-chevron-left"></i>
+              </a>
+            </div>
+            <div class="btn--right">
+              <a href="">
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        <ul class="content__box">
+          <a href="">
+            <li>
               <div class="content__wrapper">
                 <div class="content__img">
-                  <img src="" alt="Content">
+                  <img src="/assets/bg_image3.jpeg" alt="Content">
                 </div>
                 <div class="content__cp">
-                  <h2>ファミリー向け</h2>
+                  <h2>ビジネスで</h2>
                   <p></p>
                 </div>
               </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2>ビジネスシーンで</h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
+            </li>
+          </a>
+          <a href="">
+            <li>
               <div class="content__wrapper">
                 <div class="content__img">
                   <img src="" alt="Content">
@@ -130,127 +131,321 @@
                   <p></p>
                 </div>
               </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
+            </li>
+          </a>
+          <a href="">
+            <li>
               <div class="content__wrapper">
                 <div class="content__img">
                   <img src="" alt="Content">
                 </div>
                 <div class="content__cp">
-                  <h2></h2>
+                  <h2>ファミリー向け</h2>
                   <p></p>
                 </div>
               </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
+            </li>
+          </a>
         </ul>
-        <a href="">リストを全て表示</a>
+        <div class="detail__btn">
+          <a href="">
+            <span><i></i></span>
+          </a>
+        </div>
       </div>
-      <h1>観光に便利なロケーション</h1>
-      <div class="content__list">
-        <ul>
-          <li>
+      <div class="other__list place" id="">
+        <h1>観光に便利なロケーション</h1>
+        <p>非日常をたっぷり味わうのに最適です。</p>
+        <div class="move__btn">
+          <div class="btn--left">
             <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+          </div>
+          <div class="btn--right">
+            <a href="">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <ul class="post__box">
+          <a href="">
+            <li>
+              <div class="post__wrapper">
+                <div class="post__img">
+                  <%= image_tag "" %>
                 </div>
-                <div class="content__cp">
-                  <h2>お店1</h2>
-                  <p>hogehoge, ho-gesho-.hohogege!</p>
+                <div class="post__info">
+                  <div class="post__info__deco">
+                    <div class="post__review">
+                      <i class="fas fa-star"></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="post__info__basic">
+                    <div class="post__name">
+                      <h2></h2>
+                    </div>
+                    <div class="post__about">
+                      <div class="post__place">
+                        <div class="address">
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post__budget">
+                      <i class="fas fa-yen-sign"></i>
+                      <span></span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <div class="post__wrapper">
+                <div class="post__img">
+                  <%= image_tag "" %>
                 </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
-                </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
+                <div class="post__info">
+                  <div class="post__info__deco">
+                    <div class="post__review">
+                      <i class="fas fa-star"></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="post__info__basic">
+                    <div class="post__name">
+                      <h2></h2>
+                    </div>
+                    <div class="post__about">
+                      <div class="post__place">
+                        <div class="address">
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post__budget">
+                      <i class="fas fa-yen-sign"></i>
+                      <span></span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </a>
-          </li>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <div class="post__wrapper">
+                <div class="post__img">
+                  <%= image_tag "" %>
+                </div>
+                <div class="post__info">
+                  <div class="post__info__deco">
+                    <div class="post__review">
+                      <i class="fas fa-star"></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="post__info__basic">
+                    <div class="post__name">
+                      <h2></h2>
+                    </div>
+                    <div class="post__about">
+                      <div class="post__place">
+                        <div class="address">
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post__budget">
+                      <i class="fas fa-yen-sign"></i>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <div class="post__wrapper">
+                <div class="post__img">
+                  <%= image_tag "" %>
+                </div>
+                <div class="post__info">
+                  <div class="post__info__deco">
+                    <div class="post__review">
+                      <i class="fas fa-star"></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="post__info__basic">
+                    <div class="post__name">
+                      <h2></h2>
+                    </div>
+                    <div class="post__about">
+                      <div class="post__place">
+                        <div class="address">
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post__budget">
+                      <i class="fas fa-yen-sign"></i>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <div class="post__wrapper">
+                <div class="post__img">
+                  <%= image_tag "" %>
+                </div>
+                <div class="post__info">
+                  <div class="post__info__deco">
+                    <div class="post__review">
+                      <i class="fas fa-star"></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="post__info__basic">
+                    <div class="post__name">
+                      <h2></h2>
+                    </div>
+                    <div class="post__about">
+                      <div class="post__place">
+                        <div class="address">
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post__budget">
+                      <i class="fas fa-yen-sign"></i>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </a>
         </ul>
-        <a href="">リストを全て表示</a>
+        <div class="detail__btn">
+          <a href="" class="detail">
+            <span>すべて表示<i></i></span>
+          </a>
+        </div>
       </div>
-      <h1>悠久の時を感じる旅館</h1>
-      <div class="content__list">
-        <ul>
-          <li>
+      <div class="other__list" id="">
+        <h1>Caming soon</h1>
+        <p></p>
+        <div class="move__btn">
+          <div class="btn--left">
             <a href="">
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <img src="" alt="Content">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+          </div>
+          <div class="btn--right">
+            <a href="">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <ul class="post__box">
+          <a href="">
+            <li>
+              <div class="post__wrapper">
+                <div class="post__img">
+                  <%= image_tag "" %>
                 </div>
-                <div class="content__cp">
-                  <h2></h2>
-                  <p></p>
+                <div class="post__info">
+                  <div class="post__info__deco">
+                    <div class="post__review">
+                      <i class="fas fa-star"></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                    <div class="post__tag">
+                      <i class=""></i>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="post__info__basic">
+                    <div class="post__name">
+                      <h2></h2>
+                    </div>
+                    <div class="post__about">
+                      <div class="post__place">
+                        <div class="address">
+                          <span></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="post__budget">
+                      <i class="fas fa-yen-sign"></i>
+                      <span></span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </a>
-          </li>
+            </li>
+          </a>
         </ul>
-        <a href="">リストを全て表示</a>
+        <div class="detail__btn">
+          <a href="" class="detail">
+            <span>すべて表示<i></i></span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<%= render 'layouts/footer' %>

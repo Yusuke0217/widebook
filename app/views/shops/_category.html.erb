@@ -1,4 +1,10 @@
 <%# ビジネスモデルのパネルをクリックしたときのページ %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/shops/category', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/shops/tablet/category_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/shops/pc/category_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
 <%= render 'layouts/header' %>
   <div class="wrapper">
     <div class="main__wrapper">
@@ -171,10 +177,6 @@
                             <span></span>
                           </div>
                         </div>
-                        <span> / </span>
-                        <div class="post__category">
-                          <span></span>
-                        </div>
                       </div>
                       <div class="post__budget">
                         <span>¥</span>
@@ -379,19 +381,19 @@
                   </div>
                   <div class="post__info">
                     <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
+                      <div class="post__review">
+                        <i class="fas fa-star"></i>
+                        <span></span>
                       </div>
+                      <div class="post__tag">
+                        <i class=""></i>
+                        <span></span>
+                      </div>
+                      <div class="post__tag">
+                        <i class=""></i>
+                        <span></span>
+                      </div>
+                    </div>
                     <div class="post__info__basic">
                       <div class="post__name">
                         <h2></h2>
@@ -402,13 +404,10 @@
                             <span></span>
                           </div>
                         </div>
-                        <span> / </span>
-                        <div class="post__category">
-                          <span></span>
-                        </div>
                       </div>
                       <div class="post__budget">
-                        <span>¥</span>
+                        <i class="fas fa-yen-sign"></i>
+                        <span></span>
                       </div>
                     </div>
                   </div>
@@ -446,19 +445,19 @@
                   </div>
                   <div class="post__info">
                     <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
+                      <div class="post__review">
+                        <i class="fas fa-star"></i>
+                        <span></span>
                       </div>
+                      <div class="post__tag">
+                        <i class=""></i>
+                        <span></span>
+                      </div>
+                      <div class="post__tag">
+                        <i class=""></i>
+                        <span></span>
+                      </div>
+                    </div>
                     <div class="post__info__basic">
                       <div class="post__name">
                         <h2></h2>
@@ -469,13 +468,10 @@
                             <span></span>
                           </div>
                         </div>
-                        <span> / </span>
-                        <div class="post__category">
-                          <span></span>
-                        </div>
                       </div>
                       <div class="post__budget">
-                        <span>¥</span>
+                        <i class="fas fa-yen-sign"></i>
+                        <span></span>
                       </div>
                     </div>
                   </div>

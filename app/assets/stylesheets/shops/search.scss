@@ -22,7 +22,10 @@
         }
       }
       .result__wrapper {
-        padding: 0 10px;
+        padding-top: 0px;
+        padding-right: 10px;
+        padding-bottom: 0px;
+        padding-left: 10px;
         .result__group {
           background-color: $white;
           z-index: 3;
@@ -113,9 +116,7 @@
                           display: flex;
                           .post__place {
                             .address {
-                              white-space: nowrap;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
+                              @include word-el;
                               span {
                               }
                             }
@@ -171,8 +172,7 @@
                 li {
                   height: 200px;
                   width: 200px;
-                  border: 1px solid darkgray;
-                  border-radius: 20px;
+                  @include flame;
                   .content__wrapper {
                     height: 100%;
                     .content__img {
@@ -201,11 +201,10 @@
               text-align: center;
               a.detail {
                 @include link;
+                @include flame;
                 height: 50px;
                 width: 200px;
-                border: 1px solid $darkgray;
-                border-radius: 20px;
-                line-height: 50px;;
+                line-height: 50px;
                 display: inline-block;
                 span {
                   font-size: 1rem;
@@ -244,7 +243,10 @@
               overflow: scroll;
               a {
                 @include link;
-                margin: 10px 5px;
+                margin-top: 10px;
+                margin-right: 5px;
+                margin-bottom: 10px;
+                margin-left: 5px;
                 li {
                   height: 250px;
                   width: 250px;
@@ -275,7 +277,6 @@
                         }
                         .post__tag {
                           i {
-                            
                           }
                         }
                       }
@@ -289,9 +290,7 @@
                           display: flex;
                           .post__place {
                             .address {
-                              white-space: nowrap;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
+                              @include word-el;
                               span {
                                 color: $darkgray;
                                 padding: 2px;
@@ -315,11 +314,10 @@
               text-align: center;
               a.detail {
                 @include link;
+                @include flame;
                 height: 50px;
                 width: 200px;
-                border: 1px solid $darkgray;
-                border-radius: 20px;
-                line-height: 50px;;
+                line-height: 50px;
                 display: inline-block;
                 span {
                   font-size: 1rem;
@@ -432,7 +430,10 @@
               overflow: scroll;
               a {
                 @include link;
-                margin: 10px 5px;
+                margin-top: 10px;
+                margin-right: 5px;
+                margin-bottom: 10px;
+                margin-left: 5px;
                 li {
                   height: 300px;
                   width: 350px;
@@ -473,9 +474,7 @@
                           display: flex;
                           .post__place {
                             .address {
-                              white-space: nowrap;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
+                              @include word-el;
                               span {
                               }
                             }

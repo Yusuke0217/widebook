@@ -79,24 +79,16 @@
           position: relative;
           margin: 20px 12px;
           & h1 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
           }
           & p {
             color: $darkgray;
           }
-          .move__btn {
+          & .move__btn {
             display: none;
             a {
-              @include awesome;
-              height: 44px;
-              width: 44px;
-              border-radius: 50%;
-              background-color: $darkgray;
-              position: absolute;
-              opacity: 0.9;
-              color: $white;
+              @include move-btn;
               i {
-                @include awesome;
                 position: absolute;
               }
             }
@@ -122,19 +114,18 @@
             }
           }
           & ul.content__box {
+            @include content-box;
             overflow: scroll;
-            list-style: none;
-            display: flex;
-            flex-wrap: nowrap;
-            margin-bottom: 20px;
             a {
               @include link;
-              margin: 10px 5px;
+              margin-top: 10px;
+              margin-right: 5px;
+              margin-bottom: 10px;
+              margin-left: 5px;
               li {
                 height: 200px;
                 width: 200px;
-                border: 1px solid darkgray;
-                border-radius: 20px;
+                @include flame;
                 .content__wrapper {
                   height: 100%;
                   .content__img {
@@ -146,7 +137,10 @@
                     }
                   }
                   .content__cp {
-                    padding: 10px;
+                    padding-top: 10px;
+                    padding-right: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 10px;
                     h2 {
                       font-size: 1.1rem;
                     }
@@ -165,8 +159,7 @@
               @include link;
               height: 50px;
               width: 200px;
-              border: 1px solid $darkgray;
-              border-radius: 20px;
+              @include flame;
               line-height: 50px;;
               display: inline-block;
               span {
@@ -179,26 +172,20 @@
         }
         .post__list {
           position: relative;
-          margin: 20px 12px;
+          margin-top: 20px;
+          margin-right: 12px;
+          margin-bottom: 20px;
+          margin-left: 12px;
           & h1 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
           }
           & p {
             color: $darkgray;
           }
           & .move__btn {
-            display: none;
             a {
-              @include awesome;
-              height: 44px;
-              width: 44px;
-              border-radius: 50%;
-              background-color: $darkgray;
-              position: absolute;
-              opacity: 0.9;
-              color: $white;
+              @include move-btn;
               i {
-                @include awesome;
                 position: absolute;
               }
             }
@@ -224,14 +211,15 @@
             }
           }
           & ul.post__box {
+            @include content-box;
             overflow: scroll;
-            list-style: none;
-            display: flex;
-            flex-wrap: nowrap;
-            margin-bottom: 20px;
+            margin-top: 20px;
             a {
               @include link;
-              margin: 10px 5px;
+              margin-top: 10px;
+              margin-right: 5px;
+              margin-bottom: 10px;
+              margin-left: 5px;
               li {
                 height: 300px;
                 width: 300px;
@@ -299,10 +287,9 @@
             text-align: center;
             a.detail {
               @include link;
+              @include flame;
               height: 50px;
               width: 200px;
-              border: 1px solid $darkgray;
-              border-radius: 20px;
               line-height: 50px;;
               display: inline-block;
               span {

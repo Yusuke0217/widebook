@@ -1,17 +1,17 @@
-@import "../../main.scss";
+@import "../main.scss";
 
-@media screen and (min-width: 960px) {
-  // PC用のレスポンシブ
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
   .wrapper {
     .main__wrapper {
       height: 100%;
       width: 100%;
       .main__view {
-        padding-top: 100px;
+        padding-top: 80px;
         .searchbox__wrapper {
           display: none;
           form {
-            width: 80vw;
+            width: 80%;
             margin: 10px auto;
             text-align: center;
             box-sizing: border-box;
@@ -42,7 +42,6 @@
                 outline : none;
                 i {
                   color: $white;
-                  font-weight:bold;
                 }
               }
             }
@@ -51,57 +50,44 @@
         &__img {
           text-align: center;
           position: relative;
-          margin-bottom: 30px;
-          .bg__img.index {
-            height: 700px;
-            background-image: url("/assets/bg_image2.jpeg");
+          .bg__img.place {
+            height: 400px;
+            width: 95%;
+            margin: 20px auto;
+            background-image: url("/assets/bg_image4.jpeg");
             background-size: contain;
-            background-repeat: repeat;
+            border-radius: 20px;
             .main__view__cp {
+              padding-top: 120px;
               h1 {
+                font-size: 1.3rem;
                 color: $white;
-                padding-top: 200px;
               }
               p {
-                padding: 5px;
                 color: $white;
-              }
-            }
-            .place__btn {
-              padding-top: 50px;
-              a {
-                height: 50px;
-                width: 500px;
-                border: 1px solid $darkgray;
-                box-sizing: border-box;
-                background-color: $plum;
-                border-radius: 20px;
-                @include link;
-                outline: none;
-                color: $white;
-                font-size: 1.7rem;
-                display: inline-block;
-                span {
-                  line-height: 3rem;
-                }
-              }
-              a:hover {
               }
             }
           }
         }
       }
       .main__content {
-        .content__list {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        .content__list.common {
           position: relative;
-          margin: 50px 10px;
-          h1 {
-          }
-          p {
-            color: $darkgray;
+          margin-top: 20px;
+          margin-right: 12px;
+          margin-bottom: 20px;
+          margin-left: 12px;
+          & h1 {
             font-size: 1.2rem;
           }
+          & p {
+            color: $darkgray;
+          }
           .move__btn {
+            display: none;
             a {
               @include move-btn;
               i {
@@ -129,16 +115,18 @@
               }
             }
           }
-          ul.content__box {
-            list-style: none;
-            display: flex;
-            margin-bottom: 20px;
+          & ul.content__box {
+            @include content-box;
+            overflow: scroll;
             a {
               @include link;
-              margin: 15px 10px 5px;
+              margin-top: 10px;
+              margin-right: 5px;
+              margin-bottom: 10px;
+              margin-left: 5px;
               li {
-                height: 250px;
-                width: 250px;
+                height: 200px;
+                width: 200px;
                 @include flame;
                 .content__wrapper {
                   height: 100%;
@@ -151,14 +139,16 @@
                     }
                   }
                   .content__cp {
-                    padding: 15px 10px;
-                    text-align: center;
+                    padding-top: 10px;
+                    padding-right: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 10px;
                     h2 {
-                      font-size: 1.2rem;
+                      font-size: 1.1rem;
                     }
                     p {
                       color: $darkgray;
-                      padding: 5px;
+                      padding: 2px;
                     }
                   }
                 }
@@ -168,13 +158,13 @@
           ul::-webkit-scrollbar {
             display: none;
           }
-          .detail__btn {
+          & .detail__btn {
             display: none;
             text-align: center;
             margin-bottom: 50px;
             a {
               height: 50px;
-              width: 80vw;
+              width: 200px;
               display: block;
               @include flame;
               @include link;
@@ -187,8 +177,20 @@
             }
           }
         }
-        #b-type {
-          .move__btn {
+        .other__list {
+          position: relative;
+          margin-top: 20px;
+          margin-right: 12px;
+          margin-bottom: 20px;
+          margin-left: 12px;
+          & h1 {
+            font-size: 1.2rem;
+          }
+          & p {
+            color: $darkgray;
+          }
+          & .move__btn {
+            display: none;
             a {
               @include move-btn;
               i {
@@ -198,115 +200,115 @@
             .btn--left {
               a {
                 right: 12%;
-                top: 0%;
+                top: 5%;
                 i {
                   right: 40%;
-                  top: 30%;
+                  top: 35%;
                 }
               }
             }
             .btn--right {
               a {
                 right: 5%;
-                top: 0%;
+                top: 5%;
                 i {
                   right: 35%;
-                  top: 30%;
+                  top: 35%;
                 }
               }
             }
           }
-          ul {
-            overflow-x: scroll;
-            a {
-              li {
-                .content__wrapper {
-                  .content__img {
-                    img {
-                    }
-                  }
-                  .content__cp {
-                    h2 {
-                    }
-                    p {
-
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        #area {
-          ul {
+          & ul.post__box {
+            @include content-box;
             overflow: scroll;
-            margin-top: 20px;
             a {
-              margin-top: 5px;
+              @include link;
+              margin-top: 10px;
               margin-right: 5px;
+              margin-bottom: 10px;
               margin-left: 5px;
-              margin-bottom: 5px;
               li {
-                .content__wrapper {
-                  .content__img {
-                    height: 70%;
+                height: 270px;
+                width: 260px;
+                border-radius: 20px;
+                .post__wrapper {
+                  height: 100%;
+                  .post__img {
+                    height: 65%;
                     img {
                       border-radius: 20px 20px 0 0;
+                      height: 100%;
+                      width: 100%;
                     }
                   }
-                  .content__cp {
-                    flex-direction: column;
+                  .post__info {
                     padding-top: 5px;
-                    padding-right: 5px;
-                    padding-bottom: 5px;
+                    padding-right: 0px;
+                    padding-bottom: 3px;
                     padding-left: 5px;
-                    h2 {
+                    &__deco {
+                      display: flex;
+                      .post__review {
+                        i.fas.fa-star {
+                          color: $plum;
+                        }
+                        span {
+                          padding: 2px;
+                        }
+                      }
+                      .post__tag {
+                        i {
+                          
+                        }
+                      }
                     }
-                    p {
-                      padding: 0;
+                    &__basic {
+                      .post__name {
+                        h2 {
+                          font-size: 1rem;
+                        }
+                      }
+                      .post__about {
+                        display: flex;
+                        .post__place {
+                          .address {
+                            span {
+                              color: $darkgray;
+                              padding: 2px;
+                            }
+                          }
+                        }
+                        span {
+                          font-size: 12px;
+                        }
+                        .post__category {
+                          span {
+                            color: $darkgray;
+                          }
+                        }
+                      }
+                      .post__budget {
+                        span {
+                        }
+                      }
                     }
                   }
                 }
               }
             }
           }
-        }
-        #special {
-          background-color: #9E7A7A;
-          // background-color: $plum;
-          margin-top: 30px;
-          margin-right: 0px;
-          margin-bottom: 0px;
-          margin-left: 0px;
-          height: 400px;
-          h1 {
-            color: $white;
-            margin: 0 10px;
-          }
-          p {
-            margin: 0 10px;
-          }
-          ul {
-            overflow: scroll;
-            margin-right: 20px;
-            margin-bottom: 0px;
-            margin-left: 20px;
-            a {
-              margin-right: 10px;
-              margin-bottom: 10px;
-              margin-left: 10px;
-              li {
-                .content__wrapper {
-                  .content__img {
-                    img {
-                    }
-                  }
-                  .content__cp {
-                    h2 {
-                    }
-                    p {
-                    }
-                  }
+          & .detail__btn {
+            text-align: center;
+            a.detail {
+              @include link;
+              height: 50px;
+              width: 200px;
+              @include flame;
+              line-height: 50px;;
+              display: inline-block;
+              span {
+                font-size: 1.2rem;
+                i {
                 }
               }
             }
