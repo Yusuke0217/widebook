@@ -5,6 +5,7 @@
   // Mobile用のレスポンシブ
   .wrapper {
     .main__wrapper.shop__page__wrapper {
+      padding-top: 80px;
       .shop__view {
         position: relative;
         .shop__img__list {
@@ -69,7 +70,6 @@
           display: none;
           a {
             // common
-            @include awesome;
             height: 40px;
             width: 40px;
             border-radius: 50%;
