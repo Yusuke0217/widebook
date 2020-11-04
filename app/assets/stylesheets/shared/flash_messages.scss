@@ -1,0 +1,10 @@
+@import "../main.scss";
+
+
+.alert-success {
+  color: $deepgreen;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid $darkgray;
+  background-color: $green;
+}

@@ -1,44 +1,49 @@
-<div class="wrapper">
-  <div class="main__wrapper">
-    <div class="signup__wrapper">
-      <div class="signup__logo">
-        <%= image_tag "apple_logo.jpeg" %>
-      </div>
-      <div class="signup__ttl">
-        <h1>サインイン</h1>
-        <p></p>
-      </div>
-      <div class="signup__form">
-        <form action="#" id="" method="post">
-          <div class="input__ttl">
-            <i class="fas fa-asterisk"></i>
-            <label for="name">Name</label>
-          </div>
-          <input id="" type="text" name="name" placeholder="ニックネーム">
-          <div class="input__ttl">
-            <i class="fas fa-asterisk"></i>
-            <label for="email">Email</label>
-          </div>
-          <input id="" type="email" name="email" placeholder="メールアドレス">
-          <div class="input__ttl">
-            <i class="fas fa-asterisk"></i>
-            <label for="password">Password</label>
-          </div>
-          <input id="" type="password" name="password" placeholder="パスワード">
-          <input id="" class="submit" type="submit" value="登録する">
-        </form>
-        <div class="announce">
-          <i class="fas fa-exclamation-circle"></i>
-          <p>アカウントを作成すると、
-            <a href="">利用規約</a>・<a href="">プライバシーポリシー</a>
-            に同意したとみなされます。
-          </p>
+
+<div class="main__wrapper">
+  <div class="signup__wrapper">
+    <div class="signup__logo">
+      <%= image_tag "apple_logo.jpeg" %>
+    </div>
+    <div class="signup__ttl">
+      <h1>サインイン</h1>
+      <p></p>
+    </div>
+    <div class="signup__form">
+      <%= form_with model: @user, url: signup_path, class: "", id: "", local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
+        <div class="input__ttl">
+          <i class="fas fa-asterisk"></i>
+          <%= f.label :name, "Name"%>
         </div>
-        <div class="signup__form__login">
-          <p>すでにアカウントをお持ちですか？</p>
-          <div class="login__btn">
-            <a href="#">ログイン</a>
-          </div>
+        <%= f.text_field :name, id: "", placeholder: "ニックネーム"%>
+        <div class="input__ttl">
+          <i class="fas fa-asterisk"></i>
+          <%= f.label :email, "Email" %>
+        </div>
+        <%= f.email_field :email, id: "", placeholder: "メールアドレス"%>
+        <div class="input__ttl">
+          <i class="fas fa-asterisk"></i>
+          <%= f.label :password, "Password" %>
+        </div>
+        <%= f.password_field :password, id: "", placeholder: "パスワード" %>
+        <div class="input__ttl">
+          <i class="fas fa-asterisk"></i>
+          <%= f.label :image, "Image" %>
+        </div>
+        <%= f.file_field :image, id: "", placeholder: "Image" %>
+        <%= f.submit :submit, class: "submit", id: "", value: "登録する" %>
+      <% end %>
+      <div class="announce">
+        <i class="fas fa-exclamation-circle"></i>
+        <p>アカウントを作成すると、
+          <a href="">利用規約</a>・<a href="">プライバシーポリシー</a>
+          に同意したとみなされます。
+        </p>
+      </div>
+      <div class="signup__form__login">
+        <p>すでにアカウントをお持ちですか？</p>
+        <div class="login__btn">
+          <a href="#">ログイン</a>
         </div>
       </div>
     </div>

@@ -24,6 +24,10 @@ gem "seed-fu"
 
 gem 'bcrypt'
 
+gem 'pry-rails'
+
+gem 'rmagick'
+
 gem 'font-awesome-rails'
 
 gem 'carrierwave'

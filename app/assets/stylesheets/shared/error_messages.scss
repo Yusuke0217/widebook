@@ -1,0 +1,17 @@
+@import "../main.scss";
+
+
+#error_explanation {
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid $darkgray;
+  padding: 10px;
+  .alert {
+    padding-bottom: 20px;
+  }
+  & ul {
+    color: $plum;
+    background-color: $white;
+    font-weight: bold;
+  }
+}

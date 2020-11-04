@@ -14,6 +14,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, messagse, class: "alert alert-#{message_type}")%>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
