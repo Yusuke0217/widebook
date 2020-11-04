@@ -22,6 +22,8 @@ gem "kaminari"
 
 gem "seed-fu"
 
+gem 'bcrypt'
+
 gem 'font-awesome-rails'
 
 gem 'carrierwave'
