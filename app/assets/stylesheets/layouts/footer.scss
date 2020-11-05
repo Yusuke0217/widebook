@@ -63,6 +63,7 @@
             padding-top: 10px;
             padding-bottom: 10px;
             .ft__nav__how {
+              display: inline-block;
               a {
                 @include link;
                 color: $darkgray;
@@ -73,6 +74,7 @@
               }
             }
             .ft__nav__rule {
+              display: inline-block;
               a {
                 @include link;
                 color: $darkgray;
@@ -83,6 +85,7 @@
               }
             }
             .ft__nav__privacy {
+              display: inline-block;
               a {
                 @include link;
                 color: $darkgray;
@@ -93,6 +96,7 @@
               }
             }
             .ft__nav__query {
+              display: inline-block;
               a {
                 @include link;
                 color: $darkgray;
