@@ -7,4 +7,14 @@
   text-align: center;
   border: 1px solid $darkgray;
   background-color: $green;
+  margin: 30px;
+}
+
+.alert-danger {
+  color: darkred;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid $darkgray;
+  background-color: salmon;
+  margin: 30px;
 }

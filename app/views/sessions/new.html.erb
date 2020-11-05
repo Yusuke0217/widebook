@@ -1,0 +1,24 @@
+<div class="key__icon">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-lock fa-stack-1x"></i>
+</div>
+
+<div class="login__form">
+  <%= form_with scope: :session, url: login_path, class: "", id: "", local: true do |f| %>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+      <%= f.label :email, "Email" %>
+    </div>
+    <%= f.email_field :email, id: "", placeholder: "メールアドレス"%>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+      <%= f.label :password, "Password" %>
+    </div>
+    <%= f.password_field :password, id: "", placeholder: "パスワード" %>
+    <%= f.submit :submit, class: "submit", id: "", value: "ログイン" %>
+  <% end %>
+  <div class="signup__link">
+    <p>アカウントをお持ちではないですか？<%= link_to "アカウント作成", signup_path %></p>
+  </div>
+</div>
