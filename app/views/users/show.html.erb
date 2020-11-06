@@ -1,6 +1,8 @@
 <%= @user.name %>
 <%= @user.email %>
 
+<%= link_to "ホームに戻る", root_path %>
+
 <% if @user.image? %>
   <%= image_tag @user.image.url %>
 <% end %>
