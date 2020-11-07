@@ -1,4 +1,6 @@
+<% provide(:btn_text, "更新する")%>
+<% provide(:url, user_path)%>
 
-
-<%= f.label :image %>
-<%= f.file_field :image %>
+<div class="edit__profile">
+  <%= render 'form' %>
+</div>

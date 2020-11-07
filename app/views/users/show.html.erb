@@ -3,6 +3,10 @@
 
 <%= link_to "ホームに戻る", root_path %>
 
+<%= link_to "プロフィールを編集", edit_user_path %>
+
+
+
 <% if @user.image? %>
   <%= image_tag @user.image.url %>
 <% end %>
