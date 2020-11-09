@@ -26,6 +26,10 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   def forget(user)
     user.update_attribute(:remember_digest, nil)
     cookies.delete(:user_id)
@@ -36,6 +40,18 @@ module SessionsHelper
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil
+  end
+
+  # アクセスしようとしたURLを覚えておく
+  def url_location
+    if request.get?
+      session[:sending_url] = request.original_url
+    end
+  end
+
+  def redirect_back_or(default)
+    redirect_to(session[:sending_url] || default)
+    session.delete(:sending_url)
   end
 
 end

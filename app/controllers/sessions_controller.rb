@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in(user)
       remember(user)
-      redirect_to user_url(user)
+      redirect_back_or(user)
     else
       flash.now[:danger] = "Error: Not Authenticated"
       render "new"
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if user.logged_in?
+    if logged_in?
       log_out
     end
     redirect_to root_url
