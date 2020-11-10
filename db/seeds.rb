@@ -9,6 +9,6 @@
 User.create!(
   name: "Mihael",
   email: "hogehoge@example.com",
-  password: ENV['PASSWORD'],
+  password: "hogehoge",
   admin: true,
 )
