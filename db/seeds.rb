@@ -8,7 +8,9 @@
 
 User.create!(
   name: "Mihael",
-  email: "hogehoge@example.com",
-  password: "hogehoge",
+  # email: "hogehoge@example.com",
+  email: ENV['EMAIL']
+  # password: "hogehoge",
+  password: ENV['PASSWORD']
   admin: true,
 )
