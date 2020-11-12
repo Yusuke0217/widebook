@@ -1,0 +1,7 @@
+<h1>Hello <%= @user.name %>!</h1>
+
+<p>
+  <%= @greeting %>, find me in app/views/user_mailer/account_activation.html.erb
+</p>
+
+<%= link_to "Account Activated!", edit_account_activation_url(@user.activation_token, email: @user.email) %>

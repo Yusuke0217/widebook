@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(
-  name: "Mihael",
-  # email: "hogehoge@example.com",
+  name: 'Mihael',
   email: ENV['EMAIL'],
-  # password: "hogehoge",
   password: ENV['PASSWORD'],
   admin: true,
+  activated: true,
+  activated_at: Time.zone.now
 )

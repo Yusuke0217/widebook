@@ -1,4 +1,23 @@
+# inherit_from: .rubocop_todo.yml
+
+# require:
+#   - rubocop-rails
+
+# Rails:
+#   Enabled: true
+
+# AllCops:
+#   Exclude:
+#     - "vendor/**/*"
+#     - "bin/**"
+#     - "db/schema.rb"
+#     - "node_modules/**/*"
+#     - "tmp/**/*"
+#     - "lib/**/*"
 
 
-Rails:
-  Enabled: true
+# AsciiComments:
+#   Enabled: false
+
+# Style/BlockDelimiters:
+#   AutoCorrect: false
