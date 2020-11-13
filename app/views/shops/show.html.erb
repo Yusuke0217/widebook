@@ -12,7 +12,11 @@
         <div class="main__img">
           <div class="shop__img no-1">
             <a href="">
-              <%= image_tag @shop, alt: "(>;*;<)" %>
+            <% if @shop.image? %>
+              <%= image_tag @shop.image.url, alt: "No Images" %>
+            <% else %>
+              <%= image_tag "/assets/apple_logo.jpeg"%>
+            <% end %>
             </a>
           </div>
         </div>

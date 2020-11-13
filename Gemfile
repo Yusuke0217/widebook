@@ -26,11 +26,10 @@ gem 'bcrypt'
 
 gem 'pry-rails'
 
-gem 'rmagick'
-
 gem 'font-awesome-rails'
 
 gem 'carrierwave'
+gem 'mini_magick'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -72,6 +71,7 @@ end
 
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
+  # gem "fog"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

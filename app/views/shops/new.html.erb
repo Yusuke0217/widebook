@@ -38,7 +38,7 @@
       <i class="fas fa-asterisk"></i>
       <%= f.label :image, "Image" %>
     </div>
-    <%= f.file_field :image, id: "", placeholder: "Image" %>
+    <%= f.file_field :image, id: "", placeholder: "Image", accept: 'image/jpeg,image/gif,image/png' %>
     <%= f.submit :submit, class: "submit", id: "", value: "#{yield(:btn_text)}" %>
   <% end %>
 </div>

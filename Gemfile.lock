@@ -192,7 +192,6 @@ GEM
       ffi (~> 1.0)
     regexp_parser (1.8.2)
     rexml (3.2.4)
-    rmagick (4.1.2)
     rspec-core (3.9.3)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.2)
@@ -304,7 +303,6 @@ DEPENDENCIES
   pry-rails
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.3)
-  rmagick
   rspec-rails
   rubocop
   rubocop-rails
