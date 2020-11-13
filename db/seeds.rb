@@ -26,7 +26,7 @@ User.create!(
   address = Faker::JapaneseMedia::Naruto.village
   content = Faker::Games::StreetFighter.move
   Shop.create!(
-    user_id: ENV['USER'],
+    user_id: 1,
     name: name,
     phone_number: phone_number,
     address: address,
