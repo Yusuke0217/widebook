@@ -9,6 +9,11 @@
   <%= link_to "Delete", @user, method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
 <% end %>
 
+<% if @user.admin? && current_user?(@user)%>
+  <%= link_to "お店を投稿する", new_shop_path, method: :get %>
+  <%= link_to "登録店一覧", shops_path, method: :get %>
+<% end %>
+
 <% if @user.image? %>
   <%= image_tag @user.image.url %>
 <% end %>

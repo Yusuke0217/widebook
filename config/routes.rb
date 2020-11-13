@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'shops#index'
+  root 'homes#index'
 
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   resources :users
+  resources :shops
   resources :account_activations, only: [:edit]
 end
