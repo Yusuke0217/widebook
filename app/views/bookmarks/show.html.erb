@@ -1,4 +1,5 @@
 <div class="">
+  <span><%= @bookmarks.count %>件のお気に入り</span>
   <% @bookmarks.each do |bm| %>
     <%= link_to bm.name, shop_path(bm) %>
     <span><%= bm.address %></span>
