@@ -7,7 +7,14 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  resources :users
-  resources :shops
+  resources :users do
+    resource :bookmarks, only: [:index, :show, :edit, :update]
+  end
+
+  resources :shops do
+    resource :bookmarks, only: [:create, :destroy]
+  end
+
   resources :account_activations, only: [:edit]
+
 end

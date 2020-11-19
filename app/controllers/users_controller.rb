@@ -19,8 +19,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+
       # @user.send_activation_email
       @user.activate
+      
       flash[:info] = 'メールを確認し、アカウントを有効化してください。'
       redirect_to root_url
     else
@@ -54,9 +56,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password)
   end
 
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to root_url unless @user == current_user
-  end
+
 
 end

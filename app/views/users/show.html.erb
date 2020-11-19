@@ -5,6 +5,8 @@
 
 <%= link_to "プロフィールを編集", edit_user_path %>
 
+<%= link_to "お気にいり", user_bookmarks_path(@user) %>
+
 <% if current_user.admin? && !current_user?(@user) %>
   <%= link_to "Delete", @user, method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
 <% end %>

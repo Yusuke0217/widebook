@@ -22,9 +22,15 @@
           </a>
         </li>
         <li>
-          <a href="">
+        <% if logged_in? %>
+          <%= link_to user_path(current_user.id) do %>
             <i class="fas fa-user-alt"></i>
-          </a>
+          <%end%>
+        <% else %>
+          <%= link_to signup_path do %>
+            <i class="fas fa-user-alt"></i>
+          <%end%>
+        <%end%>
         </li>
       </ul>
     </div class="hd__nav">

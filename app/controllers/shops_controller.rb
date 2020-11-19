@@ -1,9 +1,10 @@
 class ShopsController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :admin_user, except: [:show]
+  before_action :admin_user, except: [:show, :index]
+  # indexアクションは、後ほど管理者のみ見ることができるようにする。
 
   def index
-    @shops = Shop.all
+    @shops = Shop.includes(:user).all
   end
 
   def new

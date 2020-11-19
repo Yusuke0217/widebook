@@ -1,0 +1,6 @@
+<div class="">
+  <% @bookmarks.each do |bm| %>
+    <%= link_to bm.name, shop_path(bm) %>
+    <span><%= bm.address %></span>
+  <% end %>
+</div>

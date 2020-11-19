@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token
+  has_many :bookmarks
+  has_many :bookmark_shops, through: :bookmarks, dependent: :destroy, source: :shop
   has_many :shops
   before_save :downcase_email
   before_create :create_activation_digest
