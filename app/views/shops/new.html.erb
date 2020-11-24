@@ -26,16 +26,13 @@
     <%= f.text_field :address_building, id: "", placeholder: "建物名など"%>
 
     <%= f.fields_for :categories, @shop.categories.build do |c| %>
+    <% end %>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, include_hidden: false) do |d| %>
+      <%= d.label { d.check_box + d.text } %>
     <%end%>
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-      </div>
-      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, include_hidden: false) do |d| %>
-        <%= d.label { d.check_box + d.text } %>
-      <%end%>
- %>
-
-
     
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
