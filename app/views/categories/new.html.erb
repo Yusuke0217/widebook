@@ -1,0 +1,8 @@
+<div class="category__form">
+  <%= form_with model: @category, url: categories_path, class: "", id: "", local: true do |f| %>
+    <div class="input__ttl">
+    <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.select :name, [["イタリアン", "イタリアン"], ["フレンチ", "フレンチ"], ["和食", "和食"], ["その他", "その他"]], { include_blank: "選択してください" }, { id: "", class: "" } %>
+  <% end %>
+</div>

@@ -13,6 +13,11 @@ class ShopsController < ApplicationController
   
   def show
     @shop = Shop.find_by(id: params[:id])
+    @shop_categories = ShopCategory.where(shop_id: @shop.id)
+    @shop_category = @shop_categories.map { |tag|
+      tag.category_id
+    }
+    @categories = Category.where(id: @shop_category)
   end
   
   def create
@@ -31,6 +36,13 @@ class ShopsController < ApplicationController
   end
 
   def update
+    @shop = Shop.find_by(id: params[:id])
+    if @shop.update_attributes(shop_params)
+      flash[:success] = "お店の情報を更新しました。"
+      redirect_to shop_path(@shop)
+    else
+      render "edit"
+    end
   end
 
   def destroy
@@ -48,7 +60,8 @@ class ShopsController < ApplicationController
   private
 
     def shop_params
-      params.require(:shop).permit(:name, :address, :phone_number, :content, :image)
+      # params.require(:shop).permit(:name, :address, :phone_number, :content, :image, { category_ids: [] } )
+      params.require(:shop).permit(:name, :address, :phone_number, :content, :image, { category_ids: [] } )
     end
 
 end

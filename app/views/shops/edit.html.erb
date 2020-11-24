@@ -1,0 +1,55 @@
+<% provide(:btn_text, "更新する")%>
+<% provide(:url, shop_path)%>
+
+<div class="shop__flame">
+  <%= form_with model: @shop, url: yield(:url), class: "", id: "", local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :name, id: "", placeholder: "名前"%>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :address_prefecture, id: "", placeholder: "都道府県"%>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :address_city, id: "", placeholder: "市町村"%>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :address_street, id: "", placeholder: "番地"%>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :address_building, id: "", placeholder: "建物名など"%>
+
+    <%= f.fields_for :categories, @shop.categories.build do |c| %>
+    <%end%>
+      <div class="input__ttl">
+        <i class="fas fa-asterisk"></i>
+      </div>
+      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, include_hidden: false) do |d| %>
+        <%= d.label { d.check_box + d.text } %>
+      <%end%>
+ %>
+
+
+    
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+      <%= f.label :image, "Image" %>
+    </div>
+    <%= f.file_field :image, id: "", placeholder: "Image", accept: 'image/jpeg,image/gif,image/png' %>
+    <%= f.submit :submit, class: "submit", id: "", value: "#{yield(:btn_text)}" %>
+  <% end %>
+</div>

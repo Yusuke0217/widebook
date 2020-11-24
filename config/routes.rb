@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :shops do
     resource :bookmarks, only: [:create, :destroy]
   end
+  
+  resources :categories, only: [:index, :create, :destroy]
 
   resources :account_activations, only: [:edit]
 

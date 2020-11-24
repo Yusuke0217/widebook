@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_104750) do
+ActiveRecord::Schema.define(version: 2020_11_20_074631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,23 @@ ActiveRecord::Schema.define(version: 2020_11_13_104750) do
     t.index ["shop_id"], name: "index_bookmarks_on_shop_id"
     t.index ["user_id", "shop_id"], name: "index_bookmarks_on_user_id_and_shop_id", unique: true
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_categories_on_name"
+  end
+
+  create_table "shop_categories", force: :cascade do |t|
+    t.bigint "shop_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_shop_categories_on_category_id"
+    t.index ["shop_id", "category_id"], name: "index_shop_categories_on_shop_id_and_category_id", unique: true
+    t.index ["shop_id"], name: "index_shop_categories_on_shop_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -55,5 +72,7 @@ ActiveRecord::Schema.define(version: 2020_11_13_104750) do
 
   add_foreign_key "bookmarks", "shops"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "shop_categories", "categories"
+  add_foreign_key "shop_categories", "shops"
   add_foreign_key "shops", "users"
 end

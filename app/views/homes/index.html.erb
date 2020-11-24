@@ -49,7 +49,7 @@
           </div>
         </div>
         <ul class="content__box">
-          <a href="">
+          <%= link_to categories_path, remote: true do %>
             <li>
               <div class="content__wrapper">
                 <div class="content__img">
@@ -61,7 +61,7 @@
                 </div>
               </div>
             </li>
-          </a>
+          <%end%>
           <a href="">
             <li>
               <div class="content__wrapper">
