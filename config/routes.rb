@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
   
   resources :categories, only: [:index, :create, :destroy]
-
+  resources :areas
   resources :account_activations, only: [:edit]
 
 end

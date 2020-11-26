@@ -11,15 +11,15 @@
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>
-    <%= f.text_field :address_prefecture, id: "", placeholder: "都道府県"%>
+
+    <%= f.fields_for :area, @shop.build_area do |a| %>
+    <%end%>
+
+    <%= f.collection_select :area_id, Area.all, :id, :name, { include_blank: "選択してください" } %>
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>
-    <%= f.text_field :address_city, id: "", placeholder: "市町村"%>
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-    </div>
-    <%= f.text_field :address_street, id: "", placeholder: "番地"%>
+    <%= f.text_field :address, id: "", placeholder: "住所"%>
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>

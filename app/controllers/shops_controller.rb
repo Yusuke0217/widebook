@@ -1,7 +1,8 @@
 class ShopsController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :admin_user, except: [:show, :index]
   # indexアクションは、後ほど管理者のみ見ることができるようにする。
+  before_action :admin_user, except: [:show, :index]
+  before_action :find_shop, only: [:edit, :update, :show, :destroy]
 
   def index
     @shops = Shop.includes(:user).all
@@ -12,7 +13,6 @@ class ShopsController < ApplicationController
   end
   
   def show
-    @shop = Shop.find_by(id: params[:id])
     @shop_categories = ShopCategory.where(shop_id: @shop.id)
     @shop_category = @shop_categories.map { |tag|
       tag.category_id
@@ -32,11 +32,9 @@ class ShopsController < ApplicationController
   end
 
   def edit
-    @shop = Shop.find_by(id: params[:id])
   end
 
   def update
-    @shop = Shop.find_by(id: params[:id])
     if @shop.update_attributes(shop_params)
       flash[:success] = "お店の情報を更新しました。"
       redirect_to shop_path(@shop)
@@ -46,7 +44,6 @@ class ShopsController < ApplicationController
   end
 
   def destroy
-    @shop = Shop.find(params[:id])
     if @shop.destroy
       flash[:success] = "お店を削除しました。"
       redirect_to request.referrer || root_url
@@ -60,8 +57,11 @@ class ShopsController < ApplicationController
   private
 
     def shop_params
-      # params.require(:shop).permit(:name, :address, :phone_number, :content, :image, { category_ids: [] } )
-      params.require(:shop).permit(:name, :address, :phone_number, :content, :image, { category_ids: [] } )
+      params.require(:shop).permit(:name, :address, :phone_number, :content, :image, { category_ids: [] }, :area_id )
+    end
+
+    def find_shop
+      @shop = Shop.find_by(id: params[:id])
     end
 
 end

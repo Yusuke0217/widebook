@@ -3,8 +3,8 @@ class Shop < ApplicationRecord
   has_many :bookmark_users, through: :bookmarks, dependent: :destroy, source: :user
   has_many :shop_categories 
   has_many :categories, through: :shop_categories, dependent: :destroy
-  # accepts_nested_attributes_for :shop_categories
   belongs_to :user
+  belongs_to :area
   mount_uploader :image, ImageUploader
   validates :user_id, presence: true
   validates :name, presence: true
