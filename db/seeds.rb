@@ -8,7 +8,8 @@
 # require 'faker'
 
 1.times do |n|
-  area = %W(和歌山エリア 白浜エリア 高野山エリア 那智勝浦エリア 串本エリア)
+  # area = %W(和歌山エリア 白浜エリア 高野山エリア 那智勝浦エリア 串本エリア)
+  area = %W(和歌山エリア)
   
   area.each do |a|
     Area.create(name: a)

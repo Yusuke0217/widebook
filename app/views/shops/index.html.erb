@@ -10,7 +10,6 @@
           <li id="shops-<% shop.id %>">
             <%= link_to shop.name, shop_path(shop) %>
             <span><%= shop.address %></span>
-            <span><% shop.phone_number %></span>
              <% if current_user.admin? && current_user?(shop.user) %>
               <%= link_to "お店を編集", edit_shop_path(shop), method: :get %>
               <%= link_to "お店を削除", shop, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
