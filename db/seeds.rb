@@ -12,7 +12,8 @@
   area = %W(和歌山エリア)
   
   area.each do |a|
-    Area.create(name: a)
+    Area.create(id: 1, name: a)
+    # Area.create(name: a)
   end
 end
 
@@ -63,6 +64,7 @@ end
   content = Faker::Games::StreetFighter.move
   Shop.create!(
     user_id: 1,
+    # area_id: 1,
     name: name,
     phone_number: phone_number,
     address: address,
