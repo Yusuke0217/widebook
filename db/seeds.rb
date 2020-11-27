@@ -77,7 +77,7 @@ end
   content = Faker::Games::StreetFighter.move
   Shop.create!(
     user_id: 1,
-    # area_id: 1,
+    area_id: 1,
     name: name,
     phone_number: phone_number,
     address: address,
