@@ -7,6 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # require 'faker'
 
+User.create!(
+  id: 1,
+  # id: ENV['ID'],
+  name: 'Mihael',
+  email: 'hogehoge@example.com',
+  password: 'hogehoge',
+  # email: ENV['EMAIL'],
+  # password: ENV['PASSWORD'],
+  admin: true,
+  activated: true,
+  activated_at: Time.zone.now
+)
+
 1.times do |n|
   # area = %W(和歌山エリア 白浜エリア 高野山エリア 那智勝浦エリア 串本エリア)
   area = %W(和歌山エリア)
@@ -72,15 +85,4 @@ end
   )
 end
 
-User.create!(
-  id: 1,
-  # id: ENV['ID'],
-  name: 'Mihael',
-  email: 'hogehoge@example.com',
-  password: 'hogehoge',
-  # email: ENV['EMAIL'],
-  # password: ENV['PASSWORD'],
-  admin: true,
-  activated: true,
-  activated_at: Time.zone.now
-)
+
