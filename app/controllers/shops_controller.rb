@@ -57,11 +57,12 @@ class ShopsController < ApplicationController
   private
 
     def shop_params
-      params.require(:shop).permit(:name, :address, :phone_number, :content, :image, { category_ids: [] }, :area_id )
+      params.require(:shop).permit(:name, :address, :address_building, :phone_number, :content, :image, { category_ids: [] }, :area_id )
     end
 
     def find_shop
       @shop = Shop.find_by(id: params[:id])
     end
+
 
 end

@@ -26,10 +26,10 @@
             <i class="fas fa-angle-down"></i>
           </div>
           <div class="result__export">
-            <p><%= @shops.count %>件の検索結果</p>
+            <p><%= @shop.count %>件の検索結果</p>
           </div>
           <div class="post__list result-top" id="">
-            <h1>Caming soon</h1>
+            <h1><%= @category.name %></h1>
             <p></p>
             <div class="move__btn">
               <div class="btn--left">
@@ -44,15 +44,15 @@
               </div>
             </div>
             <ul class="post__box">
-            <% @shops.each do |shop| %>
-              <%= link_to shop_path(shop) do %>
+            <% @shop.each do |shop| %>
+              <%= link_to shop_path(shop.id) do %>
                 <li>
                   <div class="post__wrapper">
                     <div class="post__img">
                     <% if shop.image? %>
                       <%= image_tag shop.image.url %>
                     <% else %>
-                      <%= image_tag "hotel2_view.jpeg" %>
+                      <%= image_tag "bg_image4.jpeg" %>
                     <% end %>
                     </div>
                     <div class="post__info">
@@ -89,7 +89,7 @@
                     </div>
                   </div>
                 </li>
-              <% end %>
+              <%end%>
             <% end %>
             </ul>
             <div class="detail__btn">
@@ -99,7 +99,7 @@
             </div>
           </div>
           <div class="other__list category" id="">
-            <h1>目的から探す</h1>
+            <h1>その他のカテゴリから探す</h1>
             <p></p>
             <div class="move__btn">
               <div class="btn--left">
@@ -114,20 +114,20 @@
               </div>
             </div>
             <ul class="content__box">
-            <% @b_types.each do |b_type| %>
-              <%= link_to bussiness_type_path(b_type.id) do %>
+            <% @categories.each do |category| %>
+              <%= link_to category_path(category) do %>
                 <li>
                   <div class="content__wrapper">
                     <div class="content__img">
-                      <%= image_tag b_type.image.url %>
+                      <%= image_tag "cafe1.jpeg"%>
                     </div>
                     <div class="content__cp">
-                      <h2><%= b_type.name %></h2>
+                      <h2><%= category.name %></h2>
                       <p></p>
                     </div>
                   </div>
                 </li>
-              <%end%>
+              <% end %>
             <% end %>
             </ul>
             <div class="detail__btn">

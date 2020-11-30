@@ -22,7 +22,7 @@
         <div class="main__view__img">
             <div class="bg__img b-type">
               <div class="main__view__cp">
-                <h1>グルメ</h1>
+                <h1><%= @b_type.name %></h1>
                 <p>食の聖地、和歌山のグルメスポットをご紹介。</p>
               </div>
             </div>
@@ -45,84 +45,21 @@
             </div>
           </div>
           <ul class="content__box">
-            <a href="">
+          <% @categories.each do |category| %>
+            <%= link_to category_path(category.id) do %>
               <li>
                 <div class="content__wrapper">
                   <div class="content__img">
-                    <%= image_tag "cafe1.jpeg"%>
+                    <%# <%= image_tag category.image.url %> %>
                   </div>
                   <div class="content__cp">
-                    <h2>カフェ</h2>
+                    <h2><%= category.name %></h2>
                     <p></p>
                   </div>
                 </div>
               </li>
-            </a>
-            <a href="">
-              <li>
-                <div class="content__wrapper">
-                  <div class="content__img">
-                    <%= image_tag "seafood.jpeg"%>
-                  </div>
-                  <div class="content__cp">
-                    <h2>海鮮料理</h2>
-                    <p></p>
-                  </div>
-                </div>
-              </li>
-            </a>
-            <a href="">
-              <li>
-                <div class="content__wrapper">
-                  <div class="content__img">
-                    <%= image_tag "italian1.jpeg"%>
-                  </div>
-                  <div class="content__cp">
-                    <h2>イタリアン</h2>
-                    <p></p>
-                  </div>
-                </div>
-              </li>
-            </a>
-            <a href="">
-              <li>
-                <div class="content__wrapper">
-                  <div class="content__img">
-                    <%= image_tag ""%>
-                  </div>
-                  <div class="content__cp">
-                    <h2></h2>
-                    <p></p>
-                  </div>
-                </div>
-              </li>
-            </a>
-            <a href="">
-              <li>
-                <div class="content__wrapper">
-                  <div class="content__img">
-                    <%= image_tag ""%>
-                  </div>
-                  <div class="content__cp">
-                    <h2></h2>
-                    <p></p>
-                  </div>
-                </div>
-              </li>
-            </a>
-            <a href="">
-              <li>
-                <div class="content__wrapper">
-                  <div class="content__img">
-                    <%= image_tag ""%>
-                  </div>
-                  <div class="content__cp">
-                    <h2></h2>
-                    <p></p>
-                  </div>
-                </div>
-              </li>
-            </a>
+            <%end%>
+          <%end%>
           </ul>
           <div class="detail__btn">
             <a href="" class="detail">
@@ -146,7 +83,7 @@
             </div>
           </div>
           <ul class="post__box">
-            <a href="">
+            <%= link_to root_path do %>
               <li>
                 <div class="post__wrapper">
                   <div class="post__img">
@@ -185,171 +122,7 @@
                   </div>
                 </div>
               </li>
-            </a>
-            <a href="">
-              <li>
-                <div class="post__wrapper">
-                  <div class="post__img">
-                    <%= image_tag "" %>
-                  </div>
-                  <div class="post__info">
-                    <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    <div class="post__info__basic">
-                      <div class="post__name">
-                        <h2></h2>
-                      </div>
-                      <div class="post__about">
-                        <div class="post__place">
-                          <div class="address">
-                            <span></span>
-                          </div>
-                        </div>
-                        <span> / </span>
-                        <div class="post__category">
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </a>
-            <a href="">
-              <li>
-                <div class="post__wrapper">
-                  <div class="post__img">
-                    <%= image_tag "" %>
-                  </div>
-                  <div class="post__info">
-                    <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    <div class="post__info__basic">
-                      <div class="post__name">
-                        <h2></h2>
-                      </div>
-                      <div class="post__about">
-                        <div class="post__place">
-                          <div class="address">
-                            <span></span>
-                          </div>
-                        </div>
-                        <span> / </span>
-                        <div class="post__category">
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </a>
-            <a href="">
-              <li>
-                <div class="post__wrapper">
-                  <div class="post__img">
-                    <%= image_tag "" %>
-                  </div>
-                  <div class="post__info">
-                    <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    <div class="post__info__basic">
-                      <div class="post__name">
-                        <h2></h2>
-                      </div>
-                      <div class="post__about">
-                        <div class="post__place">
-                          <div class="address">
-                            <span></span>
-                          </div>
-                        </div>
-                        <span> / </span>
-                        <div class="post__category">
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </a>
-            <a href="">
-              <li>
-                <div class="post__wrapper">
-                  <div class="post__img">
-                    <%= image_tag "" %>
-                  </div>
-                  <div class="post__info">
-                    <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    <div class="post__info__basic">
-                      <div class="post__name">
-                        <h2></h2>
-                      </div>
-                      <div class="post__about">
-                        <div class="post__place">
-                          <div class="address">
-                            <span></span>
-                          </div>
-                        </div>
-                        <span> / </span>
-                        <div class="post__category">
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </a>
+            <% end %>
           </ul>
           <div class="detail__btn">
             <a href="" class="detail">

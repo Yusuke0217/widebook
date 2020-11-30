@@ -23,6 +23,8 @@ class Shop < ApplicationRecord
   #   @shops = current_user.bookmark_shops.includes(:user)
   # end
 
+
+
   private
   
     def image_size

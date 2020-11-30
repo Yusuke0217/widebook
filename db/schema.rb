@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_072534) do
+ActiveRecord::Schema.define(version: 2020_11_29_125538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +31,20 @@ ActiveRecord::Schema.define(version: 2020_11_27_072534) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
+  create_table "bussiness_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "bussiness_type_id", null: false
+    t.string "image"
+    t.index ["bussiness_type_id"], name: "index_categories_on_bussiness_type_id"
     t.index ["name"], name: "index_categories_on_name"
   end
 
@@ -82,6 +92,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_072534) do
 
   add_foreign_key "bookmarks", "shops"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "categories", "bussiness_types"
   add_foreign_key "shop_categories", "categories"
   add_foreign_key "shop_categories", "shops"
   add_foreign_key "shops", "areas"

@@ -49,84 +49,21 @@
           </div>
         </div>
         <ul class="content__box">
-          <%= link_to categories_path, remote: true do %>
+        <% @b_types.each do |b_type| %>
+          <%= link_to bussiness_type_path(b_type.id) do %>
             <li>
               <div class="content__wrapper">
                 <div class="content__img">
-                  <%= image_tag "gurume.jpeg"%>
+                  <%= image_tag b_type.image.url %>
                 </div>
                 <div class="content__cp">
-                  <h2>グルメ</h2>
+                  <h2><%= b_type.name %></h2>
                   <p></p>
                 </div>
               </div>
             </li>
           <%end%>
-          <a href="">
-            <li>
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <%= image_tag "shopping.jpeg" %>
-                </div>
-                <div class="content__cp">
-                  <h2>ショッピング</h2>
-                  <p></p>
-                </div>
-              </div>
-            </li>
-          </a>
-          <a href="">
-            <li>
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <%= image_tag "stayhome.jpeg" %>
-                </div>
-                <div class="content__cp">
-                  <h2>ホテル・宿泊</h2>
-                  <p></p>
-                </div>
-              </div>
-            </li>
-          </a>
-          <a href="">
-            <li>
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <%= image_tag "ocean-view.jpeg" %>
-                </div>
-                <div class="content__cp">
-                  <h2>観光・インスタ映え</h2>
-                  <p></p>
-                </div>
-              </div>
-            </li>
-          </a>
-          <a href="">
-            <li>
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <%= image_tag "event2.jpeg" %>
-                </div>
-                <div class="content__cp">
-                  <h2>イベント</h2>
-                  <p>うぇいうぇい！</p>
-                </div>
-              </div>
-            </li>
-          </a>
-          <a href="">
-            <li>
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <%= image_tag "" %>
-                </div>
-                <div class="content__cp">
-                  <h1></h1>
-                  <p></p>
-                </div>
-              </div>
-            </li>
-          </a>
+        <% end %>
         </ul>
       </div>
       <div class="content__list common" id="area">

@@ -11,10 +11,6 @@
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>
-
-    <%= f.fields_for :area, @shop.build_area do |a| %>
-    <%end%>
-
     <%= f.collection_select :area_id, Area.all, :id, :name, { include_blank: "選択してください" } %>
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
@@ -25,13 +21,12 @@
     </div>
     <%= f.text_field :address_building, id: "", placeholder: "建物名など"%>
 
-    <%= f.fields_for :categories, @shop.categories.build do |c| %>
-    <% end %>
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>
-    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, include_hidden: false) do |d| %>
-      <%= d.label { d.check_box + d.text } %>
+
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, include_hidden: false) do |c| %>
+      <%= c.label { c.check_box + c.text} %>
     <%end%>
     
     <div class="input__ttl">

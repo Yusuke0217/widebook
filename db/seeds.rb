@@ -31,41 +31,42 @@ User.create!(
 end
 
 1.times do |n|
-  gurume_data = %W[イタリアン フレンチ 中華 和食 焼肉 カフェ ラーメン お寿司 ステーキ スイーツ バイキング 鍋 カレー とんかつ うどん お好み焼き ハンバーガー 居酒屋 パン コーヒー ご当地グルメ ]
+  gurume_data = %W[イタリアン フレンチ 中華 和食 焼肉 カフェ ラーメン お寿司 ステーキ スイーツ バイキング 鍋 カレー とんかつ うどん お好み焼き ハンバーガー 居酒屋 パン コーヒー   ご当地グルメ ]
   hotel_data = %W[シティホテル ラグジュアリー ログハウス 旅館 ゲストハウス]
   shop_data = %W[アパレル お土産 コンビニ スーパー お酒 雑貨 ショッピングモール 花 本 百貨店 薬局 ]
   tour_data = %W[美術館 文化遺産 自然 お寺・神社 夜景 心霊スポット ]
   event_data = %W[お祭り 〇〇体験 季節のイベント ]
 
-  Category.create!(
-      id: "1",
-      name: "インスタ映え",
-  )
-  
-  Category.create!(
-      id: "99",
-      name: "その他",
-  )
+  eat = BussinessType.create(id: 1, name: "グルメ", image: open("./db/fixtures/gurume.jpeg"))
+  shop = BussinessType.create(id: 2, name: "ショッピング", image: open("./db/fixtures/shopping.jpeg"))
+  hotel = BussinessType.create(id: 3, name: "ホテル・宿泊", image: open("./db/fixtures/stayhome.jpeg"))
+  tour = BussinessType.create(id: 4, name: "観光・インスタ映え", image: open("./db/fixtures/ocean-view.jpeg"))
+  event = BussinessType.create(id: 5, name: "イベント", image: open("./db/fixtures/event2.jpeg"))
+  # other = BussinessType.create(name: "その他")
+  # some = BussinessType.create(name: "")
 
-  gurume_data.each.with_index(2) { |a, n|
-   Category.create(id: n, name: a)
+  gurume_data.each.with_index(3) { |a, n|
+     Category.create(id: n, name: a, bussiness_type_id: eat.id)
+  }
+
+  shop_data.each.with_index(45) { |a, n|
+    Category.create(id: n, name: a, bussiness_type_id: shop.id)
   }
 
   hotel_data.each.with_index(30) { |a, n|
-   Category.create(id: n, name: a)
-  }
-  
-  shop_data.each.with_index(40) { |a, n|
-   Category.create(id: n, name: a)
+     Category.create(id: n, name: a, bussiness_type_id: hotel.id)
   }
 
-  tour_data.each.with_index(60) { |a, n|
-   Category.create(id: n, name: a)
+  tour_data.each.with_index(65) { |a, n|
+    Category.create(id: n, name: a, bussiness_type_id: tour.id)
   }
  
-  event_data.each.with_index(70) { |a, n|
-   Category.create(id: n, name: a)
+  event_data.each.with_index(80) { |a, n|
+    Category.create(id: n, name: a, bussiness_type_id: event.id)
   }
+
+  Category.create(id: 1, name: "インスタ映え")
+  Category.create(id: 99, name: "その他")
 
 end
 
@@ -82,6 +83,7 @@ end
     phone_number: phone_number,
     address: address,
     content: content,
+    category_ids: 3,
   )
 end
 

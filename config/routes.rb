@@ -15,8 +15,9 @@ Rails.application.routes.draw do
     resource :bookmarks, only: [:create, :destroy]
   end
   
-  resources :categories, only: [:index, :create, :destroy]
+  resources :categories, only: [:index, :show, :create, :destroy]
   resources :areas, only: [:show]
   resources :account_activations, only: [:edit]
+  resources :bussiness_types, only: [:show]
 
 end
