@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :shops do
     resource :bookmarks, only: [:create, :destroy]
   end
+
+  resources :searchs, only: [:index]
   
   resources :categories, only: [:index, :show, :create, :destroy]
   resources :areas, only: [:show]

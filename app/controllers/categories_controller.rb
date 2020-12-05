@@ -1,10 +1,5 @@
 class CategoriesController < ApplicationController
 
-  def index
-    @categories = Category.include(:shop).all
-    # @cateory = Category.find(params[:category_id])
-  end
-
   def show
     @shop_categories = ShopCategory.where(category_id: params[:id])
     @shops = @shop_categories.map { |category|

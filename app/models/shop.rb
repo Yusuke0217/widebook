@@ -23,7 +23,13 @@ class Shop < ApplicationRecord
   #   @shops = current_user.bookmark_shops.includes(:user)
   # end
 
-
+  def self.search(search_params)
+    if search_params.present?
+      self.where('name LIKE ?', "%#{search_params}%")
+    else
+      self.all
+    end
+  end
 
   private
   
