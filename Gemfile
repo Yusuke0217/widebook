@@ -20,6 +20,10 @@ gem 'jbuilder', '~> 2.7'
 
 gem "kaminari"
 
+gem "geocoder"
+
+gem 'dotenv-rails'
+
 gem "seed-fu"
 
 gem 'bcrypt'

@@ -12,6 +12,9 @@ class Shop < ApplicationRecord
   validate :image_size
   validate :tag_size
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   TAG_MAX = 3
 
   
