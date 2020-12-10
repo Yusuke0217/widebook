@@ -9,10 +9,12 @@ Rails.application.routes.draw do
 
   resources :users do
     resource :bookmarks, only: [:index, :show, :edit, :update]
+    resource :reviews, only: [:show]
   end
 
   resources :shops do
     resource :bookmarks, only: [:create, :destroy]
+    resource :reviews, only: [:show, :new]
   end
 
   resources :searchs, only: [:index]
@@ -21,5 +23,6 @@ Rails.application.routes.draw do
   resources :areas, only: [:show]
   resources :account_activations, only: [:edit]
   resources :bussiness_types, only: [:show]
+  resources :reviews, only: [:index, :create, :edit, :update, :destroy]
 
 end

@@ -4,9 +4,14 @@
   <%= stylesheet_link_tag '/assets/shops/pc/show_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
+
+
+
 <%= render 'layouts/header' %>
 <div class="wrapper">
   <div class="main__wrapper shop__page__wrapper">
+  <% if @reviews.present? %>
+    <% @reviews.each do |review| %>
     <div class="shop__view">
       <div class="shop__img__list">
         <div class="main__img">
@@ -115,6 +120,11 @@
               <a href="">
                 <div class="map">Google Map</div>
               </a>
+            </div>
+            <div class="review__link">
+              <%= link_to new_shop_reviews_path(@shop) do %>
+                <div class="map">仮レビュー作成ボタン</div>
+              <% end %>
             </div>
           </div>
           <div class="shop__address">
@@ -339,9 +349,11 @@
       <div class="review__box">
         <div class="review__count">
           <i class="fas fa-star"></i>
-          <span></span>
+          <span class="star__rate"><%= review.score %></span>
+          <span><%= @reviews.count %>件のレビュー</span>
         </div>
         <div class="review__list">
+        <% @users.each do |user| %>
           <ul>
             <li>
               <div class="review__wrapper">
@@ -354,75 +366,20 @@
                     </div>
                     <div class="user__profile__right">
                       <div class="user__name">
-                        <h4></h4>
+                        <h4><%= user.name %></h4>
                       </div>
                       <div class="review__date">
-                        <p></p>
+                        <p><%= review.created_at%></p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="review__contents">
+                  <div class="review__cp">
+                    <p><%= review.title %></p>
+                  </div>
                   <div class="review__txt">
-                    <p></p>
-                  </div>
-                  <div class="more__btn">
-                    <a href=""><span>続きを読む</span></a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="review__wrapper">
-                <div class="review__header">
-                  <div class="user__profile">
-                    <div class="user__profile__left">
-                      <div class="user__img">
-                        <img src="" alt="">
-                      </div>
-                    </div>
-                    <div class="user__profile__right">
-                      <div class="user__name">
-                        <h4></h4>
-                      </div>
-                      <div class="review__date">
-                        <p></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="review__contents">
-                  <div class="review__txt">
-                    <p></p>
-                  </div>
-                  <div class="more__btn">
-                    <a href=""><span>続きを読む</span></a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="review__wrapper">
-                <div class="review__header">
-                  <div class="user__profile">
-                    <div class="user__profile__left">
-                      <div class="user__img">
-                        <img src="" alt="">
-                      </div>
-                    </div>
-                    <div class="user__profile__right">
-                      <div class="user__name">
-                        <h4></h4>
-                      </div>
-                      <div class="review__date">
-                        <p></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="review__contents">
-                  <div class="review__txt">
-                    <p></p>
+                    <p><%= review.content.truncate(120) %></p>
                   </div>
                   <div class="more__btn">
                     <a href=""><span>続きを読む</span></a>
@@ -431,6 +388,7 @@
               </div>
             </li>
           </ul>
+        <% end %>
         </div>
         <div class="detail__btn">
           <a href="" class="detail">
@@ -592,6 +550,10 @@
         </div>
       </div>
     </div>
+    <% end %>
+  <% else %>
+    <%= render 'no_review' %>
+  <% end %>
   </div>
 </div>
 <%= render 'layouts/footer' %>

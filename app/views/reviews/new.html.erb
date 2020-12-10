@@ -1,0 +1,88 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/reviews/new', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/reviews/tablet/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/reviews/pc/new_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<% provide(:btn_text, "投稿する")%>
+<% provide(:url, reviews_path)%>
+
+
+<div class="wrapper">
+  <div class="main__wrapper">
+  <%= form_with model: @review, url: yield(:url), class: "", id: "", local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <%= f.hidden_field :user_id, { value: @user.id} %>
+    <%= f.hidden_field :shop_id, { value: @shop.id} %>
+    <div class="review__sheet">
+      <div class="review__hd">
+        <div class="shop__img">
+          <%= image_tag "/assets/apple_logo.jpeg" %>
+        </div>
+        <div class="shop__ttl">
+          <h3>お店の名前</h3>
+          <p><%= @shop.name %></p>
+        </div>
+      </div>
+      <div class="review__star">
+        <div class="review__nav">
+          <p>総合評価</p>
+        </div>
+        <div class="score__wrapper">
+          <div class="star__box">
+            <div class="radio__btn">
+              <%= f.collection_radio_buttons :score, [ [1], [2], [3], [4], [5] ], :first, :last, class: "", id: "review_score" %>
+            </div>
+            <div class="star__btn">
+              <%= f.label :score_1 do %>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              <% end %>
+              <%= f.label :score_2 do %>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              <% end %>
+              <%= f.label :score_3 do %>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              <% end %>
+              <%= f.label :score_4 do %>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              <% end %>
+              <%= f.label :score_5 do %>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="reset__btn">
+          <%= f.submit "リセットする", type: :reset %>
+        </div>
+      </div>
+      <div class="review__ttl">
+        <div class="ttl__label">
+          <%= f.label :title, "タイトル" %>
+        </div>
+        <div class="ttl__form">
+          <%= f.text_field :title, id: "review_title", placeholder: "もっとも伝えたいこと(50文字以下)" %>
+        </div>
+      </div>
+      <div class="review__content">
+        <div class="content__label">
+          <%= f.label :content, "レビューを追加" %>
+        </div>
+        <div class="re__text">
+          <%= f.text_area :content, id: "review_content", placeholder: "本文を入力してください。(2000文字以下)" %>
+        </div>
+        <div class="text__count">
+        </div>
+      </div>
+    </div>
+    <div class="review__option">
+      <%= f.submit :submit, class: "", id: "", value: "#{yield(:btn_text)}" %>
+    </div>
+  <% end %>
+  </div>
+</div>

@@ -2,6 +2,8 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token
   has_many :bookmarks
   has_many :bookmark_shops, through: :bookmarks, dependent: :destroy, source: :shop
+  has_many :reviews
+  has_many :review_shops, through: :reviews, source: :shop
   has_many :shops
   before_save :downcase_email
   before_create :create_activation_digest
@@ -55,4 +57,16 @@ class User < ApplicationRecord
     self.activation_token = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
+
+
+  # ----------------------------------------
+  scope :reviewer_table, -> { joins(:reviews) }
+  scope :choice_clm, -> { select('reviews.*') }
+  scope :user_ary, -> { map { |u| u.user_id } }
+
+  def self.reviewers_find
+    self.reviewer_table.choice_clm.user_ary
+  end
+  # -----------------------------------------
+
 end

@@ -3,6 +3,8 @@ class Shop < ApplicationRecord
   has_many :bookmark_users, through: :bookmarks, dependent: :destroy, source: :user
   has_many :shop_categories 
   has_many :categories, through: :shop_categories, dependent: :destroy
+  has_many :reviews
+  has_many :review_users, through: :reviews, source: :user
   belongs_to :user
   belongs_to :area
   mount_uploader :image, ImageUploader
@@ -34,6 +36,7 @@ class Shop < ApplicationRecord
     end
   end
 
+  
   private
   
     def image_size

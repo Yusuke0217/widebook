@@ -13,6 +13,10 @@ class ShopsController < ApplicationController
   end
   
   def show
+    @reviewers = User.reviewers_find
+    @users = User.where(id: @reviewers)
+    @reviews = Review.where(shop_id: @shop.id)
+
     @shop_categories = ShopCategory.where(shop_id: @shop.id)
     @shop_category = @shop_categories.map { |tag|
       tag.category_id

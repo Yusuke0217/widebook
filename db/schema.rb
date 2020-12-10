@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_06_105559) do
+ActiveRecord::Schema.define(version: 2020_12_09_060704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 2020_12_06_105559) do
     t.string "image"
     t.index ["bussiness_type_id"], name: "index_categories_on_bussiness_type_id"
     t.index ["name"], name: "index_categories_on_name"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.float "score"
+    t.bigint "user_id"
+    t.bigint "shop_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_reviews_on_shop_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "shop_categories", force: :cascade do |t|
@@ -95,6 +107,8 @@ ActiveRecord::Schema.define(version: 2020_12_06_105559) do
   add_foreign_key "bookmarks", "shops"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "categories", "bussiness_types"
+  add_foreign_key "reviews", "shops"
+  add_foreign_key "reviews", "users"
   add_foreign_key "shop_categories", "categories"
   add_foreign_key "shop_categories", "shops"
   add_foreign_key "shops", "areas"

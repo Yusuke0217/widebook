@@ -602,6 +602,10 @@
                   }
                   .review__contents {
                     height: 150px;
+                    .review__cp {
+                      p {
+                      }
+                    }
                     .review__txt {
                       word-break: break-all;
                       & p {

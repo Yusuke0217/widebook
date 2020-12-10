@@ -9,8 +9,8 @@
       display: flex;
       flex-direction: column;
       padding-top: 100px;
-      padding-right: 20px;
-      padding-left: 20px;
+      padding-right: 50px;
+      padding-left: 50px;
       margin-bottom: 50px;
       .shop__view {
         order: 2;
@@ -605,11 +605,12 @@
           padding-bottom: 30px;
           border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
           & .review__count {
-            margin-bottom: 10px;
+            margin-left: 20px;
             i.fas.fa-star {
               color: $plum;
-              font-size: 1.2rem;
-              span {
+              font-size: 1.4rem;
+              span.star__rate {
+                font-size: 1.3rem;
               }
             }
           }
@@ -631,8 +632,8 @@
                 margin-left: 10px;
                 @include flame;
                 .review__wrapper {
-                  height: 200px;
-                  width: 300px;
+                  height: 250px;
+                  width: 350px;
                   .review__header {
                     .user__profile {
                       display: flex;
@@ -664,16 +665,26 @@
                   }
                   .review__contents {
                     height: 150px;
+                    .review__cp {
+                      p {
+                        font-weight: bold;
+                        padding-top: 10px;
+                        padding-right: 10px;
+                        padding-bottom: 0px;
+                        padding-left: 10px;
+                      }
+                    }
                     .review__txt {
                       word-break: break-all;
                       & p {
-                        height: 130px;
+                        height: 150px;
                         padding-top: 10px;
                         padding-right: 10px;
                         padding-bottom: 10px;
                         padding-left: 10px;
                         overflow: hidden;
                         text-overflow: ellipsis;
+                        line-height: 1.5rem;
                       }
                     }
                     .more__btn {
@@ -685,6 +696,15 @@
                       }
                     }
                   }
+                }
+              }
+            }
+            & ul.no__exist {
+              text-align: center;
+              display: block;
+              & li {
+                border: none;
+                .no__content__msg {
                 }
               }
             }
