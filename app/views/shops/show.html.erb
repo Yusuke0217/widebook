@@ -10,8 +10,6 @@
 <%= render 'layouts/header' %>
 <div class="wrapper">
   <div class="main__wrapper shop__page__wrapper">
-  <% if @reviews.present? %>
-    <% @reviews.each do |review| %>
     <div class="shop__view">
       <div class="shop__img__list">
         <div class="main__img">
@@ -103,7 +101,7 @@
           <div class="shop__about">
             <div class="shop__review">
               <i class="fas fa-star"></i>
-              <span></span>
+              <span><%= @avg %></span>
             </div>
             <% @categories.each do |category| %>
             <div class="shop__tag">
@@ -347,21 +345,27 @@
         </div>
       </div>
       <div class="review__box">
+      <% if @reviews.present? %>
         <div class="review__count">
           <i class="fas fa-star"></i>
-          <span class="star__rate"><%= review.score %></span>
+          <span class="star__rate"><%= @avg %></span>
           <span><%= @reviews.count %>件のレビュー</span>
         </div>
         <div class="review__list">
-        <% @users.each do |user| %>
           <ul>
+          <% @reviews.each do |review| %>
             <li>
+              <% @users.each do |user| %>
               <div class="review__wrapper">
                 <div class="review__header">
                   <div class="user__profile">
                     <div class="user__profile__left">
                       <div class="user__img">
-                        <img src="" alt="">
+                      <% if user.image? %>
+                        <%= image_tag user.image.url? %>
+                      <% else %>
+                        <%= image_tag "/assets/user_icon.jpg"%>
+                      <% end %>
                       </div>
                     </div>
                     <div class="user__profile__right">
@@ -386,15 +390,19 @@
                   </div>
                 </div>
               </div>
+              <% end %>
             </li>
+          <% end %>
           </ul>
-        <% end %>
         </div>
         <div class="detail__btn">
           <a href="" class="detail">
             <span>レビューをすべて表示</span>
           </a>
         </div>
+      <% else %>
+        <%= render 'no_review' %>
+      <% end %>
       </div>
       <div class="shop__other__info">
         <h1>その他の基本情報</h1>
@@ -550,10 +558,6 @@
         </div>
       </div>
     </div>
-    <% end %>
-  <% else %>
-    <%= render 'no_review' %>
-  <% end %>
   </div>
 </div>
 <%= render 'layouts/footer' %>

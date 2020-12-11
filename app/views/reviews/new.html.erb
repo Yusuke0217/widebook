@@ -5,14 +5,13 @@
 <% end %>
 
 <% provide(:btn_text, "投稿する")%>
-<% provide(:url, reviews_path)%>
+<% provide(:url, shop_reviews_path)%>
 
 
 <div class="wrapper">
   <div class="main__wrapper">
   <%= form_with model: @review, url: yield(:url), class: "", id: "", local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
-    <%= f.hidden_field :user_id, { value: @user.id} %>
     <%= f.hidden_field :shop_id, { value: @shop.id} %>
     <div class="review__sheet">
       <div class="review__hd">
@@ -74,7 +73,7 @@
           <%= f.label :content, "レビューを追加" %>
         </div>
         <div class="re__text">
-          <%= f.text_area :content, id: "review_content", placeholder: "本文を入力してください。(2000文字以下)" %>
+          <%= f.text_area :content, id: "review_content", placeholder: "本文を入力してください。(200文字以下)" %>
         </div>
         <div class="text__count">
         </div>

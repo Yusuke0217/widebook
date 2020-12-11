@@ -16,6 +16,8 @@ class ShopsController < ApplicationController
     @reviewers = User.reviewers_find
     @users = User.where(id: @reviewers)
     @reviews = Review.where(shop_id: @shop.id)
+    @scores = Review.shop_reviews(@shop.id)
+    @avg = Review.avg_score(@scores)
 
     @shop_categories = ShopCategory.where(shop_id: @shop.id)
     @shop_category = @shop_categories.map { |tag|
