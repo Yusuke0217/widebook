@@ -103,10 +103,10 @@
               <i class="fas fa-star"></i>
               <span><%= @avg %></span>
             </div>
-            <% @categories.each do |category| %>
+            <% @categories.each do |c| %>
             <div class="shop__tag">
               <i class="fas fa-hashtag"></i>
-              <span><%= category.name %></span>
+              <span><%= c.category.name %></span>
             <% end %>
             </div>
           </div>
@@ -180,8 +180,8 @@
                     <p>カテゴリ</p>
                   </div>
                   <div class="table__import">
-                  <% @categories.each do |category| %>
-                    <span><%= category.name %></span>
+                  <% @categories.each do |c| %>
+                    <span><%= c.category.name %></span>
                   <% end %>
                   </div>
                 </div>
@@ -355,14 +355,13 @@
           <ul>
           <% @reviews.each do |review| %>
             <li>
-              <% @users.each do |user| %>
               <div class="review__wrapper">
                 <div class="review__header">
                   <div class="user__profile">
                     <div class="user__profile__left">
                       <div class="user__img">
-                      <% if user.image? %>
-                        <%= image_tag user.image.url? %>
+                      <% if review.user.image? %>
+                        <%= image_tag review.user.image.url? %>
                       <% else %>
                         <%= image_tag "/assets/user_icon.jpg"%>
                       <% end %>
@@ -370,7 +369,7 @@
                     </div>
                     <div class="user__profile__right">
                       <div class="user__name">
-                        <h4><%= user.name %></h4>
+                        <h4><%= review.user.name %></h4>
                       </div>
                       <div class="review__date">
                         <p><%= review.created_at%></p>
@@ -390,15 +389,14 @@
                   </div>
                 </div>
               </div>
-              <% end %>
             </li>
           <% end %>
           </ul>
         </div>
         <div class="detail__btn">
-          <a href="" class="detail">
+          <%= link_to shop_reviews_path(@shop.id) ,class: "detail" do %>
             <span>レビューをすべて表示</span>
-          </a>
+          <% end %>
         </div>
       <% else %>
         <%= render 'no_review' %>

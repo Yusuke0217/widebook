@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :edit, :show, :update, :destroy]
   # indexアクションは、後ほど管理者のみ見ることができるようにする。
   before_action :admin_user, except: [:show, :index]
   before_action :find_shop, only: [:edit, :update, :show, :destroy]
@@ -13,17 +13,13 @@ class ShopsController < ApplicationController
   end
   
   def show
-    @reviewers = User.reviewers_find
-    @users = User.where(id: @reviewers)
-    @reviews = Review.where(shop_id: @shop.id)
-    @scores = Review.shop_reviews(@shop.id)
-    @avg = Review.avg_score(@scores)
+    # @reviewers = User.reviewers_find ワンチャンいらない
+    # @users = User.where(id: @reviewers)
 
-    @shop_categories = ShopCategory.where(shop_id: @shop.id)
-    @shop_category = @shop_categories.map { |tag|
-      tag.category_id
-    }
-    @categories = Category.where(id: @shop_category)
+    @reviews = Review.where(shop_id: @shop.id).order(created_at: :desc).page(params[:page]).per(5)
+    @scores = Review.shop_reviews(@shop.id)
+    @avg = Review.avg_score(@scores).round(1)
+    @categories = ShopCategory.where(shop_id: @shop.id)
   end
   
   def create
