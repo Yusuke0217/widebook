@@ -1,0 +1,75 @@
+@import "../main.scss";
+
+
+@media screen and (max-width: 559px) {
+  .wrapper {
+    .main__wrapper {
+      .user__hd {
+        .user__img {
+        }
+        .user__info {
+          .user__name {
+            p {
+            }
+          }
+          .profile__link {
+            p {
+            }
+          }
+        }
+      }
+      .user__body {
+        .nav__list {
+          .body__ttl {
+            h3 {
+            }
+          }
+          .menu__view {
+            ul {
+              li {
+                .info__wrapper {
+                  .info__index {
+                    h3 {
+                    }
+                  }
+                  .info__link {
+                    .info__mark {
+                      i.fas.fa-user-cog {
+                      }
+                    }
+                  }
+                  .info__force {
+                    h3 {
+                      i.fas.fa-heart {
+                      }
+                      i.far.fa-comment-dots {
+                      }
+                      i {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .user__ft {
+        .ft__ttl {
+          h3 {
+          }
+        }
+        .user__ft__nav {
+          .user__rule {
+            p {
+            }
+          }
+          .logout__btn {
+            p {
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,25 +1,44 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/users/signup' %>
+<% end %>
+
+<% provide(:btn_text, "ログインする")%>
+<% provide(:url, login_path)%>
+
 <div class="key__icon">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-lock fa-stack-1x"></i>
 </div>
 
-<div class="login__form">
-  <%= form_with scope: :session, url: login_path, class: "", id: "", local: true do |f| %>
-
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-      <%= f.label :email, "Email" %>
+<div class="main__wrapper">
+  <div class="signup__wrapper">
+    <div class="signup__logo">
+      <%= image_tag "apple_logo.jpeg" %>
     </div>
-    <%= f.email_field :email, id: "", placeholder: "メールアドレス"%>
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-      <%= f.label :password, "Password" %>
+    <div class="signup__ttl">
+      <h1>ログイン</h1>
+      <p></p>
     </div>
-    <%= f.password_field :password, id: "", placeholder: "パスワード" %>
-    <%= f.submit :submit, class: "submit", id: "", value: "ログイン" %>
-  <% end %>
-  <div class="signup__link">
-    <p>アカウントをお持ちではないですか？<%= link_to "アカウント作成", signup_path %></p>
+    <div class="signup__form">
+      <%= form_with scope: :session, url: yield(:url), class: "", id: "", local: true do |f| %>
+        <div class="input__ttl">
+          <i class="fas fa-asterisk"></i>
+          <%= f.label :email, "Email" %>
+        </div>
+        <%= f.email_field :email, id: "", placeholder: "メールアドレス"%>
+        <div class="input__ttl">
+          <i class="fas fa-asterisk"></i>
+          <%= f.label :password, "Password" %>
+        </div>
+        <%= f.password_field :password, id: "", placeholder: "パスワード" %>
+        <%= f.submit :submit, class: "submit", id: "", value: "ログイン" %>
+      <% end %>
+        <div class="signup__form__login">
+        <p>アカウントをお持ちではありませんか？</p>
+        <div class="login__btn">
+          <%= link_to "アカウント作成", signup_path %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<%= render 'layouts/footer' %>

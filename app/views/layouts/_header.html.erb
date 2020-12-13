@@ -22,9 +22,9 @@
     <div class="hd__nav">
       <ul>
         <li>
-          <a href="">
+          <%= link_to root_path do %>
             <i class="fas fa-bars"></i>
-          </a>
+          <% end %>
         </li>
         <li>
         <% if logged_in? %>
@@ -38,7 +38,7 @@
         <%end%>
         </li>
       </ul>
-    </div class="hd__nav">
+    </div>
   </div>
 </header>
 

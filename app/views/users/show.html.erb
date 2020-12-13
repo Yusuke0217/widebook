@@ -1,24 +1,154 @@
-<%= @user.name %>
-<%= @user.email %>
-
-<%= link_to "ホームに戻る", root_path %>
-
-<%= link_to "プロフィールを編集", edit_user_path %>
-
-<%= link_to "お気にいり", user_bookmarks_path(@user) %>
-
-<% if current_user.admin? && !current_user?(@user) %>
-  <%= link_to "Delete", @user, method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/users/show', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/users/tablet/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/users/pc/show_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-<% if @user.admin? && current_user?(@user)%>
-  <%= link_to "お店を投稿する", new_shop_path, method: :get %>
-  <%= link_to "登録店一覧", shops_path, method: :get %>
-<% end %>
 
-<% if @user.image? %>
-  <%= image_tag @user.image.url %>
-<% end %>
+<div class="wrapper">
+  <div class="main__wrapper">
+    <div class="user__hd">
+      <div class="user__img">
+        <% if @user.image? %>
+        <%= link_to image_tag( @user.image.url, class: ""), user_path(@user.id) %>
+        <% else %>
+        <%= link_to image_tag("/assets/user_icon.jpeg", class: ""), user_path(@user.id) %>
+        <% end %>
+      </div>
+      <div class="user__info">
+        <div class="user__name">
+          <p><%= @user.name %></p>
+          <p><%= @user.email %></p>
+        </div>
+        <div class="profile__link">
+          <%= link_to user_path(@user.id) do %>
+            <p>プロフィールを表示</p>
+          <% end %>
+          <% if current_user.admin? && !current_user?(@user) %>
+            <%= link_to "Delete", @user, method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="user__body">
+      <div class="nav__list">
+        <div class="body__ttl">
+          <h3>アカウントの設定</h3>
+        </div>
+        <div class="menu__view">
+          <ul>
+            <%= link_to edit_user_path(@user) do %>
+              <li>
+                <div class="info__wrapper">
+                  <div class="info__index">
+                    <h3>プロフィールを編集</h3>
+                  </div>
+                  <div class="info__link">
+                    <div class="info__mark">
+                      <i class="fas fa-user-cog"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+            <%= link_to  user_bookmarks_path(@user) do %>
+              <li>
+                <div class="info__wrapper">
+                  <div class="info__force">
+                    <h3>お気にいり一覧</h3>
+                  </div>
+                  <div class="info__link">
+                    <div class="info__mark">
+                      <i class="fas fa-heart"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+            <%= link_to user_reviews_path(@user.id) do %>
+              <li>
+                <div class="info__wrapper">
+                  <div class="info__force">
+                    <h3>レビュー一覧</h3>
+                  </div>
+                  <div class="info__link">
+                    <div class="info__mark">
+                      <i class="far fa-comment-dots"></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          <% if @user.admin? && current_user?(@user) %>
+            <%= link_to new_shop_path do %>
+              <li>
+                <div class="info__wrapper">
+                  <div class="info__force">
+                    <h3>お店を投稿する</h3>
+                  </div>
+                  <div class="info__link">
+                    <div class="info__mark">
+                      <i class=""></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+            <%= link_to shops_path do %>
+              <li>
+                <div class="info__wrapper">
+                  <div class="info__force">
+                    <h3>登録店一覧</h3>
+                  </div>
+                  <div class="info__link">
+                    <div class="info__mark">
+                      <i class=""></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          <% end %>
+            <%= link_to root_path do %>
+              <li>
+                <div class="info__wrapper">
+                  <div class="info__force">
+                    <h3></h3>
+                  </div>
+                  <div class="info__link">
+                    <div class="info__mark">
+                      <i class=""></i>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="user__ft">
+      <div class="ft__ttl">
+        <h3>その他</h3>
+      </div>
+      <div class="user__ft__nav">
+        <div class="user__rule">
+          <%= link_to root_path do %>
+            <p>利用規約</p>
+          <% end %>
+        </div>
+        <div class="logout__btn">
+          <%= link_to logout_path, method: :delete do %>
+            <p>ログアウト</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 

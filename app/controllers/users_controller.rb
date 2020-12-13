@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[edit update destroy]
+  before_action :logged_in_user, only: %i[index show edit update destroy]
   before_action :correct_user, only: %i[edit update]
   before_action :admin_user, only: :destroy
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
 
-  def index; end
+  def index
+  end
 
   def new
     @user = User.new
   end
 
   def show
-    @user = User.find(params[:id])
     unless @user.activated?
       redirect_to root_url and return
     end
@@ -31,11 +32,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = 'プロフィール情報を更新しました'
       redirect_to user_url(@user)
@@ -45,7 +44,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
     flash[:success] = 'Deleted!'
     redirect_to root_url
   end
@@ -54,6 +52,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :image)
+  end
+
+  def find_user
+    @user = User.find(params[:id])
   end
 
 
