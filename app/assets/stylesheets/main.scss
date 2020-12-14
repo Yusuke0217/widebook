@@ -21,6 +21,21 @@
   text-decoration: none;
 }
 
+@mixin margin($mTop: 0px, $mRight: 0px, $mBottom: 0px, $mLeft: 0px) {
+  margin-top: $mTop;
+  margin-right: $mRight;
+  margin-bottom: $mBottom;
+  margin-left: $mLeft;
+}
+
+@mixin padding($pTop: 0px, $pRight: 0px, $pBottom: 0px, $pLeft: 0px) {
+  padding-top: $pTop;
+  padding-right: $pRight;
+  padding-bottom: $pBottom;
+  padding-left: $pLeft;
+}
+
+
 @mixin awesome {
   font-family: "Font Awesome 5 Free";
   font-weight: bold;

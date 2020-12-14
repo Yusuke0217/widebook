@@ -36,6 +36,15 @@
             padding-left: 10px;
             width: calc(100% - 45.3px);
             outline: none;
+            &.area__form {
+              display: none;
+            }
+            &.date__form {
+              display: none;
+            }
+          }
+          select {
+            display: none;
           }
           button {
             height: 40px;

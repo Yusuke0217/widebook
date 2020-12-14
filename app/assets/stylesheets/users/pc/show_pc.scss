@@ -3,4 +3,177 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブデザイン
+  .wrapper {
+    .main__wrapper.user__mypg {
+      width: 90%;
+      margin: 0 auto;
+      @include padding(100px);
+      .mypg__ttl {
+        @include margin(10px);
+        text-align: center;
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+      .user__hd {
+        height: 300px;
+        width: 100%;
+        text-align: center;
+        @include margin(20px);
+        @include padding(0, 10px, 0, 10px);
+        border-bottom: 1px solid $darkgray;
+        .user__img {
+          @include margin(30px, 0, 20px, 0);
+          img {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+          }
+        }
+        .user__info {
+          text-align: center;
+          .user__name {
+            p {
+              font-size: 1.5rem;
+              font-weight: bold;
+              @include margin(0, 0, 5px, 0)
+            }
+          }
+          .profile__link {
+            p {
+            }
+          }
+        }
+      }
+      .user__body {
+        @include margin(30px, 0px, 30px, 0px);
+        .nav__list {
+          .body__ttl {
+            h3 {
+              font-size: 1.5rem;
+            }
+          }
+          .menu__view {
+            @include margin(0, 0, 30px, 0);
+            ul {
+              width: 100%;
+              a {
+                @include link;
+                li {
+                  border-bottom: 1px solid $darkgray;
+                  @include margin(20px, 0, 10px, 0);
+                  .info__wrapper {
+                    display: flex;
+                    .info__index {
+                      width: 95%;
+                      @include margin(10px, 10px, 10px, 10px);
+                      h3 {
+                        font-size: 1.3rem;
+                        color: $darkgray;
+                      }
+                    }
+                    .info__link {
+                      @include margin(10px, 10px, 10px, 10px);
+                      .info__mark {
+                        i {
+                          font-size: 2rem;
+                          color: $plum;
+                          &:hover {
+                            opacity: 0.8;
+                          }
+                        }
+                        i.fas.fa-user-edit {
+                        }
+                        i.far.fa-heart {
+                        }
+                        i.far.fa-comment-dots {
+                        }
+                        i.fas.fa-folder-plus {
+                        }
+                        i.fas.fa-address-card {
+                        }
+                      }
+                    }
+                  }
+                  &:hover {
+                    opacity: 0.7;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .user__ft {
+        @include margin(0px, 0, 50px, 0);
+        .ft__ttl {
+          @include margin(20px, 0, 20px, 0);
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+        .user__ft__nav {
+          .user__rule {
+            border-bottom: 1px solid $darkgray;
+            @include margin(20px);
+            a {
+              display: flex;
+              text-decoration: none;
+              .rule__index {
+                width: 95%;
+                @include margin(10px, 10px, 10px, 10px);
+                h3 {
+                  font-size: 1.3rem;
+                  color: $darkgray;
+                }
+              }
+              .rule__link {
+                @include margin(10px, 10px, 10px, 10px);
+                .rule__mark {
+                  i.fas.fa-exclamation-circle {
+                    font-size: 2rem;
+                    color: $plum;
+                  }
+                }
+              }
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+          }
+          .logout__btn {
+            border-bottom: 1px solid $darkgray;
+            @include margin(20px);
+            a {
+              display: flex;
+              text-decoration: none;
+              .logout__index {
+                width: 95%;
+                @include margin(10px, 10px, 10px, 10px);
+                h3 {
+                  font-size: 1.3rem;
+                  color: $darkgray;
+                }
+              }
+              .logout__link {
+                @include margin(10px, 10px, 10px, 10px);
+                .logout__mark {
+                  i.fas.fa-sign-out-alt {
+                    font-size: 2rem;
+                    color: $plum;
+                    &:hover {
+                      opacity: 0.8;
+                    }
+                  }
+                }
+              }
+            }
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
 }

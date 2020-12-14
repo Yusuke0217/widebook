@@ -4,9 +4,12 @@
   <%= stylesheet_link_tag '/assets/users/pc/show_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-
+<%= render 'layouts/header' %>
 <div class="wrapper">
-  <div class="main__wrapper">
+  <div class="main__wrapper user__mypg">
+    <div class="mypg__ttl">
+      <h3>プロフィール</h3>
+    </div>
     <div class="user__hd">
       <div class="user__img">
         <% if @user.image? %>
@@ -18,12 +21,9 @@
       <div class="user__info">
         <div class="user__name">
           <p><%= @user.name %></p>
-          <p><%= @user.email %></p>
+          <span><%= @user.email %></span>
         </div>
         <div class="profile__link">
-          <%= link_to user_path(@user.id) do %>
-            <p>プロフィールを表示</p>
-          <% end %>
           <% if current_user.admin? && !current_user?(@user) %>
             <%= link_to "Delete", @user, method: :delete, data: { confirm: "削除してもよろしいですか？" } %>
           <% end %>
@@ -45,7 +45,7 @@
                   </div>
                   <div class="info__link">
                     <div class="info__mark">
-                      <i class="fas fa-user-cog"></i>
+                      <i class="fas fa-user-edit"></i>
                     </div>
                   </div>
                 </div>
@@ -54,12 +54,12 @@
             <%= link_to  user_bookmarks_path(@user) do %>
               <li>
                 <div class="info__wrapper">
-                  <div class="info__force">
-                    <h3>お気にいり一覧</h3>
+                  <div class="info__index">
+                    <h3>お気にいりしたお店</h3>
                   </div>
                   <div class="info__link">
                     <div class="info__mark">
-                      <i class="fas fa-heart"></i>
+                      <i class="far fa-heart"></i>
                     </div>
                   </div>
                 </div>
@@ -68,7 +68,7 @@
             <%= link_to user_reviews_path(@user.id) do %>
               <li>
                 <div class="info__wrapper">
-                  <div class="info__force">
+                  <div class="info__index">
                     <h3>レビュー一覧</h3>
                   </div>
                   <div class="info__link">
@@ -83,12 +83,12 @@
             <%= link_to new_shop_path do %>
               <li>
                 <div class="info__wrapper">
-                  <div class="info__force">
+                  <div class="info__index">
                     <h3>お店を投稿する</h3>
                   </div>
                   <div class="info__link">
                     <div class="info__mark">
-                      <i class=""></i>
+                      <i class="fas fa-folder-plus"></i>
                     </div>
                   </div>
                 </div>
@@ -97,32 +97,18 @@
             <%= link_to shops_path do %>
               <li>
                 <div class="info__wrapper">
-                  <div class="info__force">
-                    <h3>登録店一覧</h3>
+                  <div class="info__index">
+                    <h3>登録店リスト</h3>
                   </div>
                   <div class="info__link">
                     <div class="info__mark">
-                      <i class=""></i>
+                      <i class="fas fa-address-card"></i>
                     </div>
                   </div>
                 </div>
               </li>
             <% end %>
           <% end %>
-            <%= link_to root_path do %>
-              <li>
-                <div class="info__wrapper">
-                  <div class="info__force">
-                    <h3></h3>
-                  </div>
-                  <div class="info__link">
-                    <div class="info__mark">
-                      <i class=""></i>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            <% end %>
           </ul>
         </div>
       </div>
@@ -134,21 +120,31 @@
       <div class="user__ft__nav">
         <div class="user__rule">
           <%= link_to root_path do %>
-            <p>利用規約</p>
+            <div class="rule__index">
+              <h3>利用規約</h3>
+            </div>
+            <div class="rule__link">
+              <div class="rule__mark">
+                <i class="fas fa-exclamation-circle"></i>
+              </div>
+            </div>
           <% end %>
         </div>
         <div class="logout__btn">
           <%= link_to logout_path, method: :delete do %>
-            <p>ログアウト</p>
+            <div class="logout__index">
+              <h3>ログアウト</h3>
+            </div>
+            <div class="logout__link">
+              <div class="logout__mark">
+                <i class="fas fa-sign-out-alt"></i>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
+<%= render 'layouts/footer' %>
 
