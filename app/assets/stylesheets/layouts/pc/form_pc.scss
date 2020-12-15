@@ -1,0 +1,64 @@
+@import "../../main.scss";
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .input__ttl {
+      margin-bottom: 3px;
+      i.fas.fa-asterisk {
+        color: $darkgray;
+        font-size: 0.8rem;
+      }
+      label {
+        font-size: 1.2rem;
+      }
+    }
+    .input__field {
+      input {
+        height: 50px;
+        width: 300px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border: 1px solid $darkgray;
+        border-radius: 20px;
+        outline: none;
+        &.img_field {
+          display: none;
+        }
+      }
+      .image__icon {
+        @include margin(15px, 0, 15px, 0,);
+        label {
+          position: relative;
+          outline: none;
+          &:hover {
+            cursor: pointer;
+          }
+          img {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+          }
+          i.fas.fa-plus {
+            position: absolute;
+            font-size: 2rem;
+            top: -15px;
+            right: 1px;
+            color: $plum;
+          }
+        }
+      }
+      input.submit {
+        @include margin(15px, 0, 15px, 0);
+        background-color: $plum;
+        color: $white;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

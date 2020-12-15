@@ -1,0 +1,45 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/layouts/form' %>
+<% end %>
+
+
+<%= form_with model: @user, url: yield(:url), class: "", id: "", local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="input__ttl">
+    <i class="fas fa-asterisk"></i>
+    <%= f.label :name, "Name"%>
+  </div>
+  <div class="input__field">
+    <%= f.text_field :name, id: "", placeholder: "ニックネーム"%>
+  </div>
+  <div class="input__ttl">
+    <i class="fas fa-asterisk"></i>
+    <%= f.label :email, "Email" %>
+  </div>
+  <div class="input__field">
+    <%= f.email_field :email, id: "", placeholder: "メールアドレス"%>
+  </div>
+  <div class="input__ttl">
+    <i class="fas fa-asterisk"></i>
+    <%= f.label :password, "Password" %>
+  </div>
+  <div class="input__field">
+    <%= f.password_field :password, id: "", placeholder: "パスワード" %>
+  </div>
+  <div class="input__ttl">
+    <i class="fas fa-asterisk"></i>
+    <%= f.label "Image" %>
+  </div>
+  <div class="input__field">
+    <%= f.file_field :image, class: "img_field", id: "user_image" %>
+    <div class="image__icon">
+      <%= f.label :image, class: "" do %>
+        <%= image_tag "/assets/user_icon.jpeg"%>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="input__field">
+    <%= f.submit :submit, class: "submit", id: "", value: "#{yield(:btn_text)}" %>
+  </div>
+<% end %>

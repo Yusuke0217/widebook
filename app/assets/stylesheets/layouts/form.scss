@@ -1,0 +1,60 @@
+@import "../main.scss";
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include margin(10px, 0, 10px, 0);
+    .input__ttl {
+      margin-bottom: 3px;
+      width: 200px;
+      i.fas.fa-asterisk {
+        color: $darkgray;
+        font-size: 10px;
+      }
+      label {
+        font-size: 13px;
+      }
+    }
+    .input__field {
+      input {
+        height: 40px;
+        width: 250px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border: 1px solid $darkgray;
+        border-radius: 20px;
+        outline: none;
+        &.img_field {
+          display: none;
+        }
+      }
+      .image__icon {
+        @include margin(15px, 0, 0px, 0,);
+        label {
+          position: relative;
+          outline: none;
+          img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+          }
+          i.fas.fa-plus {
+            position: absolute;
+            font-size: 1.5rem;
+            top: -15px;
+            right: 1px;
+            color: $plum;
+          }
+        }
+      }
+      input.submit {
+        @include margin(15px, 0, 15px, 0);
+        background-color: $plum;
+        color: $white;
+      }
+    }
+  }
+}

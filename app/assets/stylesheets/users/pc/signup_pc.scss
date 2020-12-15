@@ -1,14 +1,15 @@
-@import "../main.scss";
+@import "../../main.scss";
 
-@media screen and (max-width: 559px) {
-  // Mobile用のレスポンシブ
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
   .wrapper {
     .main__wrapper {
       .form__wrapper {
         height: 100%;
+        @include padding(100px);
         .signup__logo {
-          height: 100px;
-          width: 150px;
+          height: 130px;
+          width: 230px;
           margin-top: 30px;
           margin-right: auto;
           margin-bottom: 15px;
@@ -29,16 +30,16 @@
         }
         .user__info__form {
           .announce {
-            height: 20px;
-            width: 300px;
+            height: 30px;
+            width: 350px;
             display: flex;
             text-align: center;
-            margin: 0 auto;
+            margin: 10px auto;
             i.fas.fa-exclamation-circle {
               color: $plum;
             }
             p {
-              font-size: 13px;
+              font-size: 1rem;
               line-height: 20px;
               a {
                 text-decoration: none;
@@ -46,7 +47,7 @@
             }
           }
           .other__form__link {
-            margin-top: 30px;
+            @include margin(30px, 0, 20px, 0);
             p {
               text-align: center;
             }
@@ -56,6 +57,12 @@
               a {
                 @include link;
                 color: $plum;
+                display: inline-block;
+                &:hover {
+                  opacity: 0.7;
+                }
+                p {
+                }
               }
             }
           }

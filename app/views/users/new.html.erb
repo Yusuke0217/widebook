@@ -1,5 +1,7 @@
 <% content_for :css do %>
-  <%= stylesheet_link_tag '/assets/users/signup' %>
+  <%= stylesheet_link_tag '/assets/users/signup', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/users/tablet/signup_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/users/pc/signup_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
 <% provide(:btn_text, "登録する")%>
@@ -7,16 +9,16 @@
 
 
 <div class="main__wrapper">
-  <div class="signup__wrapper">
+  <div class="form__wrapper">
     <div class="signup__logo">
       <%= image_tag "apple_logo.jpeg" %>
     </div>
-    <div class="signup__ttl">
+    <div class="form__ttl">
       <h1>サインイン</h1>
       <p></p>
     </div>
-    <div class="signup__form">
-      <%= render 'form' %>
+    <div class="user__info__form">
+      <%= render 'layouts/form' %>
       <div class="announce">
         <i class="fas fa-exclamation-circle"></i>
         <p>アカウントを作成すると、
@@ -24,10 +26,12 @@
           に同意したとみなされます。
         </p>
       </div>
-      <div class="signup__form__login">
+      <div class="other__form__link">
         <p>すでにアカウントをお持ちですか？</p>
-        <div class="login__btn">
-          <%= link_to "ログイン", login_path %>
+        <div class="jump__btn">
+          <%= link_to login_path do %>
+            <p>ログイン</p>
+          <% end %>
         </div>
       </div>
     </div>
