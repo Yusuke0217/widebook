@@ -62,5 +62,14 @@
         }
       }
     }
+    .signup__wrapper {
+      @include margin(0, 0, 50px, 0);
+    }
+    .login__wrapper {
+      @include padding(80px);
+    }
+    .edit__wrapper {
+      @include padding(80px);
+    }
   }
 }

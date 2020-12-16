@@ -6,7 +6,6 @@
     .main__wrapper {
       .form__wrapper {
         height: 100%;
-        @include padding(100px);
         .signup__logo {
           height: 130px;
           width: 230px;
@@ -68,6 +67,14 @@
           }
         }
       }
+    }
+    .signup__wrapper {
+    }
+    .login__wrapper {
+      @include padding(100px);
+    }
+    .edit__wrapper {
+      @include padding(100px);
     }
   }
 }

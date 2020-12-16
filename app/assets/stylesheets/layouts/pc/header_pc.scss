@@ -13,8 +13,8 @@
       box-shadow: 0px 0px 3px 0px #544C59;
       background-color: $white;
       .hd__logo {
-        margin: 10px 30px;
         width: 130px;
+        margin: 10px 30px;
         a {
           img {
             height: 80px;
@@ -30,66 +30,105 @@
           box-shadow: 0 0 4px 0px $darkgray;
           height: 50px;
           width: 100%;
-          label.b-type__label {
-          }
-          select {
+          display: inline-block;
+          position: relative;
+          .search__form {
             height: 100%;
-            width: 20%;
-            outline: none;
-            &:hover {
-              background-color: $darkgray;
+            input {
+              height: 100%;
+              outline: none;
+              padding-left: 20px;
+              &:hover {
+                background-color: $darkgray;
+                border-radius: 50px;
+              }
             }
-            &:before {
-              content: "\f078";
-              @include awesome;
+            input.area__form {
+              width: 20%;
+            }
+            select {
+              height: 100%;
+              width: 20%;
+              outline: none;
+              @include padding(0px, 0, 0px, 10px);
+              border-left: 2px solid rgba($color: $darkgray, $alpha: 0.3) ;
+              &:hover {
+                background-color: $darkgray;
+              }
+              &:before {
+                content: "\f078";
+                @include awesome;
+              }
+            }
+            input.keyword__form {
+              width: 30%;
+              border-left: 2px solid rgba($color: $darkgray, $alpha: 0.3) ;
+            }
+            input.date__form {
+              width: 20%;
+              border-left: 2px solid rgba($color: $darkgray, $alpha: 0.3) ;
             }
           }
-          input {
-            height: 100%;
-            outline: none;
-            padding-left: 20px;
-            &:hover {
-              background-color: $darkgray;
+          .search__btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            button {
+              height: 50px;
+              width: 50px;
+              background-color: $plum;
               border-radius: 50px;
-            }
-          }
-          input.area__form {
-            width: 20%;
-          }
-          input.keyword__form {
-            width: 30%;
-          }
-          input.date__form {
-            width: 20%;
-          }
-
-          button {
-            height: 50px;
-            width: 50px;
-            background-color: $plum;
-            border-radius: 50px;
-            cursor: pointer;
-            outline : none;
-            i {
-              color: $white;
-              font-weight:bold;
+              cursor: pointer;
+              outline : none;
+              i {
+                color: $white;
+                font-weight:bold;
+                input.btn {
+                  display: none;
+                }
+              }
+              &:hover {
+                opacity: 0.8;
+              }
             }
           }
         }
       }
       .hd__nav {
-        // display: none;
+        display: flex;
         line-height: 7.5rem;
-        ul {
-          display: flex;
-          li {
-            margin: 0 20px;
+          input#menu {
+          }
+          label.open {
+            @include margin(0, 20px, 0, 20px);
+            i.fas.fa-bars {
+              color: $darkgray;
+              @include awesome;
+              font-size: 3rem;
+            }
+          }
+          label.back {
+          }
+          .user__icon {
+            @include margin(0, 20px, 0, 20px);
             a {
               @include link;
               color: $darkgray;
-              i {
-                @include awesome;
+              i.fas.fa-user-alt {
                 font-size: 3rem;
+              }
+            }
+          }
+        nav {
+          label.close {
+            outline: none;
+          }
+          ul {
+            display: flex;
+            li {
+              a {
+                @include link;
+                color: $darkgray;
               }
             }
           }

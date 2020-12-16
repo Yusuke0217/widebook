@@ -7,37 +7,125 @@
       </a>
     </div>
     <div class="hd__search__box">
-      <%= form_with(scope: :search, url: searchs_path, class: "search__form", method: "get", local: true) do |f| %>
+      <%= form_with(scope: :search, url: searchs_path, class: "", method: "get", local: true) do |f| %>
+      <div class="search__form">
         <%= f.text_field :name, placeholder: "エリア・駅", class: "area__form" %>
         <%= f.collection_select :id, BussinessType.all, :id, :name, { include_hidden: false, include_blank: "選択してください", class: "b-type__form" } %>
         <%= f.text_field :name, value: params[:name], placeholder: "キーワード", class: "keyword__form" %>
         <%= f.date_field :date, class: "date__form" %>
+      </div>
+      <div class="search__btn">
         <button>
           <i class="fas fa-search">
             <%= f.submit "", class: "btn" %>
           </i>
         </button>
+      </div>
       <% end %>
     </div>
     <div class="hd__nav">
-      <ul>
-        <li>
-          <%= link_to root_path do %>
-            <i class="fas fa-bars"></i>
-          <% end %>
-        </li>
-        <li>
-        <% if logged_in? %>
-          <%= link_to user_path(current_user.id) do %>
-            <i class="fas fa-user-alt"></i>
-          <%end%>
-        <% else %>
-          <%= link_to signup_path do %>
-            <i class="fas fa-user-alt"></i>
-          <%end%>
+      <input id="menu" type="checkbox">
+      <label for="menu" class="open">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label for="menu" class="back"></label>
+      <div class="user__icon">
+      <% if logged_in? %>
+        <%= link_to user_path(current_user.id) do %>
+          <i class="fas fa-user-alt"></i>
         <%end%>
-        </li>
-      </ul>
+        <% else %>
+        <%= link_to signup_path do %>
+          <i class="fas fa-user-alt"></i>
+        <%end%>
+      <%end%>
+      </div>
+      <nav>
+        <label for="menu" class="close">
+          <i class="fas fa-times"></i>
+        </label>
+        <% if current_user.nil? %>
+        <ul class="common__nav">
+          <li>
+            <div class="nav__link">
+              <%= link_to login_path do %>
+                <p>ログイン</p>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div class="nav__link">
+              <%= link_to signup_path do %>
+                <p>登録する</p>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+        <ul class="sp__nav">
+          <li>
+            <div class="nav__link">
+              <%= link_to root_path do %>
+                <p>ヘルプ</p>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+        <% else %>
+        <ul class="common__nav">
+          <li>
+            <div class="nav__link">
+              <%= link_to root_path do %>
+                <p>トップに戻る</p>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div class="nav__link">
+              <%= link_to user_path(current_user.id) do %>
+                <p>マイページ</p>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div class="nav__link">
+              <%= link_to user_bookmarks_path(current_user.id) do %>
+                <p>お気に入り</p>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div class="nav__link">
+              <%= link_to root_path do %>
+                <p></p>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+        <ul class="sp__nav">
+          <li>
+            <div class="nav__link">
+              <%= link_to logout_path, method: :delete do %>
+                <p>ログアウト</p>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div class="nav__link">
+              <%= link_to root_path do %>
+                <p>ヘルプ</p>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div class="nav__link">
+              <%= link_to root_path do %>
+                <p></p>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+        <% end %>
+      </nav>
     </div>
   </div>
 </header>
