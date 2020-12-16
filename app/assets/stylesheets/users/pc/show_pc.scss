@@ -96,7 +96,7 @@
                     }
                   }
                   &:hover {
-                    opacity: 0.7;
+                    background-color: rgba($darkgray, $alpha: 0.1);
                   }
                 }
               }
@@ -133,11 +133,14 @@
                   i.fas.fa-exclamation-circle {
                     font-size: 2rem;
                     color: $plum;
+                    &:hover {
+                      opacity: 0.8;
+                    }
                   }
                 }
               }
               &:hover {
-                opacity: 0.8;
+                background-color: rgba($darkgray, $alpha: 0.1);
               }
             }
           }
@@ -169,7 +172,7 @@
               }
             }
             &:hover {
-              opacity: 0.8;
+              background-color: rgba($darkgray, $alpha: 0.1);
             }
           }
         }

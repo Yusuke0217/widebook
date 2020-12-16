@@ -78,7 +78,7 @@
         input#menu {
           position: absolute;
           left: -50vw;
-          &:checked ~ nav {
+          &:checked ~ nav.mobile__nav {
             right: 0px;
           }
           &:checked ~ .back {
@@ -102,20 +102,8 @@
         }
         label.back {
           display: block;
-
         }
-        .user__icon {
-          @include margin(0, 30px, 0, 30px);
-          display: none;
-          a {
-            @include link;
-            color: $darkgray;
-            i.fas.fa-user-alt {
-              font-size: 3rem;
-            }
-          }
-        }
-        nav {
+        nav.mobile__nav {
           height: 100vh;
           width: 70%;
           position: absolute;
@@ -165,6 +153,66 @@
             border-bottom: 1px solid rgba($darkgray, $alpha: 0.8)
           }
           ul.sp__nav {
+          }
+        }
+        input#bar_menu {
+          display: none;
+        }
+        label.bar__open {
+          display: none;
+        }
+        label.bar__back {
+          display: none;
+        }
+        nav.pc__nav--bar {
+          display: none;
+          label.bar__close {
+            display: none;
+          }
+          ul {
+            display: flex;
+            flex-direction: column;
+            @include margin(0, 0, 30px, 0);
+            li {
+              @include margin(0px, 0, 30px, 0px);
+              @include padding(0px, 0, 0, 30px);
+              height: 30px;
+              line-height: 30px;
+              .nav__link {
+                height: 100%;
+                a {
+                  height: 100%;
+                  @include link($darkgray);
+                  display: inline-block;
+                  p {
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+          }
+          ul.common__nav {
+            border-bottom: 1px solid rgba($darkgray, $alpha: 0.8)
+          }
+          ul.sp__nav {
+          }
+        }
+        input#user_menu {
+          display: none;
+        }
+        label.user__open {
+          @include margin(0, 30px, 0, 30px);
+          display: none;
+          i.fas.fa-user-alt {
+            font-size: 3rem;
+          }
+        }
+        label.user__back {
+          display: none;
+        }
+        nav.pc__nav--user {
+          display: none;
+          label.user__close {
           }
         }
       }

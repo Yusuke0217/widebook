@@ -97,42 +97,188 @@
       .hd__nav {
         display: flex;
         line-height: 7.5rem;
-          input#menu {
+        input#menu {
+          display: none;
+          position: absolute;
+          left: -50vw;
+          &:checked ~ nav.mobile__nav {
+          right: 0px;
           }
-          label.open {
-            @include margin(0, 20px, 0, 20px);
-            i.fas.fa-bars {
-              color: $darkgray;
-              @include awesome;
-              font-size: 3rem;
-            }
+          &:checked ~ .back {
+            display: none;
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            right: 0%;
+            background-color: $white;
+            opacity: 0.8;
+            transition: all 0.2s;
           }
-          label.back {
+        }
+        label.open {
+          display: none;
+          @include margin(0, 20px, 0, 20px);
+          i.fas.fa-bars {
+            color: $darkgray;
+            @include awesome;
+            font-size: 3rem;
+            cursor: pointer;
           }
-          .user__icon {
-            @include margin(0, 20px, 0, 20px);
-            a {
-              @include link;
-              color: $darkgray;
-              i.fas.fa-user-alt {
-                font-size: 3rem;
-              }
-            }
+        }
+        label.back {
+        }
+        nav.mobile__nav {
+          display: none;
+        }
+        input#bar_menu {
+          display: none;
+          position: absolute;
+          left: -50vw;
+          &:checked ~ nav.pc__nav--bar {
+          right: 0px;
           }
-        nav {
-          label.close {
-            outline: none;
+          &:checked ~ .bar__back {
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            right: 0%;
+            background-color: $white;
+            opacity: 0.8;
+            transition: all 0.2s;
+          }
+        }
+        label.bar__open {
+          display: none;
+          @include margin(0, 20px, 0, 20px);
+          i.fas.fa-bars {
+            color: $darkgray;
+            @include awesome;
+            font-size: 3rem;
+            cursor: pointer;
+          }
+        }
+        label.bar__back {
+          display: none;
+        }
+        nav.pc__nav--bar {
+          display: none;
+          label.bar__close {
           }
           ul {
             display: flex;
+            flex-direction: column;
+            @include margin(0, 0, 30px, 0);
             li {
-              a {
-                @include link;
-                color: $darkgray;
+              @include margin(0px, 0, 30px, 0px);
+              @include padding(0px, 0, 0, 30px);
+              height: 30px;
+              line-height: 30px;
+              .nav__link {
+                height: 100%;
+                a {
+                  height: 100%;
+                  @include link($darkgray);
+                  display: inline-block;
+                  p {
+                    font-weight: bold;
+                  }
+                }
               }
             }
           }
+          ul.common__nav {
+            border-bottom: 1px solid rgba($darkgray, $alpha: 0.8)
+          }
+          ul.sp__nav {
+          }
         }
+        input#user_menu {
+          position: absolute;
+          left: -50vw;
+          &:checked ~ nav.pc__nav--user {
+            right: 30px;
+            }
+            &:checked ~ .user__back {
+              position: absolute;
+              height: 100vh;
+              width: 100%;
+              right: 0%;
+              transition: all 0.1s;
+            }
+        }
+        label.user__open {
+          @include margin(0, 20px, 0, 20px);
+          i.fas.fa-user-alt {
+            color: $darkgray;
+            @include awesome;
+            font-size: 3rem;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+        label.user__back {
+        }
+        nav.pc__nav--user {
+          height: 400px;
+          width: 15%;
+          position: absolute;
+          transition: all 0s;
+          right: -100vw;
+          background-color: $white;
+          top: 100%;
+          border-radius: 15px;
+          border: 1px solid $darkgray;
+          label.user__close {
+            height: 50px;
+            width: 50px;
+            display: flex;
+            @include margin(0, 0, 30px, 0);
+            i.fas.fa-times {
+              height: 100%;
+              width: 50px;
+              text-align: center;
+              line-height: 50px;
+              display: inline-block;
+              outline: none;
+              color: $darkgray;
+              font-size: 2.3rem;
+            }
+          }
+          ul {
+            display: flex;
+            flex-direction: column;
+            @include margin(0, 0, 30px, 0);
+            @include padding(0, 15px, 0, 15px);
+            li {
+              @include margin(0px, 0, 15px, 0px);
+              height: 30px;
+              line-height: 30px;
+              .nav__link {
+                height: 100%;
+                a {
+                  height: 100%;
+                  width: 100%;
+                  @include link($darkgray);
+                  display: inline-block;
+                  p {
+                    font-weight: bold;
+                  }
+                  &:hover {
+                    background-color: rgba($darkgray, $alpha: 0.1);
+                    border-radius: 10px;
+                  }
+                }
+              }
+            }
+          }
+          ul.common__nav {
+            border-bottom: 1px solid rgba($darkgray, $alpha: 0.8)
+          }
+          ul.sp__nav {
+          }
+        } 
       }
     }
   }
