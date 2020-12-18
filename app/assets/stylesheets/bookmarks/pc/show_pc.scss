@@ -6,7 +6,7 @@
     @include padding(0, 70px, 0, 70px);
     .favo__hd {
       @include padding(100px, 0, 0, 0);
-      border-bottom: 1px solid rgba($darkgray, $alpha: 0.3);
+      @include border-btm($darkgray)
       .page__index {
         @include margin(20px, 0, 30px, 0);
         @include padding(0px, 0, 0px, 50px);
@@ -16,7 +16,7 @@
       }
     }
     .favo__list {
-      @include margin(30px, 0, 0, 0);
+      @include margin(30px, 0, 30px, 0);
       & ul.shop__box {
         @include content-box;
         overflow: scroll;
@@ -52,7 +52,7 @@
             height: 250px;
             width: 250px;
             border-radius: 20px;
-            margin-bottom: 10px;
+            @include margin(0px, 0px, 20px, 0px);
             .shop__wrapper {
               height: 100%;
               .shop__img {
@@ -68,11 +68,12 @@
                 &__deco {
                   display: flex;
                   .shop__review {
-                    display: none;
                     i.fas.fa-star {
                       color: $plum;
+                      @include mobile-fsz;
                     }
                     span {
+                      @include mobile-fsz;
                     }
                   }
                   .shop__tag {
@@ -110,7 +111,7 @@
             }
           }
           &:hover {
-            opacity: 0.8;
+            @include link-hover;
           }
         }
         .move__btn {

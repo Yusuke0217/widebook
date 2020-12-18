@@ -74,6 +74,18 @@
   white-space: nowrap;
 }
 
+@mixin border-btm($color: gray, $opct: 0.3) {
+  border-bottom: 1px solid rgba($color, $alpha: $opct);
+}
+
+@mixin link-hover($opct: 0.8) {
+  opacity: $opct;
+}
+
+@mixin mobile-fsz($f-size: 0.9rem) {
+  font-size: $f-size;
+}
+
 // @mixin form {
 //   outline: none;
 // }

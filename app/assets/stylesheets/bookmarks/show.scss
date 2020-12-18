@@ -5,18 +5,19 @@
   .favo__wrapper {
     @include margin(0, 5px, 0, 5px);
     .favo__hd {
-      @include margin(30px, 0, 30px, 0);
-      @include padding(0, 0, 0, 30px);
+      @include margin(0, 0px, 10px, 0px);
+      @include padding(20px, 0, 20px, 30px);
+      @include border-btm($darkgray)
       .page__index {
         h3 {
         }
       }
     }
     .favo__list {
-      ul.shop__box {
+      & ul.shop__box {
         @include content-box;
         justify-content: space-between;
-        // display: block;
+        display: block;
         flex-wrap: wrap;
         overflow: scroll;
         .heart__mark {
@@ -32,31 +33,40 @@
         }
         a {
           @include link;
-          @include margin(5px, 5px, 5px, 5px);
+          // @include margin(5px, 5px, 5px, 5px);
           li {
-            height: 170px;
-            width: 170px;
-            border-radius: 20px;
-            border: 1px solid $darkgray;
+            height: 120px;
+            width: 100%;
+            @include margin(0px, 0px, 10px, 0px);
             .shop__wrapper {
-              height: 100%;
+              @include border-btm;
+              height: 115%;
+              display: flex;
               .shop__img {
-                height: 70%;
+                height: 120px;
+                @include margin(0, 10px, 0, 10px);
                 img {
-                  border-radius: 20px 20px 0 0;
+                  border-radius: 20px 20px 20px 20px;
                   height: 100%;
-                  width: 100%;
+                  width: 120px;
                 }
               }
               .shop__info {
-                text-align: center;
+                height: 120px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                @include margin(0, auto, 0, auto);
+                @include padding(5px, 5px, 5px, 5px);
                 &__deco {
-                  display: none;
+                  order: 3;
                   .shop__review {
                     i.fas.fa-star {
                       color: $plum;
+                      @include mobile-fsz;
                     }
                     span {
+                      @include mobile-fsz;
                     }
                   }
                   .shop__tag {
@@ -65,28 +75,32 @@
                   }
                 }
                 &__basic {
-                  text-overflow: ellipsis;
-                  overflow: hidden;
-                  white-space: nowrap;
+                  @include padding(0, 0, 0, 2px);
+                  @include word-el;
+                  order: 1;
                   .shop__name {
+                    @include padding(0px, 0px, 3px, 0px);
                     h2 {
                       font-size: 1rem;
                     }
                   }
                   .shop__about {
                     display: flex;
-                    display: none;
                     .shop__place {
                       .address {
                         @include word-el;
                         span {
+                          @include mobile-fsz;
                         }
                       }
                     }
                   }
                   .shop__budget {
-                    display: none;
+                    i.fas.fa-yen-sign {
+                      @include mobile-fsz;
+                    }
                     span {
+                      @include mobile-fsz;
                     }
                   }
                 }

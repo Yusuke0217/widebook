@@ -13,9 +13,6 @@ class ShopsController < ApplicationController
   end
   
   def show
-    # @reviewers = User.reviewers_find ワンチャンいらない
-    # @users = User.where(id: @reviewers)
-
     @reviews = Review.where(shop_id: @shop.id).order(created_at: :desc).page(params[:page]).per(5)
     @scores = Review.shop_reviews(@shop.id)
     @avg = Review.avg_score(@scores).round(1)

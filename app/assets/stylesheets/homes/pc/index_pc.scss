@@ -167,6 +167,9 @@
                   }
                 }
               }
+              &:hover {
+                @include link-hover;
+              }
             }
           }
           ul::-webkit-scrollbar {
