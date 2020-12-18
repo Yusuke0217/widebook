@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
 
   before_action :logged_in_user
+  # before_action :correct_user
 
   def new
   end
@@ -10,7 +11,7 @@ class BookmarksController < ApplicationController
 
   def show
     @user = User.find_by(id: current_user.id)
-    @bookmarks = @user.bookmark_shops
+    @bookmarks = Bookmark.where(user_id: current_user.id)
   end
 
   def create

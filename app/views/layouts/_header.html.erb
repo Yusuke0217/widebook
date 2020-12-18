@@ -236,7 +236,7 @@
           </li>
           <li>
             <div class="nav__link">
-              <%= link_to user_bookmarks_path(current_user.id) do %>
+              <%= link_to user_bookmarks_path(user_id: current_user.id) do %>
                 <p>お気に入り</p>
               <% end %>
             </div>

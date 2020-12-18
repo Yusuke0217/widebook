@@ -1,0 +1,148 @@
+@import "../../main.scss";
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  .favo__wrapper {
+    @include padding(0, 70px, 0, 70px);
+    .favo__hd {
+      @include padding(100px, 0, 0, 0);
+      border-bottom: 1px solid rgba($darkgray, $alpha: 0.3);
+      .page__index {
+        @include margin(20px, 0, 30px, 0);
+        @include padding(0px, 0, 0px, 50px);
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .favo__list {
+      @include margin(30px, 0, 0, 0);
+      & ul.shop__box {
+        @include content-box;
+        overflow: scroll;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        @include margin(15px, 0, 0, 0);
+        .heart__mark {
+          position: relative;
+          display: none;
+          a {
+            position: absolute;
+            top: 5%;
+            right: -250px;
+            z-index: 1;
+            i.far.fa-heart {
+              font-size: 1.7rem;
+              color: $plum;
+            }
+            i.fas.fa-heart {
+              font-size: 1.7rem;
+              color: $plum;
+            }
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+        a {
+          @include link;
+          @include margin(5px, 5px, 5px, 5px);
+          li {
+            height: 250px;
+            width: 250px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            .shop__wrapper {
+              height: 100%;
+              .shop__img {
+                height: 65%;
+                img {
+                  border-radius: 20px 20px 20px 20px;
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+              .shop__info {
+                @include padding(5px, 5px, 5px, 5px);
+                &__deco {
+                  display: flex;
+                  .shop__review {
+                    display: none;
+                    i.fas.fa-star {
+                      color: $plum;
+                    }
+                    span {
+                    }
+                  }
+                  .shop__tag {
+                    i {
+                    }
+                  }
+                }
+                &__basic {
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  .shop__name {
+                    h2 {
+                      font-size: 1rem;
+                    }
+                  }
+                  .shop__about {
+                    display: flex;
+                    align-items: baseline;
+                    .shop__place {
+                      .address {
+                        @include word-el;
+                        span {
+                          font-size: 0.9rem;
+                        }
+                      }
+                    }
+                  }
+                  .shop__budget {
+                    span {
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        .move__btn {
+          display: none;
+          a {
+            @include move-btn;
+            i {
+              position: absolute;
+            }
+          }
+          .btn--left {
+            a {
+              right: 12%;
+              top: 5%;
+              i {
+                right: 40%;
+                top: 35%;
+              }
+            }
+          }
+          .btn--right {
+            a {
+              right: 5%;
+              top: 5%;
+              i {
+                right: 35%;
+                top: 35%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

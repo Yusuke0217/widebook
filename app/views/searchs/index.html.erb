@@ -1,8 +1,8 @@
 <%# 検索結果のページ&ビジネスタイプ>カテゴリのページ %>
 <% content_for :css do %>
-  <%= stylesheet_link_tag '/assets/shops/search', media: "screen and (max-width: 559px)" %>
-  <%= stylesheet_link_tag '/assets/shops/tablet/search_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
-  <%= stylesheet_link_tag '/assets/shops/pc/search_pc', media: "screen and (min-width: 960px)" %>
+  <%= stylesheet_link_tag '/assets/searchs/search', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/searchs/tablet/search_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/searchs/pc/search_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
 <%= render 'layouts/header' %>
@@ -43,45 +43,46 @@
                 </a>
               </div>
             </div>
-            <ul class="post__box">
+            <%# 以下は後ほど、shop_listにまとめてrenderする。 %>
+            <ul class="shop__box">
             <% @results.page(params[:page]).per(5).each do |result| %>
               <%= link_to shop_path(result) do %>
                 <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
+                  <div class="shop__wrapper">
+                    <div class="shop__img">
                     <% if result.image? %>
                       <%= image_tag result.image.url %>
                     <% else %>
                       <%= image_tag "hotel2_view.jpeg" %>
                     <% end %>
                     </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
+                    <div class="shop__info">
+                      <div class="shop__info__deco">
+                        <div class="shop__review">
                           <i class="fas fa-star"></i>
                           <span></span>
                         </div>
-                        <div class="post__tag">
+                        <div class="shop__tag">
                           <i class=""></i>
                           <span></span>
                         </div>
-                        <div class="post__tag">
+                        <div class="shop__tag">
                           <i class=""></i>
                           <span></span>
                         </div>
                       </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
+                      <div class="shop__info__basic">
+                        <div class="shop__name">
                           <h2><%= result.name %></h2>
                         </div>
-                        <div class="post__about">
-                          <div class="post__place">
+                        <div class="shop__about">
+                          <div class="shop__place">
                             <div class="address">
                               <span><%= result.address %></span>
                             </div>
                           </div>
                         </div>
-                        <div class="post__budget">
+                        <div class="shop__budget">
                           <i class="fas fa-yen-sign"></i>
                           <span></span>
                         </div>

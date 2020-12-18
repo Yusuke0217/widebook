@@ -1,0 +1,56 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/shops/shop_list', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/shops/tablet/shop_list_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/shops/pc/shop_list_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+
+<ul class="shop__box">
+<% yield(:objects).each do |obj| %>
+  <%= link_to yield(:url) do %>
+    <li>
+      <div class="shop__wrapper">
+        <div class="shop__img">
+        <% if result.image? %>
+          <%= image_tag result.image.url %>
+        <% else %>
+          <%= image_tag "hotel2_view.jpeg" %>
+        <% end %>
+        </div>
+        <div class="shop__info">
+          <div class="shop__info__deco">
+            <div class="shop__review">
+              <i class="fas fa-star"></i>
+              <span></span>
+            </div>
+            <div class="shop__tag">
+              <i class=""></i>
+              <span></span>
+            </div>
+            <div class="shop__tag">
+              <i class=""></i>
+              <span></span>
+            </div>
+          </div>
+          <div class="shop__info__basic">
+            <div class="shop__name">
+              <h2><%= obj.name %></h2>
+            </div>
+            <div class="shop__about">
+              <div class="shop__place">
+                <div class="address">
+                  <span><%= obj.address %></span>
+                </div>
+              </div>
+            </div>
+            <div class="shop__budget">
+              <i class="fas fa-yen-sign"></i>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  <% end %>
+<% end %>
+</ul>

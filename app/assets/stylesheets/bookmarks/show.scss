@@ -1,0 +1,129 @@
+@import "../main.scss";
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .favo__wrapper {
+    @include margin(0, 5px, 0, 5px);
+    .favo__hd {
+      @include margin(30px, 0, 30px, 0);
+      @include padding(0, 0, 0, 30px);
+      .page__index {
+        h3 {
+        }
+      }
+    }
+    .favo__list {
+      ul.shop__box {
+        @include content-box;
+        justify-content: space-between;
+        // display: block;
+        flex-wrap: wrap;
+        overflow: scroll;
+        .heart__mark {
+          display: none;
+          a {
+            i.far.fa-heart {
+              color: $plum;
+            }
+            i.fas.fa-heart {
+              color: $plum;
+            }
+          }
+        }
+        a {
+          @include link;
+          @include margin(5px, 5px, 5px, 5px);
+          li {
+            height: 170px;
+            width: 170px;
+            border-radius: 20px;
+            border: 1px solid $darkgray;
+            .shop__wrapper {
+              height: 100%;
+              .shop__img {
+                height: 70%;
+                img {
+                  border-radius: 20px 20px 0 0;
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+              .shop__info {
+                text-align: center;
+                &__deco {
+                  display: none;
+                  .shop__review {
+                    i.fas.fa-star {
+                      color: $plum;
+                    }
+                    span {
+                    }
+                  }
+                  .shop__tag {
+                    i {
+                    }
+                  }
+                }
+                &__basic {
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  .shop__name {
+                    h2 {
+                      font-size: 1rem;
+                    }
+                  }
+                  .shop__about {
+                    display: flex;
+                    display: none;
+                    .shop__place {
+                      .address {
+                        @include word-el;
+                        span {
+                        }
+                      }
+                    }
+                  }
+                  .shop__budget {
+                    display: none;
+                    span {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .move__btn {
+          display: none;
+          a {
+            @include move-btn;
+            i {
+              position: absolute;
+            }
+          }
+          .btn--left {
+            a {
+              right: 12%;
+              top: 5%;
+              i {
+                right: 40%;
+                top: 35%;
+              }
+            }
+          }
+          .btn--right {
+            a {
+              right: 5%;
+              top: 5%;
+              i {
+                right: 35%;
+                top: 35%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

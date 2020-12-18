@@ -1,19 +1,15 @@
-@import "../../main.scss";
+@import "../main.scss";
 
-@media screen and (min-width: 960px) {
-  // PC用のレスポンシブ
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
   .wrapper {
-    .main__wrapper.search_pc {
-      padding-top: 100px;
-      // display: flex;
+    .main__wrapper {
+      padding-top: 80px;
       .ggrmap__wrapper {
         display: none;
-        width: 40%;
-        order: 3;
         .ggrmap {
-          height: 700px;
-          width: 100%;
-          background-color: $deepgreen;
+          background-color: $green;
+          height: 600px;
           form#search-form {
             .input__area {
               input {
@@ -27,14 +23,13 @@
         }
       }
       .result__wrapper {
-        // width: 60%;
-        width: 100%;
-        order: 2;
-        padding: 0 10px;
+        padding-top: 0px;
+        padding-right: 10px;
+        padding-bottom: 0px;
+        padding-left: 10px;
         .result__group {
           background-color: $white;
           z-index: 3;
-          margin-bottom: 50px;
           .result--icon {
             height: 30px;
             text-align: center;
@@ -53,37 +48,28 @@
               border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             }
           }
-          .post__list {
+          .post__list.result-top {
             h1 {
               font-size: 1.5rem;
             }
             p {
             }
             & .move__btn {
+              display: none;
               .btn--left {
                 a {
-                  @include move-btn;
-                  right: 12%;
-                  top: 5%;
                   i.fas.fa-chevron-left {
-                    right: 40%;
-                    top: 35%;
                   }
                 }
               }
               .btn--right {
                 a {
-                  @include move-btn;
-                  right: 5%;
-                  top: 5%;
                   i.fas.fa-chevron-right {
-                    right: 35%;
-                    top: 35%;
                   }
                 }
               }
             }
-            & ul.post__box {
+            ul.shop__box {
               @include content-box;
               overflow: scroll;
               // flex-wrap: wrap;
@@ -100,9 +86,9 @@
                   width: 245px;
                   border-radius: 20px;
                   margin-bottom: 10px;
-                  .post__wrapper {
+                  .shop__wrapper {
                     height: 100%;
-                    .post__img {
+                    .shop__img {
                       height: 65%;
                       img {
                         border-radius: 20px 20px 0 0;
@@ -110,33 +96,32 @@
                         width: 100%;
                       }
                     }
-                    .post__info {
+                    .shop__info {
                       &__deco {
                         display: flex;
-                        .post__review {
+                        .shop__review {
                           i.fas.fa-star {
                             color: $plum;
                           }
                           span {
                           }
                         }
-                        .post__tag {
+                        .shop__tag {
                           i {
-                            
                           }
                         }
                       }
                       &__basic {
                         overflow: hidden;
-                        .post__name {
+                        .shop__name {
                           h2 {
                             font-size: 1rem;
                           }
                         }
-                        .post__about {
+                        .shop__about {
                           display: flex;
                           align-items: baseline;
-                          .post__place {
+                          .shop__place {
                             .address {
                               @include word-el;
                               span {
@@ -144,7 +129,7 @@
                             }
                           }
                         }
-                        .post__budget {
+                        .shop__budget {
                           span {
                           }
                         }
@@ -155,89 +140,7 @@
               }
             }
             & .detail__btn {
-              // display: none;
-              text-align: center;
-              a.detail {
-                @include link;
-                @include flame;
-                height: 50px;
-                width: 200px;
-                line-height: 50px;;
-                display: inline-block;
-                span {
-                  font-size: 1.2rem;
-                  i {
-                  }
-                }
-              }
-            }
-          }
-          .post__list.result__top {
-            h1 {
-            }
-            p {
-            }
-            .move__btn {
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
-            }
-            ul.post__box {
-              @include content-box;
-              a {
-                li {
-                  .post__wrapper {
-                    .post__img {
-                    }
-                    .post__info {
-                      &__deco {
-                        display: flex;
-                        .post__review {
-                          i.fas.fa-star {
-                            color: $plum;
-                          }
-                          span {
-                          }
-                        }
-                        .post__tag {
-                          i {
-                            
-                          }
-                        }
-                      }
-                      &__basic {
-                        .post__name {
-                          h2 {
-                          }
-                        }
-                        .post__about {
-                          .post__place {
-                            .address {
-                              span {
-                              }
-                            }
-                          }
-                        }
-                        .post__budget {
-                          span {
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            .detail__btn {
+              display: none;
               a.detail {
                 span {
                   i {
@@ -253,6 +156,7 @@
             p {
             }
             & .move__btn {
+              display: none;
               .btn--left {
                 a {
                   i.fas.fa-chevron-left {
@@ -271,10 +175,7 @@
               overflow: scroll;
               a {
                 @include link;
-                margin-top: 10px;
-                margin-right: 5px;
-                margin-bottom: 10px 5px;
-                margin-left: 5px;
+                margin: 10px 5px;
                 li {
                   height: 200px;
                   width: 200px;
@@ -290,10 +191,7 @@
                       }
                     }
                     .content__cp {
-                      padding-top: 10px;
-                      padding-right: 10px;
-                      padding-bottom: 10px;
-                      padding-left: 10px;
+                      padding: 10px;
                       h2 {
                         font-size: 1.1rem;
                       }
@@ -310,13 +208,13 @@
               text-align: center;
               a.detail {
                 @include link;
+                @include flame;
                 height: 50px;
                 width: 200px;
-                @include flame;
-                line-height: 50px;;
+                line-height: 50px;
                 display: inline-block;
                 span {
-                  font-size: 1.2rem;
+                  font-size: 1rem;
                   i {
                   }
                 }
@@ -327,12 +225,13 @@
             position: relative;
             margin: 20px 12px;
             & h1 {
-              font-size: 1.5rem;
+              font-size: 1.2rem;
             }
             & p {
               color: $darkgray;
             }
             & .move__btn {
+              display: none;
               .btn--left {
                 a {
                   i.fas.fa-chevron-left {
@@ -385,7 +284,6 @@
                         }
                         .post__tag {
                           i {
-                            
                           }
                         }
                       }
@@ -396,15 +294,20 @@
                           }
                         }
                         .post__about {
+                          display: flex;
                           .post__place {
                             .address {
                               @include word-el;
                               span {
+                                color: $darkgray;
+                                padding: 2px;
                               }
                             }
                           }
                         }
                         .post__budget {
+                          i.fas.fa-yen-sign {
+                          }
                           span {
                           }
                         }
@@ -421,10 +324,10 @@
                 @include flame;
                 height: 50px;
                 width: 200px;
-                line-height: 50px;;
+                line-height: 50px;
                 display: inline-block;
                 span {
-                  font-size: 1.2rem;
+                  font-size: 1rem;
                   i {
                   }
                 }
@@ -487,6 +390,8 @@
                           }
                         }
                         .post__budget {
+                          i.fas.fa-yen-sign {
+                          }
                           span {
                           }
                         }
@@ -497,6 +402,103 @@
               }
             }
             .detail__btn {
+              a.detail {
+                span {
+                  i {
+                  }
+                }
+              }
+            }
+          }
+          .post__list.result-all {
+            h1 {
+              font-size: 1.5rem;
+            }
+            p {
+            }
+            & .move__btn {
+              display: none;
+              .btn--left {
+                a {
+                  i.fas.fa-chevron-left {
+                  }
+                }
+              }
+              .btn--right {
+                a {
+                  i.fas.fa-chevron-right {
+                  }
+                }
+              }
+            }
+            ul.post__box {
+              @include content-box;
+              display: block;
+              overflow: scroll;
+              a {
+                @include link;
+                margin-top: 10px;
+                margin-right: 5px;
+                margin-bottom: 10px;
+                margin-left: 5px;
+                li {
+                  height: 300px;
+                  width: 350px;
+                  border-radius: 20px;
+                  margin-bottom: 10px;
+                  .post__wrapper {
+                    height: 100%;
+                    .post__img {
+                      height: 65%;
+                      img {
+                        border-radius: 20px 20px 0 0;
+                        height: 100%;
+                        width: 100%;
+                      }
+                    }
+                    .post__info {
+                      &__deco {
+                        display: flex;
+                        .post__review {
+                          i.fas.fa-star {
+                            color: $plum;
+                          }
+                          span {
+                          }
+                        }
+                        .post__tag {
+                          i {
+                          }
+                        }
+                      }
+                      &__basic {
+                        .post__name {
+                          h2 {
+                            font-size: 1.2rem;
+                          }
+                        }
+                        .post__about {
+                          display: flex;
+                          .post__place {
+                            .address {
+                              @include word-el;
+                              span {
+                              }
+                            }
+                          }
+                        }
+                        .post__budget {
+                          span {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            & .detail__btn {
+              display: none;
               a.detail {
                 span {
                   i {

@@ -1,7 +1,89 @@
-<div class="">
-  <span><%= @bookmarks.count %>件のお気に入り</span>
-  <% @bookmarks.each do |bm| %>
-    <%= link_to bm.name, shop_path(bm) %>
-    <span><%= bm.address %></span>
-  <% end %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/bookmarks/show', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/bookmarks/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/bookmarks/show_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<% provide(:url, )%>
+
+<%= render 'layouts/header' %>
+<div class="main__wrapper">
+  <div class="favo__wrapper">
+    <div class="favo__hd">
+      <div class="page__index">
+        <h3><%= @bookmarks.count %>件のお気に入り</h3>
+      </div>
+    </div>
+    <div class="favo__list">
+      <ul class="shop__box">
+      <% @bookmarks.each do |bm| %>
+        <div class="heart__mark">
+        <% unless bm.shop.bookmarked_by?(current_user) %>
+          <%= link_to shop_bookmarks_path(bm.shop_id), method: :post, remote: true do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to shop_bookmarks_path(bm.shop_id), method: :delete, remote: true do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% end %>
+        </div>
+        <%= link_to shop_path(bm.shop_id) do %>
+          <li>
+            <div class="shop__wrapper">
+              <div class="shop__img">
+                <% if bm.shop.image? %>
+                <%= image_tag bm.shop.image.url %>
+                <% else %>
+                <%= image_tag "hotel2_view.jpeg" %>
+                <% end %>
+              </div>
+              <div class="shop__info">
+                <div class="shop__info__deco">
+                  <div class="shop__review">
+                    <i class="fas fa-star"></i>
+                    <span></span>
+                  </div>
+                  <div class="shop__tag">
+                    <i class=""></i>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="shop__info__basic">
+                  <div class="shop__name">
+                    <h2><%= bm.shop.name %></h2>
+                  </div>
+                  <div class="shop__about">
+                    <div class="shop__place">
+                      <div class="address">
+                        <span><%= bm.shop.address %></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="shop__budget">
+                    <i class="fas fa-yen-sign"></i>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+        <div class="move__btn">
+          <div class="btn--left">
+            <a href="">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+          </div>
+          <div class="btn--right">
+            <a href="">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
+<%= render 'layouts/footer' %>
