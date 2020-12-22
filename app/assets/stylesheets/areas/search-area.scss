@@ -23,10 +23,7 @@
         }
       }
       .result__wrapper {
-        padding-top: 0px;
-        padding-right: 10px;
-        padding-bottom: 0px;
-        padding-left: 10px;
+        @include padding(0, 20px, 0, 20px);
         .result__group {
           background-color: $white;
           z-index: 3;
@@ -40,17 +37,17 @@
             height: 50px;
             border-radius: 20px 20px 0 0;
             text-align: center;
-            margin-bottom: 20px;
+            @include margin(0, 0, 20px, 0);
             p {
               width: 300px;
               display: inline-block;
-              padding-bottom: 20px;
+              @include padding(0, 0, 20px, 0);
               border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             }
           }
           .post__list.result-top {
             h1 {
-              font-size: 1.5rem;
+              @include mobile-ttl;
             }
             p {
             }
@@ -73,17 +70,14 @@
               @include content-box;
               overflow: scroll;
               // flex-wrap: wrap;
-              margin-top: 15px;
+              @include margin(15px, 0, 0, 0);
               justify-content: start;
               a {
                 @include link;
-                margin-top: 10px;
-                margin-right: 10px;
-                margin-bottom: 10px;
-                margin-left: 10px;
+                @include margin(10px, 10px, 10px, 10px);
                 li {
                   height: 250px;
-                  width: 245px;
+                  width: 250px;
                   border-radius: 20px;
                   margin-bottom: 10px;
                   .shop__wrapper {
@@ -151,7 +145,7 @@
           }
           .other__list.category {
             h1 {
-              font-size: 1.5rem;
+              @include mobile-ttl;
             }
             p {
             }
@@ -172,13 +166,14 @@
             }
             & ul.content__box {
               @include content-box;
+              @include margin(10px, 0, 20px, 0);
               overflow: scroll;
               a {
                 @include link;
                 margin: 10px 5px;
                 li {
-                  height: 200px;
-                  width: 200px;
+                  height: 130px;
+                  width: 130px;
                   @include flame;
                   .content__wrapper {
                     height: 100%;
@@ -191,9 +186,10 @@
                       }
                     }
                     .content__cp {
-                      padding: 10px;
+                      @include padding(5px, 5px, 5px, 5px);
+                      text-align: center;
                       h2 {
-                        font-size: 1.1rem;
+                        font-size: 1.0rem;
                       }
                       p {
                         color: $darkgray;
@@ -209,9 +205,9 @@
               a.detail {
                 @include link;
                 @include flame;
-                height: 50px;
-                width: 200px;
-                line-height: 50px;
+                height: 40px;
+                width: 180px;
+                line-height: 40px;
                 display: inline-block;
                 span {
                   font-size: 1rem;
@@ -223,9 +219,9 @@
           }
           .other__list {
             position: relative;
-            margin: 20px 12px;
+            @include margin(20px, 12px, 20px, 12px);
             & h1 {
-              font-size: 1.2rem;
+              @include mobile-ttl;
             }
             & p {
               color: $darkgray;
@@ -247,6 +243,7 @@
             }
             & ul.post__box {
               @include content-box;
+              @include margin(10px, 0, 20px, 0);
               overflow: scroll;
               a {
                 @include link;
@@ -255,9 +252,7 @@
                 margin-bottom: 10px;
                 margin-left: 5px;
                 li {
-                  height: 250px;
-                  width: 250px;
-                  border-radius: 20px;
+                  @include main-list;
                   .post__wrapper {
                     height: 100%;
                     .post__img {
@@ -269,10 +264,7 @@
                       }
                     }
                     .post__info {
-                      padding-top: 5px;
-                      padding-right: 0px;
-                      padding-bottom: 3px;
-                      padding-left: 5px;
+                      @include padding(5px, 0, 3px, 5px);
                       &__deco {
                         display: flex;
                         .post__review {
@@ -411,8 +403,9 @@
             }
           }
           .post__list.result-all {
+            @include margin(20px, 12px, 20px, 12px);
             h1 {
-              font-size: 1.5rem;
+              @include mobile-ttl;
             }
             p {
             }
@@ -433,17 +426,15 @@
             }
             ul.post__box {
               @include content-box;
+              @include margin(10px, 0, 20px, 0);
               display: block;
               overflow: scroll;
               a {
                 @include link;
-                margin-top: 10px;
-                margin-right: 5px;
-                margin-bottom: 10px;
-                margin-left: 5px;
+                @include margin(10px, 5px, 10px, 5px);
                 li {
-                  height: 300px;
-                  width: 350px;
+                  height: 250px;
+                  width: 250px;
                   border-radius: 20px;
                   margin-bottom: 10px;
                   .post__wrapper {
@@ -474,7 +465,7 @@
                       &__basic {
                         .post__name {
                           h2 {
-                            font-size: 1.2rem;
+                            @include mobile-ttl;
                           }
                         }
                         .post__about {

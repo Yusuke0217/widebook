@@ -64,7 +64,7 @@
                 a {
                   @include move-btn;
                   right: 12%;
-                  top: 5%;
+                  top: 3%;
                   i.fas.fa-chevron-left {
                     right: 40%;
                     top: 35%;
@@ -75,7 +75,7 @@
                 a {
                   @include move-btn;
                   right: 5%;
-                  top: 5%;
+                  top: 3%;
                   i.fas.fa-chevron-right {
                     right: 35%;
                     top: 35%;
@@ -86,7 +86,6 @@
             ul.shop__box {
               @include content-box;
               flex-wrap: wrap;
-              margin-top: 15px;
               justify-content: start;
               a {
                 @include link;

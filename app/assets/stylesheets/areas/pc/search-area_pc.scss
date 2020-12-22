@@ -30,7 +30,7 @@
         // width: 60%;
         width: 100%;
         order: 2;
-        padding: 0 10px;
+        @include padding(0, 30px, 0, 30px);
         .result__group {
           background-color: $white;
           z-index: 3;
@@ -85,8 +85,7 @@
             }
             ul.shop__box {
               @include content-box;
-              overflow: scroll;
-              // flex-wrap: wrap;
+              flex-wrap: wrap;
               margin-top: 15px;
               justify-content: start;
               a {
@@ -97,7 +96,7 @@
                 margin-left: 10px;
                 li {
                   height: 250px;
-                  width: 245px;
+                  width: 250px;
                   border-radius: 20px;
                   margin-bottom: 10px;
                   .shop__wrapper {
@@ -268,33 +267,32 @@
             & ul.content__box {
               @include content-box;
               overflow: scroll;
+              // flex-wrap: wrap;
               a {
                 @include link;
-                margin-top: 10px;
-                margin-right: 5px;
-                margin-bottom: 10px 5px;
-                margin-left: 5px;
+                @include margin(10px, 5px, 10px, 5px);
                 li {
-                  height: 200px;
-                  width: 200px;
-                  @include flame;
+                  height: 100px;
+                  width: 210px;
                   .content__wrapper {
                     height: 100%;
+                    display: flex;
                     .content__img {
-                      height: 70%;
+                      height: 100%;
+                      width: 100px;
                       img {
-                        border-radius: 20px 20px 0 0;
+                        border-radius: 20px 20px 20px 20px;
                         height: 100%;
                         width: 100%;
                       }
                     }
                     .content__cp {
-                      padding-top: 10px;
-                      padding-right: 10px;
-                      padding-bottom: 10px;
-                      padding-left: 10px;
+                      text-align: center;
+                      display: flex;
+                      align-items: center;
+                      @include padding(10px, 0, 10px, 10px);
                       h2 {
-                        font-size: 1.1rem;
+                        font-size: 1.0rem;
                       }
                       p {
                         color: $darkgray;
@@ -424,80 +422,6 @@
                 display: inline-block;
                 span {
                   font-size: 1.2rem;
-                  i {
-                  }
-                }
-              }
-            }
-          }
-          .other__list {
-            h1 {
-            }
-            p {
-            }
-            .move__btn {
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
-            }
-            ul.post__box {
-              @include content-box;
-              a {
-                li {
-                  .post__wrapper {
-                    .post__img {
-                    }
-                    .post__info {
-                      &__deco {
-                        display: flex;
-                        .post__review {
-                          i.fas.fa-star {
-                            color: $plum;
-                          }
-                          span {
-                          }
-                        }
-                        .post__tag {
-                          i {
-                            
-                          }
-                        }
-                      }
-                      &__basic {
-                        .post__name {
-                          h2 {
-                          }
-                        }
-                        .post__about {
-                          .post__place {
-                            .address {
-                              span {
-                              }
-                            }
-                          }
-                        }
-                        .post__budget {
-                          span {
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            .detail__btn {
-              a.detail {
-                span {
                   i {
                   }
                 }
