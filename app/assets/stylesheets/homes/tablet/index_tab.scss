@@ -165,25 +165,6 @@
           ul::-webkit-scrollbar {
             display: none;
           }
-          .detail__btn {
-            display: none;
-            text-align: center;
-            margin-bottom: 50px;
-            a {
-              height: 50px;
-              width: 80vw;
-              display: block;
-              border: 1px solid $darkgray;
-              border-radius: 20px;
-              @include link;
-              span {
-                font-size: 1.2rem;
-                line-height: 3rem;
-                i {
-                }
-              }
-            }
-          }
         }
         #b-type {
           .move__btn {

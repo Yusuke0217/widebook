@@ -5,17 +5,56 @@
 <div class="wrapper">
   <div class="main__wrapper">
     <div class="shop__data">
-      <ul class="shops">
-        <% @shops.each do |shop|%>
+      <ul class="shop__box">
+      <% @shop.page(params[:page]).per(20).each do |shop| %>
+        <%= link_to shop_path(shop.id) do %>
           <li id="shops-<% shop.id %>">
-            <%= link_to shop.name, shop_path(shop) %>
-            <span><%= shop.address %></span>
-             <% if current_user.admin? && current_user?(shop.user) %>
-              <%= link_to "お店を編集", edit_shop_path(shop), method: :get %>
-              <%= link_to "お店を削除", shop, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
-            <% end %>
+            <div class="shop__wrapper">
+              <div class="shop__img">
+              <% if shop.image? %>
+                <%= image_tag shop.image.url %>
+              <% else %>
+                <%= image_tag "bg_image4.jpeg" %>
+              <% end %>
+              </div>
+              <div class="shop__info">
+                <div class="shop__info__deco">
+                  <div class="shop__review">
+                    <i class="fas fa-star"></i>
+                    <span></span>
+                  </div>
+                  <div class="shop__tag">
+                    <i class=""></i>
+                    <span></span>
+                  </div>
+                  <div class="shop__action">
+                  <% if current_user.admin? && current_user?(shop.user) %>
+                    <%= link_to "お店を編集", edit_shop_path(shop), method: :get %>
+                    <%= link_to "お店を削除", shop, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
+                  <% end %>
+                  </div>
+                </div>
+                <div class="shop__info__basic">
+                  <div class="shop__name">
+                    <h2><%= shop.name %></h2>
+                  </div>
+                  <div class="shop__about">
+                    <div class="shop__place">
+                      <div class="address">
+                        <span><%= shop.address %></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="shop__budget">
+                    <i class="fas fa-yen-sign"></i>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
-        <% end %>
+        <%end%>
+      <% end %>
       </ul>
     </div>
   </div>

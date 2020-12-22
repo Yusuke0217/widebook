@@ -6,7 +6,7 @@
     @include padding(0, 70px, 0, 70px);
     .favo__hd {
       @include padding(100px, 0, 0, 0);
-      @include border-btm($darkgray)
+      @include border-btm($darkgray);
       .page__index {
         @include margin(20px, 0, 30px, 0);
         @include padding(0px, 0, 0px, 50px);
@@ -112,35 +112,6 @@
           }
           &:hover {
             @include link-hover;
-          }
-        }
-        .move__btn {
-          display: none;
-          a {
-            @include move-btn;
-            i {
-              position: absolute;
-            }
-          }
-          .btn--left {
-            a {
-              right: 12%;
-              top: 5%;
-              i {
-                right: 40%;
-                top: 35%;
-              }
-            }
-          }
-          .btn--right {
-            a {
-              right: 5%;
-              top: 5%;
-              i {
-                right: 35%;
-                top: 35%;
-              }
-            }
           }
         }
       }

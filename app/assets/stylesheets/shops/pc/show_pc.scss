@@ -135,23 +135,6 @@
             }
           }
         }
-        .detail__btn {
-          text-align: center;
-          @include margin(0, 0, 50px, 0);
-          a.detail {
-            height: 50px;
-            width: 200px;
-            display: inline-block;
-            @include flame;
-            @include link;
-            span {
-              font-size: 1.2rem;
-              line-height: 3rem;
-              i {
-              }
-            }
-          }
-        }
         .img__move__btn {
           display: none;
           a {
@@ -478,15 +461,6 @@
                 }
               }
             }
-            .detail__btn {
-              text-align: center;
-              a.detail {
-                span {
-                  i {
-                  }
-                }
-              }
-            }
           }
           .shop__info__amenity {
             display: none;
@@ -501,14 +475,6 @@
                 p {
                 }
                 i {
-                }
-              }
-            }
-            .detail__btn {
-              a.detail {
-                span {
-                  i {
-                  }
                 }
               }
             }
@@ -688,22 +654,6 @@
               }
             }
           }
-          .detail__btn {
-            text-align: center;
-            @include margin(10px, 0, 0, 0);
-            a.detail {
-              @include link;
-              height: 50px;
-              width: 200px;
-              border: 1px solid $darkgray;
-              border-radius: 20px;
-              line-height: 50px;;
-              display: inline-block;
-              span {
-                font-size: 1rem;
-              }
-            }
-          }
         }
         .shop__other__info {
           display: none;
@@ -824,34 +774,11 @@
               }
             }
           }
-          & .detail__btn {
-            // display: none;
-            a.detail {
-              span {
-                i {
-                }
-              }
-            }
-          }
         }
         .other__list {
           h1 {
           }
           p {
-          }
-          .move__btn {
-            .btn--left {
-              a {
-                i.fas.fa-chevron-left {
-                }
-              }
-            }
-            .btn--right {
-              a {
-                i.fas.fa-chevron-right {
-                }
-              }
-            }
           }
           ul.post__box {
             a {
@@ -895,14 +822,6 @@
                       }
                     }
                   }
-                }
-              }
-            }
-          }
-          .detail__btn {
-            a.detail {
-              span {
-                i {
                 }
               }
             }

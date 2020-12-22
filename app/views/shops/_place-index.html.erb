@@ -85,10 +85,10 @@
             </li>
           </a>
         </ul>
-        <div class="detail__btn">
-          <a href="">
+        <div class="detail__btn cate__more">
+          <%= link_to root_path do %>
             <span>他のエリアから探す<i></i></span>
-          </a>
+          <% end %>
         </div>
       </div>
       <div class="content__list common" id="purpose">
@@ -147,10 +147,10 @@
             </li>
           </a>
         </ul>
-        <div class="detail__btn">
-          <a href="">
+        <div class="detail__btn shop__more">
+          <%= link_to root_path do %>
             <span><i></i></span>
-          </a>
+          <% end %>
         </div>
       </div>
       <div class="other__list place" id="">
@@ -375,10 +375,10 @@
             </li>
           </a>
         </ul>
-        <div class="detail__btn">
-          <a href="" class="detail">
+        <div class="detail__btn shop__more">
+          <%= link_to shops_path, class:"detail" do %>
             <span>すべて表示<i></i></span>
-          </a>
+          <% end %>
         </div>
       </div>
       <div class="other__list" id="">
@@ -439,10 +439,10 @@
             </li>
           </a>
         </ul>
-        <div class="detail__btn">
-          <a href="" class="detail">
+        <div class="detail__btn shop__more">
+          <%= link_to shops_path, class:"detail" do %>
             <span>すべて表示<i></i></span>
-          </a>
+          <% end %>
         </div>
       </div>
     </div>

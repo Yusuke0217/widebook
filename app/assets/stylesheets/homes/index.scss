@@ -172,24 +172,6 @@
           ul::-webkit-scrollbar {
             display: none;
           }
-          & .detail__btn {
-            display: none;
-            text-align: center;
-            margin-bottom: 50px;
-            a {
-              @include flame;
-              @include link;
-              height: 50px;
-              width: 200px;
-              display: block;
-              span {
-                font-size: 1.2rem;
-                line-height: 3rem;
-                i {
-                }
-              }
-            }
-          }
         }
         #b-type {
           order: 2;
@@ -308,18 +290,8 @@
               }
             }
           }
-          .detail__btn {
-          }
         }
       }
     }
   }
-}
-
-@media screen and (min-width: 560px) and (max-width: 959px) {
-  // Tablet用のレスポンシブ
-}
-
-@media screen and (min-width: 960px) {
-  // PC用のレスポンシブ
 }

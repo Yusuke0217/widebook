@@ -27,10 +27,9 @@
         }
       }
       .result__wrapper {
-        // width: 60%;
         width: 100%;
         order: 2;
-        @include padding(0, 30px, 0, 30px);
+        @include padding(0, 70px, 0, 70px);
         .result__group {
           background-color: $white;
           z-index: 3;
@@ -54,34 +53,11 @@
             }
           }
           .post__list {
+            position: relative;
             h1 {
               font-size: 1.5rem;
             }
             p {
-            }
-            & .move__btn {
-              .btn--left {
-                a {
-                  @include move-btn;
-                  right: 12%;
-                  top: 3%;
-                  i.fas.fa-chevron-left {
-                    right: 40%;
-                    top: 35%;
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  @include move-btn;
-                  right: 5%;
-                  top: 3%;
-                  i.fas.fa-chevron-right {
-                    right: 35%;
-                    top: 35%;
-                  }
-                }
-              }
             }
             ul.shop__box {
               @include content-box;
@@ -151,42 +127,11 @@
                 }
               }
             }
-            & .detail__btn {
-              // display: none;
-              text-align: center;
-              a.detail {
-                @include link;
-                @include flame;
-                height: 50px;
-                width: 200px;
-                line-height: 50px;;
-                display: inline-block;
-                span {
-                  font-size: 1.2rem;
-                  i {
-                  }
-                }
-              }
-            }
           }
           .post__list.result__top {
             h1 {
             }
             p {
-            }
-            .move__btn {
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
             }
             ul.post__box {
               @include content-box;
@@ -234,34 +179,12 @@
                 }
               }
             }
-            .detail__btn {
-              a.detail {
-                span {
-                  i {
-                  }
-                }
-              }
-            }
           }
           .other__list.category {
             h1 {
               font-size: 1.5rem;
             }
             p {
-            }
-            & .move__btn {
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
             }
             & ul.content__box {
               @include content-box;
@@ -302,22 +225,6 @@
                 }
               }
             }
-            & .detail__btn {
-              text-align: center;
-              a.detail {
-                @include link;
-                height: 50px;
-                width: 200px;
-                @include flame;
-                line-height: 50px;;
-                display: inline-block;
-                span {
-                  font-size: 1.2rem;
-                  i {
-                  }
-                }
-              }
-            }
           }
           .other__list {
             position: relative;
@@ -327,20 +234,6 @@
             }
             & p {
               color: $darkgray;
-            }
-            & .move__btn {
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
             }
             & ul.post__box {
               @include content-box;
@@ -406,22 +299,6 @@
                         }
                       }
                     }
-                  }
-                }
-              }
-            }
-            .detail__btn {
-              text-align: center;
-              a.detail {
-                @include link;
-                @include flame;
-                height: 50px;
-                width: 200px;
-                line-height: 50px;;
-                display: inline-block;
-                span {
-                  font-size: 1.2rem;
-                  i {
                   }
                 }
               }

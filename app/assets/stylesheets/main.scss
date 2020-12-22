@@ -5,7 +5,6 @@
   // Mobile用のレスポンシブ
 }
 
-
 @media screen and (min-width: 560px) and (max-width: 959px) {
   // Tablet用のレスポンシブ
 }
@@ -13,6 +12,91 @@
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
 }
+
+
+// ------------------------------------------------------------------
+
+@media screen and (min-width: 960px) {
+  // PC用の共通部分
+  .move__btn {
+    a {
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+      background-color: $darkgray;
+      position: absolute;
+      opacity: 0.9;
+      color: $white;
+      i {
+        position: absolute;
+      }
+    }
+    .btn--left {
+      a {
+        right: 12%;
+        top: 3%;
+        i.fas.fa-chevron-left {
+          right: 40%;
+          top: 35%;
+        }
+      }
+    }
+    .btn--right {
+      a {
+        right: 5%;
+        top: 3%;
+        i.fas.fa-chevron-right {
+          right: 35%;
+          top: 35%;
+        }
+      }
+    }
+  }
+  .detail__btn {
+    text-align: center;
+    a.detail {
+      height: 50px;
+      width: 200px;
+      line-height: 50px;;
+      display: inline-block;
+      color: $black;
+      text-decoration: none;
+      border: 1px solid $darkgray;
+      border-radius: 20px;
+      span {
+        font-size: 1.2rem;
+        i {
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 559px) {
+  // Mobile用の共通部分
+  .detail__btn {
+    text-align: center;
+    a.detail {
+      height: 40px;
+      width: 180px;
+      line-height: 40px;;
+      display: inline-block;
+      color: $black;
+      text-decoration: none;
+      border: 1px solid $darkgray;
+      border-radius: 20px;
+      span {
+        font-size: 1.0rem;
+        i {
+        }
+      }
+    }
+  }
+}
+
+
 
 
 

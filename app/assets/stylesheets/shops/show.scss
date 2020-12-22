@@ -482,15 +482,6 @@
                 }
               }
             }
-            .detail__btn {
-              text-align: center;
-              a.detail {
-                span {
-                  i {
-                  }
-                }
-              }
-            }
           }
           .shop__info__amenity {
             display: none;
@@ -505,14 +496,6 @@
                 p {
                 }
                 i {
-                }
-              }
-            }
-            .detail__btn {
-              a.detail {
-                span {
-                  i {
-                  }
                 }
               }
             }
@@ -692,22 +675,6 @@
                     }
                   }
                 }
-              }
-            }
-          }
-          .detail__btn {
-            text-align: center;
-            @include margin(10px, 0, 0, 0);
-            a.detail {
-              @include link;
-              height: 50px;
-              width: 200px;
-              border: 1px solid $darkgray;
-              border-radius: 20px;
-              line-height: 50px;;
-              display: inline-block;
-              span {
-                @include mobile-fsz;
               }
             }
           }
@@ -902,14 +869,6 @@
                       }
                     }
                   }
-                }
-              }
-            }
-          }
-          .detail__btn {
-            a.detail {
-              span {
-                i {
                 }
               }
             }

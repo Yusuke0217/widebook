@@ -55,7 +55,7 @@
           position: relative;
           margin-bottom: 30px;
           .bg__img.place {
-            height: 700px;
+            height: 400px;
             width: 100%;
             background-image: url("/assets/bg_image1.jpeg");
             background-size: contain;
@@ -86,34 +86,6 @@
           p {
             color: $darkgray;
             font-size: 1.2rem;
-          }
-          & .move__btn {
-            a {
-              @include move-btn;
-              i {
-                position: absolute;
-              }
-            }
-            .btn--left {
-              a {
-                right: 12%;
-                top: 5%;
-                i {
-                  right: 40%;
-                  top: 35%;
-                }
-              }
-            }
-            .btn--right {
-              a {
-                right: 5%;
-                top: 5%;
-                i {
-                  right: 35%;
-                  top: 35%;
-                }
-              }
-            }
           }
           & ul.content__box {
             list-style: none;
@@ -157,24 +129,6 @@
               }
             }
           }
-          .detail__btn {
-            // display: none;
-            text-align: center;
-            margin-bottom: 50px;
-            a {
-              height: 50px;
-              width: 200px;
-              display: block;
-              @include flame;
-              @include link;
-              span {
-                font-size: 1.2rem;
-                line-height: 3rem;
-                i {
-                }
-              }
-            }
-          }
         }
         .other__list.place {
           position: relative;
@@ -188,37 +142,8 @@
           & p {
             color: $darkgray;
           }
-          & .move__btn {
-            a {
-              @include move-btn;
-              i {
-                position: absolute;
-              }
-            }
-            .btn--left {
-              a {
-                right: 12%;
-                top: 5%;
-                i {
-                  right: 40%;
-                  top: 35%;
-                }
-              }
-            }
-            .btn--right {
-              a {
-                right: 5%;
-                top: 5%;
-                i {
-                  right: 35%;
-                  top: 35%;
-                }
-              }
-            }
-          }
           & ul.post__box {
             @include content-box;
-            margin-top: 20px;
             overflow: scroll;
             a {
               @include link;
@@ -289,45 +214,11 @@
               }
             }
           }
-          & .detail__btn {
-            text-align: center;
-            a.detail {
-              @include link;
-              @include flame;
-              height: 50px;
-              width: 200px;
-              line-height: 50px;;
-              display: inline-block;
-              span {
-                font-size: 1.2rem;
-                i {
-                }
-              }
-            }
-          }
         }
         .other__list {
           & h1 {
           }
           & p {
-          }
-          & .move__btn {
-            a {
-              i {
-              }
-            }
-            .btn--left {
-              a {
-                i {
-                }
-              }
-            }
-            .btn--right {
-              a {
-                i {
-                }
-              }
-            }
           }
           & ul.post__box {
             a {
@@ -369,14 +260,6 @@
                       }
                     }
                   }
-                }
-              }
-            }
-          }
-          & .detail__btn {
-            a.detail {
-              span {
-                i {
                 }
               }
             }

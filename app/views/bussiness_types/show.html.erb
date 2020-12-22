@@ -20,13 +20,13 @@
           </form>
         </div>
         <div class="main__view__img">
-            <div class="bg__img b-type">
-              <div class="main__view__cp">
-                <h1><%= @b_type.name %></h1>
-                <p>食の聖地、和歌山のグルメスポットをご紹介。</p>
-              </div>
+          <div class="bg__img b-type">
+            <div class="main__view__cp">
+              <h1><%= @b_type.name %></h1>
+              <p>食の聖地、和歌山のグルメスポットをご紹介。</p>
             </div>
           </div>
+        </div>
       </div>
       <div class="main__content">
         <div class="content__list" id="category">
@@ -61,13 +61,13 @@
             <%end%>
           <%end%>
           </ul>
-          <div class="detail__btn">
-            <a href="" class="detail">
+          <div class="detail__btn cate__more">
+            <%= link_to root_path, class:"detail" do %>
               <span>すべて表示<i></i></span>
-            </a>
+            <% end %>
           </div>
         </div>
-        <div class="post__list pick-up" id="">
+        <div class="shop__list pick-up" id="">
           <h1>オシャレな雰囲気のレストラン</h1>
           <p></p>
           <div class="move__btn">
@@ -82,40 +82,36 @@
               </a>
             </div>
           </div>
-          <ul class="post__box">
+          <ul class="shop__box">
             <%= link_to root_path do %>
               <li>
-                <div class="post__wrapper">
-                  <div class="post__img">
+                <div class="shop__wrapper">
+                  <div class="shop__img">
                     <%= image_tag "restaurant1.jpeg" %>
                   </div>
-                  <div class="post__info">
-                    <div class="post__info__deco">
-                        <div class="post__review">
+                  <div class="shop__info">
+                    <div class="shop__info__deco">
+                        <div class="shop__review">
                           <i class="fas fa-star"></i>
                           <span></span>
                         </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
+                        <div class="shop__tag">
                           <i class=""></i>
                           <span></span>
                         </div>
                       </div>
-                    <div class="post__info__basic">
-                      <div class="post__name">
+                    <div class="shop__info__basic">
+                      <div class="shop__name">
                         <h2>October sky</h2>
                       </div>
-                      <div class="post__about">
-                        <div class="post__place">
+                      <div class=shopt__about">
+                        <div class="shop__place">
                           <div class="address">
                             <span></span>
                           </div>
                         </div>
                       </div>
-                      <div class="post__budget">
+                      <div class="shop__budget">
                         <span>¥</span>
                       </div>
                     </div>
@@ -124,13 +120,13 @@
               </li>
             <% end %>
           </ul>
-          <div class="detail__btn">
-            <a href="" class="detail">
+          <div class="detail__btn shop__more">
+            <%= link_to shops_path, class:"detail" do %>
               <span>すべて表示<i></i></span>
-            </a>
+            <% end %>
           </div>
         </div>
-        <div class="post__list" id="">
+        <div class="shop__list" id="">
           <h1>Caming soon</h1>
           <p></p>
           <div class="move__btn">
@@ -145,40 +141,36 @@
               </a>
             </div>
           </div>
-          <ul class="post__box">
+          <ul class="shop__box">
             <a href="">
               <li>
-                <div class="post__wrapper">
-                  <div class="post__img">
+                <div class="shop__wrapper">
+                  <div class="shop__img">
                     <%= image_tag "" %>
                   </div>
-                  <div class="post__info">
-                    <div class="post__info__deco">
-                      <div class="post__review">
+                  <div class="shop__info">
+                    <div class="shop__info__deco">
+                      <div class="shop__review">
                         <i class="fas fa-star"></i>
                         <span></span>
                       </div>
-                      <div class="post__tag">
-                        <i class=""></i>
-                        <span></span>
-                      </div>
-                      <div class="post__tag">
+                      <div class="shop__tag">
                         <i class=""></i>
                         <span></span>
                       </div>
                     </div>
-                    <div class="post__info__basic">
-                      <div class="post__name">
+                    <div class="shop__info__basic">
+                      <div class="shop__name">
                         <h2></h2>
                       </div>
-                      <div class="post__about">
-                        <div class="post__place">
+                      <div class="shop__about">
+                        <div class="shop__place">
                           <div class="address">
                             <span></span>
                           </div>
                         </div>
                       </div>
-                      <div class="post__budget">
+                      <div class="shop__budget">
                         <i class="fas fa-yen-sign"></i>
                         <span></span>
                       </div>
@@ -188,74 +180,10 @@
               </li>
             </a>
           </ul>
-          <div class="detail__btn">
-            <a href="" class="detail">
+          <div class="detail__btn shop__more">
+            <%= link_to shops_path, class:"detail" do %>
               <span>すべて表示<i></i></span>
-            </a>
-          </div>
-        </div>
-        <div class="post__list" id="">
-          <h1>Caming soon</h1>
-          <p></p>
-          <div class="move__btn">
-            <div class="btn--left">
-              <a href="">
-                <i class="fas fa-chevron-left"></i>
-              </a>
-            </div>
-            <div class="btn--right">
-              <a href="">
-                <i class="fas fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
-          <ul class="post__box">
-            <a href="">
-              <li>
-                <div class="post__wrapper">
-                  <div class="post__img">
-                    <%= image_tag "" %>
-                  </div>
-                  <div class="post__info">
-                    <div class="post__info__deco">
-                      <div class="post__review">
-                        <i class="fas fa-star"></i>
-                        <span></span>
-                      </div>
-                      <div class="post__tag">
-                        <i class=""></i>
-                        <span></span>
-                      </div>
-                      <div class="post__tag">
-                        <i class=""></i>
-                        <span></span>
-                      </div>
-                    </div>
-                    <div class="post__info__basic">
-                      <div class="post__name">
-                        <h2></h2>
-                      </div>
-                      <div class="post__about">
-                        <div class="post__place">
-                          <div class="address">
-                            <span></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="post__budget">
-                        <i class="fas fa-yen-sign"></i>
-                        <span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </a>
-          </ul>
-          <div class="detail__btn">
-            <a href="" class="detail">
-              <span>すべて表示<i></i></span>
-            </a>
+            <% end %>
           </div>
         </div>
       </div>

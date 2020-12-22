@@ -83,10 +83,10 @@
         <% end %>
         </div>
       </div>
-      <div class="detail__btn">
-        <a href="" class="detail">
-          <span>すべての写真を表示</span>
-        </a>
+      <div class="detail__btn img__more">
+        <%= link_to root_path, class:"detail" do %>
+          <span>すべての写真を表示<i></i></span>
+        <% end %>
       </div>
       <div class="img__move__btn">
         <a href="">
@@ -293,10 +293,10 @@
               <p></p>
             </div>
           </div>
-          <div class="detail__btn">
-            <a href="" class="detail">
-              <span><i></i></span>
-            </a>
+          <div class="detail__btn shop__more">
+            <%= link_to shops_path, class:"detail" do %>
+              <span>すべて表示<i></i></span>
+            <% end %>
           </div>
         </div>
         <div class="shop__info__amenity">
@@ -315,10 +315,10 @@
               <i></i>
             </div>
           </div>
-          <div class="detail__btn">
-            <a href="" class="detail">
-              <span><i></i></span>
-            </a>
+          <div class="detail__btn shop__more">
+            <%= link_to shops_path, class:"detail" do %>
+              <span>すべて表示<i></i></span>
+            <% end %>
           </div>
         </div>
         <div class="shop__info__sns">
@@ -406,7 +406,7 @@
           <% end %>
           </ul>
         </div>
-        <div class="detail__btn">
+        <div class="detail__btn rev__more">
           <%= link_to shop_reviews_path(@shop.id) ,class: "detail" do %>
             <span>レビューをすべて表示</span>
           <% end %>
@@ -498,10 +498,10 @@
             </li>
           </a>
         </ul>
-        <div class="detail__btn">
-          <a href="" class="detail">
+        <div class="detail__btn shop__more">
+          <%= link_to shops_path, class:"detail" do %>
             <span>すべて表示<i></i></span>
-          </a>
+          <% end %>
         </div>
       </div>
       <div class="other__list" id="">
@@ -562,10 +562,10 @@
             </li>
           </a>
         </ul>
-        <div class="detail__btn">
-          <a href="" class="detail">
+        <div class="detail__btn shop__more">
+          <%= link_to shops_path, class:"detail" do %>
             <span>すべて表示<i></i></span>
-          </a>
+          <% end %>
         </div>
       </div>
     </div>

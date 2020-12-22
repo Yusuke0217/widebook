@@ -204,22 +204,6 @@
                 }
               }
             }
-            & .detail__btn {
-              text-align: center;
-              a.detail {
-                @include link;
-                @include flame;
-                height: 50px;
-                width: 200px;
-                line-height: 50px;
-                display: inline-block;
-                span {
-                  font-size: 1rem;
-                  i {
-                  }
-                }
-              }
-            }
           }
           .other__list {
             position: relative;
@@ -317,22 +301,6 @@
                 }
               }
             }
-            .detail__btn {
-              text-align: center;
-              a.detail {
-                @include link;
-                @include flame;
-                height: 50px;
-                width: 200px;
-                line-height: 50px;
-                display: inline-block;
-                span {
-                  font-size: 1rem;
-                  i {
-                  }
-                }
-              }
-            }
           }
           .other__list {
             h1 {
@@ -397,14 +365,6 @@
                         }
                       }
                     }
-                  }
-                }
-              }
-            }
-            .detail__btn {
-              a.detail {
-                span {
-                  i {
                   }
                 }
               }

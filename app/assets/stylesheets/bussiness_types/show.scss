@@ -150,24 +150,8 @@
               }
             }
           }
-          & .detail__btn {
-            text-align: center;
-            a.detail {
-              @include link;
-              @include flame;
-              height: 40px;
-              width: 180px;
-              line-height: 40px;
-              display: inline-block;
-              span {
-                font-size: 1rem;
-                i {
-                }
-              }
-            }
-          }
         }
-        .post__list {
+        .shop__list {
           position: relative;
           margin-top: 20px;
           margin-right: 12px;
@@ -208,7 +192,7 @@
               }
             }
           }
-          & ul.post__box {
+          & ul.shop__box {
             overflow: scroll;
             @include content-box;
             @include margin(10px, 0, 20px, 0);
@@ -220,9 +204,9 @@
               margin-left: 5px;
               li {
                 @include main-list;
-                .post__wrapper {
+                .shop__wrapper {
                   height: 100%;
-                  .post__img {
+                  .shop__img {
                     height: 65%;
                     img {
                       border-radius: 20px 20px 0 0;
@@ -230,7 +214,7 @@
                       width: 100%;
                     }
                   }
-                  .post__info {
+                  .shop__info {
                     @include padding(0px, 0, 0px, 5px);
                     &__deco {
                       display: flex;
@@ -241,20 +225,20 @@
                         span {
                         }
                       }
-                      .post__tag {
+                      .shop__tag {
                         i {
                         }
                       }
                     }
                     &__basic {
-                      .post__name {
+                      .shop__name {
                         h2 {
                           font-size: 1rem;
                         }
                       }
-                      .post__about {
+                      .shop__about {
                         display: flex;
-                        .post__place {
+                        .shop__place {
                           .address {
                             span {
                               color: $darkgray;
@@ -263,100 +247,12 @@
                           }
                         }
                       }
-                      .post__budget {
+                      .shop__budget {
                         span {
                         }
                       }
                     }
                   }
-                }
-              }
-            }
-          }
-          & .detail__btn {
-            text-align: center;
-            a.detail {
-              @include link;
-              @include flame;
-              height: 40px;
-              width: 180px;
-              line-height: 40px;
-              display: inline-block;
-              span {
-                font-size: 1rem;
-                i {
-                }
-              }
-            }
-          }
-        }
-        .post__list {
-          h1 {
-          }
-          p {
-          }
-          .move__btn {
-            .btn--left {
-              a {
-                i.fas.fa-chevron-left {
-                }
-              }
-            }
-            .btn--right {
-              a {
-                i.fas.fa-chevron-right {
-                }
-              }
-            }
-          }
-          a {
-            i {
-            }
-          }
-          ul.post__box {
-            a {
-              li {
-                .post__wrapper {
-                  .post__img {
-                    img {
-                    }
-                  }
-                  .post__info {
-                    .post__review {
-                      i {
-                      }
-                      span {
-                      }
-                    }
-                    &__basic {
-                      .post__name {
-                        h2 {
-                        }
-                      }
-                      .post__about {
-                        .post__place {
-                          .address {
-                            span {
-                            }
-                          }
-                        }
-                        span {
-                        }
-                        .post__category {
-                          span {
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          .detail__btn {
-            a {
-              span {
-                i {
                 }
               }
             }
