@@ -5,47 +5,60 @@
   // Mobile用のレスポンシブ
   .wrapper {
     .main__wrapper.shop__page__wrapper {
-      padding-top: 80px;
+      position: relative;
+      @include padding(80px, 0px, 50px, 0px);
       .shop__view {
-        position: relative;
         .shop__img__list {
-          .main__img {
-            .shop__img.no-1 {
+          height: 250px;
+          width: 100%;
+          display: flex;
+          position: relative;
+          & .main__img {
+            width: 100%;
+            & .shop__img.no-1 {
               height: 250px;
+              width: 100%;
               a {
                 img {
-                  height: 100%;
-                  width: 100%;
                 }
               }
             }
           }
-          .sub__img {
-            ul.sub__img__list {
+          & .sub__img {
+            display: none;
+            position: absolute;
+            right: -1700px;
+            ul.img__list {
+              display: flex;
+              flex-wrap: nowrap;
               li {
-                .shop__img.no-2 {
-                  display: none;
+                width: 100%;
+                min-width: 100%;
+                @include margin(0, 0, 0px, 0px);
+                & .shop__img {
+                  // common
+                  height: 250px;
+                  width: 100%;
+                }
+                & .shop__img.no-2 {
                   a {
                     img {
                     }
                   }
                 }
-                .shop__img.no-3 {
-                  display: none;
+                & .shop__img.no-3 {
                   a {
                     img {
                     }
                   }
                 }
-                .shop__img.no-4 {
-                  display: none;
+                & .shop__img.no-4 {
                   a {
                     img {
                     }
                   }
                 }
-                .shop__img.no-5 {
-                  display: none;
+                & .shop__img.no-5 {
                   a {
                     img {
                     }
@@ -55,40 +68,53 @@
             }
           }
           .shop__img {
+            height: 200px;
+            width: 100%;
             a {
               img {
+                height: 100%;
+                width: 100%;
               }
             }
           }
         }
         .shop__event {
-          width: 100px;
           position: absolute;
-          left: 70%;
-          top: 3%;
           display: flex;
-          display: none;
+          right: 3%;
+          z-index: 3;
           a {
             // common
+            @include link;
             height: 40px;
             width: 40px;
+            color: $darkgray;
             border-radius: 50%;
-            background-color: $white;
-            opacity: 0.9;
-            margin-right: 10px;
             display: block;
+            background-color: $white;
+            &:hover {
+              @include link-hover;
+            }
             i {
-              margin: 12px;
+              @include margin(10px, 0px, 10px, 0px);
+              font-size: 1.5rem;
               color: $darkgray;
             }
             span {
-              display: none;
+              font-size: 10px;
             }
           }
           .share__btn {
+            @include margin(0, 5px, 0, 0);
             & a {
               .share__icon {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
                 i.fas.fa-upload {
+                }
+                span {
+                  display: none;
                 }
               }
             }
@@ -96,9 +122,16 @@
           .like__btn {
             & a {
               .like__icon {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
                 i.far.fa-heart {
+                  color: $plum;
                 }
                 i.fas.fa-heart {
+                  color: $plum;
+                }
+                span {
                   display: none;
                 }
               }
@@ -107,8 +140,17 @@
         }
         .detail__btn {
           display: none;
+          text-align: center;
+          @include margin(0, 0, 50px, 0);
           a.detail {
+            height: 50px;
+            width: 200px;
+            display: inline-block;
+            @include flame;
+            @include link;
             span {
+              font-size: 1.2rem;
+              line-height: 3rem;
               i {
               }
             }
@@ -123,49 +165,55 @@
         }
       }
       .shop__info.main {
+        @include margin(10px, 20px, 10px, 20px);
+        @include padding(0, 0, 10px, 0);
+        @include border-btm;
         .shop__info__head {
-          margin-top: 10px;
-          margin-right: 10px;
-          margin-bottom: 50px;
-          margin-left: 10px;
+          position: relative;
           .shop__info__profile {
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+            display: flex;
+            flex-direction: column;
             .shop__about {
+              order: 2;
               display: flex;
               .shop__review {
-                margin-right: 10px;
+                @include margin(0, 10px, 0, 0);
                 i.fas.fa-star {
                   color: $plum;
-                  margin-right: 3px;
                 }
                 span {
+                  @include mobile-fsz;
                 }
               }
               .shop__tag {
-                margin-right: 10px;
+                @include margin(0, 10px, 0, 0);
                 i.fas.fa-hashtag {
                   color: $darkgray;
                 }
                 span {
+                  @include mobile-fsz;
                 }
               }
             }
             .shop__name {
-              margin-top: 10px;
+              order: 1;
+              @include margin(10px, 0, 5px, 0);
               h2 {
-                font-size: 1.3rem;
+                @include mobile-ttl;
               }
             }
             .shop__ggrmap {
+              order: 6;
+              display: none;
               .ggrmap__link {
-                display: flex;
-                flex-direction: row-reverse;
+                position: absolute;
+                top: 50%;
+                right: 6%;
                 a {
                   @include link;
                   .map {
-                    height: 65px;
-                    width: 65px;
+                    height: 75px;
+                    width: 75px;
                     background-color: $deepgreen;
                     color: white;
                   }
@@ -173,42 +221,44 @@
               }
             }
             .shop__address {
+              order: 3;
               display: flex;
-              margin-top: 15px;
+              @include margin(5px, 0, 0, 0);
               &__ttl {
                 display: flex;
                 i.fas.fa-map-marker-alt {
                   width: 20px;
                   color: $darkgray;
-                  font-size: 1.3rem;
-                  margin-right: 10px;
-                  padding-top: 3px;
+                  @include padding(3px, 0, 0, 0);
                 }
                 p {
-                  margin-right: 5px;
+                  @include margin(0, 5px, 0, 0);
                 }
               }
-              &__import {
-                span {
-                  @include word-el;
-                  margin-right: 5px;
+              & a {
+                color: $darkgray;
+                .shop__address__import {
+                  span {
+                    width: 250px;
+                    @include word-el;
+                    @include margin(0, 5px, 0, 0);
+                  }
                 }
               }
             }
             .shop__hours {
+              order: 4;
               display: flex;
-              margin-top: 15px;
+              @include margin(5px, 0, 0, 0);
               &__ttl {
                 display: flex;
                 i.far.fa-clock {
                   width: 20px;
                   color: $darkgray;
-                  font-size: 1.3rem;
-                  margin-right: 10px;
-                  padding-top: 3px;
+                  @include padding(3px, 0, 0, 0);
                 }
                 p {
-                  margin-right: 5px;
+                  @include margin(0, 5px, 0, 0);
                 }
               }
               &__import {
@@ -217,17 +267,17 @@
               }
             }
             .shop__budget {
-              margin-top: 15px;
+              order: 5;
+              @include margin(5px, 0, 0, 0);
               display: flex;
               i.fas.fa-yen-sign {
                 width: 20px;
                 color: $darkgray;
-                font-size: 1.3rem;
-                margin-right: 10px;
-                padding-top: 3px;
+                @include margin(0, 10px, 0, 0);
+                @include padding(3px, 0, 0, 0);
               }
               p {
-                margin-right: 10px;
+                @include margin(0, 10px, 0, 0);
               }
               span {
               }
@@ -235,42 +285,39 @@
           }
         }
       }
-      .shop__info__sub {
-        margin-top: 10px;
-        margin-right: 10px;
-        margin-bottom: 50px;
-        margin-left: 10px;
+      .shop__info.sub {
+        @include margin(0, 20px, 0, 20px);
         .shop__info__body {
           .shop__info__summary {
-            margin-top: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+            @include margin(30px, 0, 0, 0);
+            @include padding(0, 0, 10px, 0);
+            @include border-btm;
             h2 {
               font-size: 1.3rem;
-              margin-bottom: 10px;
+              @include margin(0, 0, 10px, 0);
             }
             .summary__list {
               & ul.table {
                 & li {
-                  margin-top: 20px;
-                  margin-bottom: 20px;
+                  @include margin(20px, 0, 20px, 0);
                   .table__force {
                     display: flex;
-                    justify-content: space-between;
                     .table__ttl {
                       display: flex;
+                      width: 40%;
                       i {
                         width: 20px;
                         color: $darkgray;
                         font-size: 1.3rem;
-                        margin-right: 15px;
-                        padding-top: 3px;
+                        @include margin(0, 15px, 0, 0)
+                        @include padding(2px, 0, 0, 0);
                       }
                     }
                     .table__import {
+                      width: 60%;
                     }
                     p,span {
-                      margin-right: 5px;
+                      @include mobile-fsz;
                       @include word-el;
                     }
                   }
@@ -356,17 +403,20 @@
                     & .table__import {
                       .time-info {
                         display: flex;
-                        margin-bottom: 5px;
+                        @include margin(0, 0, 5px, 0);
                         h4 {
-                          margin-right: 5px;
+                          @include margin(0, 10px, 0, 0);
+                          @include mobile-fsz;
                         }
                         span {
                         }
                       }
                       .rest-info {
                         display: flex;
-                        margin-bottom: 5px;
+                        @include margin(0, 0, 5px, 0);
                         h4 {
+                          @include margin(0, 10px, 0, 0);
+                          @include mobile-fsz;
                         }
                         span {
                         }
@@ -384,26 +434,24 @@
                       & .credit {
                         display: flex;
                         & p {
-                          margin-right: 10px;
+                          @include margin(0, 10px, 0, 0);
                         }
                         & span {
                           border-bottom: 1px solid $darkgray;
-                          margin-right: 30px;
+                          @include margin(0, 30px, 0, 0);
                         }
                       }
                       & ul.card__list {
                         display: flex;
-                        margin-bottom: 10px;
+                        @include margin(0, 0, 10px, 0);
                         & li {
-                          margin-top: 0px;
-                          margin-right: 10px;
-                          margin-bottom: 0px;
+                          @include margin(0, 10px, 0, 0);
                         }
                       }
                       .ele-pay {
                         display: flex;
                         & p {
-                          margin-right: 10px;
+                          @include margin(0, 10px, 0, 0);
                         }
                         & span {
                           border-bottom: 1px solid $darkgray;
@@ -416,14 +464,15 @@
             }
           }
           .shop__info__usp {
-            margin-top: 20px;
-            padding-bottom: 20px;
+            display: none;
+            @include margin(30px, 0, 0, 0);
+            @include padding(0, 0, 20px, 0);
             border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             .shop__cp {
               .shop__ttl {
                 h1 {
-                  font-size: 1rem;
-                  margin-bottom: 15px;
+                  font-size: 1.5rem;
+                  @include margin(0, 0, 15px, 0);
                 }
                 p {
                 }
@@ -445,8 +494,8 @@
           }
           .shop__info__amenity {
             display: none;
-            margin-top: 20px;
-            padding-bottom: 20px;
+            @include margin(20px, 0, 0, 0);
+            @include padding(0, 0, 20px, 0);
             border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             h2 {
               font-size: 1.3rem;
@@ -469,64 +518,64 @@
             }
           }
           .shop__info__sns {
-            margin-top: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+            @include margin(30px, 0, 0, 0);
+            @include padding(0, 0, 10px, 0);
+            @include border-btm;
             h1 {
               font-size: 1.3rem;
             }
             .sns__link {
               display: flex;
-              margin-top: 20px;
-              margin-bottom: 20px;
+              @include margin(20px, 0, 20px, 0);
               &__ttl {
+                width: 40%;
                 display: flex;
-                margin-right: 20px;
-                i.fas.fa-home {
+                i {
+                  // common
                   color: $darkgray;
                   font-size: 1.3rem;
-                  margin-right: 10px;
+                  @include margin(0, 15px, 0, 0);
                   width: 20px;
-                  padding-top: 3px;
+                  @include padding(2px, 0, 0, 0);
+                }
+                i.fas.fa-home {
                 }
                 i.fas.fa-share-alt {
-                  color: $darkgray;
-                  font-size: 1.3rem;
-                  margin-right: 10px;
-                  width: 20px;
-                  padding-top: 3px;
                 }
                 & p {
+                  @include mobile-fsz;
+                  @include word-el;
                 }
               }
               &__import {
+                width: 60%;
+                justify-content: center;
                 display: flex;
-                max-width: 200px;
                 word-break: break-all;
                 .facebook {
-                  margin: 0px 10px;
+                  @include margin(0, 15px, 0, 15px);
                   a {
                     i.fab.fa-facebook-square {
                       color: $darkgray;
-                      font-size: 1.5rem;
+                      font-size: 2rem;
                     }
                   }
                 }
                 .instagram {
-                  margin: 0px 10px;
+                  @include margin(0, 15px, 0, 15px);
                   a {
                     i.fab.fa-instagram {
                       color: $darkgray;
-                      font-size: 1.5rem;
+                      font-size: 2rem;
                     }
                   }
                 }
                 .twitter {
-                  margin: 0px 10px;
+                  @include margin(0, 15px, 0, 15px);
                   a {
                     i.fab.fa-twitter {
                       color: $sora;
-                      font-size: 1.5rem;
+                      font-size: 2rem;
                     }
                   }
                 }
@@ -539,34 +588,25 @@
           }
         }
         .review__box {
-          margin-top: 20px;
-          padding-bottom: 20px;
-          border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+          @include margin(30px, 0, 0, 0);
+          @include padding(0, 0, 30px, 0);
+          @include border-btm;
           & .review__count {
-            margin-bottom: 10px;
+            @include margin(0, 0, 0, 20px);
             i.fas.fa-star {
               color: $plum;
-              font-size: 1.2rem;
-              span {
+              span.star__rate {
               }
             }
           }
           & .review__list {
-            margin-top: 20px;
-            margin-bottom: 20px;
+            @include margin(20px, 0, 20px, 0);
             & ul {
               display: flex;
-              // flex-wrap: nowrap;
               overflow: scroll;
               & li {
-                padding-top: 20px;
-                padding-right: 10px;
-                padding-bottom: 20px;
-                padding-left: 10px;
-                margin-top: 10px;
-                margin-right: 10px;
-                margin-bottom: 10px;
-                margin-left: 10px;
+                @include margin(10px, 5px, 10px, 5px);
+                @include padding(10px, 10px, 10px, 10px);
                 @include flame;
                 .review__wrapper {
                   height: 200px;
@@ -574,13 +614,13 @@
                   .review__header {
                     .user__profile {
                       display: flex;
+                      @include padding(0, 0, 5px, 0);
                       &__left {
                         .user__img {
-                          margin-right: 20px;
-                          margin-left: 15px;
+                          @include margin(0, 15px, 0, 10px);
                           img {
-                            height: 50px;
-                            width: 50px;
+                            height: 40px;
+                            width: 40px;
                             border-radius: 50%;
                           }
                         }
@@ -589,12 +629,13 @@
                         flex-direction: column;
                         & .user__name {
                           h4 {
+                            @include mobile-fsz;
                           }
                         }
                         & .review__date {
                           p {
                             color: $darkgray;
-                            font-size: 13px;
+                            font-size: 12px;
                           }
                         }
                       }
@@ -604,26 +645,49 @@
                     height: 150px;
                     .review__cp {
                       p {
+                        font-weight: bold;
+                        @include word-el;
+                        @include padding(0px, 10px, 0px, 10px);
                       }
                     }
                     .review__txt {
                       word-break: break-all;
                       & p {
                         height: 130px;
-                        padding-top: 10px;
-                        padding-right: 10px;
-                        padding-bottom: 10px;
-                        padding-left: 10px;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                        width: 250px;
+                        @include artcl-el(5);
+                        @include padding(5px, 5px, 5px, 5px);
+                        @include mobile-fsz;
+                        line-height: 1.5rem;
                       }
                     }
                     .more__btn {
                       text-align: right;
+                      display: none;
                       & a {
                         color: $darkgray;
                         & span {
+                          @include mobile-fsz;
                         }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            & ul.no__exist {
+              text-align: center;
+              display: block;
+              & li {
+                border: none;
+                .no__content__msg {
+                  h3 {
+                  }
+                  .review__link {
+                    @include padding(5px, 0, 0, 0)
+                    a {
+                      p {
+                        @include mobile-fsz;
                       }
                     }
                   }
@@ -633,7 +697,7 @@
           }
           .detail__btn {
             text-align: center;
-            margin-top: 10px;
+            @include margin(10px, 0, 0, 0);
             a.detail {
               @include link;
               height: 50px;
@@ -643,7 +707,7 @@
               line-height: 50px;;
               display: inline-block;
               span {
-                font-size: 1rem;
+                @include mobile-fsz;
               }
             }
           }
@@ -658,23 +722,26 @@
           }
         }
         .ggrmap__wrapper {
-          display: none;
+          @include margin(30px, 0, 0, 0);
+          @include padding(0, 0, 50px, 0);
           border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
           h1 {
+            font-size: 1.5rem;
+            @include margin(0, 0, 30px, 0);
           }
           p {
           }
           .ggrmap {
+            height: 400px;
+            width: 700px;
+            background-color: $darkgray;
             a {
-            }
-          }
-          .ggrmap__info {
-            p {
             }
           }
         }
         .other__list {
           // .near-event
+          @include margin(30px, 0, 0, 0);
           h1 {
             font-size: 1.5rem;
           }
@@ -697,14 +764,11 @@
           }
           & ul.post__box {
             @include content-box;
-            margin-top: 10px;
+            @include margin(10px, 0, 0, 0);
             overflow: scroll;
             a {
               @include link;
-              margin-top: 10px;
-              margin-right: 5px;
-              margin-bottom: 10px;
-              margin-left: 5px;
+              @include margin(10px, 5px, 10px, 5px);
               li {
                 height: 250px;
                 width: 250px;
@@ -720,10 +784,7 @@
                     }
                   }
                   .post__info {
-                    padding-top: 5px;
-                    padding-right: 0px;
-                    padding-bottom: 3px;
-                    padding-left: 5px;
+                    @include padding(5px, 0, 3px, 5px);
                     &__deco {
                       display: flex;
                       .post__review {
@@ -753,7 +814,7 @@
                             @include word-el;
                             span {
                               color: $darkgray;
-                              padding: 2px;
+                              @include padding(2px, 2px, 2px, 2px);
                             }
                           }
                         }

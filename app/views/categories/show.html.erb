@@ -1,8 +1,8 @@
 <%# 検索結果のページ&ビジネスタイプ>カテゴリのページ %>
 <% content_for :css do %>
-  <%= stylesheet_link_tag '/assets/searchs/search', media: "screen and (max-width: 559px)" %>
-  <%= stylesheet_link_tag '/assets/searchs/tablet/search_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
-  <%= stylesheet_link_tag '/assets/searchs/pc/search_pc', media: "screen and (min-width: 960px)" %>
+  <%= stylesheet_link_tag '/assets/categories/search-cate', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/categories/tablet/search-cate_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/categories/pc/search-cate_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
 <%= render 'layouts/header' %>
@@ -44,7 +44,7 @@
               </div>
             </div>
             <ul class="shop__box">
-            <% @shop.each do |shop| %>
+            <% @shop.page(params[:page]).per(20).each do |shop| %>
               <%= link_to shop_path(shop.id) do %>
                 <li>
                   <div class="shop__wrapper">

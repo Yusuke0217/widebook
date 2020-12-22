@@ -1,7 +1,8 @@
-@import "../main.scss";
+@import "../../main.scss";
 
-@media screen and (max-width: 559px) {
-  // Mobile用のレスポンシブ
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
   .wrapper {
     .main__wrapper {
       height: 100%;
@@ -51,21 +52,20 @@
           text-align: center;
           position: relative;
           .bg__img.b-type {
-            height: 500px;
+            height: 700px;
             width: 100%;
             margin: 0px;
             background-image: url("/assets/bg_image3.jpeg");
             background-size: contain;
+            background-repeat: repeat;
             border-radius: 0%;
-            .main__view__cp {
-              padding-top: 120px;
+            & .main__view__cp {
               h1 {
-                font-size: 1.3rem;
                 color: $white;
+                padding-top: 200px;
               }
               p {
                 padding: 5px;
-                word-break: keep-all;
                 color: $white;
               }
             }
@@ -73,21 +73,19 @@
         }
       }
       .main__content {
+        @include padding(0, 70px, 0, 70px);
         display: flex;
         flex-direction: column;
         .content__list#category {
           position: relative;
-          margin-top: 20px;
-          margin-right: 12px;
-          margin-bottom: 20px;
-          margin-left: 12px;
+          margin: 20px 12px;
           & h1 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
           }
           & p {
             color: $darkgray;
           }
-          .move__btn {
+          & .move__btn {
             display: none;
             a {
               @include move-btn;
@@ -118,6 +116,7 @@
           }
           & ul.content__box {
             @include content-box;
+            overflow: scroll;
             a {
               @include link;
               margin-top: 10px;
@@ -159,9 +158,9 @@
             text-align: center;
             a.detail {
               @include link;
-              @include flame;
               height: 50px;
               width: 200px;
+              @include flame;
               line-height: 50px;;
               display: inline-block;
               span {
@@ -179,13 +178,12 @@
           margin-bottom: 20px;
           margin-left: 12px;
           & h1 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
           }
           & p {
             color: $darkgray;
           }
           & .move__btn {
-            display: none;
             a {
               @include move-btn;
               i {
@@ -214,8 +212,9 @@
             }
           }
           & ul.post__box {
-            overflow: scroll;
             @include content-box;
+            overflow: scroll;
+            margin-top: 20px;
             a {
               @include link;
               margin-top: 10px;
@@ -223,8 +222,8 @@
               margin-bottom: 10px;
               margin-left: 5px;
               li {
-                height: 270px;
-                width: 255px;
+                height: 300px;
+                width: 300px;
                 border-radius: 20px;
                 .post__wrapper {
                   height: 100%;
@@ -241,19 +240,13 @@
                     padding-right: 0px;
                     padding-bottom: 3px;
                     padding-left: 5px;
-                    &__deco {
-                      display: flex;
-                      .post__review {
-                        i.fas.fa-star {
-                          color: $plum;
-                        }
-                        span {
-                          padding: 2px;
-                        }
+                    .post__review {
+                      i {
+                        color: $plum;
                       }
-                      .post__tag {
-                        i {
-                        }
+                      span {
+                        color: $darkgray;
+                        padding: 2px;
                       }
                     }
                     &__basic {
@@ -298,7 +291,7 @@
               @include flame;
               height: 50px;
               width: 200px;
-              line-height: 50px;
+              line-height: 50px;;
               display: inline-block;
               span {
                 font-size: 1.2rem;

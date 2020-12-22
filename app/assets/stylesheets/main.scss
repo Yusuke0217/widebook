@@ -58,6 +58,12 @@
   border-radius: 20px;
 }
 
+@mixin main-list {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+}
+
 @mixin move-btn {
   height: 44px;
   width: 44px;
@@ -69,9 +75,17 @@
 }
 
 @mixin word-el {
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@mixin artcl-el($recode: 5) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $recode;
+  overflow: hidden;
 }
 
 @mixin border-btm($color: gray, $opct: 0.3) {
@@ -86,6 +100,10 @@
   font-size: $f-size;
 }
 
+@mixin mobile-ttl($h-size: 1.3rem) {
+  font-size: $h-size;
+}
+
 // @mixin form {
 //   outline: none;
 // }
@@ -95,4 +113,14 @@
 //   height: 100%;
 //   width: 100%;
 //   @include padding(0, 70px, 0, 70px);
+// }
+
+// @mixin pc-wrapper {
+//   padding-right: 70px;
+//   padding-left: 70px;
+// }
+
+// @mixin mobile-wrapper {
+//   padding-right: 20px;
+//   padding-left: 20px;
 // }

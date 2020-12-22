@@ -14,17 +14,17 @@
       <div class="shop__img__list">
         <div class="main__img">
           <div class="shop__img no-1">
-            <a href="">
-            <% if @shop.image? %>
-              <%= image_tag @shop.image.url, alt: "No Images" %>
-            <% else %>
-              <%= image_tag "/assets/apple_logo.jpeg"%>
+            <%= link_to root_path do %>
+              <% if @shop.image? %>
+                <%= image_tag @shop.image.url, alt: "No Images" %>
+              <% else %>
+                <%= image_tag "/assets/apple_logo.jpeg"%>
+              <% end %>
             <% end %>
-            </a>
           </div>
         </div>
         <div class="sub__img">
-          <ul class="sub__img__list">
+          <ul class="img__list">
             <li>
               <div class="shop__img no-2">
                 <a href="">
@@ -58,24 +58,29 @@
       </div>
       <div class="shop__event">
         <div class="share__btn">
-          <a href="">
+          <%= link_to root_path do %>
             <div class="share__icon">
               <i class="fas fa-upload"></i>
               <span>シェアする</span>
             </div>
-          </a>
+          <% end %>
         </div>
         <div class="like__btn">
-          <div class="like__icon">
-          <% unless @shop.bookmarked_by?(current_user) %>
-          <%= link_to "", shop_bookmarks_path(@shop.id), method: :post, remote: true %>
-            <i class="far fa-heart"></i>
-          <% else %>
-          <%= link_to "", shop_bookmarks_path(@shop.id), method: :delete, remote: true %>
-            <i class="fas fa-heart"></i>
+        <% unless @shop.bookmarked_by?(current_user) %>
+          <%= link_to shop_bookmarks_path(@shop.id), method: :post, remote: true do %>
+            <div class="like__icon">
+              <i class="far fa-heart"></i>
+              <span>お気に入り</span>
+            </div>
           <% end %>
-            <span>お気に入り</span>
-          </div>
+        <% else %>
+          <%= link_to shop_bookmarks_path(@shop.id), method: :delete, remote: true do %>
+            <div class="like__icon">
+              <i class="fas fa-heart"></i>
+              <span>お気に入り</span>
+            </div>
+          <% end %>
+        <% end %>
         </div>
       </div>
       <div class="detail__btn">
@@ -107,8 +112,8 @@
             <div class="shop__tag">
               <i class="fas fa-hashtag"></i>
               <span><%= c.category.name %></span>
-            <% end %>
             </div>
+            <% end %>
           </div>
           <div class="shop__name">
             <h2><%= @shop.name %></h2>
@@ -130,9 +135,11 @@
               <i class="fas fa-map-marker-alt"></i>
               <p>住所:</p>
             </div>
-            <div class="shop__address__import">
-              <span><%= @shop.address %></span>
-            </div>
+            <%= link_to root_path do %>
+              <div class="shop__address__import">
+                <span><%= @shop.address %></span>
+              </div>
+            <% end %>
           </div>
           <div class="shop__hours">
             <div class="shop__hours__ttl">
@@ -190,7 +197,7 @@
                 <div class="table__force phone">
                   <div class="table__ttl">
                     <i class="fas fa-phone"></i>
-                    <p>電話番号:</p>
+                    <p>電話番号</p>
                   </div>
                   <div class="table__import">
                     <span><%= @shop.phone_number %></span>
@@ -328,17 +335,23 @@
           <div class="sns__link">
             <div class="sns__link__ttl">
               <i class="fas fa-share-alt"></i>
-              <p>公式アカウント</p>
+              <p>SNS</p>
             </div>
             <div class="sns__link__import">
               <div class="facebook">
-                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <%= link_to root_path do %>
+                  <i class="fab fa-facebook-square"></i>
+                <% end %>
               </div>
               <div class="instagram">
-                <a href=""><i class="fab fa-instagram"></i></a>
+                <%= link_to root_path do %>
+                  <i class="fab fa-instagram"></i>
+                <% end %>
               </div>
               <div class="twitter">
-                <a href=""><i class="fab fa-twitter"></i></a>
+                <%= link_to root_path do %>
+                  <i class="fab fa-twitter"></i>
+                <% end %>
               </div>
             </div>
           </div>
@@ -361,7 +374,7 @@
                     <div class="user__profile__left">
                       <div class="user__img">
                       <% if review.user.image? %>
-                        <%= image_tag review.user.image.url? %>
+                        <%= image_tag review.user.image.url %>
                       <% else %>
                         <%= image_tag "/assets/user_icon.jpg"%>
                       <% end %>
@@ -382,7 +395,7 @@
                     <p><%= review.title %></p>
                   </div>
                   <div class="review__txt">
-                    <p><%= review.content.truncate(120) %></p>
+                    <p><%= review.content.truncate(140) %></p>
                   </div>
                   <div class="more__btn">
                     <a href=""><span>続きを読む</span></a>

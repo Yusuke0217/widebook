@@ -2,8 +2,8 @@ class Review < ApplicationRecord
   belongs_to :user, dependent: :destroy
   belongs_to :shop, dependent: :destroy
 
-  validates :title, length: { maximum: 20 }
-  validates :content, length: { maximum: 120 }
+  validates :title, length: { maximum: 21 }
+  validates :content, length: { maximum: 141 }
   validates :score, presence: true
   validates :shop_id, uniqueness: { scope: :user_id}
 

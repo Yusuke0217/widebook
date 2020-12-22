@@ -1,8 +1,7 @@
-@import "../../main.scss";
+@import "../main.scss";
 
-
-@media screen and (min-width: 960px) {
-  // PC用のレスポンシブ
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
   .wrapper {
     .main__wrapper {
       height: 100%;
@@ -52,20 +51,20 @@
           text-align: center;
           position: relative;
           .bg__img.b-type {
-            height: 700px;
+            height: 400px;
             width: 100%;
-            margin: 0px;
             background-image: url("/assets/bg_image3.jpeg");
-            background-size: contain;
-            background-repeat: repeat;
+            background-size: cover;
             border-radius: 0%;
-            & .main__view__cp {
+            .main__view__cp {
+              padding-top: 120px;
               h1 {
+                @include mobile-ttl;
                 color: $white;
-                padding-top: 200px;
               }
               p {
-                padding: 5px;
+                @include padding(10px, 10px, 10px, 10px);
+                word-break: keep-all;
                 color: $white;
               }
             }
@@ -75,16 +74,18 @@
       .main__content {
         display: flex;
         flex-direction: column;
+        @include margin(10px, 0, 0, 0);
+        @include padding( 0, 20px, 0, 20px);
         .content__list#category {
           position: relative;
-          margin: 20px 12px;
+          @include margin(20px, 12px, 20px, 12px);
           & h1 {
-            font-size: 1.5rem;
+            @include mobile-ttl;
           }
           & p {
             color: $darkgray;
           }
-          & .move__btn {
+          .move__btn {
             display: none;
             a {
               @include move-btn;
@@ -116,15 +117,13 @@
           & ul.content__box {
             @include content-box;
             overflow: scroll;
+            @include margin(10px, 0, 20px, 0);
             a {
               @include link;
-              margin-top: 10px;
-              margin-right: 5px;
-              margin-bottom: 10px;
-              margin-left: 5px;
+              @include margin(10px, 5px, 10px, 5px);
               li {
-                height: 200px;
-                width: 200px;
+                height: 130px;
+                width: 130px;
                 @include flame;
                 .content__wrapper {
                   height: 100%;
@@ -137,12 +136,10 @@
                     }
                   }
                   .content__cp {
-                    padding-top: 10px;
-                    padding-right: 10px;
-                    padding-bottom: 10px;
-                    padding-left: 10px;
+                    @include padding(5px, 5px, 5px, 5px);
+                    text-align: center;
                     h2 {
-                      font-size: 1.1rem;
+                      font-size: 1.0rem;
                     }
                     p {
                       color: $darkgray;
@@ -157,13 +154,13 @@
             text-align: center;
             a.detail {
               @include link;
-              height: 50px;
-              width: 200px;
               @include flame;
-              line-height: 50px;;
+              height: 40px;
+              width: 180px;
+              line-height: 40px;
               display: inline-block;
               span {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 i {
                 }
               }
@@ -177,12 +174,13 @@
           margin-bottom: 20px;
           margin-left: 12px;
           & h1 {
-            font-size: 1.5rem;
+            @include mobile-ttl;
           }
           & p {
             color: $darkgray;
           }
           & .move__btn {
+            display: none;
             a {
               @include move-btn;
               i {
@@ -211,9 +209,9 @@
             }
           }
           & ul.post__box {
-            @include content-box;
             overflow: scroll;
-            margin-top: 20px;
+            @include content-box;
+            @include margin(10px, 0, 20px, 0);
             a {
               @include link;
               margin-top: 10px;
@@ -221,9 +219,7 @@
               margin-bottom: 10px;
               margin-left: 5px;
               li {
-                height: 300px;
-                width: 300px;
-                border-radius: 20px;
+                @include main-list;
                 .post__wrapper {
                   height: 100%;
                   .post__img {
@@ -235,17 +231,19 @@
                     }
                   }
                   .post__info {
-                    padding-top: 5px;
-                    padding-right: 0px;
-                    padding-bottom: 3px;
-                    padding-left: 5px;
-                    .post__review {
-                      i {
-                        color: $plum;
+                    @include padding(0px, 0, 0px, 5px);
+                    &__deco {
+                      display: flex;
+                      .post__review {
+                        i.fas.fa-star {
+                          color: $plum;
+                        }
+                        span {
+                        }
                       }
-                      span {
-                        color: $darkgray;
-                        padding: 2px;
+                      .post__tag {
+                        i {
+                        }
                       }
                     }
                     &__basic {
@@ -264,14 +262,6 @@
                             }
                           }
                         }
-                        span {
-                          font-size: 12px;
-                        }
-                        .post__category {
-                          span {
-                            color: $darkgray;
-                          }
-                        }
                       }
                       .post__budget {
                         span {
@@ -288,12 +278,12 @@
             a.detail {
               @include link;
               @include flame;
-              height: 50px;
-              width: 200px;
-              line-height: 50px;;
+              height: 40px;
+              width: 180px;
+              line-height: 40px;
               display: inline-block;
               span {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 i {
                 }
               }

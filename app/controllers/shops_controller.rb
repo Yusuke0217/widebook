@@ -13,7 +13,7 @@ class ShopsController < ApplicationController
   end
   
   def show
-    @reviews = Review.where(shop_id: @shop.id).order(created_at: :desc).page(params[:page]).per(5)
+    @reviews = Review.where(shop_id: @shop.id).order(created_at: :desc).page(params[:page]).per(3)
     @scores = Review.shop_reviews(@shop.id)
     @avg = Review.avg_score(@scores).round(1)
     @categories = ShopCategory.where(shop_id: @shop.id)
