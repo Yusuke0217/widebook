@@ -2,307 +2,75 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
-  .wrapper {
-    .main__wrapper.search_pc {
-      padding-top: 100px;
-      // display: flex;
-      .ggrmap__wrapper {
-        display: none;
-        width: 40%;
-        order: 3;
-        .ggrmap {
-          height: 700px;
-          width: 100%;
-          background-color: $deepgreen;
-          form#search-form {
-            .input__area {
-              input {
-              }
-              button {
-                i.fas.fa-search {
-                }
+  .main__wrapper.search_pc {
+    padding-top: 100px;
+    .ggrmap__wrapper {
+      display: none;
+      width: 40%;
+      order: 3;
+      .ggrmap {
+        height: 700px;
+        width: 100%;
+        background-color: $deepgreen;
+        form#search-form {
+          .input__area {
+            input {
+            }
+            button {
+              i.fas.fa-search {
               }
             }
           }
         }
       }
-      .result__wrapper {
-        width: 100%;
-        order: 2;
-        @include padding(0, 70px, 0, 70px);
-        .result__group {
-          background-color: $white;
-          z-index: 3;
-          margin-bottom: 50px;
-          .result--icon {
-            height: 30px;
-            text-align: center;
-            i.fas.fa-angle-down {
-            }
+    }
+    .result__wrapper {
+      width: 100%;
+      order: 2;
+      .result__group {
+        background-color: $white;
+        z-index: 3;
+        margin-bottom: 50px;
+        .result--icon {
+          height: 30px;
+          text-align: center;
+          i.fas.fa-angle-down {
           }
-          .result__export {
-            height: 50px;
-            border-radius: 20px 20px 0 0;
-            text-align: center;
-            margin-bottom: 20px;
-            p {
-              width: 300px;
-              display: inline-block;
-              padding-bottom: 20px;
-              border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
-            }
+        }
+        .result__export {
+          height: 50px;
+          border-radius: 20px 20px 0 0;
+          text-align: center;
+          margin-bottom: 20px;
+          p {
+            width: 300px;
+            display: inline-block;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
           }
-          .post__list {
-            position: relative;
-            h1 {
-              font-size: 1.5rem;
-            }
-            p {
-            }
-            ul.shop__box {
-              @include content-box;
-              flex-wrap: wrap;
-              justify-content: start;
-              a {
-                @include link;
-                margin-top: 10px;
-                margin-right: 10px;
-                margin-bottom: 10px;
-                margin-left: 10px;
-                li {
-                  height: 250px;
-                  width: 250px;
-                  border-radius: 20px;
-                  margin-bottom: 10px;
-                  .shop__wrapper {
-                    height: 100%;
-                    .shop__img {
-                      height: 65%;
-                      img {
-                        border-radius: 20px 20px 0 0;
-                        height: 100%;
-                        width: 100%;
-                      }
-                    }
-                    .shop__info {
-                      &__deco {
-                        display: flex;
-                        .shop__review {
-                          i.fas.fa-star {
-                            color: $plum;
-                          }
-                          span {
-                          }
-                        }
-                        .shop__tag {
-                          i {
-                          }
-                        }
-                      }
-                      &__basic {
-                        overflow: hidden;
-                        .shop__name {
-                          h2 {
-                            font-size: 1rem;
-                          }
-                        }
-                        .shop__about {
-                          display: flex;
-                          align-items: baseline;
-                          .shop__place {
-                            .address {
-                              @include word-el;
-                              span {
-                              }
-                            }
-                          }
-                        }
-                        .shop__budget {
-                          span {
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+        }
+        .post__list {
+          position: relative;
+          h1 {
+            font-size: 1.5rem;
           }
-          .post__list.result__top {
-            h1 {
-            }
-            p {
-            }
-            ul.post__box {
-              @include content-box;
-              a {
-                li {
-                  .post__wrapper {
-                    .post__img {
-                    }
-                    .post__info {
-                      &__deco {
-                        display: flex;
-                        .post__review {
-                          i.fas.fa-star {
-                            color: $plum;
-                          }
-                          span {
-                          }
-                        }
-                        .post__tag {
-                          i {
-                            
-                          }
-                        }
-                      }
-                      &__basic {
-                        .post__name {
-                          h2 {
-                          }
-                        }
-                        .post__about {
-                          .post__place {
-                            .address {
-                              span {
-                              }
-                            }
-                          }
-                        }
-                        .post__budget {
-                          span {
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+          p {
           }
-          .other__list.category {
-            h1 {
-              font-size: 1.5rem;
-            }
-            p {
-            }
-            & ul.content__box {
-              @include content-box;
-              overflow: scroll;
-              // flex-wrap: wrap;
-              a {
-                @include link;
-                @include margin(10px, 5px, 10px, 5px);
-                li {
-                  height: 100px;
-                  width: 210px;
-                  .content__wrapper {
-                    height: 100%;
-                    display: flex;
-                    .content__img {
-                      height: 100%;
-                      width: 100px;
-                      img {
-                        border-radius: 20px 20px 20px 20px;
-                        height: 100%;
-                        width: 100%;
-                      }
-                    }
-                    .content__cp {
-                      text-align: center;
-                      display: flex;
-                      align-items: center;
-                      @include padding(10px, 0, 10px, 10px);
-                      h2 {
-                        font-size: 1.0rem;
-                      }
-                      p {
-                        color: $darkgray;
-                        padding: 2px;
-                      }
-                    }
-                  }
-                }
-              }
-            }
+        }
+        .post__list.result__top {
+          h1 {
           }
-          .other__list {
-            position: relative;
-            margin: 20px 12px;
-            & h1 {
-              font-size: 1.5rem;
-            }
-            & p {
-              color: $darkgray;
-            }
-            & ul.post__box {
-              @include content-box;
-              overflow: scroll;
-              a {
-                @include link;
-                margin-top: 10px;
-                margin-right: 5px;
-                margin-bottom: 10px;
-                margin-left: 5px;
-                li {
-                  height: 250px;
-                  width: 250px;
-                  border-radius: 20px;
-                  .post__wrapper {
-                    height: 100%;
-                    .post__img {
-                      height: 65%;
-                      img {
-                        border-radius: 20px 20px 0 0;
-                        height: 100%;
-                        width: 100%;
-                      }
-                    }
-                    .post__info {
-                      padding-top: 5px;
-                      padding-right: 0px;
-                      padding-bottom: 3px;
-                      padding-left: 5px;
-                      &__deco {
-                        display: flex;
-                        .post__review {
-                          i.fas.fa-star {
-                            color: $plum;
-                          }
-                          span {
-                          }
-                        }
-                        .post__tag {
-                          i {
-                            
-                          }
-                        }
-                      }
-                      &__basic {
-                        .post__name {
-                          h2 {
-                            font-size: 1rem;
-                          }
-                        }
-                        .post__about {
-                          .post__place {
-                            .address {
-                              @include word-el;
-                              span {
-                              }
-                            }
-                          }
-                        }
-                        .post__budget {
-                          span {
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+          p {
+          }
+        }
+        .other__list {
+          position: relative;
+          margin: 20px 12px;
+          & h1 {
+            font-size: 1.5rem;
+          }
+          & p {
+            color: $darkgray;
           }
         }
       }

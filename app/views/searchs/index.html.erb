@@ -1,394 +1,266 @@
 <%# 検索結果のページ&ビジネスタイプ>カテゴリのページ %>
 <% content_for :css do %>
-  <%= stylesheet_link_tag '/assets/searchs/search', media: "screen and (max-width: 559px)" %>
-  <%= stylesheet_link_tag '/assets/searchs/tablet/search_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
-  <%= stylesheet_link_tag '/assets/searchs/pc/search_pc', media: "screen and (min-width: 960px)" %>
+  <%= stylesheet_link_tag '/assets/searchs/index', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/searchs/tablet/index_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/searchs/pc/index_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
+<% provide(:text, "その他のカテゴリから探す")%>
+
 <%= render 'layouts/header' %>
-  <div class="wrapper">
-    <div class="main__wrapper search_pc">
-      <div class="ggrmap__wrapper">
-        <div class="ggrmap">
-          <form id="search-form" action="" method="post">
-            <div class="input__area">
-              <input id="" type="search" name="search" placeholder="キーワード">
-              <button type="submit" form="search-form" name="">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </form>
-        </div>
+<div class="wrapper">
+  <div class="main__wrapper search_pc">
+    <div class="ggrmap__wrapper">
+      <div class="ggrmap">
+        <form id="search-form" action="" method="post">
+          <div class="input__area">
+            <input id="" type="search" name="search" placeholder="キーワード">
+            <button type="submit" form="search-form" name="">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
       </div>
-      <div class="result__wrapper">
-        <div class="result__group">
-          <div class="result--icon">
-            <i class="fas fa-angle-down"></i>
-          </div>
-          <div class="result__export">
-            <p><%= @results.count %>件の検索結果</p>
-          </div>
-          <div class="post__list result-top" id="">
-            <h1> name</h1>
-            <p></p>
-            <div class="move__btn">
-              <div class="btn--left">
-                <a href="">
-                  <i class="fas fa-chevron-left"></i>
-                </a>
-              </div>
-              <div class="btn--right">
-                <a href="">
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
+    </div>
+    <div class="result__wrapper">
+      <div class="result__group">
+        <div class="result--icon">
+          <i class="fas fa-angle-down"></i>
+        </div>
+        <div class="result__export">
+          <p><%= @results.count %>件の検索結果</p>
+        </div>
+        <div class="post__list result-top" id="">
+          <h1> name</h1>
+          <p></p>
+          <div class="move__btn">
+            <div class="btn--left">
+              <a href="">
+                <i class="fas fa-chevron-left"></i>
+              </a>
             </div>
-            <%# 以下は後ほど、shop_listにまとめてrenderする。 %>
-            <ul class="shop__box">
-            <% @results.page(params[:page]).per(5).each do |result| %>
-              <%= link_to shop_path(result) do %>
-                <li>
-                  <div class="shop__wrapper">
-                    <div class="shop__img">
-                    <% if result.image? %>
-                      <%= image_tag result.image.url %>
-                    <% else %>
-                      <%= image_tag "hotel2_view.jpeg" %>
-                    <% end %>
-                    </div>
-                    <div class="shop__info">
-                      <div class="shop__info__deco">
-                        <div class="shop__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="shop__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="shop__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
+            <div class="btn--right">
+              <a href="">
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+          <%# 以下は後ほど、shop_listにまとめてrenderする。 %>
+          <ul class="shop__box">
+          <% @results.page(params[:page]).per(5).each do |result| %>
+            <%= link_to shop_path(result) do %>
+              <li>
+                <div class="shop__wrapper">
+                  <div class="shop__img">
+                  <% if result.image? %>
+                    <%= image_tag result.image.url %>
+                  <% else %>
+                    <%= image_tag "hotel2_view.jpeg" %>
+                  <% end %>
+                  </div>
+                  <div class="shop__info">
+                    <div class="shop__info__deco">
+                      <div class="shop__review">
+                        <i class="fas fa-star"></i>
+                        <span></span>
                       </div>
-                      <div class="shop__info__basic">
-                        <div class="shop__name">
-                          <h2><%= result.name %></h2>
-                        </div>
-                        <div class="shop__about">
-                          <div class="shop__place">
-                            <div class="address">
-                              <span><%= result.address %></span>
-                            </div>
+                      <div class="shop__tag">
+                        <i class=""></i>
+                        <span></span>
+                      </div>
+                      <div class="shop__tag">
+                        <i class=""></i>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="shop__info__basic">
+                      <div class="shop__name">
+                        <h2><%= result.name %></h2>
+                      </div>
+                      <div class="shop__about">
+                        <div class="shop__place">
+                          <div class="address">
+                            <span><%= result.address %></span>
                           </div>
                         </div>
-                        <div class="shop__budget">
-                          <i class="fas fa-yen-sign"></i>
-                          <span></span>
-                        </div>
+                      </div>
+                      <div class="shop__budget">
+                        <i class="fas fa-yen-sign"></i>
+                        <span></span>
                       </div>
                     </div>
                   </div>
-                </li>
-              <% end %>
+                </div>
+              </li>
             <% end %>
-            </ul>
-            <div class="detail__btn shop__more">
-              <%= link_to shops_path, class:"detail" do %>
-                <span>すべて表示<i></i></span>
-              <% end %>
+          <% end %>
+          </ul>
+          <div class="detail__btn shop__more">
+            <%= link_to shops_path, class:"detail" do %>
+              <span>すべて表示<i></i></span>
+            <% end %>
+          </div>
+        </div>
+        <div class="content__list" id="category">
+          <h1><%= yield(:text) %></h1>
+          <p></p>
+          <div class="move__btn">
+            <div class="btn--left">
+              <a href="">
+                <i class="fas fa-chevron-left"></i>
+              </a>
+            </div>
+            <div class="btn--right">
+              <a href="">
+                <i class="fas fa-chevron-right"></i>
+              </a>
             </div>
           </div>
-          <div class="other__list category" id="">
-            <h1>その他のカテゴリから探す</h1>
-            <p></p>
-            <div class="move__btn">
-              <div class="btn--left">
-                <a href="">
-                  <i class="fas fa-chevron-left"></i>
-                </a>
-              </div>
-              <div class="btn--right">
-                <a href="">
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
-            </div>
-            <ul class="content__box">
-            <% @other_categories.each do |category| %>
-              <%= link_to category_path(category.id) do %>
-                <li>
-                  <div class="content__wrapper">
-                    <div class="content__img">
-                      <%# <%= image_tag category.image.url %> %>
-                    </div>
-                    <div class="content__cp">
-                      <h2><%= category.name %></h2>
-                      <p></p>
-                    </div>
+          <ul class="content__box">
+          <% @categories.each do |category| %>
+            <%= link_to category_path(category) do %>
+              <li>
+                <div class="content__wrapper">
+                  <div class="content__img">
+                    <%= image_tag "hotel1.jpeg"%>
                   </div>
-                </li>
-              <%end%>
-            <%end %>
-            </ul>
-            <div class="detail__btn cate__more">
-              <%= link_to root_path, class:"detail" do %>
-                <span>すべて表示<i></i></span>
-              <% end %>
+                  <div class="content__cp">
+                    <h2><%= category %></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </li>
+            <%end%>
+          <%end%>
+          </ul>
+          <div class="detail__btn cate__more">
+            <%= link_to root_path, class:"detail" do %>
+              <span>すべて表示<i></i></span>
+            <% end %>
+          </div>
+        </div>
+        <div class="other__list" id="">
+          <h1>Caming soon</h1>
+          <p></p>
+          <div class="move__btn">
+            <div class="btn--left">
+              <a href="">
+                <i class="fas fa-chevron-left"></i>
+              </a>
+            </div>
+            <div class="btn--right">
+              <a href="">
+                <i class="fas fa-chevron-right"></i>
+              </a>
             </div>
           </div>
-          <div class="other__list" id="">
-            <h1>Caming soon</h1>
-            <p></p>
-            <div class="move__btn">
-              <div class="btn--left">
-                <a href="">
-                  <i class="fas fa-chevron-left"></i>
-                </a>
-              </div>
-              <div class="btn--right">
-                <a href="">
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
+          <ul class="shop__box">
+            <%= link_to root_path do %>
+              <li>
+                <div class="shop__wrapper">
+                  <div class="shop__img">
+                    <%= image_tag "" %>
+                  </div>
+                  <div class="shop__info">
+                    <div class="shop__info__deco">
+                      <div class="shop__review">
+                        <i class="fas fa-star"></i>
+                        <span></span>
+                      </div>
+                      <div class="shop__tag">
+                        <i class=""></i>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="shop__info__basic">
+                      <div class="shop__name">
+                        <h2></h2>
+                      </div>
+                      <div class="shop__about">
+                        <div class="shop__place">
+                          <div class="address">
+                            <span></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="shop__budget">
+                        <i class="fas fa-yen-sign"></i>
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+          <div class="detail__btn shop__more">
+            <%= link_to shops_path, class:"detail" do %>
+              <span>すべて表示<i></i></span>
+            <% end %>
+          </div>
+        </div>
+        <div class="post__list result-all" id="">
+          <h1>Caming soon</h1>
+          <p></p>
+          <div class="move__btn">
+            <div class="btn--left">
+              <a href="">
+                <i class="fas fa-chevron-left"></i>
+              </a>
             </div>
-            <ul class="post__box">
+            <div class="btn--right">
               <a href="">
-                <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
-                      <%= image_tag "" %>
-                    </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
-                          <h2></h2>
-                        </div>
-                        <div class="post__about">
-                          <div class="post__place">
-                            <div class="address">
-                              <span></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="post__budget">
-                          <i class="fas fa-yen-sign"></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
+                <i class="fas fa-chevron-right"></i>
               </a>
-              <a href="">
-                <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
-                      <%= image_tag "" %>
-                    </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
-                          <h2></h2>
-                        </div>
-                        <div class="post__about">
-                          <div class="post__place">
-                            <div class="address">
-                              <span></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="post__budget">
-                          <i class="fas fa-yen-sign"></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </a>
-            </ul>
-            <div class="detail__btn shop__more">
-              <%= link_to shops_path, class:"detail" do %>
-                <span>すべて表示<i></i></span>
-              <% end %>
             </div>
           </div>
-          <div class="post__list result-all" id="">
-            <h1>Caming soon</h1>
-            <p></p>
-            <div class="move__btn">
-              <div class="btn--left">
-                <a href="">
-                  <i class="fas fa-chevron-left"></i>
-                </a>
-              </div>
-              <div class="btn--right">
-                <a href="">
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
-            </div>
-            <ul class="post__box">
-              <a href="">
-                <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
-                      <%= image_tag "hotel1_view.jpeg" %>
-                    </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
+          <ul class="shop__box">
+            <%= link_to root_path do %>
+              <li>
+                <div class="shop__wrapper">
+                  <div class="shop__img">
+                    <%= image_tag "" %>
+                  </div>
+                  <div class="shop__info">
+                    <div class="shop__info__deco">
+                      <div class="shop__review">
+                        <i class="fas fa-star"></i>
+                        <span></span>
                       </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
-                          <h2>London-Winchester</h2>
-                        </div>
-                        <div class="post__about">
-                          <div class="post__place">
-                            <div class="address">
-                              <span></span>
-                            </div>
+                      <div class="shop__tag">
+                        <i class=""></i>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="shop__info__basic">
+                      <div class="shop__name">
+                        <h2></h2>
+                      </div>
+                      <div class="shop__about">
+                        <div class="shop__place">
+                          <div class="address">
+                            <span></span>
                           </div>
                         </div>
-                        <div class="post__budget">
-                          <span></span>
-                        </div>
+                      </div>
+                      <div class="shop__budget">
+                        <i class="fas fa-yen-sign"></i>
+                        <span></span>
                       </div>
                     </div>
                   </div>
-                </li>
-              </a>
-              <a href="">
-                <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
-                      <%= image_tag "" %>
-                    </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
-                          <h2></h2>
-                        </div>
-                        <div class="post__about">
-                          <div class="post__place">
-                            <div class="address">
-                              <span></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="post__budget">
-                          <i class="fas fa-yen-sign"></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </a>
-              <a href="">
-                <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
-                      <%= image_tag "" %>
-                    </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
-                          <h2></h2>
-                        </div>
-                        <div class="post__about">
-                          <div class="post__place">
-                            <div class="address">
-                              <span></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="post__budget">
-                          <i class="fas fa-yen-sign"></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </a>
-            </ul>
-            <div class="detail__btn shop__more">
-              <%= link_to shops_path, class:"detail" do %>
-                <span>すべて表示<i></i></span>
-              <% end %>
-            </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+          <div class="detail__btn shop__more">
+            <%= link_to shops_path, class:"detail" do %>
+              <span>すべて表示<i></i></span>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 <%= render 'layouts/footer' %>

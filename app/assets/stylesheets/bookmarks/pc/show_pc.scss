@@ -3,7 +3,6 @@
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
   .favo__wrapper {
-    @include padding(0, 70px, 0, 70px);
     .favo__hd {
       @include padding(100px, 0, 0, 0);
       @include border-btm($darkgray);
@@ -18,12 +17,7 @@
     .favo__list {
       @include margin(30px, 0, 30px, 0);
       & ul.shop__box {
-        @include content-box;
-        overflow: scroll;
-        flex-wrap: wrap;
-        display: flex;
         justify-content: space-between;
-        @include margin(15px, 0, 0, 0);
         .heart__mark {
           position: relative;
           display: none;
@@ -46,64 +40,22 @@
           }
         }
         a {
-          @include link;
           @include margin(5px, 5px, 5px, 5px);
           li {
-            height: 250px;
-            width: 250px;
-            border-radius: 20px;
-            @include margin(0px, 0px, 20px, 0px);
             .shop__wrapper {
-              height: 100%;
               .shop__img {
-                height: 65%;
                 img {
                   border-radius: 20px 20px 20px 20px;
-                  height: 100%;
-                  width: 100%;
                 }
               }
               .shop__info {
-                @include padding(5px, 5px, 5px, 5px);
                 &__deco {
-                  display: flex;
                   .shop__review {
                     i.fas.fa-star {
-                      color: $plum;
                       @include mobile-fsz;
                     }
                     span {
                       @include mobile-fsz;
-                    }
-                  }
-                  .shop__tag {
-                    i {
-                    }
-                  }
-                }
-                &__basic {
-                  text-overflow: ellipsis;
-                  overflow: hidden;
-                  white-space: nowrap;
-                  .shop__name {
-                    h2 {
-                      font-size: 1rem;
-                    }
-                  }
-                  .shop__about {
-                    display: flex;
-                    align-items: baseline;
-                    .shop__place {
-                      .address {
-                        @include word-el;
-                        span {
-                          font-size: 0.9rem;
-                        }
-                      }
-                    }
-                  }
-                  .shop__budget {
-                    span {
                     }
                   }
                 }

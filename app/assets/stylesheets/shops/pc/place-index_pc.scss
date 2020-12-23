@@ -4,266 +4,104 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
-  .wrapper {
-    .main__wrapper {
-      height: 100%;
-      width: 100%;
-      .main__view {
-        padding-top: 100px;
-        .searchbox__wrapper {
-          display: none;
-          form {
-            width: 80vw;
-            margin: 10px auto;
-            text-align: center;
-            box-sizing: border-box;
-            position: relative;
-            display: block;
-            overflow: hidden;
-            border-radius: 50px;
-            box-shadow: 1px 1px 2px 1px rgb(180, 180, 180);
-            .input__area {
-              display: block;
-              input {
-                height: 50px;
-                width: 100%;
-                background-color: $white;
-                border-radius: 50px;
-              }
-              input:focus {
-                outline: none;
-              }
-              button {
-                height: 50px;
-                width: 50px;
-                background-color: $plum;
-                border-radius: 50px;
-                cursor: pointer;
-                position: absolute;
-                right:0px;
-                outline : none;
-                i {
-                  color: $white;
-                  font-weight:bold;
-                }
-              }
-            }
-          }
-        }
-        &__img {
+  .main__wrapper {
+    .main__view {
+      padding-top: 100px;
+      .searchbox__wrapper {
+        display: none;
+        form {
+          width: 80vw;
+          margin: 10px auto;
           text-align: center;
+          box-sizing: border-box;
           position: relative;
-          margin-bottom: 30px;
-          .bg__img.place {
-            height: 400px;
-            width: 100%;
-            background-image: url("/assets/bg_image1.jpeg");
-            background-size: contain;
-            background-repeat: repeat;
-            .main__view__cp {
-              h1 {
+          display: block;
+          overflow: hidden;
+          border-radius: 50px;
+          box-shadow: 1px 1px 2px 1px rgb(180, 180, 180);
+          .input__area {
+            display: block;
+            input {
+              height: 50px;
+              width: 100%;
+              background-color: $white;
+              border-radius: 50px;
+            }
+            input:focus {
+              outline: none;
+            }
+            button {
+              height: 50px;
+              width: 50px;
+              background-color: $plum;
+              border-radius: 50px;
+              cursor: pointer;
+              position: absolute;
+              right:0px;
+              outline : none;
+              i {
                 color: $white;
-                padding-top: 200px;
-              }
-              p {
-                padding: 5px;
-                color: $white;
+                font-weight:bold;
               }
             }
           }
         }
       }
-      .main__content {
-        .content__list {
-          position: relative;
-          margin-top: 50px;
-          margin-right: 10px;
-          margin-bottom: 50px;
-          margin-left: 10px;
-          h1 {
-            font-size: 1.5rem;
-          }
-          p {
-            color: $darkgray;
-            font-size: 1.2rem;
-          }
-          & ul.content__box {
-            list-style: none;
-            display: flex;
-            margin-bottom: 20px;
-            a {
-              @include link;
-              margin-top: 15px;
-              margin-right: 10px;
-              margin-bottom: 5px;
-              margin-left: 10px;
-              li {
-                height: 250px;
-                width: 250px;
-                @include flame;
-                .content__wrapper {
-                  height: 100%;
-                  .content__img {
-                    height: 70%;
-                    img {
-                      border-radius: 20px 20px 0 0;
-                      height: 100%;
-                      width: 100%;
-                    }
-                  }
-                  .content__cp {
-                    padding-top: 15px;
-                    padding-right: 10px;
-                    padding-bottom: 15px;
-                    padding-left: 10px;
-                    text-align: center;
-                    h2 {
-                      font-size: 1.2rem;
-                    }
-                    p {
-                      color: $darkgray;
-                      padding: 5px;
-                    }
-                  }
-                }
-              }
+      &__img {
+        text-align: center;
+        position: relative;
+        margin-bottom: 30px;
+        .bg__img.place {
+          height: 400px;
+          width: 100%;
+          background-image: url("/assets/bg_image1.jpeg");
+          background-size: contain;
+          background-repeat: repeat;
+          .main__view__cp {
+            h1 {
+              color: $white;
+              padding-top: 200px;
+            }
+            p {
+              padding: 5px;
+              color: $white;
             }
           }
         }
-        .other__list.place {
-          position: relative;
-          margin-top: 20px;
-          margin-right: 12px;
-          margin-bottom: 20px;
-          margin-left: 12px;
-          & h1 {
-            font-size: 1.5rem;
-          }
-          & p {
-            color: $darkgray;
-          }
-          & ul.post__box {
-            @include content-box;
-            overflow: scroll;
-            a {
-              @include link;
-              margin-top: 10px;
-              margin-right: 5px;
-              margin-bottom: 10px;
-              margin-left: 5px;
-              li {
-                height: 300px;
-                width: 300px;
-                border-radius: 20px;
-                .post__wrapper {
-                  height: 100%;
-                  .post__img {
-                    height: 65%;
-                    img {
-                      border-radius: 20px 20px 0 0;
-                      height: 100%;
-                      width: 100%;
-                    }
-                  }
-                  .post__info {
-                    padding-top: 5px;
-                    padding-right: 0px;
-                    padding-bottom: 3px;
-                    padding-left: 5px;
-                    .post__review {
-                      i {
-                        color: $plum;
-                      }
-                      span {
-                        color: $darkgray;
-                        padding: 2px;
-                      }
-                    }
-                    &__basic {
-                      .post__name {
-                        h2 {
-                          font-size: 1rem;
-                        }
-                      }
-                      .post__about {
-                        display: flex;
-                        .post__place {
-                          .address {
-                            span {
-                              color: $darkgray;
-                              padding: 2px;
-                            }
-                          }
-                        }
-                        span {
-                          font-size: 12px;
-                        }
-                        .post__category {
-                          span {
-                            color: $darkgray;
-                          }
-                        }
-                      }
-                      .post__budget {
-                        span {
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
+      }
+    }
+    .main__content {
+      .content__list {
+        position: relative;
+        margin-top: 50px;
+        margin-right: 10px;
+        margin-bottom: 50px;
+        margin-left: 10px;
+        h1 {
+          font-size: 1.5rem;
         }
-        .other__list {
-          & h1 {
-          }
-          & p {
-          }
-          & ul.post__box {
-            a {
-              li {
-                .post__wrapper {
-                  .post__img {
-                    img {
-                    }
-                  }
-                  .post__info {
-                    .post__review {
-                      i {
-                      }
-                      span {
-                      }
-                    }
-                    &__basic {
-                      .post__name {
-                        h2 {
-                        }
-                      }
-                      .post__about {
-                        .post__place {
-                          .address {
-                            span {
-                            }
-                          }
-                        }
-                        span {
-                        }
-                        .post__category {
-                          span {
-                          }
-                        }
-                      }
-                      .post__budget {
-                        span {
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
+        p {
+          color: $darkgray;
+          font-size: 1.2rem;
+        }
+      }
+      .other__list.place {
+        position: relative;
+        margin-top: 20px;
+        margin-right: 12px;
+        margin-bottom: 20px;
+        margin-left: 12px;
+        & h1 {
+          font-size: 1.5rem;
+        }
+        & p {
+          color: $darkgray;
+        }
+      }
+      .other__list {
+        & h1 {
+        }
+        & p {
         }
       }
     }

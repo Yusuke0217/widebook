@@ -1,0 +1,53 @@
+@import "../../main.scss";
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  .content__list#category {
+    position: relative;
+    @include margin(20px, 12px, 20px, 12px);
+    & h1 {
+      font-size: 1.5rem;
+    }
+    & p {
+      color: $darkgray;
+    }
+    & ul.content__box {
+      @include content-box;
+      overflow: scroll;
+      a {
+        @include link;
+        @include margin(10px, 5px, 10px, 5px);
+        li {
+          height: 100px;
+          width: 210px;
+          .content__wrapper {
+            height: 100%;
+            display: flex;
+            .content__img {
+              height: 100%;
+              width: 100px;
+              img {
+                border-radius: 20px 20px 20px 20px;
+                height: 100%;
+                width: 100%;
+              }
+            }
+            .content__cp {
+              text-align: center;
+              display: flex;
+              align-items: center;
+              @include padding(10px, 0, 10px, 10px);
+              h2 {
+                font-size: 1.0rem;
+              }
+              p {
+                color: $darkgray;
+                padding: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

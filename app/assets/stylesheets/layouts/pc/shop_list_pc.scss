@@ -5,21 +5,16 @@
   // PC用のレスポンシブ
   ul.shop__box {
     @include content-box;
-    overflow: scroll;
-    // flex-wrap: wrap;
-    margin-top: 15px;
+    flex-wrap: wrap;
     justify-content: start;
     a {
       @include link;
-      margin-top: 10px;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      margin-left: 10px;
+      @include margin(10px, 5px, 10px, 5px);
       li {
         height: 250px;
-        width: 245px;
+        width: 250px;
         border-radius: 20px;
-        margin-bottom: 10px;
+        @include margin(0px, 0px, 15px, 0px);
         .shop__wrapper {
           height: 100%;
           .shop__img {
@@ -31,6 +26,7 @@
             }
           }
           .shop__info {
+            @include padding(5px, 5px, 5px, 5px);
             &__deco {
               display: flex;
               .shop__review {
@@ -38,6 +34,8 @@
                   color: $plum;
                 }
                 span {
+                  color: $darkgray;
+                  padding: 2px;
                 }
               }
               .shop__tag {
@@ -46,7 +44,9 @@
               }
             }
             &__basic {
+              text-overflow: ellipsis;
               overflow: hidden;
+              white-space: nowrap;
               .shop__name {
                 h2 {
                   font-size: 1rem;
@@ -59,6 +59,7 @@
                   .address {
                     @include word-el;
                     span {
+                      @include mobile-fsz;
                     }
                   }
                 }
@@ -70,6 +71,9 @@
             }
           }
         }
+      }
+      &:hover {
+        @include link-hover;
       }
     }
   }

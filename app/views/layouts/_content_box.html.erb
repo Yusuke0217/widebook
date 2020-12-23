@@ -1,0 +1,48 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/layoutss/content_box', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/tablet/content_box_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/pc/content_box_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<div class="content__list" id="category">
+  <h1><%= yield(:text) %></h1>
+  <p></p>
+  <div class="move__btn">
+    <div class="btn--left">
+      <a href="">
+        <i class="fas fa-chevron-left"></i>
+      </a>
+    </div>
+    <div class="btn--right">
+      <a href="">
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    </div>
+  </div>
+  <ul class="content__box">
+  <% @categories.each do |category| %>
+    <%= link_to category_path(category.id) do %>
+      <li>
+        <div class="content__wrapper">
+          <div class="content__img">
+          <% if category.image? %>
+            <%= image_tag category.image.url %>
+          <% else %>
+            <%= image_tag "hotel1.jpeg"%>
+          <% end %>
+          </div>
+          <div class="content__cp">
+            <h2><%= category.name %></h2>
+            <p></p>
+          </div>
+        </div>
+      </li>
+    <%end%>
+  <%end%>
+  </ul>
+  <div class="detail__btn cate__more">
+    <%= link_to root_path, class:"detail" do %>
+      <span>すべて表示<i></i></span>
+    <% end %>
+  </div>
+</div>

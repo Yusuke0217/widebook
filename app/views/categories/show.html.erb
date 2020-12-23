@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag '/assets/categories/pc/search-cate_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
+<% provide(:text, "その他のカテゴリから探す")%>
+
 <%= render 'layouts/header' %>
   <div class="wrapper">
     <div class="main__wrapper search_pc">
@@ -65,10 +67,6 @@
                           <i class=""></i>
                           <span></span>
                         </div>
-                        <div class="shop__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
                       </div>
                       <div class="shop__info__basic">
                         <div class="shop__name">
@@ -98,44 +96,7 @@
               <% end %>
             </div>
           </div>
-          <div class="other__list category" id="">
-            <h1>その他のカテゴリから探す</h1>
-            <p></p>
-            <div class="move__btn">
-              <div class="btn--left">
-                <a href="">
-                  <i class="fas fa-chevron-left"></i>
-                </a>
-              </div>
-              <div class="btn--right">
-                <a href="">
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </div>
-            </div>
-            <ul class="content__box">
-            <% @categories.each do |category| %>
-              <%= link_to category_path(category) do %>
-                <li>
-                  <div class="content__wrapper">
-                    <div class="content__img">
-                      <%= image_tag "cafe1.jpeg"%>
-                    </div>
-                    <div class="content__cp">
-                      <h2><%= category.name %></h2>
-                      <p></p>
-                    </div>
-                  </div>
-                </li>
-              <% end %>
-            <% end %>
-            </ul>
-            <div class="detail__btn cate__more">
-              <%= link_to root_path, class:"detail" do %>
-                <span>すべて表示<i></i></span>
-              <% end %>
-            </div>
-          </div>
+          <%= render 'layouts/content_box' %>
           <div class="other__list" id="">
             <h1>Caming soon</h1>
             <p></p>
@@ -151,40 +112,36 @@
                 </a>
               </div>
             </div>
-            <ul class="post__box">
-              <a href="">
+            <ul class="shop__box">
+              <%= link_to root_path do %>
                 <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
+                  <div class="shop__wrapper">
+                    <div class="shop__img">
                       <%= image_tag "" %>
                     </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
+                    <div class="shop__info">
+                      <div class="shop__info__deco">
+                        <div class="shop__review">
                           <i class="fas fa-star"></i>
                           <span></span>
                         </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
+                        <div class="shop__tag">
                           <i class=""></i>
                           <span></span>
                         </div>
                       </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
+                      <div class="shop__info__basic">
+                        <div class="shop__name">
                           <h2></h2>
                         </div>
-                        <div class="post__about">
-                          <div class="post__place">
+                        <div class="shop__about">
+                          <div class="shop__place">
                             <div class="address">
                               <span></span>
                             </div>
                           </div>
                         </div>
-                        <div class="post__budget">
+                        <div class="shop__budget">
                           <i class="fas fa-yen-sign"></i>
                           <span></span>
                         </div>
@@ -192,48 +149,7 @@
                     </div>
                   </div>
                 </li>
-              </a>
-              <a href="">
-                <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
-                      <%= image_tag "" %>
-                    </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
-                          <h2></h2>
-                        </div>
-                        <div class="post__about">
-                          <div class="post__place">
-                            <div class="address">
-                              <span></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="post__budget">
-                          <i class="fas fa-yen-sign"></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </a>
+              <% end %>
             </ul>
             <div class="detail__btn shop__more">
               <%= link_to shops_path, class:"detail" do %>
@@ -256,80 +172,36 @@
                 </a>
               </div>
             </div>
-            <ul class="post__box">
-              <a href="">
+            <ul class="shop__box">
+              <%= link_to root_path do %>
                 <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
-                      <%= image_tag "hotel1_view.jpeg" %>
-                    </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
-                          <h2>London-Winchester</h2>
-                        </div>
-                        <div class="post__about">
-                          <div class="post__place">
-                            <div class="address">
-                              <span></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="post__budget">
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </a>
-              <a href="">
-                <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
+                  <div class="shop__wrapper">
+                    <div class="shop__img">
                       <%= image_tag "" %>
                     </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
+                    <div class="shop__info">
+                      <div class="shop__info__deco">
+                        <div class="shop__review">
                           <i class="fas fa-star"></i>
                           <span></span>
                         </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
+                        <div class="shop__tag">
                           <i class=""></i>
                           <span></span>
                         </div>
                       </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
+                      <div class="shop__info__basic">
+                        <div class="shop__name">
                           <h2></h2>
                         </div>
-                        <div class="post__about">
-                          <div class="post__place">
+                        <div class="shop__about">
+                          <div class="shop__place">
                             <div class="address">
                               <span></span>
                             </div>
                           </div>
                         </div>
-                        <div class="post__budget">
+                        <div class="shop__budget">
                           <i class="fas fa-yen-sign"></i>
                           <span></span>
                         </div>
@@ -337,48 +209,7 @@
                     </div>
                   </div>
                 </li>
-              </a>
-              <a href="">
-                <li>
-                  <div class="post__wrapper">
-                    <div class="post__img">
-                      <%= image_tag "" %>
-                    </div>
-                    <div class="post__info">
-                      <div class="post__info__deco">
-                        <div class="post__review">
-                          <i class="fas fa-star"></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                        <div class="post__tag">
-                          <i class=""></i>
-                          <span></span>
-                        </div>
-                      </div>
-                      <div class="post__info__basic">
-                        <div class="post__name">
-                          <h2></h2>
-                        </div>
-                        <div class="post__about">
-                          <div class="post__place">
-                            <div class="address">
-                              <span></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="post__budget">
-                          <i class="fas fa-yen-sign"></i>
-                          <span></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </a>
+              <% end %>
             </ul>
             <div class="detail__btn shop__more">
               <%= link_to shops_path, class:"detail" do %>
