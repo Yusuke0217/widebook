@@ -690,20 +690,20 @@
         }
         .ggrmap__wrapper {
           @include margin(30px, 0, 0, 0);
-          @include padding(0, 0, 50px, 0);
-          border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+          @include padding(0, 0, 40px, 0);
+          @include border-btm;
           h1 {
-            font-size: 1.5rem;
+            @include mobile-ttl;
             @include margin(0, 0, 30px, 0);
           }
           p {
+            text-align: center;
+            @include margin(0, 0, 20px, 0);
           }
           .ggrmap {
-            height: 400px;
-            width: 700px;
-            background-color: $darkgray;
-            a {
-            }
+            height: 200px;
+            width: 300px;
+            @include margin(0, auto, 0, auto);
           }
         }
         .other__list {

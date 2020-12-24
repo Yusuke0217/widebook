@@ -146,7 +146,7 @@
     }
     .shop__info.main {
       order: 1;
-      @include margin(0, 0, 10px, 0);
+      @include margin(10px, 0, 30px, 0);
       .shop__info__head {
         position: relative;
         @include padding(0, 0, 0, 20px);
@@ -187,14 +187,16 @@
             order: 6;
             .ggrmap__link {
               position: absolute;
-              top: 50%;
-              right: 6%;
+              top: 45%;
+              right: 5%;
               a {
                 @include link;
                 .map {
+                  border: 1px solid $darkgray;
                   height: 75px;
                   width: 75px;
-                  background-color: $deepgreen;
+                  background-image: url("/assets/google_map_icon.jpeg");
+                  background-size: cover;
                   color: white;
                 }
               }
@@ -667,20 +669,23 @@
       }
       .ggrmap__wrapper {
         @include margin(30px, 0, 0, 0);
-        @include padding(0, 0, 50px, 0);
+        @include padding(0, 0, 40px, 0);
         border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
         h1 {
           font-size: 1.5rem;
           @include margin(0, 0, 30px, 0);
         }
         p {
+          font-size: 1rem;
+          text-align: center;
+          @include margin(0, 0, 20px, 0);
         }
         .ggrmap {
+          @include margin(0, auto, 0, auto);
           height: 300px;
           width: 600px;
-          background-color: $darkgray;
-          a {
-          }
+          // background-color: $darkgray;
+          border: 1px solid gray;
         }
       }
       .other__list {

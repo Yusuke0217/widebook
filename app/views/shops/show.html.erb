@@ -120,9 +120,9 @@
           </div>
           <div class="shop__ggrmap">
             <div class="ggrmap__link">
-              <a href="">
-                <div class="map">Google Map</div>
-              </a>
+              <%= link_to root_path do %>
+                <div class="map"></div>
+              <% end %>
             </div>
             <div class="review__link">
               <%= link_to new_shop_reviews_path(@shop) do %>
@@ -241,7 +241,7 @@
                 <div class="table__force time">
                   <div class="table__ttl">
                     <i class="far fa-clock"></i>
-                    <p>営業時間・定休日</p>
+                    <p>営業時間</p>
                   </div>
                   <div class="table__import">
                     <div class="time-info">
@@ -432,9 +432,8 @@
       </div>
       <div class="ggrmap__wrapper">
         <h1>マップ</h1>
-        <p></p>
-        <div class="ggrmap">
-          <a href=""></a>
+        <p><%= @shop.address %><%= @shop.address_street %></p>
+        <div class="ggrmap" id="js-map">
         </div>
         <div class="ggrmap__info">
           <p></p>
