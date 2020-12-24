@@ -6,7 +6,7 @@
   <div class="main__wrapper">
     <div class="shop__data">
       <ul class="shop__box">
-      <% @shop.page(params[:page]).per(20).each do |shop| %>
+      <% @shops.page(params[:page]).per(20).each do |shop| %>
         <%= link_to shop_path(shop.id) do %>
           <li id="shops-<% shop.id %>">
             <div class="shop__wrapper">
