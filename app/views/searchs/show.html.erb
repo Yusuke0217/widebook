@@ -1,0 +1,15 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/searchs/show', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/searchs/tablet/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/searchs/pc/show_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<%= render 'layouts/header' %>
+<div class="main__wrapper">
+  <div class="ggrmap__wrapper">
+    <h1>マップ</h1>
+    <p><%= @shop.address %></p>
+    <div class="ggrmap-dtl" id="js-map"></div>
+  </div>
+</div>
+

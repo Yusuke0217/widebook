@@ -120,7 +120,7 @@
           </div>
           <div class="shop__ggrmap">
             <div class="ggrmap__link">
-              <%= link_to root_path do %>
+              <%= link_to search_path(@shop.id) do %>
                 <div class="map"></div>
               <% end %>
             </div>
@@ -135,7 +135,7 @@
               <i class="fas fa-map-marker-alt"></i>
               <p>住所:</p>
             </div>
-            <%= link_to root_path do %>
+            <%= link_to search_path(@shop.id) do %>
               <div class="shop__address__import">
                 <span><%= @shop.address %></span>
               </div>
@@ -434,9 +434,6 @@
         <h1>マップ</h1>
         <p><%= @shop.address %><%= @shop.address_street %></p>
         <div class="ggrmap" id="js-map">
-        </div>
-        <div class="ggrmap__info">
-          <p></p>
         </div>
       </div>
       <div class="other__list near-event" id="">

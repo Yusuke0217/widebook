@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resource :reviews, only: [:show, :new, :create]
   end
 
-  resources :searchs, only: [:index]
+  resources :searchs, only: [:index, :show]
   resources :bookmarks, only: [:index]
   resources :categories, only: [:index, :show, :create, :destroy]
   resources :areas, only: [:show]

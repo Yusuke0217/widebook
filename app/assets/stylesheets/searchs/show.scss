@@ -1,0 +1,28 @@
+@import "../main.scss";
+
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .main__wrapper {
+    .ggrmap__wrapper {
+      @include margin(30px, 20px, 0, 20px);
+      @include padding(0, 0, 40px, 0);
+      @include border-btm;
+      display: block;
+      h1 {
+        @include mobile-ttl;
+        @include margin(0, 0, 20px, 0);
+      }
+      p {
+        font-size: 1rem;
+        text-align: center;
+        @include margin(0, 0, 20px, 0);
+      }
+      .ggrmap-dtl {
+        @include margin(0, auto, 0, auto);
+        height: 60vh;
+        width: 95%;
+      }
+    }
+  }
+}

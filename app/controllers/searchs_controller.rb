@@ -21,6 +21,10 @@ class SearchsController < ApplicationController
     
   end
 
+  def show
+    @shop = Shop.find_by(id: params[:id])
+  end
+
   private
 
   def search_params
