@@ -35,18 +35,7 @@
     <div class="main__content">
       <div class="content__list common" id="b-type">
         <h1>目的から探す</h1>
-        <div class="move__btn">
-          <div class="btn--left">
-            <a href="">
-              <i class="fas fa-chevron-left"></i>
-            </a>
-          </div>
-          <div class="btn--right">
-            <a href="">
-              <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        </div>
+        <%= render 'layouts/move_btn' %>
         <ul class="content__box">
         <% @b_types.each do |b_type| %>
           <%= link_to bussiness_type_path(b_type.id) do %>
@@ -68,18 +57,7 @@
       <div class="content__list common" id="area">
         <h1>エリアから探す</h1>
         <p>範囲を絞って検索できます！</p>
-        <div class="move__btn">
-          <div class="btn--left">
-            <a href="">
-              <i class="fas fa-chevron-left"></i>
-            </a>
-          </div>
-          <div class="btn--right">
-            <a href="">
-              <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        </div>
+        <%= render 'layouts/move_btn' %>
         <ul class="content__box">
         <% @areas.each do |area| %>
           <%= link_to area_path(area) do %>
@@ -106,18 +84,7 @@
       <div class="content__list common" id="">
         <h1>から探す</h1>
         <p></p>
-        <div class="move__btn">
-          <div class="btn--left">
-            <a href="">
-              <i class="fas fa-chevron-left"></i>
-            </a>
-          </div>
-          <div class="btn--right">
-            <a href="">
-              <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        </div>
+        <%= render 'layouts/move_btn' %>
         <ul class="content__box">
           <%= link_to root_path do %>
             <li>
@@ -142,18 +109,7 @@
       <div class="content__list common" id="">
         <h1>から探す</h1>
         <p></p>
-        <div class="move__btn">
-          <div class="btn--left">
-            <a href="">
-              <i class="fas fa-chevron-left"></i>
-            </a>
-          </div>
-          <div class="btn--right">
-            <a href="">
-              <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        </div>
+        <%= render 'layouts/move_btn' %>
         <ul class="content__box">
           <%= link_to root_path do %>
             <li>
@@ -178,18 +134,7 @@
       <div class="content__list common" id="special">
         <h1>特集</h1>
         <p>ガイドブックならではの特集を皆様にお届けします！</p>
-        <div class="move__btn">
-          <div class="btn--left">
-            <a href="">
-              <i class="fas fa-chevron-left"></i>
-            </a>
-          </div>
-          <div class="btn--right">
-            <a href="">
-              <i class="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        </div>
+        <%= render 'layouts/move_btn' %>
         <ul class="content__box">
           <a href="">
             <li>

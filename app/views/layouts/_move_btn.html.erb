@@ -1,0 +1,19 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/layouts/move_btn', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/tablet/move_btn_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/pc/move_btn_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+
+<div class="move__btn">
+  <div class="btn--left">
+    <a href="">
+      <i class="fas fa-chevron-left"></i>
+    </a>
+  </div>
+  <div class="btn--right">
+    <a href="">
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+</div>

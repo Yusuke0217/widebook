@@ -35,18 +35,7 @@
         <div class="shop__list pick-up" id="">
           <h1>オシャレな雰囲気のレストラン</h1>
           <p></p>
-          <div class="move__btn">
-            <div class="btn--left">
-              <a href="">
-                <i class="fas fa-chevron-left"></i>
-              </a>
-            </div>
-            <div class="btn--right">
-              <a href="">
-                <i class="fas fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
+          <%= render 'layouts/move_btn' %>
           <ul class="shop__box">
             <%= link_to root_path do %>
               <li>

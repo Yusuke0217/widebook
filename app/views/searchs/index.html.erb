@@ -33,18 +33,7 @@
         <div class="post__list result-top" id="">
           <h1> name</h1>
           <p></p>
-          <div class="move__btn">
-            <div class="btn--left">
-              <a href="">
-                <i class="fas fa-chevron-left"></i>
-              </a>
-            </div>
-            <div class="btn--right">
-              <a href="">
-                <i class="fas fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
+          <%= render 'layouts/move_btn' %>
           <%# 以下は後ほど、shop_listにまとめてrenderする。 %>
           <ul class="shop__box">
           <% @results.page(params[:page]).per(5).each do |result| %>
@@ -104,18 +93,7 @@
         <div class="content__list" id="category">
           <h1><%= yield(:text) %></h1>
           <p></p>
-          <div class="move__btn">
-            <div class="btn--left">
-              <a href="">
-                <i class="fas fa-chevron-left"></i>
-              </a>
-            </div>
-            <div class="btn--right">
-              <a href="">
-                <i class="fas fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
+          <%= render 'layouts/move_btn' %>
           <ul class="content__box">
           <% @categories.each do |category| %>
             <%= link_to category_path(category) do %>
@@ -142,18 +120,7 @@
         <div class="other__list" id="">
           <h1>Caming soon</h1>
           <p></p>
-          <div class="move__btn">
-            <div class="btn--left">
-              <a href="">
-                <i class="fas fa-chevron-left"></i>
-              </a>
-            </div>
-            <div class="btn--right">
-              <a href="">
-                <i class="fas fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
+          <%= render 'layouts/move_btn' %>
           <ul class="shop__box">
             <%= link_to root_path do %>
               <li>
@@ -202,18 +169,7 @@
         <div class="post__list result-all" id="">
           <h1>Caming soon</h1>
           <p></p>
-          <div class="move__btn">
-            <div class="btn--left">
-              <a href="">
-                <i class="fas fa-chevron-left"></i>
-              </a>
-            </div>
-            <div class="btn--right">
-              <a href="">
-                <i class="fas fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
+          <%= render 'layouts/move_btn' %>
           <ul class="shop__box">
             <%= link_to root_path do %>
               <li>

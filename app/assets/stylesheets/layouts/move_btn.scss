@@ -1,0 +1,21 @@
+@import "../main.scss";
+
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .move__btn {
+    display: none;
+    .btn--left {
+      a {
+        i.fas.fa-chevron-left {
+        }
+      }
+    }
+    .btn--right {
+      a {
+        i.fas.fa-chevron-right {
+        }
+      }
+    }
+  }
+}
