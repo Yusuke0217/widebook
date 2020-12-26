@@ -1,0 +1,54 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/layouts/shop_form', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/tablet/shop_form_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/pc/shop_form_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<div class="shop__flame">
+  <%= form_with model: @shop, url: yield(:url), class: "", id: "", local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :name, id: "", placeholder: "名前"%>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.collection_select :area_id, Area.all, :id, :name, { include_blank: "選択してください" } %>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :address, id: "", placeholder: "住所"%>
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :address_building, id: "", placeholder: "建物名など"%>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, include_hidden: false) do |c| %>
+      <%= c.label { c.check_box + c.text} %>
+    <%end%>
+    
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+      <%= f.label "予約可否"%>
+    </div>
+    <%= f.check_box :booking, checked_value: true, unchecked_value: false, :as => :boolean %>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :phone_number, placeholder: "電話番号" %>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.fields_for :images do |i| %>
+      <%= i.file_field :image, accept: "image/*" %>
+    <% end %>
+    <%= f.submit :submit, class: "submit", id: "", value: "#{yield(:btn_text)}" %>
+  <% end %>
+</div>

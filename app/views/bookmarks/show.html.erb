@@ -32,10 +32,10 @@
           <li>
             <div class="shop__wrapper">
               <div class="shop__img">
-                <% if bm.shop.image? %>
-                <%= image_tag bm.shop.image.url %>
+                <% if bm.shop.images.first.present? %>
+                  <%= image_tag bm.shop.images.first.image.url %>
                 <% else %>
-                <%= image_tag "hotel2_view.jpeg" %>
+                  <%= image_tag "wait.jpeg" %>
                 <% end %>
               </div>
               <div class="shop__info">

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :searchs, only: [:index, :show]
+  resources :images, only: [:show]
   resources :bookmarks, only: [:index]
   resources :categories, only: [:index, :show, :create, :destroy]
   resources :areas, only: [:show]

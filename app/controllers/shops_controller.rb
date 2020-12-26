@@ -10,6 +10,7 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    10.times{@shop.images.build}
   end
   
   def show
@@ -31,6 +32,7 @@ class ShopsController < ApplicationController
   end
 
   def edit
+    10.times{@shop.images.build}
   end
 
   def update
@@ -56,7 +58,7 @@ class ShopsController < ApplicationController
   private
 
     def shop_params
-      params.require(:shop).permit(:name, :address, :address_building, :phone_number, :content, :image, { category_ids: [] }, :area_id )
+      params.require(:shop).permit(:name, :address, :address_building, :phone_number, :content, :booking, :area_id, { category_ids: [] }, images_attributes: [:image, :id] )
     end
 
     def find_shop

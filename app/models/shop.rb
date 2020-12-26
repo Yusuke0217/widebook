@@ -5,13 +5,14 @@ class Shop < ApplicationRecord
   has_many :categories, through: :shop_categories, dependent: :destroy
   has_many :reviews
   has_many :review_users, through: :reviews, source: :user
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images
   belongs_to :user
   belongs_to :area
-  mount_uploader :image, ImageUploader
   validates :user_id, presence: true
   validates :name, presence: true
+  validates :address, presence: true
   validates :content, length: { maximum: 2000 }
-  validate :image_size
   validate :tag_size
 
   geocoded_by :address
@@ -38,12 +39,6 @@ class Shop < ApplicationRecord
 
   
   private
-  
-    def image_size
-      if image.size > 5.megabytes
-        errors.add(:image, "写真は5MBまでです。")
-      end
-    end
 
     def tag_size
       if self.categories.size > TAG_MAX

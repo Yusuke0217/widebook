@@ -1,0 +1,13 @@
+<div class="main__wrapper">
+  <div class="img__list">
+    <ul>
+      <% @images.each do |img| %>
+      <li>
+        <div class="img__wrapper">
+          <%= image_tag img.image.url%>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

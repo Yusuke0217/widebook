@@ -1,47 +1,4 @@
 <% provide(:btn_text, "登録する")%>
 <% provide(:url, shops_path)%>
 
-<div class="shop__flame">
-  <%= form_with model: @shop, url: yield(:url), class: "", id: "", local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-    </div>
-    <%= f.text_field :name, id: "", placeholder: "名前"%>
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-    </div>
-    <%= f.collection_select :area_id, Area.all, :id, :name, { include_blank: "選択してください" } %>
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-    </div>
-    <%= f.text_field :address, id: "", placeholder: "住所"%>
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-    </div>
-    <%= f.text_field :address_building, id: "", placeholder: "建物名など"%>
-
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-    </div>
-
-    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, include_hidden: false) do |c| %>
-      <%= c.label { c.check_box + c.text} %>
-    <%end%>
-    
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-    </div>
-
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-    </div>
-
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-      <%= f.label :image, "Image" %>
-    </div>
-    <%= f.file_field :image, id: "", placeholder: "Image", accept: 'image/jpeg,image/gif,image/png' %>
-    <%= f.submit :submit, class: "submit", id: "", value: "#{yield(:btn_text)}" %>
-  <% end %>
-</div>
+<%= render 'layouts/shop_form' %>

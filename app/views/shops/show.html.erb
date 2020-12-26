@@ -14,11 +14,11 @@
       <div class="shop__img__list">
         <div class="main__img">
           <div class="shop__img no-1">
-            <%= link_to root_path do %>
-              <% if @shop.image? %>
-                <%= image_tag @shop.image.url, alt: "No Images" %>
+            <%= link_to image_path do %>
+              <% if @shop.images.first.present? %>
+                <%= image_tag @shop.images.first.image.url %>
               <% else %>
-                <%= image_tag "/assets/apple_logo.jpeg"%>
+                <%= image_tag "wait.jpeg" %>
               <% end %>
             <% end %>
           </div>
@@ -27,30 +27,46 @@
           <ul class="img__list">
             <li>
               <div class="shop__img no-2">
-                <a href="">
-                  <img src="/assets/hotel1_view.jpeg" alt="">
-                </a>
+                <%= link_to image_path do %>
+                  <% if @shop.images[1].present? %>
+                    <%= image_tag @shop.images[1].image.url %>
+                  <% else %>
+                    <%= image_tag "wait.jpeg" %>
+                  <% end %>
+                <% end %>
               </div>
             </li>
             <li>
               <div class="shop__img no-3">
-                <a href="">
-                  <img src="/assets/bar.jpeg" alt="">
-                </a>
+                <%= link_to image_path do %>
+                  <% if @shop.images[2].present? %>
+                    <%= image_tag @shop.images[2].image.url %>
+                  <% else %>
+                    <%= image_tag "wait.jpeg" %>
+                  <% end %>
+                <% end %>
               </div>
             </li>
             <li>
               <div class="shop__img no-4">
-                <a href="">
-                  <img src="/assets/cafe1.jpeg" alt="">
-                </a>
+                <%= link_to image_path do %>
+                  <% if @shop.images[3].present? %>
+                    <%= image_tag @shop.images[3].image.url %>
+                  <% else %>
+                    <%= image_tag "wait.jpeg" %>
+                  <% end %>
+                <% end %>
               </div>
             </li>
             <li>
               <div class="shop__img no-5">
-                <a href="">
-                  <img src="/assets/park1.jpeg" alt="">
-                </a>
+                <%= link_to image_path do %>
+                  <% if @shop.images[4].present? %>
+                    <%= image_tag @shop.images[4].image.url %>
+                  <% else %>
+                    <%= image_tag "wait.jpeg" %>
+                  <% end %>
+                <% end %>
               </div>
             </li>
           </ul>
@@ -84,7 +100,7 @@
         </div>
       </div>
       <div class="detail__btn img__more">
-        <%= link_to root_path, class:"detail" do %>
+        <%= link_to image_path, class:"detail" do %>
           <span>すべての写真を表示<i></i></span>
         <% end %>
       </div>
@@ -222,7 +238,11 @@
                     <p>予約可否</p>
                   </div>
                   <div class="table__import">
-                    <span></span>
+                    <% if @shop.booking == true %>
+                      <span>予約可能</span>
+                    <% else %>
+                      <span>予約不可</span>
+                    <% end %>
                   </div>
                 </div>
               </li>
@@ -432,7 +452,7 @@
       </div>
       <div class="ggrmap__wrapper">
         <h1>マップ</h1>
-        <p><%= @shop.address %><%= @shop.address_street %></p>
+        <p><%= @shop.address %><%= @shop.address_building %></p>
         <div class="ggrmap" id="js-map">
         </div>
       </div>

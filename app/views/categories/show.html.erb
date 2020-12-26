@@ -51,11 +51,11 @@
                 <li>
                   <div class="shop__wrapper">
                     <div class="shop__img">
-                    <% if shop.image? %>
-                      <%= image_tag shop.image.url %>
-                    <% else %>
-                      <%= image_tag "bg_image4.jpeg" %>
-                    <% end %>
+                      <% if shop.images.first.present? %>
+                        <%= image_tag shop.images.first.image.url %>
+                      <% else %>
+                        <%= image_tag "wait.jpeg" %>
+                      <% end %>
                     </div>
                     <div class="shop__info">
                       <div class="shop__info__deco">

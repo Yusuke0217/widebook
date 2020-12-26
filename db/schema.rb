@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_060704) do
+ActiveRecord::Schema.define(version: 2020_12_25_024224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 2020_12_09_060704) do
     t.index ["name"], name: "index_categories_on_name"
   end
 
+  create_table "images", force: :cascade do |t|
+    t.bigint "shop_id"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_images_on_shop_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -74,16 +82,15 @@ ActiveRecord::Schema.define(version: 2020_12_09_060704) do
     t.string "name"
     t.string "address"
     t.string "phone_number"
-    t.string "image"
     t.text "content"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "address_street"
     t.string "address_building"
     t.bigint "area_id"
     t.float "latitude"
     t.float "longitude"
+    t.boolean "booking", default: false, null: false
     t.index ["area_id"], name: "index_shops_on_area_id"
     t.index ["name"], name: "index_shops_on_name"
     t.index ["user_id"], name: "index_shops_on_user_id"
@@ -107,6 +114,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_060704) do
   add_foreign_key "bookmarks", "shops"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "categories", "bussiness_types"
+  add_foreign_key "images", "shops"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
   add_foreign_key "shop_categories", "categories"
