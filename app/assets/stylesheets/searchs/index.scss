@@ -56,18 +56,6 @@
             }
             & .move__btn {
               display: none;
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
             }
             ul.shop__box {
               @include content-box;
@@ -157,18 +145,6 @@
             }
             & .move__btn {
               display: none;
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
             }
             & ul.content__box {
               @include content-box;
@@ -216,18 +192,6 @@
             }
             & .move__btn {
               display: none;
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
             }
             & ul.post__box {
               @include content-box;
@@ -308,18 +272,6 @@
             p {
             }
             .move__btn {
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
             }
             ul.post__box {
               @include content-box;
@@ -378,18 +330,6 @@
             }
             & .move__btn {
               display: none;
-              .btn--left {
-                a {
-                  i.fas.fa-chevron-left {
-                  }
-                }
-              }
-              .btn--right {
-                a {
-                  i.fas.fa-chevron-right {
-                  }
-                }
-              }
             }
             ul.post__box {
               @include content-box;

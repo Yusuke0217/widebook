@@ -698,18 +698,6 @@
         }
         & .move__btn {
           display: none;
-          .btn--left {
-            a {
-              i.fas.fa-chevron-left {
-              }
-            }
-          }
-          .btn--right {
-            a {
-              i.fas.fa-chevron-right {
-              }
-            }
-          }
         }
         & ul.post__box {
           @include content-box;

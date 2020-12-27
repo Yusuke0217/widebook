@@ -110,32 +110,6 @@
         }
         .move__btn {
           display: none;
-          a {
-            @include move-btn;
-            i {
-              position: absolute;
-            }
-          }
-          .btn--left {
-            a {
-              right: 12%;
-              top: 5%;
-              i {
-                right: 40%;
-                top: 35%;
-              }
-            }
-          }
-          .btn--right {
-            a {
-              right: 5%;
-              top: 5%;
-              i {
-                right: 35%;
-                top: 35%;
-              }
-            }
-          }
         }
       }
     }

@@ -12,7 +12,7 @@
         <%= f.text_field :name, placeholder: "エリア・駅", class: "area__form" %>
         <%= f.collection_select :id, BussinessType.all, :id, :name, { include_hidden: false, include_blank: "選択してください", class: "b-type__form" } %>
         <%= f.text_field :name, value: params[:name], placeholder: "キーワード", class: "keyword__form" %>
-        <%= f.date_field :date, class: "date__form" %>
+        <%= f.date_field :calendar, class: "date__form"%>
       </div>
       <div class="search__btn">
         <button>
