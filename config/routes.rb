@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/:id/shops", to: "shops#index", as: "shop_views"
 
   resources :users, only: [:index, :show, :edit, :update, :destroy] do
     resource :bookmarks, only: [:show, :edit, :update]
     resource :reviews, only: [:show]
   end
 
-  resources :shops do
+  resources :shops, only: [:new, :show, :edit, :create, :update, :destroy] do
     resource :bookmarks, only: [:create, :destroy]
     resource :reviews, only: [:show, :new, :create]
   end

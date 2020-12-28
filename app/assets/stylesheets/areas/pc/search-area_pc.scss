@@ -70,55 +70,6 @@
             p {
             }
           }
-          .other__list {
-            position: relative;
-            margin: 20px 12px;
-            & h1 {
-              font-size: 1.5rem;
-            }
-            & p {
-              color: $darkgray;
-            }
-            ul.content__box {
-              list-style: none;
-              display: flex;
-              margin-bottom: 20px;
-              a {
-                @include link;
-                margin: 15px 10px 5px;
-                li {
-                  height: 250px;
-                  width: 250px;
-                  @include flame;
-                  .content__wrapper {
-                    height: 100%;
-                    .content__img {
-                      height: 70%;
-                      img {
-                        border-radius: 20px 20px 0 0;
-                        height: 100%;
-                        width: 100%;
-                      }
-                    }
-                    .content__cp {
-                      padding: 15px 10px;
-                      text-align: center;
-                      h2 {
-                        font-size: 1.2rem;
-                      }
-                      p {
-                        color: $darkgray;
-                        padding: 5px;
-                      }
-                    }
-                  }
-                }
-                &:hover {
-                  @include link-hover;
-                }
-              }
-            }
-          }
         }
       }
     }

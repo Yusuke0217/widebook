@@ -3,7 +3,6 @@ class Image < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :image, length: {maximum: 10}
   validate :image_size
 
   private

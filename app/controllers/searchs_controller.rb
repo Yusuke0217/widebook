@@ -7,17 +7,17 @@ class SearchsController < ApplicationController
     
 
     if @categories.present?
-      @results = Shop.where(id: @categories)
+      @results = Shop.where(id: @categories).page(params[:page]).per(20)
     elsif @shops.present?
-      @results = Shop.search(params[:search][:name])
+      @results = Shop.search(params[:search][:name]).page(params[:page]).per(20)
     elsif @bussiness_types.present?
-      @results = Shop.where(id: @bussiness_types)
+      @results = Shop.where(id: @bussiness_types).page(params[:page]).per(20)
     else
       # @results = Shop.all
       redirect_to root_url
     end
 
-    @other_categories = Category.where(id: 3)
+    @other_categories = Category.where(id: 1).page(params[:page]).per(10)
     
   end
 

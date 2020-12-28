@@ -140,9 +140,10 @@
                 <div class="map"></div>
               <% end %>
             </div>
-            <div class="review__link">
-              <%= link_to new_shop_reviews_path(@shop) do %>
-                <div class="map">仮レビュー作成ボタン</div>
+            <div class="shop__action">
+              <% if current_user.admin? && current_user?(@shop.user) %>
+                <%= link_to "お店を編集", edit_shop_path(@shop), method: :get %>
+                <%= link_to "お店を削除", @shop, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
               <% end %>
             </div>
           </div>
@@ -314,7 +315,7 @@
             </div>
           </div>
           <div class="detail__btn shop__more">
-            <%= link_to shops_path, class:"detail" do %>
+            <%= link_to root_path, class:"detail" do %>
               <span>すべて表示<i></i></span>
             <% end %>
           </div>
@@ -336,7 +337,7 @@
             </div>
           </div>
           <div class="detail__btn shop__more">
-            <%= link_to shops_path, class:"detail" do %>
+            <%= link_to root_path, class:"detail" do %>
               <span>すべて表示<i></i></span>
             <% end %>
           </div>
@@ -504,7 +505,7 @@
           </a>
         </ul>
         <div class="detail__btn shop__more">
-          <%= link_to shops_path, class:"detail" do %>
+          <%= link_to root_path, class:"detail" do %>
             <span>すべて表示<i></i></span>
           <% end %>
         </div>
@@ -557,7 +558,7 @@
           </a>
         </ul>
         <div class="detail__btn shop__more">
-          <%= link_to shops_path, class:"detail" do %>
+          <%= link_to root_path, class:"detail" do %>
             <span>すべて表示<i></i></span>
           <% end %>
         </div>

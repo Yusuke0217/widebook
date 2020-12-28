@@ -5,7 +5,7 @@ class ShopsController < ApplicationController
   before_action :find_shop, only: [:edit, :update, :show, :destroy]
 
   def index
-    @shops = Shop.includes(:user).all
+    @shops = ShopCategory.where(category_id: params[:id])
   end
 
   def new
@@ -47,7 +47,7 @@ class ShopsController < ApplicationController
   def destroy
     if @shop.destroy
       flash[:success] = "お店を削除しました。"
-      redirect_to request.referrer || root_url
+      redirect_to shop_views_path || root_url
     else
       flash[:danger] = "削除に失敗しました。"
       render "shops#index"

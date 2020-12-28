@@ -1,0 +1,21 @@
+@import "../main.scss";
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .pagination {
+    & span {
+      & a {
+        &:hover {
+        }
+      }
+    }
+    span.page {
+    }
+    span.page.current {
+    }
+    span.next {
+    }
+    span.last {
+    }
+  }
+}

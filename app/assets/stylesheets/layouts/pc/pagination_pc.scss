@@ -1,0 +1,45 @@
+@import "../../main.scss";
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  .pagination {
+    display: flex;
+    justify-content: center;
+    @include padding(10px, 0, 10px, 0);
+    & span {
+      @include margin(0, 5px, 0, 5px);
+      @include mobile-ttl;
+      & a {
+        @include link;
+        &:hover {
+        }
+      }
+    }
+    span.page {
+      order: 2;
+    }
+    span.page.current {
+      height: 30px;
+      width: 31px;
+      background-color: $plum;
+      color: white;
+      border-radius: 50%;
+    }
+    span.next {
+      order: 3;
+      @include margin(0, 5px, 0, 15px);
+    }
+    span.prev {
+      order: 1;
+      @include margin(0, 15px, 0, 5px);
+    }
+    span.last {
+      display: none;
+      order: 3;
+    }
+    span.first {
+      display: none;
+      order: 3;
+    }
+  }
+}

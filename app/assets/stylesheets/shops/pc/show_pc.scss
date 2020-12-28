@@ -82,7 +82,7 @@
         position: absolute;
         display: flex;
         @include margin(0, 10px, 0, 0);
-        top: 3%;
+        top: 3.5%;
         right: 5%;
         z-index: 70;
         a {
@@ -698,81 +698,6 @@
         }
         & .move__btn {
           display: none;
-        }
-        & ul.post__box {
-          @include content-box;
-          @include margin(10px, 0, 0, 0);
-          overflow: scroll;
-          a {
-            @include link;
-            @include margin(10px, 5px, 10px, 5px);
-            li {
-              height: 250px;
-              width: 250px;
-              border-radius: 20px;
-              .post__wrapper {
-                height: 100%;
-                .post__img {
-                  height: 65%;
-                  img {
-                    border-radius: 20px 20px 0 0;
-                    height: 100%;
-                    width: 100%;
-                  }
-                }
-                .post__info {
-                  @include padding(5px, 0, 3px, 5px);
-                  &__deco {
-                    display: flex;
-                    .post__review {
-                      i.fas.fa-star {
-                        color: $plum;
-                      }
-                      span {
-                      }
-                    }
-                    .post__tag {
-                      i {
-                      }
-                      span {
-                      }
-                    }
-                  }
-                  .post__info__basic {
-                    .post__name {
-                      h2 {
-                        font-size: 1rem;
-                      }
-                    }
-                    .post__about {
-                      display: flex;
-                      .post__place {
-                        .address {
-                          @include word-el;
-                          span {
-                            color: $darkgray;
-                            @include padding(2px, 2px, 2px, 2px);
-                          }
-                        }
-                      }
-                    }
-                    .post__budget {
-                      i.fas.fa-yen-sign {
-                      }
-                      span {
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      .other__list {
-        h1 {
-        }
-        p {
         }
       }
     }

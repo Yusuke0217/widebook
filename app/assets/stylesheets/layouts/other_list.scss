@@ -1,0 +1,17 @@
+@import "../main.scss";
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .other__list {
+    position: relative;
+    & h1 {
+      @include mobile-ttl;
+    }
+    & p {
+      color: $darkgray;
+    }
+    & .move__btn {
+      display: none;
+    }
+  }
+}
