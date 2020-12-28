@@ -31,7 +31,7 @@
           <p><%= @results.count %>件の検索結果</p>
         </div>
         <div class="post__list result-top" id="">
-          <h1> name</h1>
+          <h1></h1>
           <p></p>
           <%= render 'layouts/move_btn' %>
           <%# 以下は後ほど、shop_listにまとめてrenderする。 %>
@@ -87,28 +87,6 @@
           <div class="detail__btn result__more">
             <%= paginate @results %>
           </div>
-        </div>
-        <div class="content__list" id="category">
-          <h1><%= yield(:text) %></h1>
-          <p></p>
-          <%= render 'layouts/move_btn' %>
-          <ul class="content__box">
-          <% @categories.each do |category| %>
-            <%= link_to category_path(category) do %>
-              <li>
-                <div class="content__wrapper">
-                  <div class="content__img">
-                    <%= image_tag "hotel1.jpeg"%>
-                  </div>
-                  <div class="content__cp">
-                    <h2><%= category %></h2>
-                    <p></p>
-                  </div>
-                </div>
-              </li>
-            <%end%>
-          <%end%>
-          </ul>
         </div>
         <div class="other__list" id="">
           <h1></h1>

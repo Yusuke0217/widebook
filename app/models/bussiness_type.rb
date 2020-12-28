@@ -7,10 +7,10 @@ class BussinessType < ApplicationRecord
   #   self.find_by(id: search_params)
   # end
 
-  scope :join_us, -> { joins(categories: :shop_categories) }
-  scope :choice, -> { select('categories.*, shop_categories.*')}
+  scope :join_us, -> { joins(categories: :shops) }
+  scope :choice, -> { select('bussiness_types.*, categories.*, shops.*')}
   scope :b_search, -> (search_params) { where(id: search_params)}
-  scope :shops_ary, -> { map { |result| result.shop_id }}
+  scope :shops_ary, -> { map { |result| result.id }}
 
   scope :search, -> (search_params) { self.join_us.choice.b_search(search_params).shops_ary }
   

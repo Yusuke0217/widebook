@@ -6,18 +6,16 @@ class SearchsController < ApplicationController
     @bussiness_types = BussinessType.search(params[:search][:id])
     
 
-    if @categories.present?
+    if @bussiness_types.present?
+      @results = Shop.where(id: @bussiness_types).page(params[:page]).per(20)
+    elsif @categories.present?
       @results = Shop.where(id: @categories).page(params[:page]).per(20)
     elsif @shops.present?
       @results = Shop.search(params[:search][:name]).page(params[:page]).per(20)
-    elsif @bussiness_types.present?
-      @results = Shop.where(id: @bussiness_types).page(params[:page]).per(20)
     else
       # @results = Shop.all
       redirect_to root_url
     end
-
-    @other_categories = Category.where(id: 1).page(params[:page]).per(10)
     
   end
 

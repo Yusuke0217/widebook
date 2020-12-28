@@ -52,14 +52,9 @@
             }
           }
           .post__list {
+            @include padding(30px, 0, 0, 0);
             h1 {
               font-size: 1.5rem;
-            }
-            p {
-            }
-          }
-          .post__list.result__top {
-            h1 {
             }
             p {
             }

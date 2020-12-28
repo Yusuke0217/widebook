@@ -5,6 +5,7 @@
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
   .move__btn {
+    @include padding(0, 0, 15px, 0);
     a {
       height: 44px;
       width: 44px;
@@ -19,7 +20,7 @@
     }
     .btn--left {
       a {
-        right: 12%;
+        right: 11%;
         top: 3%;
         i.fas.fa-chevron-left {
           right: 40%;
