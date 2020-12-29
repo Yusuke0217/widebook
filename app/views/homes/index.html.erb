@@ -54,58 +54,6 @@
         <% end %>
         </ul>
       </div>
-      <div class="content__list common" id="area">
-        <h1>エリアから探す</h1>
-        <p>範囲を絞って検索できます！</p>
-        <%= render 'layouts/move_btn' %>
-        <ul class="content__box">
-        <% @areas.each do |area| %>
-          <%= link_to area_path(area) do %>
-            <li>
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <%= image_tag "/assets/instagram1.jpeg" %>
-                </div>
-                <div class="content__cp">
-                  <h2><%= area.name %></h2>
-                  <p></p>
-                </div>
-              </div>
-            </li>
-          <% end %>
-        <% end %>
-        </ul>
-        <div class="detail__btn shop__more">
-          <%= link_to root_path, class:"detail" do %>
-            <span>すべて表示<i></i></span>
-          <% end %>
-        </div>
-      </div>
-      <div class="content__list common" id="">
-        <h1>から探す</h1>
-        <p></p>
-        <%= render 'layouts/move_btn' %>
-        <ul class="content__box">
-          <%= link_to root_path do %>
-            <li>
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <%= image_tag "/assets/instagram1.jpeg" %>
-                </div>
-                <div class="content__cp">
-                  <h2><%= %></h2>
-                  <p></p>
-                </div>
-              </div>
-            </li>
-          <% end %>
-        </ul>
-        <div class="detail__btn shop__more">
-          <%= link_to root_path, class:"detail" do %>
-            <span>すべて表示<i></i></span>
-          <% end %>
-        </div>
-      </div>
       <div class="content__list common" id="">
         <h1>から探す</h1>
         <p></p>
