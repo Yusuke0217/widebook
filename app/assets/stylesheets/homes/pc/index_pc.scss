@@ -4,7 +4,6 @@
   // PC用のレスポンシブ
   .main__wrapper {
     .main__view {
-      @include padding(100px, 0px, 0, 0px);
       .searchbox__wrapper {
         display: none;
         form {
@@ -57,10 +56,11 @@
           .main__view__cp {
             h1 {
               color: $white;
+              @include pc-ttl;
               padding-top: 120px;
             }
             p {
-              padding: 5px;
+              @include padding(5px, 5px, 5px, 5px);
               color: $white;
             }
           }
@@ -68,7 +68,7 @@
             padding-top: 50px;
             a {
               height: 50px;
-              width: 500px;
+              width: 300px;
               border: 1px solid $darkgray;
               box-sizing: border-box;
               background-color: $plum;
@@ -91,30 +91,27 @@
     .main__content {
       .content__list {
         position: relative;
-        margin-top: 50px;
-        margin-right: 10px;
-        margin-bottom: 0px;
-        margin-left: 10px;
+        @include margin(50px, 10px, 0px, 10px);
         h1 {
         }
         p {
           color: $darkgray;
           font-size: 1.2rem;
         }
-        ul.content__box {
-          list-style: none;
+        ul.post__box {
+          justify-content: space-between;
           display: flex;
-          margin-bottom: 20px;
+          @include margin(0, 0, 20px, 0);
           a {
             @include link;
             margin: 15px 10px 5px;
             li {
-              height: 250px;
-              width: 250px;
+              height: 200px;
+              width: 200px;
               @include flame;
-              .content__wrapper {
+              .post__wrapper {
                 height: 100%;
-                .content__img {
+                .post__img {
                   height: 70%;
                   img {
                     border-radius: 20px 20px 0 0;
@@ -122,8 +119,8 @@
                     width: 100%;
                   }
                 }
-                .content__cp {
-                  padding: 15px 10px;
+                .post__cp {
+                  @include padding(10px, 10px, 5px, 10px);
                   text-align: center;
                   h2 {
                     font-size: 1.2rem;
@@ -147,23 +144,6 @@
       #b-type {
         ul {
           overflow-x: scroll;
-          a {
-            li {
-              .content__wrapper {
-                .content__img {
-                  img {
-                  }
-                }
-                .content__cp {
-                  h2 {
-                  }
-                  p {
-
-                  }
-                }
-              }
-            }
-          }
         }
       }
       #area {
@@ -201,39 +181,33 @@
         }
       }
       #special {
-        background-color: #9E7A7A;
-        // background-color: $plum;
-        margin-top: 30px;
-        margin-right: 0px;
-        margin-bottom: 0px;
-        margin-left: 0px;
+        background-color: rgba($darkgray, $alpha: 0.3);
+        @include margin(30px, 0px, 0px, 0px);
         height: 400px;
         h1 {
           color: $white;
-          margin: 0 10px;
+          @include padding(10px, 10px, 10px, 20px);
         }
         p {
-          margin: 0 10px;
+          @include margin(0px, 10px, 0px, 10px);
         }
         ul {
           overflow: scroll;
-          margin-right: 20px;
-          margin-bottom: 0px;
-          margin-left: 20px;
+          @include margin(10px, 20px, 0px, 20px);
           a {
-            margin-right: 10px;
-            margin-bottom: 10px;
-            margin-left: 10px;
+            @include margin(10px, 10px, 10px, 10px);
             li {
-              .content__wrapper {
-                .content__img {
+              .post__wrapper {
+                .post__img {
                   img {
                   }
                 }
-                .content__cp {
+                .post__cp {
                   h2 {
+                    font-size: 1.0rem;
                   }
                   p {
+                    font-size: 0.9rem;
                   }
                 }
               }

@@ -36,15 +36,15 @@
       <div class="content__list common" id="b-type">
         <h1>目的から探す</h1>
         <%= render 'layouts/move_btn' %>
-        <ul class="content__box">
+        <ul class="post__box">
         <% @b_types.each do |b_type| %>
           <%= link_to bussiness_type_path(b_type.id) do %>
             <li>
-              <div class="content__wrapper">
-                <div class="content__img">
+              <div class="post__wrapper">
+                <div class="post__img">
                   <%= image_tag b_type.image.url %>
                 </div>
-                <div class="content__cp">
+                <div class="post__cp">
                   <h2><%= b_type.name %></h2>
                   <p></p>
                 </div>
@@ -58,14 +58,14 @@
         <h1>から探す</h1>
         <p></p>
         <%= render 'layouts/move_btn' %>
-        <ul class="content__box">
+        <ul class="post__box">
           <%= link_to root_path do %>
             <li>
-              <div class="content__wrapper">
-                <div class="content__img">
+              <div class="post__wrapper">
+                <div class="post__img">
                   <%= image_tag "/assets/instagram1.jpeg" %>
                 </div>
-                <div class="content__cp">
+                <div class="post__cp">
                   <h2><%= %></h2>
                   <p></p>
                 </div>
@@ -83,14 +83,14 @@
         <h1>特集</h1>
         <p>ガイドブックならではの特集を皆様にお届けします！</p>
         <%= render 'layouts/move_btn' %>
-        <ul class="content__box">
+        <ul class="post__box">
           <a href="">
             <li>
-              <div class="content__wrapper">
-                <div class="content__img">
+              <div class="post__wrapper">
+                <div class="post__img">
                   <%= image_tag "christmas-market.jpeg" %>
                 </div>
-                <div class="content__cp">
+                <div class="post__cp">
                   <h2>冬の代名詞</h2>
                   <p></p>
                 </div>
@@ -99,26 +99,13 @@
           </a>
           <a href="">
             <li>
-              <div class="content__wrapper">
-                <div class="content__img">
+              <div class="post__wrapper">
+                <div class="post__img">
                   <%= image_tag "ramen.jpeg" %>
                 </div>
-                <div class="content__cp">
+                <div class="post__cp">
                   <h2>最近キテるラーメン屋さん特集</h2>
                   <p>ラーメンと言えば、秒速4.5cmで麺が伸びますが、今回は麺が伸びるスピードよりも早く人気が伸びているラーメン屋さんをご紹介します！</p>
-                </div>
-              </div>
-            </li>
-          </a>
-          <a href="">
-            <li>
-              <div class="content__wrapper">
-                <div class="content__img">
-                  <%= image_tag "" %>
-                </div>
-                <div class="content__cp">
-                  <h1></h1>
-                  <p></p>
                 </div>
               </div>
             </li>

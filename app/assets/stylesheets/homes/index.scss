@@ -4,211 +4,203 @@
 
 @media screen and (max-width: 559px) {
   // Mobile用のレスポンシブ
-  .wrapper {
-    .main__wrapper {
-      height: 100%;
-      width: 100%;
-      .main__view {
-        padding-top: 80px;
-        .searchbox__wrapper {
-          display: none;
-          form {
-            width: 80%;
-            margin: 10px auto;
-            text-align: center;
-            box-sizing: border-box;
-            position: relative;
+  .main__wrapper {
+    .main__view {
+      .searchbox__wrapper {
+        display: none;
+        form {
+          width: 80%;
+          margin: 10px auto;
+          text-align: center;
+          box-sizing: border-box;
+          position: relative;
+          display: block;
+          overflow: hidden;
+          border-radius: 50px;
+          box-shadow: 1px 1px 2px 1px rgb(180, 180, 180);
+          .input__area {
             display: block;
-            overflow: hidden;
-            border-radius: 50px;
-            box-shadow: 1px 1px 2px 1px rgb(180, 180, 180);
-            .input__area {
-              display: block;
-              input {
-                height: 50px;
-                width: 100%;
-                background-color: $white;
-                border-radius: 50px;
+            input {
+              height: 50px;
+              width: 100%;
+              background-color: $white;
+              border-radius: 50px;
+            }
+            input:focus {
+              outline: none;
+            }
+            button {
+              height: 50px;
+              width: 50px;
+              background-color: $plum;
+              border-radius: 50px;
+              cursor: pointer;
+              position: absolute;
+              right:0px;
+              outline : none;
+              i {
+                color: $white;
+                font-weight:bold;
               }
-              input:focus {
-                outline: none;
+            }
+          }
+        }
+      }
+      &__img {
+        text-align: center;
+        position: relative;
+        .bg__img.index {
+          height: 300px;
+          width: 95%;
+          margin: 20px auto;
+          background-image: url("/assets/bg_image2.jpeg");
+          background-size: contain;
+          border-radius: 20px;
+          .main__view__cp {
+            @include padding(90px, 0px, 0px, 0px);
+            h1 {
+              @include mobile-ttl;
+              color: $white;
+            }
+            p {
+              color: $white;
+            }
+          }
+          .place__btn {
+            @include padding(30px, 0px, 0px, 0px);
+            a {
+              height: 30px;
+              width: 50%;
+              border: 1px solid $darkgray;
+              box-sizing: border-box;
+              border-radius: 20px;
+              background-color: $plum;
+              outline: none;
+              @include link;
+              display: inline-block;
+              color: $white;
+              span {
+                line-height: 1.8rem;
+                font-size: 1.1rem;
               }
-              button {
-                height: 50px;
-                width: 50px;
-                background-color: $plum;
-                border-radius: 50px;
-                cursor: pointer;
-                position: absolute;
-                right:0px;
-                outline : none;
-                i {
-                  color: $white;
-                  font-weight:bold;
+            }
+          }
+        }
+      }
+    }
+    .main__content {
+      display: flex;
+      flex-direction: column;
+      .content__list.common {
+        position: relative;
+        margin: 20px 12px;
+        & h1 {
+          font-size: 1.2rem;
+        }
+        & p {
+          color: $darkgray;
+        }
+        .move__btn {
+          display: none;
+        }
+        & ul.post__box {
+          @include content-box;
+          a {
+            @include link;
+            @include margin(10px, 5px, 10px, 5px);
+            li {
+              @include flame;
+              height: 200px;
+              width: 200px;
+              .post__wrapper {
+                height: 100%;
+                .post__img {
+                  height: 70%;
+                  img {
+                    border-radius: 20px 20px 0 0;
+                    height: 100%;
+                    width: 100%;
+                  }
+                }
+                .post__cp {
+                  padding: 10px;
+                  h2 {
+                    font-size: 1.1rem;
+                  }
+                  p {
+                    color: $darkgray;
+                    padding: 2px;
+                  }
                 }
               }
             }
           }
         }
-        &__img {
-          text-align: center;
-          position: relative;
-          .bg__img.index {
-            height: 400px;
-            width: 95%;
-            margin: 20px auto;
-            background-image: url("/assets/bg_image2.jpeg");
-            background-size: contain;
-            border-radius: 20px;
-            .main__view__cp {
-              padding-top: 120px;
-              h1 {
-                font-size: 1.3rem;
-                color: $white;
-              }
-              p {
-                color: $white;
-              }
-            }
-            .place__btn {
-              padding-top: 30px;
-              a {
-                height: 30px;
-                width: 50%;
-                border: 1px solid $darkgray;
-                box-sizing: border-box;
-                border-radius: 20px;
-                background-color: $plum;
-                outline: none;
-                @include link;
-                display: inline-block;
-                color: $white;
-                span {
-                  line-height: 1.8rem;
-                  font-size: 1.1rem;
+        ul::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      #b-type {
+        order: 2;
+        & .move__btn {
+          // display: none;
+        }
+        ul {
+          overflow: scroll;
+        }
+      }
+      #area {
+        order: 1;
+        margin: 30px 12px;
+        h1 {
+        }
+        .move__btn {
+          display: none;
+        }
+        & ul {
+          flex-wrap: wrap;
+          margin-top: 20px;
+          justify-content: center;
+          a {
+            margin: 1px;
+            li {
+              height: 115px;
+              width: 110px;
+              border: none;
+              position: relative;
+              .content__wrapper {
+                .content__img {
+                  height: 100%;
+                  img {
+                    border-radius: 10px;
+                  }
+                }
+                .content__cp {
+                  position: absolute;
+                  top: 35%;
+                  left: 20%;
+                  h2 {
+                    color: $white;
+                  }
                 }
               }
             }
           }
         }
       }
-      .main__content {
-        display: flex;
-        flex-direction: column;
-        .content__list.common {
-          position: relative;
-          margin: 20px 12px;
-          & h1 {
-            font-size: 1.2rem;
-          }
-          & p {
-            color: $darkgray;
-          }
-          .move__btn {
-            display: none;
-          }
-          & ul.content__box {
-            @include content-box;
-            a {
-              @include link;
-              margin-top: 10px;
-              margin-right: 5px;
-              margin-bottom: 10px;
-              margin-left: 5px;
-              li {
-                @include flame;
-                height: 200px;
-                width: 200px;
-                .content__wrapper {
-                  height: 100%;
-                  .content__img {
-                    height: 70%;
-                    img {
-                      border-radius: 20px 20px 0 0;
-                      height: 100%;
-                      width: 100%;
-                    }
-                  }
-                  .content__cp {
-                    padding: 10px;
-                    h2 {
-                      font-size: 1.1rem;
-                    }
-                    p {
-                      color: $darkgray;
-                      padding: 2px;
-                    }
-                  }
-                }
-              }
-            }
-          }
-          ul::-webkit-scrollbar {
-            display: none;
-          }
+      #special {
+        order: 3;
+        background-color: $beige;
+        margin: 0;
+        padding: 0 15px;
+        h1 {
+          padding-top: 20px;
         }
-        #b-type {
-          order: 2;
-          & .move__btn {
-            // display: none;
-          }
-          ul {
-            overflow: scroll;
-          }
-        }
-        #area {
-          order: 1;
-          margin: 30px 12px;
-          h1 {
-          }
-          .move__btn {
-            display: none;
-          }
-          & ul {
-            flex-wrap: wrap;
-            margin-top: 20px;
-            justify-content: center;
-            a {
-              margin: 1px;
-              li {
-                height: 115px;
-                width: 110px;
-                border: none;
-                position: relative;
-                .content__wrapper {
-                  .content__img {
-                    height: 100%;
-                    img {
-                      border-radius: 10px;
-                    }
-                  }
-                  .content__cp {
-                    position: absolute;
-                    top: 35%;
-                    left: 20%;
-                    h2 {
-                      color: $white;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        #special {
-          order: 3;
-          background-color: $beige;
-          margin: 0;
-          padding: 0 15px;
-          h1 {
-            padding-top: 20px;
-          }
-          ul {
-            overflow-x: scroll;
-            a {
-              li {
-                .content__wrapper {
-                }
+        ul {
+          overflow-x: scroll;
+          a {
+            li {
+              .content__wrapper {
               }
             }
           }

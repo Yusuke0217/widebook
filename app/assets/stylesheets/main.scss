@@ -59,9 +59,13 @@
 @media screen and (max-width: 559px) {
   // Mobile用の共通部分
   #top__face {
+    height: 100%;
+    width: 100%;
     padding-top: 80px;
   }
   .main__wrapper {
+    height: 100%;
+    width: 100%;
     padding-top: 80px;
     .detail__btn {
       text-align: center;
