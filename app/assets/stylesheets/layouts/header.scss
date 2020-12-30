@@ -15,7 +15,7 @@
       background-color: $white;
       .hd__logo {
         display: none;
-        margin: 0 30px;
+        @include margin(0px, 30px, 0px, 30px);
         a {
           img {
             height: 100px;

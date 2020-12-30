@@ -1,0 +1,65 @@
+@import "../../main.scss";
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  footer {
+    .ft__wrapper {
+      .ft__nav {
+        @include padding(20px, 0px, 20px, 0px);
+        background-color: rgba($darkgray, $alpha: 0.3);
+        ul.nav__list {
+          text-align: center;
+          li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .nav__link {
+              display: inline-block;
+              a {
+                @include link;
+                color: $darkgray;
+              }
+            }
+            .ft__nav__how {
+              a {
+                .app__info {
+                  p {
+                  }
+                }
+              }
+            }
+            .ft__nav__rule {
+              a {
+                .rule {
+                  p {
+                  }
+                }
+              }
+            }
+            .ft__nav__privacy {
+              a {
+                .privacy {
+                  p {
+                  }
+                }
+              }
+            }
+            .ft__nav__query {
+              a {
+                .query {
+                  p {
+                  }
+                }
+              }
+            }
+          }
+        }
+        .copy__write {
+          text-align: center;
+          @include padding(20px, 0px, 10px, 0px);
+          p {
+          }
+        }
+      }
+    }
+  }
+}

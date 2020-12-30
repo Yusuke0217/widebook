@@ -14,7 +14,7 @@
       background-color: $white;
       .hd__logo {
         width: 130px;
-        margin: 10px 30px;
+        @include margin(10px, 30px, 10px, 30px);
         a {
           img {
             height: 80px;
@@ -26,7 +26,7 @@
         width: 65%;
         form {
           border-radius: 50px;
-          margin: 25px 10px;
+          @include margin(25px, 10px, 25px, 10px);
           box-shadow: 0 0 4px 0px $darkgray;
           height: 50px;
           width: 100%;
@@ -37,36 +37,34 @@
             input {
               height: 100%;
               outline: none;
-              padding-left: 20px;
+              @include padding(0px, 0px, 0px, 20px);
               &:hover {
-                background-color: $darkgray;
-                border-radius: 50px;
+                background-color: rgba($darkgray, $alpha: 0.3);
+                // border-radius: 50px 0px 0px 50px;
               }
             }
             input.area__form {
+              display: none;
               width: 20%;
             }
             select {
               height: 100%;
-              width: 20%;
+              width: 27%;
               outline: none;
-              @include padding(0px, 0, 0px, 10px);
-              border-left: 2px solid rgba($color: $darkgray, $alpha: 0.3) ;
+              @include padding(0px, 0, 0px, 20px);
               &:hover {
-                background-color: $darkgray;
-              }
-              &:before {
-                content: "\f078";
-                @include awesome;
+                background-color: rgba($darkgray, $alpha: 0.3);
+                border-radius: 50px 0px 0px 50px;
               }
             }
             input.keyword__form {
-              width: 30%;
-              border-left: 2px solid rgba($color: $darkgray, $alpha: 0.3) ;
+              width: 65%;
+              border-left: 2px solid rgba($color: $darkgray, $alpha: 0.3);
             }
             input.date__form {
+              display: none;
               width: 20%;
-              border-left: 2px solid rgba($color: $darkgray, $alpha: 0.3) ;
+              border-left: 2px solid rgba($color: $darkgray, $alpha: 0.3);
             }
           }
           .search__btn {

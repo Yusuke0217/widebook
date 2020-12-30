@@ -1,3 +1,9 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/layouts/header', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/tablet/header_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/pc/header_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
 <%# mobile用のfooter %>
 <%# <footer>
   <div class="ft__wrapper">
@@ -64,7 +70,7 @@
     <div class="ft__nav">
       <ul class="nav__list">
         <li>
-          <div class="ft__nav__how">
+          <div class="ft__nav__how nav__link">
             <a href="">
               <div class="app__info">
                 <p>アプリのご利用方法</p>
@@ -73,7 +79,7 @@
           </div>
         </li>
         <li>
-          <div class="ft__nav__rule">
+          <div class="ft__nav__rule nav__link">
             <a href="">
               <div class="rule">
                 <p>利用規約</p>
@@ -82,7 +88,7 @@
           </div>
         </li>
         <li>
-          <div class="ft__nav__privacy">
+          <div class="ft__nav__privacy nav__link">
             <a href="">
               <div class="privacy">
                 <p>プライバシー・ポリシー</p>
@@ -91,7 +97,7 @@
           </div>
         </li>
         <li>
-          <div class="ft__nav__query">
+          <div class="ft__nav__query nav__link">
             <a href="">
               <div class="query">
                 <p>お問い合わせ</p>
