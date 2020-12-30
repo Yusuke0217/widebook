@@ -16,8 +16,8 @@ class SearchsController < ApplicationController
     elsif @shops.present?
       @results = Shop.search(params[:search][:name]).page(params[:page]).per(20)
     else
-      # @results = Shop.all
-      redirect_to root_url
+      @results = Shop.all
+      # redirect_to root_url
     end
     
   end
