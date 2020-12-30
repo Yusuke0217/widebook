@@ -74,12 +74,15 @@
       flex-direction: column;
       .shop__list {
         position: relative;
-        @include margin(20px, 12px, 20px, 12px);
+        @include margin(20px, 0px, 20px, 0px);
         & h1 {
           @include pc-ttl;
         }
         & p {
           color: $darkgray;
+        }
+        .detail__btn {
+          // display: none;
         }
       }
     }

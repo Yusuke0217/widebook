@@ -4,8 +4,6 @@
   // Mobile用のレスポンシブ
   .wrapper {
     .main__wrapper {
-      height: 100%;
-      width: 100%;
       .main__view {
         .searchbox__wrapper {
           display: none;
@@ -126,10 +124,7 @@
         }
         .shop__list {
           position: relative;
-          margin-top: 20px;
-          margin-right: 12px;
-          margin-bottom: 20px;
-          margin-left: 12px;
+          @include margin(20px, 12px, 20px, 12px);
           & h1 {
             @include mobile-ttl;
           }

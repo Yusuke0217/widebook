@@ -24,7 +24,7 @@ class BussinessType < ApplicationRecord
   # ---------------------関連するお店----------
   scope :choice_ids, -> { select("bussiness_types.id", "categories.bussiness_type_id", "shop_categories.shop_id", "shop_categories.category_id") }
 
-  scope :rand_shops, -> (search_params) { self.join_type.choice_ids.b_search(search_params).stores_ary}
+  scope :rand_shops, -> (search_params) { self.join_type.choice_ids.b_search(search_params).stores_ary }
   # --------------------------------------------
   
 end

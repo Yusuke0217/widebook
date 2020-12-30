@@ -6,6 +6,7 @@ class ShopsController < ApplicationController
 
   def index
     @shops = ShopCategory.where(category_id: params[:id])
+    # @shops = idsを持ってくる。appication-controllerに共通のメソッドをかく
   end
 
   def new
