@@ -183,17 +183,18 @@
       #special {
         background-color: rgba($darkgray, $alpha: 0.3);
         @include margin(30px, 0px, 0px, 0px);
+        @include padding(0px, 10px, 0px, 10px);
         height: 400px;
         h1 {
           color: $white;
-          @include padding(10px, 10px, 10px, 20px);
+          @include padding(10px, 0px, 10px, 10px);
         }
         p {
           @include margin(0px, 10px, 0px, 10px);
         }
         ul {
           overflow: scroll;
-          @include margin(10px, 20px, 0px, 20px);
+          @include margin(10px, 10px, 0px, 10px);
           a {
             @include margin(10px, 10px, 10px, 10px);
             li {
