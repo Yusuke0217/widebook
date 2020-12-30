@@ -3,10 +3,6 @@ class BussinessType < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  # def self.search(search_params)
-  #   self.find_by(id: search_params)
-  # end
-
   # -----------Bussiness_typeをidで検索するとき----
   scope :join_us, -> { joins(categories: :shops) }
   scope :choice, -> { select('bussiness_types.*, categories.*, shops.*')}
@@ -25,11 +21,10 @@ class BussinessType < ApplicationRecord
   scope :k_word, -> (search_params) { self.join_type.select_column.b_type_search(search_params).stores_ary }
   # --------------------------------------------
 
-  # --------------------------------------------
+  # ---------------------関連するお店----------
   scope :choice_ids, -> { select("bussiness_types.id", "categories.bussiness_type_id", "shop_categories.shop_id", "shop_categories.category_id") }
-  scope :params_where, -> (id_params) { where(id: id_params) }
 
-  scope :rand_shop, -> (id_params) { self.join_type.choice_ids.params_where(id_params).stores_ary}
+  scope :rand_shops, -> (search_params) { self.join_type.choice_ids.b_search(search_params).stores_ary}
   # --------------------------------------------
   
 end

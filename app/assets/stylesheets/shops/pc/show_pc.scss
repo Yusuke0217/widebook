@@ -7,11 +7,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
-    padding-bottom: 50px;
     .shop__view {
       order: 2;
-      border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+      @include border-btm;
       @include padding(0, 0, 30px, 0);
       .shop__img__list {
         display: flex;
@@ -690,6 +688,7 @@
       }
       .other__list {
         // .near-event
+        display: none;
         @include margin(30px, 0, 0, 0);
         h1 {
           font-size: 1.5rem;
