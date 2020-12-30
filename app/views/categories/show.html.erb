@@ -49,7 +49,7 @@
                     <div class="shop__info__deco">
                       <div class="shop__review">
                         <i class="fas fa-star"></i>
-                        <span></span>
+                        <span><%= shop.reviews.average(:score) %></span>
                       </div>
                       <div class="shop__tag">
                         <i class=""></i>
@@ -86,55 +86,6 @@
         </div>
         <%= render 'layouts/content_box' %>
         <div class="other__list" id="">
-          <h1>Caming soon</h1>
-          <p></p>
-          <%= render 'layouts/move_btn' %>
-          <ul class="shop__box">
-            <%= link_to root_path do %>
-              <li>
-                <div class="shop__wrapper">
-                  <div class="shop__img">
-                    <%= image_tag "" %>
-                  </div>
-                  <div class="shop__info">
-                    <div class="shop__info__deco">
-                      <div class="shop__review">
-                        <i class="fas fa-star"></i>
-                        <span></span>
-                      </div>
-                      <div class="shop__tag">
-                        <i class=""></i>
-                        <span></span>
-                      </div>
-                    </div>
-                    <div class="shop__info__basic">
-                      <div class="shop__name">
-                        <h2></h2>
-                      </div>
-                      <div class="shop__about">
-                        <div class="shop__place">
-                          <div class="address">
-                            <span></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="shop__budget">
-                        <i class="fas fa-yen-sign"></i>
-                        <span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-          <div class="detail__btn shop__more">
-            <%= link_to root_path, class:"detail" do %>
-              <span>すべて表示<i></i></span>
-            <% end %>
-          </div>
-        </div>
-        <div class="post__list result-all" id="">
           <h1>Caming soon</h1>
           <p></p>
           <%= render 'layouts/move_btn' %>
