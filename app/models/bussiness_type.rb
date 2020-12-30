@@ -24,5 +24,12 @@ class BussinessType < ApplicationRecord
   
   scope :k_word, -> (search_params) { self.join_type.select_column.b_type_search(search_params).stores_ary }
   # --------------------------------------------
+
+  # --------------------------------------------
+  scope :choice_ids, -> { select("bussiness_types.id", "categories.bussiness_type_id", "shop_categories.shop_id", "shop_categories.category_id") }
+  scope :params_where, -> (id_params) { where(id: id_params) }
+
+  scope :rand_shop, -> (id_params) { self.join_type.choice_ids.params_where(id_params).stores_ary}
+  # --------------------------------------------
   
 end
