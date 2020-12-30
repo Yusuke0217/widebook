@@ -51,7 +51,6 @@
         .bg__img.b-type {
           height: 400px;
           width: 100%;
-          background-image: url("/assets/bg_image3.jpeg");
           background-size: contain;
           background-repeat: repeat;
           border-radius: 0%;
@@ -70,25 +69,17 @@
     }
     .main__content {
       @include margin(0, 0, 30px, 0);
+      @include padding(0, 60px, 0, 60px);
       display: flex;
       flex-direction: column;
       .shop__list {
         position: relative;
-        margin-top: 20px;
-        margin-right: 12px;
-        margin-bottom: 20px;
-        margin-left: 12px;
+        @include margin(20px, 12px, 20px, 12px);
         & h1 {
-          font-size: 1.5rem;
+          @include pc-ttl;
         }
         & p {
           color: $darkgray;
-        }
-      }
-      .shop__list {
-        h1 {
-        }
-        p {
         }
       }
     }

@@ -53,8 +53,7 @@
           .bg__img.b-type {
             height: 400px;
             width: 100%;
-            background-image: url("/assets/bg_image3.jpeg");
-            background-size: cover;
+            background-size: contain;
             border-radius: 0%;
             .main__view__cp {
               padding-top: 120px;

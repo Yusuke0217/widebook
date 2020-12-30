@@ -18,14 +18,20 @@
 
 @media screen and (min-width: 960px) {
   // PC用の共通部分
-  .top__face {
+  #top__face {
     height: 100%;
     width: 100%;
+    padding-top: 100px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+    padding-left: 0px;
   }
   .main__wrapper {
     height: 100%;
     width: 100%;
+    padding-top: 100px;
     padding-right: 60px;
+    padding-bottom: 50px;
     padding-left: 60px;
     .detail__btn {
       text-align: center;
@@ -52,20 +58,26 @@
 
 @media screen and (max-width: 559px) {
   // Mobile用の共通部分
-  .detail__btn {
-    text-align: center;
-    a.detail {
-      height: 40px;
-      width: 180px;
-      line-height: 40px;;
-      display: inline-block;
-      color: $black;
-      text-decoration: none;
-      border: 1px solid $darkgray;
-      border-radius: 20px;
-      span {
-        font-size: 1.0rem;
-        i {
+  #top__face {
+    padding-top: 80px;
+  }
+  .main__wrapper {
+    padding-top: 80px;
+    .detail__btn {
+      text-align: center;
+      a.detail {
+        height: 40px;
+        width: 180px;
+        line-height: 40px;;
+        display: inline-block;
+        color: $black;
+        text-decoration: none;
+        border: 1px solid $darkgray;
+        border-radius: 20px;
+        span {
+          font-size: 1.0rem;
+          i {
+          }
         }
       }
     }
@@ -173,6 +185,10 @@
 }
 
 @mixin mobile-ttl($h-size: 1.3rem) {
+  font-size: $h-size;
+}
+
+@mixin pc-ttl($h-size: 1.5rem) {
   font-size: $h-size;
 }
 
