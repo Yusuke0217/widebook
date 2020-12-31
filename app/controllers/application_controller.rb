@@ -3,6 +3,15 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def shop_index
+    # b-type/:idでのshops同じbussiness-typeのお店たち
+    @some_shops = BussinessType.joins(categories: :shop_categories).select("bussiness_types.id", "categories.bussiness_type_id", "shop_categories.shop_id", "shop_categories.category_id").where(id: params[:id]).map { |result| result.shop_id }.shuffle.uniq
+
+    # category/:idでのshops同じカテゴリーのお店たち
+
+    # area/:idでのshops同じエリアのお店たち
+
+    # searchs.indexでのshops
+
     # @shops = 
   end
 

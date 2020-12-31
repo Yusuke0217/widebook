@@ -9,12 +9,12 @@
     overflow: scroll;
     a {
       @include link;
-      margin: 10px 5px;
+      @include margin(10px, 10px, 10px, 10px);
       li {
-        height: 300px;
-        width: 350px;
+        height: 250px;
+        width: 250px;
         border-radius: 20px;
-        margin-bottom: 10px;
+        @include margin(0px, 0px, 10px, 0px);
         .shop__wrapper {
           height: 100%;
           .shop__img {
@@ -33,6 +33,7 @@
                   color: $plum;
                 }
                 span {
+                  @include mobile-fsz;
                 }
               }
               .shop__tag {
@@ -44,7 +45,7 @@
             &__basic {
               .shop__name {
                 h2 {
-                  font-size: 1.2rem;
+                  font-size: 1.0rem;
                 }
               }
               .shop__about {
