@@ -9,6 +9,7 @@
   <div class="page__index">
   </div>
   <div class="shop__data">
+  <% if @shops.present? %>
     <ul class="shop__box">
     <% @shops.each do |dtl| %>
       <%= link_to shop_path(dtl.id) do %>
@@ -54,5 +55,11 @@
       <% end %>
     <% end %>
     </ul>
+    <div class="detail__btn result__more">
+      <%= paginate @shops %>
+    </div>
+  <% else %>
+    <%= render 'no_content' %>
+  <% end %>
   </div>
 </div>
