@@ -9,9 +9,9 @@ class ShopsController < ApplicationController
 
     @c_shops = ShopCategory.joins(:shop).select('shop_categories.*', 'shops.*').where(category_id: params[:id]).map { |result| result.shop_id }
 
-    if @c_shops.present?
+    if params[:detail] == 'category'
       @shops = Shop.where(id: @c_shops).page(params[:page]).per(20)
-    elsif @b_shops.present?
+    elsif params[:detail] == 'b_type'
       @shops = Shop.where(id: @b_shops).page(params[:page]).per(20)
     end
   end
