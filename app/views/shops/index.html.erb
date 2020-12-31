@@ -11,12 +11,12 @@
   <div class="shop__data">
     <ul class="shop__box">
     <% @shops.each do |dtl| %>
-      <%= link_to shop_path(dtl.shop.id) do %>
+      <%= link_to shop_path(dtl.id) do %>
         <li>
           <div class="shop__wrapper">
             <div class="shop__img">
-              <% if dtl.shop.images.first.present? %>
-                <%= image_tag dtl.shop.images.first.image.url %>
+              <% if dtl.images.first.present? %>
+                <%= image_tag dtl.images.first.image.url %>
               <% else %>
                 <%= image_tag "wait.jpeg" %>
               <% end %>
@@ -25,7 +25,7 @@
               <div class="shop__info__deco">
                 <div class="shop__review">
                   <i class="fas fa-star"></i>
-                  <span><%= dtl.shop.reviews.average(:score) %></span>
+                  <span><%= dtl.reviews.average(:score) %></span>
                 </div>
                 <div class="shop__tag">
                   <i class=""></i>
@@ -34,12 +34,12 @@
               </div>
               <div class="shop__info__basic">
                 <div class="shop__name">
-                  <h2><%= dtl.shop.name %></h2>
+                  <h2><%= dtl.name %></h2>
                 </div>
                 <div class="shop__about">
                   <div class="shop__place">
                     <div class="address">
-                      <span><%= dtl.shop.address %></span>
+                      <span><%= dtl.address %></span>
                     </div>
                   </div>
                 </div>

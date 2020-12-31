@@ -19,6 +19,9 @@ class SearchsController < ApplicationController
       @results = Shop.all
       # redirect_to root_url
     end
+
+    # searchs.indexでのshops
+    # @sc_shops = 
     
   end
 

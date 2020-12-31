@@ -5,7 +5,17 @@ class ShopsController < ApplicationController
   before_action :find_shop, only: [:edit, :update, :show, :destroy]
 
   def index
-    @shops = ShopCategory.where(category_id: params[:id])
+    @b_shops = Category.joins(shop_categories: :shop).select('shops.*', 'shop_categories.shop_id', 'categories.bussiness_type_id').where(bussiness_type_id: params[:id]).map { |result| result.shop_id }.uniq
+
+    @c_shops = ShopCategory.joins(:shop).select('shop_categories.*', 'shops.*').where(category_id: params[:id]).map { |result| result.shop_id }
+
+    if @c_shops.present?
+      @shops = Shop.where(id: @c_shops)
+    elsif @b_shops.present?
+      @shops = Shop.where(id: @b_shops)
+    elsif @sc_shops.present?
+      @shops = Shop.where(id: @sc_shops)
+    end
   end
 
   def new
