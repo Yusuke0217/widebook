@@ -50,14 +50,14 @@
         text-align: center;
         position: relative;
         .bg__img.index {
-          height: 300px;
+          height: 240px;
           width: 95%;
           @include margin(20px, auto, 20px, auto);
           background-image: url("/assets/bg_image2.jpeg");
           background-size: contain;
           border-radius: 20px;
           .main__view__cp {
-            @include padding(90px, 0px, 0px, 0px);
+            @include padding(70px, 0px, 0px, 0px);
             h1 {
               @include mobile-ttl;
               color: $white;
@@ -68,6 +68,7 @@
           }
           .place__btn {
             @include padding(30px, 0px, 0px, 0px);
+            display: none;
             a {
               height: 30px;
               width: 50%;
@@ -190,6 +191,7 @@
         }
       }
       #special {
+        display: none;
         order: 3;
         background-color: rgba($darkgray, $alpha: 0.3);
         margin: 0;

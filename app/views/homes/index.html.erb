@@ -4,6 +4,8 @@
   <%= stylesheet_link_tag '/assets/home/pc/index_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
+<% provide(:text, "カテゴリから探す")%>
+
 <body>
   <%= render 'layouts/header' %>
   <div class="main__wrapper" id="top__face">
@@ -54,7 +56,8 @@
         <% end %>
         </ul>
       </div>
-      <div class="content__list common" id="">
+      <%= render 'layouts/content_box' %>
+      <div class="content__list common" id="area">
         <h1>から探す</h1>
         <p></p>
         <%= render 'layouts/move_btn' %>

@@ -66,6 +66,7 @@
           }
           .place__btn {
             padding-top: 50px;
+            display: none;
             a {
               height: 50px;
               width: 300px;
@@ -146,7 +147,12 @@
           overflow-x: scroll;
         }
       }
+      #category {
+        ul {
+        }
+      }
       #area {
+        display: none;
         ul {
           overflow: scroll;
           margin-top: 20px;
@@ -181,6 +187,7 @@
         }
       }
       #special {
+        display: none;
         background-color: rgba($darkgray, $alpha: 0.3);
         @include margin(30px, 0px, 0px, 0px);
         @include padding(0px, 10px, 0px, 10px);

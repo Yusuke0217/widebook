@@ -234,6 +234,7 @@
             display: flex;
             @include margin(0, 0, 30px, 0);
             i.fas.fa-times {
+              cursor: pointer;
               height: 100%;
               width: 50px;
               text-align: center;
