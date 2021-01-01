@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_25_024224) do
+ActiveRecord::Schema.define(version: 2021_01_01_063248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,9 @@ ActiveRecord::Schema.define(version: 2020_12_25_024224) do
     t.float "latitude"
     t.float "longitude"
     t.boolean "booking", default: false, null: false
+    t.string "holidays"
+    t.string "budget"
+    t.string "b_hours"
     t.index ["area_id"], name: "index_shops_on_area_id"
     t.index ["name"], name: "index_shops_on_name"
     t.index ["user_id"], name: "index_shops_on_user_id"

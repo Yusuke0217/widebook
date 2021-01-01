@@ -164,7 +164,7 @@
               <p>営業時間:</p>
             </div>
             <div class="shop__hours__import">
-              <span></span>
+              <span><%= @shop.b_hours %></span>
               <span></span>
             </div>
           </div>
@@ -174,7 +174,7 @@
               <p></p>
             </div>
             <div class="shop__budget__import">
-              <span></span>
+              <span><%= @shop.budget %></span>
             </div>
           </div>
         </div>
@@ -254,7 +254,7 @@
                     <p>予算感</p>
                   </div>
                   <div class="table__import">
-                    <span></span>
+                    <span>￥<%= @shop.budget %></span>
                   </div>
                 </div>
               </li>
@@ -267,11 +267,11 @@
                   <div class="table__import">
                     <div class="time-info">
                       <h4>営業時間 : </h4>
-                      <span></span>
+                      <span><%= @shop.b_hours %></span>
                     </div>
                     <div class="rest-info">
                       <h4>定休日 : </h4>
-                      <span></span>
+                      <span><%= @shop.holidays %></span>
                     </div>
                   </div>
                 </div>
@@ -294,8 +294,8 @@
                       <li>AMEX</li>
                     </ul>
                     <div class="ele-pay">
-                      <p>電子マネー</p>
-                      <span>不可</span>
+                      <p></p>
+                      <span></span>
                     </div>
                   </div>
                 </div>

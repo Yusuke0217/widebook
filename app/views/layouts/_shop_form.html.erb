@@ -46,6 +46,21 @@
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>
+    <%= f.text_field :budget, placeholder: "平均予算" %>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :b_hours, placeholder: "営業時間" %>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :holidays, placeholder: "定休日" %>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
     <%= f.fields_for :images do |i| %>
       <%= i.file_field :image, accept: "image/*" %>
     <% end %>
