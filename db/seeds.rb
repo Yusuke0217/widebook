@@ -39,10 +39,6 @@ end
 end
 
 1.times do |n|
-  BussinessType.create()
-end
-
-1.times do |n|
   gurume_data = %W[イタリアン フレンチ 中華 和食 焼肉 カフェ ラーメン お寿司 ステーキ スイーツ バイキング 鍋 カレー とんかつ うどん お好み焼き ハンバーガー 居酒屋 パン ご当地グルメ ]
   hotel_data = %W[シティホテル ラグジュアリー ログハウス 旅館 ゲストハウス]
   shop_data = %W[アパレル お土産 お酒 雑貨 ショッピングモール 本 百貨店 ]
