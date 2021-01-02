@@ -350,7 +350,13 @@
               <p>ホームページ</p>
             </div>
             <div class="sns__link__import">
-              <a href="#{<% %>}"><span><%= %></span></a>
+              <div class="home__page sns">
+                <%= link_to @shop.mediums.first.home_page, target: :_blank do %>
+                  <span>
+                    <%= @shop.mediums.first.home_page %>
+                  </span>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="sns__link">
@@ -359,19 +365,28 @@
               <p>SNS</p>
             </div>
             <div class="sns__link__import">
-              <div class="facebook">
-                <%= link_to root_path do %>
+              <div class="facebook sns">
+                <%= link_to @shop.mediums.first.facebook, target: :_blank do %>
                   <i class="fab fa-facebook-square"></i>
+                  <span>
+                    <%= @shop.mediums.first.facebook %>
+                  </span>
                 <% end %>
               </div>
-              <div class="instagram">
-                <%= link_to root_path do %>
+              <div class="instagram sns">
+                <%= link_to @shop.mediums.first.instagram, target: :_blank do %>
                   <i class="fab fa-instagram"></i>
+                  <span>
+                    <%= @shop.mediums.first.instagram %>
+                  </span>
                 <% end %>
               </div>
-              <div class="twitter">
-                <%= link_to root_path do %>
+              <div class="twitter sns">
+                <%= link_to @shop.mediums.first.twitter, target: :_blank do %>
                   <i class="fab fa-twitter"></i>
+                  <span>
+                    <%= @shop.mediums.first.twitter %>
+                  </span>
                 <% end %>
               </div>
             </div>

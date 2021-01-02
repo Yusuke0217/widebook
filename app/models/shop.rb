@@ -7,6 +7,8 @@ class Shop < ApplicationRecord
   has_many :review_users, through: :reviews, source: :user
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
+  has_many :mediums, dependent: :destroy
+  accepts_nested_attributes_for :mediums
   belongs_to :user
   belongs_to :area
   validates :user_id, presence: true

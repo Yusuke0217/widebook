@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_02_012337) do
+ActiveRecord::Schema.define(version: 2021_01_02_013814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 2021_01_02_012337) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["shop_id"], name: "index_images_on_shop_id"
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.bigint "shop_id", null: false
+    t.string "home_page"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "instagram"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_media_on_shop_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -119,6 +130,7 @@ ActiveRecord::Schema.define(version: 2021_01_02_012337) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "categories", "bussiness_types"
   add_foreign_key "images", "shops"
+  add_foreign_key "media", "shops"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
   add_foreign_key "shop_categories", "categories"

@@ -513,33 +513,47 @@
               }
             }
             &__import {
-              display: flex;
-              max-width: 200px;
+              // display: flex;
               word-break: break-all;
+              .sns {
+                @include margin(0, 30px, 10px, 0px);
+                // @include margin(0, 30px, 0, 30px);
+                a {
+                  display: flex;
+                  text-decoration: none;
+                  i.fab {
+                    color: $darkgray;
+                    font-size: 1.5rem;
+                    @include margin(0, 15px, 0, 0);
+                  }
+                  span {
+                    font-size: 1rem;
+                    &:hover {
+                      color: $plum;
+                    }
+                  }
+                }
+              }
+              .home__page {
+                a {
+                }
+              }
               .facebook {
-                @include margin(0, 30px, 0, 30px);
                 a {
                   i.fab.fa-facebook-square {
-                    color: $darkgray;
-                    font-size: 2rem;
                   }
                 }
               }
               .instagram {
-                @include margin(0, 30px, 0, 30px);
                 a {
                   i.fab.fa-instagram {
-                    color: $darkgray;
-                    font-size: 2rem;
                   }
                 }
               }
               .twitter {
-                @include margin(0, 30px, 0, 30px);
                 a {
                   i.fab.fa-twitter {
                     color: $sora;
-                    font-size: 2rem;
                   }
                 }
               }

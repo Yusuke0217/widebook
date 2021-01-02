@@ -531,34 +531,45 @@
                 }
               }
               &__import {
-                width: 60%;
+                width: 80%;
                 justify-content: center;
                 display: flex;
                 word-break: break-all;
-                .facebook {
+                .sns {
                   @include margin(0, 15px, 0, 15px);
+                  a {
+                    i.fab {
+                      font-size: 2rem;
+                    }
+                  }
+                }
+                .facebook {
                   a {
                     i.fab.fa-facebook-square {
                       color: $darkgray;
-                      font-size: 2rem;
+                    }
+                    span {
+                      display: none;
                     }
                   }
                 }
                 .instagram {
-                  @include margin(0, 15px, 0, 15px);
                   a {
                     i.fab.fa-instagram {
                       color: $darkgray;
-                      font-size: 2rem;
+                    }
+                    span {
+                      display: none;
                     }
                   }
                 }
                 .twitter {
-                  @include margin(0, 15px, 0, 15px);
                   a {
                     i.fab.fa-twitter {
                       color: $sora;
-                      font-size: 2rem;
+                    }
+                    span {
+                      display: none;
                     }
                   }
                 }

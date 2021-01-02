@@ -7,18 +7,22 @@
 <div class="shop__flame">
   <%= form_with model: @shop, url: yield(:url), class: "", id: "", local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
-    <div class="input__ttl">
-      <i class="fas fa-asterisk"></i>
-    </div>
-    <%= f.text_field :name, id: "", placeholder: "名前"%>
+
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>
     <%= f.collection_select :area_id, Area.all, :id, :name, { include_blank: "選択してください" } %>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.text_field :name, id: "", placeholder: "名前"%>
+
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>
     <%= f.text_field :address, id: "", placeholder: "住所"%>
+
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>
@@ -58,6 +62,16 @@
       <i class="fas fa-asterisk"></i>
     </div>
     <%= f.text_field :holidays, placeholder: "定休日" %>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
+    <%= f.fields_for :mediums do |m| %>
+      <%= m.text_field :home_page, placeholder: "ホームページURL" %>
+      <%= m.text_field :facebook, placeholder: "Facebook" %>
+      <%= m.text_field :instagram, placeholder: "Instagram" %>
+      <%= m.text_field :twitter, placeholder: "Twitter" %>
+    <% end %>
 
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>

@@ -18,6 +18,7 @@ class ShopsController < ApplicationController
   def new
     @shop = Shop.new
     10.times{@shop.images.build}
+    @shop.mediums.build
   end
   
   def show
@@ -65,7 +66,7 @@ class ShopsController < ApplicationController
   private
 
     def shop_params
-      params.require(:shop).permit(:name, :address, :address_building, :phone_number, :content, :booking, :area_id, :budget, :holidays, :b_hours_first, :b_hours_last, { category_ids: [] }, images_attributes: [:image, :id] )
+      params.require(:shop).permit(:name, :address, :address_building, :phone_number, :content, :booking, :area_id, :budget, :holidays, :b_hours_first, :b_hours_last, { category_ids: [] }, images_attributes: [:image, :id], mediums_attributes: [:home_page, :facebook, :instagram, :twitter] )
     end
 
     def find_shop
