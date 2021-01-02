@@ -285,13 +285,16 @@
                   <div class="table__import">
                     <div class="credit">
                       <p>クレジットカード</p>
+                    <% if @shop.pay_cards.present? %>
                       <span>可能</span>
+                    <% else %>
+                      <span>不可能</span>
+                    <% end %>
                     </div>
                     <ul class="card__list">
-                      <li>Visa</li>
-                      <li>JCB</li>
-                      <li>Master</li>
-                      <li>AMEX</li>
+                    <% @shop.pay_cards.each do |card| %>
+                      <li><%= card.name %></li>
+                    <% end %>
                     </ul>
                     <div class="ele-pay">
                       <p></p>

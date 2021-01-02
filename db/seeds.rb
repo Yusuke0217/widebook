@@ -21,6 +21,14 @@ User.create!(
 )
 
 1.times do |n|
+  cards = %W(Visa JCB Master AMEX )
+
+  cards.each do |c|
+    PayCard.create(name: c)
+  end
+end
+
+1.times do |n|
   # area = %W(和歌山エリア 白浜エリア 高野山エリア 那智勝浦エリア 串本エリア)
   area = %W(和歌山エリア)
   
@@ -85,9 +93,14 @@ end
     area_id: 1,
     name: name,
     phone_number: phone_number,
+    holidays: "金曜日",
+    budget: rand(1000..20000),
+    b_hours_first: "9:00",
+    b_hours_last: "22:30",
+    booking: true,
     address: address,
     content: content,
-    category_ids: 3,
+    category_ids: rand(3..23),
   )
 end
 

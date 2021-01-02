@@ -11,13 +11,13 @@
   <div class="shop__data">
   <% if @shops.present? %>
     <ul class="shop__box">
-    <% @shops.each do |dtl| %>
-      <%= link_to shop_path(dtl.id) do %>
+    <% @shops.each do |shop| %>
+      <%= link_to shop_path(shop.id) do %>
         <li>
           <div class="shop__wrapper">
             <div class="shop__img">
-              <% if dtl.images.first.present? %>
-                <%= image_tag dtl.images.first.image.url %>
+              <% if shop.images.first.present? %>
+                <%= image_tag shop.images.first.image.url %>
               <% else %>
                 <%= image_tag "wait.jpeg" %>
               <% end %>
@@ -26,7 +26,7 @@
               <div class="shop__info__deco">
                 <div class="shop__review">
                   <i class="fas fa-star"></i>
-                  <span><%= dtl.reviews.average(:score) %></span>
+                  <span><%= shop.reviews.average(:score) %></span>
                 </div>
                 <div class="shop__tag">
                   <i class=""></i>
@@ -35,18 +35,18 @@
               </div>
               <div class="shop__info__basic">
                 <div class="shop__name">
-                  <h2><%= dtl.name %></h2>
+                  <h2><%= shop.name %></h2>
                 </div>
                 <div class="shop__about">
                   <div class="shop__place">
                     <div class="address">
-                      <span><%= dtl.address %></span>
+                      <span><%= shop.address %></span>
                     </div>
                   </div>
                 </div>
                 <div class="shop__budget">
                   <i class="fas fa-yen-sign"></i>
-                  <span></span>
+                  <span><%= shop.budget %></span>
                 </div>
               </div>
             </div>

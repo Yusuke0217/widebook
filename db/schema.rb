@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_02_013814) do
+ActiveRecord::Schema.define(version: 2021_01_02_051440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,12 @@ ActiveRecord::Schema.define(version: 2021_01_02_013814) do
     t.index ["shop_id"], name: "index_media_on_shop_id"
   end
 
+  create_table "pay_cards", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -77,6 +83,15 @@ ActiveRecord::Schema.define(version: 2021_01_02_013814) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["shop_id"], name: "index_reviews_on_shop_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "shop_cards", force: :cascade do |t|
+    t.bigint "shop_id", null: false
+    t.bigint "pay_card_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pay_card_id"], name: "index_shop_cards_on_pay_card_id"
+    t.index ["shop_id"], name: "index_shop_cards_on_shop_id"
   end
 
   create_table "shop_categories", force: :cascade do |t|
@@ -133,6 +148,8 @@ ActiveRecord::Schema.define(version: 2021_01_02_013814) do
   add_foreign_key "media", "shops"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
+  add_foreign_key "shop_cards", "pay_cards"
+  add_foreign_key "shop_cards", "shops"
   add_foreign_key "shop_categories", "categories"
   add_foreign_key "shop_categories", "shops"
   add_foreign_key "shops", "areas"

@@ -9,6 +9,8 @@ class Shop < ApplicationRecord
   accepts_nested_attributes_for :images
   has_many :mediums, dependent: :destroy
   accepts_nested_attributes_for :mediums
+  has_many :shop_cards
+  has_many :pay_cards, through: :shop_cards, dependent: :destroy
   belongs_to :user
   belongs_to :area
   validates :user_id, presence: true

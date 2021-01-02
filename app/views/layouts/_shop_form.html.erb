@@ -76,6 +76,13 @@
     <div class="input__ttl">
       <i class="fas fa-asterisk"></i>
     </div>
+    <%= f.collection_check_boxes(:pay_card_ids, PayCard.all, :id, :name, include_hidden: false) do |p| %>
+      <%= p.label { p.check_box + p.text} %>
+    <%end%>
+
+    <div class="input__ttl">
+      <i class="fas fa-asterisk"></i>
+    </div>
     <%= f.fields_for :images do |i| %>
       <%= i.file_field :image, accept: "image/*" %>
     <% end %>
