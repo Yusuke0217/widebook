@@ -1,0 +1,36 @@
+@import "../../main.scss";
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  .shop__flame {
+    .shop__form {
+      text-align: center;
+      input {
+      }
+      select {
+      }
+      .input__ttl {
+        i.fas.fa-asterisk {
+        }
+      }
+      label {
+      }
+    }
+    .area__field {
+    }
+    .base__field {
+    }
+    .cate__list {
+    }
+    .amend__field {
+    }
+    .sns__field {
+      .sns__form {
+      }
+    }
+    .card__field {
+    }
+    .img__field {
+    }
+  }
+}
