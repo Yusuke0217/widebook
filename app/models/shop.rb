@@ -12,9 +12,11 @@ class Shop < ApplicationRecord
   validates :user_id, presence: true
   validates :name, presence: true
   validates :address, presence: true
+  validates :phone_number, presence: true
   validates :content, length: { maximum: 2000 }
   validates :holidays, presence: true
-  validates :b_hours, presence: true
+  validates :b_hours_first, presence: true
+  validates :b_hours_last, presence: true
   validates :budget, presence: true
   validate :tag_size
 

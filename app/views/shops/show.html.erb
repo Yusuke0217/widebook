@@ -164,7 +164,7 @@
               <p>営業時間:</p>
             </div>
             <div class="shop__hours__import">
-              <span><%= @shop.b_hours %></span>
+              <span><%= @shop.b_hours_first %> ~ <%= @shop.b_hours_last%></span>
               <span></span>
             </div>
           </div>
@@ -267,7 +267,7 @@
                   <div class="table__import">
                     <div class="time-info">
                       <h4>営業時間 : </h4>
-                      <span><%= @shop.b_hours %></span>
+                      <span><%= @shop.b_hours_first %> ~ <%= @shop.b_hours_last%></span>
                     </div>
                     <div class="rest-info">
                       <h4>定休日 : </h4>
