@@ -4,12 +4,11 @@ class BussinessType < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   # -----------Bussiness_typeをidで検索するとき----
-  scope :join_us, -> { joins(categories: :shops) }
-  scope :choice, -> { select('bussiness_types.*, categories.*, shops.*')}
+  scope :join_us, -> { eager_load(categories: :shop_categories) }
   scope :b_search, -> (search_params) { where(id: search_params)}
-  scope :shops_ary, -> { map { |result| result.id }}
+  scope :shops_ary, -> { pluck(:shop_id) }
 
-  scope :search, -> (search_params) { self.join_us.choice.b_search(search_params).shops_ary }
+  scope :search, -> (search_params) { self.join_us.b_search(search_params).shops_ary }
   # --------------------------------------------
 
   # --------------------名前で検索されたとき----

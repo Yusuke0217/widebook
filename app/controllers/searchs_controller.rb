@@ -3,7 +3,7 @@ class SearchsController < ApplicationController
   def index
     @shops = Shop.search(params[:search][:name])
     @categories = Category.search(params[:search][:name])
-    @bussiness_types = BussinessType.search(params[:search][:id])
+    @bussiness_types = BussinessType.search(params[:search][:id]).uniq
     @b_types = BussinessType.k_word(params[:search][:name])
     
 
