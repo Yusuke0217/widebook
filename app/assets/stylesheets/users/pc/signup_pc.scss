@@ -3,7 +3,8 @@
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
   .wrapper {
-    .main__wrapper {
+    .main__wrapper#user__wrapper {
+      @include padding(0, 0, 50px, 0);
       .form__wrapper {
         height: 100%;
         .signup__logo {
