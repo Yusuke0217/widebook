@@ -1,13 +1,12 @@
 class CategoriesController < ApplicationController
 
   def show
-    @shop_categories = ShopCategory.where(category_id: params[:id])
-    @shop = @shop_categories.map { |category|
+    @category = Category.find_by(id: params[:id])
+    @shop_categories = ShopCategory.where(category_id: params[:id]).map { |category|
       category.shop_id
     }
-    @shops = Shop.where(id: @shop)
+    @shops = Shop.where(id: @shop_categories)
 
-    @category = Category.find_by(id: params[:id])
     @categories = Category.where(bussiness_type_id: @category.bussiness_type_id).where.not(id: @category)
   end
 

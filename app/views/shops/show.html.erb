@@ -354,11 +354,15 @@
             </div>
             <div class="sns__link__import">
               <div class="home__page sns">
+              <% if @shop.mediums.first.home_page.present? %>
                 <%= link_to @shop.mediums.first.home_page, target: :_blank do %>
                   <span>
                     <%= @shop.mediums.first.home_page %>
                   </span>
                 <% end %>
+              <% else %>
+                <span></span>
+              <% end %>
               </div>
             </div>
           </div>
@@ -369,28 +373,40 @@
             </div>
             <div class="sns__link__import">
               <div class="facebook sns">
+              <% if @shop.mediums.first.facebook.present? %>
                 <%= link_to @shop.mediums.first.facebook, target: :_blank do %>
                   <i class="fab fa-facebook-square"></i>
                   <span>
                     <%= @shop.mediums.first.facebook %>
                   </span>
                 <% end %>
+              <% else %>
+                <span></span>
+              <% end %>
               </div>
               <div class="instagram sns">
+              <% if @shop.mediums.first.instagram.present? %>
                 <%= link_to @shop.mediums.first.instagram, target: :_blank do %>
                   <i class="fab fa-instagram"></i>
                   <span>
                     <%= @shop.mediums.first.instagram %>
                   </span>
                 <% end %>
+              <% else %>
+                <span></span>
+              <% end %>
               </div>
               <div class="twitter sns">
+              <% if @shop.mediums.first.twitter.present? %>
                 <%= link_to @shop.mediums.first.twitter, target: :_blank do %>
                   <i class="fab fa-twitter"></i>
                   <span>
                     <%= @shop.mediums.first.twitter %>
                   </span>
                 <% end %>
+              <% else %>
+                <span></span>
+              <% end %>
               </div>
             </div>
           </div>
@@ -463,7 +479,7 @@
       </div>
       <div class="ggrmap__wrapper">
         <h1>マップ</h1>
-        <p><%= @shop.address %><%= @shop.address_building %></p>
+        <p><%= @shop.address %> <%= @shop.address_building %></p>
         <div class="ggrmap" id="js-map">
         </div>
       </div>

@@ -5,7 +5,7 @@ class Category < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  # -----------------------
+  # ------------検索-----------
   
   scope :join_us, -> { joins(:shop_categories) }
   scope :choice, -> { select('categories.id', 'shop_categories.shop_id')}
