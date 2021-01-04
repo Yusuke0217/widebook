@@ -1,28 +1,20 @@
 class CategoriesController < ApplicationController
 
-  def show
-    @category = Category.find_by(id: params[:id])
-    @shop_categories = ShopCategory.where(category_id: params[:id]).map { |category|
-      category.shop_id
-    }
-    # pluck(shop_id)
-    @shops = Shop.where(id: @shop_categories)
+  before_action :find_category, only: [:show]
 
+  def index
+  end
+
+  def show
+    @shop_categories = ShopCategory.where(category_id: params[:id]).pluck(:shop_id)
+    @shops = Shop.where(id: @shop_categories)
+    # other_category
     @categories = Category.where(bussiness_type_id: @category.bussiness_type_id).where.not(id: @category)
   end
 
-  def create
-    @category = Category.new(category_params)
-    @category.save
-  end
-
-  def destroy
-  end
-
   private
-
-    def category_params
-      params.require(:category).permit(:name)
+    def find_category
+      @category = Category.find_by(id: params[:id])
     end
 
 end

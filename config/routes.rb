@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :searchs, only: [:index, :show]
   resources :images, only: [:show]
   resources :bookmarks, only: [:index]
-  resources :categories, only: [:index, :show, :create, :destroy]
+  resources :categories, only: [:index, :show]
   resources :areas, only: [:show]
   resources :account_activations, only: [:edit]
   resources :bussiness_types, only: [:show]
