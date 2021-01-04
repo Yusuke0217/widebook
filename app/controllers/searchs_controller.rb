@@ -17,7 +17,6 @@ class SearchsController < ApplicationController
       @results = Shop.search(params[:search][:name]).page(params[:page]).per(20)
     else
       @results = Shop.all.page(params[:page]).per(20)
-      # redirect_to root_url
     end
     
   end

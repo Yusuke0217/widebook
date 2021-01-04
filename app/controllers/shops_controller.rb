@@ -4,10 +4,9 @@ class ShopsController < ApplicationController
   before_action :find_shop, only: [:edit, :update, :show, :destroy]
 
   def index
-    @b_shops = Category.joins(shop_categories: :shop).select('shops.*', 'shop_categories.shop_id', 'categories.bussiness_type_id').where(bussiness_type_id: params[:id]).map { |result| result.shop_id }.uniq
-
-    @c_shops = ShopCategory.joins(:shop).select('shop_categories.*', 'shops.*').where(category_id: params[:id]).map { |result| result.shop_id }
-
+    @c_shops = Shop.c_shops(params[:id])
+    @b_shops = Shop.b_shops(params[:id]).uniq
+    
     if params[:detail] == 'category'
       @shops = Shop.where(id: @c_shops).page(params[:page]).per(20)
     elsif params[:detail] == 'b_type'

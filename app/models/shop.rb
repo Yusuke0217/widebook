@@ -46,6 +46,21 @@ class Shop < ApplicationRecord
     end
   end
 
+  # -----------カテゴリのshop_indexページ用------------------
+  scope :join_us, -> { eager_load(:shop_categories) }
+  scope :where_c_id, -> (params_id) { where(shop_categories: {category_id: params_id} ) }
+  scope :shops_ary, -> { pluck(:id) }
+
+  scope :c_shops, -> (params_id) { self.join_us.where_c_id(params_id).shops_ary }
+  # ---------------------------------------
+
+  # ------------B-typeのshop_indexページ用---------------
+  scope :join_b, -> { eager_load(shop_categories: :category) }
+  scope :where_b_id, -> (params_id) { where(categories: { bussiness_type_id: params_id }) }
+
+  scope :b_shops, -> (params_id) { self.join_b.where_b_id(params_id).shops_ary}
+  # ---------------------------------------
+
   
   private
 
