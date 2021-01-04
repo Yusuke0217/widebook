@@ -2,35 +2,52 @@
 
 
 @media screen and (min-width: 960px) {
-  .wrapper {
-    .main__wrapper {
-      .review__sheet {
-        .review__hd {
-          .shop__img {
-          }
-          .shop__ttl {
-            h3 {
-            }
+  // PC用のレスポンシブ
+  .main__wrapper {
+    .review__sheet {
+      text-align: center;
+      @include margin(0, 0, 15px, 0);
+      .review__hd {
+        @include margin(0, 0, 10px, 0);
+        .shop__img {
+          width: 300px;
+          @include margin(0, 0, 10px, 0);
+          img {
+            height: 170px;
+            width: 100%;
           }
         }
-        .review__star {
-          .review__nav {
-            p {
-            }
+        .shop__ttl {
+          h3 {
+            @include margin(0, 0, 5px, 0);
           }
-          .score__wrapper {
-            .star__box {
-              .radio__btn {
-                & input {
-                  // display: none;
-                }
-                & label {
-                  display: none;
-                }
+          p {
+          }
+        }
+      }
+      .review__star {
+        @include margin(0, 0, 20px, 0);
+        .review__nav {
+          p {
+          }
+        }
+        .score__wrapper {
+          .star__box {
+            .radio__btn {
+              & input {
+                // display: none;
               }
-              .star__btn {
+              & label {
+                display: none;
+              }
+            }
+            .star__btn {
+              @include margin(15px, 0, 15px, 0);
+              label {
+                @include padding(0, 3px, 0, 3px);
                 i.fas.fa-star {
                   color: $plum;
+                  font-size: 1.3rem;
                 }
                 i.far.fa-star {
                   color: $plum;
@@ -39,25 +56,55 @@
               }
             }
           }
-          .reset__btn {
+        }
+        .reset__btn {
+          display: none;
+        }
+      }
+      .review__ttl {
+        @include margin(0, 0, 20px, 0);
+        .ttl__label {
+          @include margin(0, 0, 10px, 0);
+          label {
           }
         }
-        .review__ttl {
-          .ttl__label {
-          }
-          .ttl__form {
-          }
-        }
-        .review__content {
-          .content__label {
-          }
-          .re__text {
-          }
-          .text__count {
+        .ttl__form {
+          & input {
+            height: 40px;
+            width: 300px;
+            @include padding(0, 0, 0, 10px);
+            border: 1px solid rgba($darkgray, $alpha: 0.5);
+            border-radius: 20px;
           }
         }
       }
-      .review__option {
+      .review__content {
+        .content__label {
+          @include margin(0, 0, 10px, 0);
+          label {
+          }
+        }
+        .re__text {
+          & textarea {
+            height: 200px;
+            width: 300px;
+            border: 1px solid rgba($darkgray, $alpha: 0.5);
+            @include padding(5px, 5px, 5px, 5px);
+            border-radius: 20px;
+          }
+        }
+        .text__count {
+        }
+      }
+    }
+    .review__submit__btn {
+      & input {
+        height: 40px;
+        width: 200px;
+        @include margin(15px, 0, 15px, 0);
+        background-color: $plum;
+        color: $white;
+        border-radius: 20px;
       }
     }
   }

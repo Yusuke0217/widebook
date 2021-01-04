@@ -8,15 +8,19 @@
 <% provide(:url, shop_reviews_path)%>
 
 
-<div class="wrapper">
-  <div class="main__wrapper">
+<%= render 'layouts/header' %>
+<div class="main__wrapper">
   <%= form_with model: @review, url: yield(:url), class: "", id: "", local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
     <%= f.hidden_field :shop_id, { value: @shop.id} %>
     <div class="review__sheet">
       <div class="review__hd">
         <div class="shop__img">
-          <%= image_tag "/assets/apple_logo.jpeg" %>
+        <% if @shop.images.first.present? %>
+          <%= image_tag @shop.images.first.image.url %>
+        <% else %>
+          <%= image_tag "wait.jpeg" %>
+        <% end %>
         </div>
         <div class="shop__ttl">
           <h3>お店の名前</h3>
@@ -65,7 +69,7 @@
           <%= f.label :title, "タイトル" %>
         </div>
         <div class="ttl__form">
-          <%= f.text_field :title, id: "review_title", placeholder: "もっとも伝えたいこと(50文字以下)" %>
+          <%= f.text_field :title, id: "review_title", placeholder: "もっとも伝えたいこと" %>
         </div>
       </div>
       <div class="review__content">
@@ -79,9 +83,8 @@
         </div>
       </div>
     </div>
-    <div class="review__option">
+    <div class="review__submit__btn">
       <%= f.submit :submit, class: "", id: "", value: "#{yield(:btn_text)}" %>
     </div>
   <% end %>
-  </div>
 </div>

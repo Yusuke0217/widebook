@@ -1,4 +1,115 @@
 @import "../main.scss";
 
 @media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .main__wrapper {
+    .review__sheet {
+      text-align: center;
+      @include margin(0, 0, 15px, 0);
+      .review__hd {
+        @include margin(0, 0, 10px, 0);
+        .shop__img {
+          display: none;
+          width: 300px;
+          @include margin(0, 0, 10px, 0);
+          img {
+            height: 170px;
+            width: 100%;
+          }
+        }
+        .shop__ttl {
+          h3 {
+            @include mobile-ttl;
+            @include margin(0, 0, 5px, 0);
+          }
+          p {
+          }
+        }
+      }
+      .review__star {
+        @include margin(0, 0, 20px, 0);
+        .review__nav {
+          p {
+            @include mobile-ttl;
+          }
+        }
+        .score__wrapper {
+          .star__box {
+            .radio__btn {
+              & input {
+                // display: none;
+              }
+              & label {
+                display: none;
+              }
+            }
+            .star__btn {
+              @include margin(15px, 0, 15px, 0);
+              label {
+                @include padding(0, 3px, 0, 3px);
+                i.fas.fa-star {
+                  color: $plum;
+                  font-size: 1.3rem;
+                }
+                i.far.fa-star {
+                  color: $plum;
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+        .reset__btn {
+          display: none;
+        }
+      }
+      .review__ttl {
+        @include margin(0, 0, 20px, 0);
+        .ttl__label {
+          @include margin(0, 0, 10px, 0);
+          label {
+            @include mobile-ttl;
+          }
+        }
+        .ttl__form {
+          & input {
+            height: 40px;
+            width: 300px;
+            @include padding(0, 0, 0, 10px);
+            border: 1px solid rgba($darkgray, $alpha: 0.5);
+            border-radius: 20px;
+          }
+        }
+      }
+      .review__content {
+        .content__label {
+          @include margin(0, 0, 10px, 0);
+          label {
+            @include mobile-ttl;
+          }
+        }
+        .re__text {
+          & textarea {
+            height: 170px;
+            width: 300px;
+            border: 1px solid rgba($darkgray, $alpha: 0.5);
+            @include padding(5px, 5px, 5px, 5px);
+            border-radius: 20px;
+          }
+        }
+        .text__count {
+        }
+      }
+    }
+    .review__submit__btn {
+      & input {
+        height: 40px;
+        width: 200px;
+        @include margin(15px, 0, 15px, 0);
+        background-color: $plum;
+        color: $white;
+        border-radius: 20px;
+      }
+    }
+  }
 }
