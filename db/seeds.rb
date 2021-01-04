@@ -40,9 +40,9 @@ end
 
 1.times do |n|
   gurume_data = %W[イタリアン フレンチ 中華 和食 焼肉 カフェ ラーメン お寿司 ステーキ スイーツ バイキング 鍋 カレー とんかつ うどん お好み焼き ハンバーガー 居酒屋 パン ご当地グルメ ]
-  hotel_data = %W[シティホテル ラグジュアリー 旅館 ゲストハウス]
+  hotel_data = %W[シティホテル ビジネスホテル ラグジュアリー 旅館 ゲストハウス ]
   shop_data = %W[アパレル お土産 お酒 雑貨 ショッピングモール 本 百貨店 ]
-  tour_data = %W[美術館 文化遺産 自然 お寺・神社 夜景 ]
+  tour_data = %W[美術館 文化遺産 自然 お寺・神社 夜景 温泉 アウトドア   ]
   event_data = %W[お祭り 〇〇体験 季節のイベント ]
 
   eat = BussinessType.create(id: 1, name: "グルメ", image: open("./db/fixtures/gurume.jpeg"))
