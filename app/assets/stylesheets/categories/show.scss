@@ -4,23 +4,6 @@
   // Mobile用のレスポンシブ
   .wrapper {
     .main__wrapper {
-      .ggrmap__back {
-        display: none;
-        .ggrmap {
-          background-color: $green;
-          height: 600px;
-          form#search-form {
-            .input__area {
-              input {
-              }
-              button {
-                i.fas.fa-search {
-                }
-              }
-            }
-          }
-        }
-      }
       .result__wrapper {
         @include padding(0, 20px, 0, 20px);
         .result__group {

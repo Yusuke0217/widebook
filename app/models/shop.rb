@@ -31,12 +31,10 @@ class Shop < ApplicationRecord
 
   
   def bookmarked_by?(user)
-    bookmarks.where(user_id: user.id).exists?
+    if user.present?
+      bookmarks.where(user_id: user.id).exists?
+    end
   end
-
-  # def bookmarks
-  #   @shops = current_user.bookmark_shops.includes(:user)
-  # end
 
   def self.search(search_params)
     if search_params.present?

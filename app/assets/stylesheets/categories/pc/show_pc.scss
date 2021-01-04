@@ -3,26 +3,6 @@
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
   .main__wrapper.search_pc {
-    .ggrmap__back {
-      display: none;
-      width: 40%;
-      order: 3;
-      .ggrmap {
-        height: 700px;
-        width: 100%;
-        background-color: $deepgreen;
-        form#search-form {
-          .input__area {
-            input {
-            }
-            button {
-              i.fas.fa-search {
-              }
-            }
-          }
-        }
-      }
-    }
     .result__wrapper {
       width: 100%;
       order: 2;

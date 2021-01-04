@@ -30,6 +30,7 @@
             &__deco {
               display: flex;
               .shop__review {
+                @include margin(0, 10px, 0, 0);
                 i.fas.fa-star {
                   color: $plum;
                 }
@@ -40,7 +41,8 @@
                 }
               }
               .shop__tag {
-                i {
+                i.fas.fa-tag {
+                  color: $darkgray;
                 }
               }
             }

@@ -10,16 +10,6 @@
 <%= render 'layouts/header' %>
 <div class="main__wrapper" id="top__face">
   <div class="main__view">
-    <div class="searchbox__wrapper">
-      <form id="search-form" action="" method="post">
-        <div class="input__area">
-          <input id="" type="search" name="search" placeholder="キーワード">
-          <button type="submit" form="search-form" name="">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </form>
-    </div>
     <div class="main__view__img">
       <div class="bg__img b-type">
         <style media="screen">
@@ -57,8 +47,8 @@
                       <span><%= shop.reviews.average(:score) %></span>
                     </div>
                     <div class="shop__tag">
-                      <i class=""></i>
-                      <span></span>
+                      <i class="fas fa-tag"></i>
+                      <span><%= shop.categories.first.name %></span>
                     </div>
                   </div>
                 <div class="shop__info__basic">
@@ -90,64 +80,8 @@
       </div>
     </div>
     <div class="shop__list" id="">
-      <h1>Caming soon</h1>
+      <h1></h1>
       <p></p>
-      <div class="move__btn">
-        <div class="btn--left">
-          <a href="">
-            <i class="fas fa-chevron-left"></i>
-          </a>
-        </div>
-        <div class="btn--right">
-          <a href="">
-            <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <ul class="shop__box">
-        <a href="">
-          <li>
-            <div class="shop__wrapper">
-              <div class="shop__img">
-                <%= image_tag "" %>
-              </div>
-              <div class="shop__info">
-                <div class="shop__info__deco">
-                  <div class="shop__review">
-                    <i class="fas fa-star"></i>
-                    <span></span>
-                  </div>
-                  <div class="shop__tag">
-                    <i class=""></i>
-                    <span></span>
-                  </div>
-                </div>
-                <div class="shop__info__basic">
-                  <div class="shop__name">
-                    <h2></h2>
-                  </div>
-                  <div class="shop__about">
-                    <div class="shop__place">
-                      <div class="address">
-                        <span></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="shop__budget">
-                    <i class="fas fa-yen-sign"></i>
-                    <span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-        </a>
-      </ul>
-      <div class="detail__btn shop__more">
-        <%= link_to root_path, class:"detail" do %>
-          <span>すべて表示<i></i></span>
-        <% end %>
-      </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :show, :update, :destroy]
-  before_action :admin_user, except: [:show, :index]
+  before_action :logged_in_user, only: [:edit, :update, :destroy]
+  before_action :admin_user, except: [:index, :show]
   before_action :find_shop, only: [:edit, :update, :show, :destroy]
 
   def index

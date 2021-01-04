@@ -1,6 +1,14 @@
 @import "../main.scss";
 
 
-@media screen and (min-width: 960px) {
-  // PC用のレスポンシブ
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .main__wrapper {
+    .page__index {
+    }
+    .shop__data {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }

@@ -141,10 +141,12 @@
               <% end %>
             </div>
             <div class="shop__action">
+            <% if current_user.present? %>
               <% if current_user.admin? && current_user?(@shop.user) %>
                 <%= link_to "お店を編集", edit_shop_path(@shop), method: :get %>
                 <%= link_to "お店を削除", @shop, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
               <% end %>
+            <% end%>
             </div>
           </div>
           <div class="shop__address">
