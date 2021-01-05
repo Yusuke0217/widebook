@@ -39,6 +39,7 @@
             p {
               font-size: 1.2rem;
               font-weight: bold;
+              @include margin(0, 0, 5px, 0);
             }
           }
           .profile__link {
@@ -68,6 +69,7 @@
                     .info__index {
                       width: 80%;
                       @include margin(10px, 10px, 10px, 10px);
+                      @include padding(10px, 0px, 0px, 0px);
                       h3 {
                         font-size: 1rem;
                         color: $darkgray;

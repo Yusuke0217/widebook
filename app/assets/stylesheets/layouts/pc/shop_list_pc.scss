@@ -28,7 +28,7 @@
           .shop__info {
             @include padding(5px, 5px, 5px, 5px);
             &__deco {
-              @include margin(0px, 0px, 3px, 0px);
+              @include margin(0px, 0px, 5px, 0px);
               display: flex;
               .shop__review {
                 @include margin(0, 10px, 0, 0);
