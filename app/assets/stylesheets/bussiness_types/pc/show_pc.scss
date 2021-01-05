@@ -15,7 +15,8 @@
           & .main__view__cp {
             h1 {
               color: $white;
-              padding-top: 120px;
+              @include padding(120px, 0px, 0px, 0px);
+              @include margin(0px, 0px, 10px, 0px);
             }
             p {
               padding: 5px;

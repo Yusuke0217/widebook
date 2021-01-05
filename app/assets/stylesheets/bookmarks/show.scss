@@ -10,6 +10,7 @@
       @include border-btm($darkgray)
       .page__index {
         h3 {
+          @include mobile-ttl;
         }
       }
     }

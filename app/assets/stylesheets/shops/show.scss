@@ -176,6 +176,7 @@
             .shop__about {
               order: 2;
               display: flex;
+              @include margin(5px, 0px, 0px, 0px);
               .shop__review {
                 @include margin(0, 10px, 0, 0);
                 i.fas.fa-star {
@@ -233,6 +234,7 @@
                 }
                 p {
                   @include margin(0, 5px, 0, 0);
+                  @include padding(3px, 0px, 0px, 0px);
                 }
               }
               & a {
@@ -241,6 +243,7 @@
                   span {
                     width: 250px;
                     @include word-el;
+                    @include mobile-fsz;
                     @include margin(0, 5px, 0, 0);
                   }
                 }
@@ -259,6 +262,7 @@
                 }
                 p {
                   @include margin(0, 5px, 0, 0);
+                  @include padding(3px, 0px, 0px, 0px);
                 }
               }
               &__import {
@@ -280,6 +284,8 @@
                 @include margin(0, 10px, 0, 0);
               }
               span {
+                display: block;
+                @include padding(3px, 0px, 0px, 0px);
               }
             }
           }
@@ -433,6 +439,7 @@
                     .table__import {
                       & .credit {
                         display: flex;
+                        @include margin(0px, 0px, 5px, 0px);
                         & p {
                           @include margin(0, 10px, 0, 0);
                         }
@@ -716,6 +723,19 @@
             height: 200px;
             width: 300px;
             @include margin(0, auto, 0, auto);
+          }
+        }
+        .other__list {
+          // .near-event
+          display: none;
+          @include margin(30px, 0, 0, 0);
+          h1 {
+            font-size: 1.5rem;
+          }
+          p {
+          }
+          & .move__btn {
+            display: none;
           }
         }
       }

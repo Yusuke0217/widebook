@@ -58,7 +58,7 @@
             h1 {
               color: $white;
               @include pc-ttl;
-              padding-top: 120px;
+              @include padding(120px, 0px, 0px, 0px);
             }
             p {
               @include padding(5px, 5px, 5px, 5px);
@@ -95,6 +95,7 @@
         position: relative;
         @include margin(50px, 10px, 0px, 10px);
         h1 {
+          @include pc-ttl;
         }
         p {
           color: $darkgray;

@@ -116,12 +116,10 @@
                     }
                   }
                   .shop__info {
-                    @include padding(0px, 0, 0px, 5px);
                     &__deco {
                       display: flex;
                       .post__review {
                         i.fas.fa-star {
-                          color: $plum;
                         }
                         span {
                         }

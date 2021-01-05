@@ -5,6 +5,11 @@
   // Mobile用のレスポンシブ
   .main__wrapper {
     .page__hd {
+      @include padding(20px, 0, 20px, 30px);
+      @include border-btm($darkgray)
+      h3 {
+        @include mobile-ttl;
+      }
     }
     .shop__data {
       & ul.shop__box {
@@ -40,7 +45,7 @@
                 @include margin(0, auto, 0, auto);
                 @include padding(5px, 5px, 5px, 5px);
                 &__deco {
-                  order: 3;
+                  @include margin(0px, 0px, 10px, 0px);
                   .shop__review {
                     i.fas.fa-star {
                       color: $plum;
@@ -61,14 +66,15 @@
                 &__basic {
                   @include padding(0, 0, 0, 2px);
                   @include word-el;
-                  order: 1;
                   .shop__name {
                     @include padding(0px, 0px, 3px, 0px);
+                    @include margin(0px, 0px, 10px, 0px);
                     h2 {
                       font-size: 1rem;
                     }
                   }
                   .shop__about {
+                    @include margin(0px, 0px, 10px, 0px);
                     display: flex;
                     .shop__place {
                       .address {
@@ -80,6 +86,7 @@
                     }
                   }
                   .shop__budget {
+                    @include margin(0px, 0px, 10px, 0px);
                     i.fas.fa-yen-sign {
                       @include mobile-fsz;
                     }

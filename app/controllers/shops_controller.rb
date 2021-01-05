@@ -5,12 +5,14 @@ class ShopsController < ApplicationController
 
   def index
     @c_shops = Shop.c_shops(params[:id])
-    @b_shops = Shop.b_shops(params[:id]).uniq
+    @b_shops = Shop.b_shops(params[:id])
     
     if params[:detail] == 'category'
       @shops = Shop.where(id: @c_shops).page(params[:page]).per(20)
+      @index_type = Category.find_by(id: params[:id])
     elsif params[:detail] == 'b_type'
       @shops = Shop.where(id: @b_shops).page(params[:page]).per(20)
+      @index_type = BussinessType.find_by(id: params[:id])
     end
   end
 

@@ -4,6 +4,12 @@
   // PC用のレスポンシブ
   .main__wrapper {
     .page__hd {
+      @include margin(20px, 0px, 30px, 0px);
+      @include border-btm($darkgray);
+      h3 {
+        @include padding(20px, 0px, 20px, 50px);
+        @include pc-ttl;
+      }
     }
     .shop__data {
       @include margin(30px, 0, 30px, 0);

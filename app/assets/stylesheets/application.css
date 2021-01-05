@@ -18,6 +18,16 @@
 
  /* css */
 
+ /* font */ 
+
+ * {
+  font-family: 'Kosugi Maru', sans-serif;
+  font-weight: 400;
+ }
+ 
+
+ /* style */
+
 body {
 }
 
@@ -27,4 +37,8 @@ ul {
 
 ul::-webkit-scrollbar {
   display: none;
+}
+
+img {
+  object-fit: cover;
 }

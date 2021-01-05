@@ -28,6 +28,7 @@
           .shop__info {
             @include padding(5px, 5px, 5px, 5px);
             &__deco {
+              @include margin(0px, 0px, 3px, 0px);
               display: flex;
               .shop__review {
                 @include margin(0, 10px, 0, 0);
@@ -44,6 +45,10 @@
                 i.fas.fa-tag {
                   color: $darkgray;
                 }
+                span {
+                  color: $darkgray;
+                  font-size: 0.9rem;
+                }
               }
             }
             &__basic {
@@ -51,11 +56,13 @@
               overflow: hidden;
               white-space: nowrap;
               .shop__name {
+                @include margin(0px, 0px, 3px, 0px);
                 h2 {
                   font-size: 1rem;
                 }
               }
               .shop__about {
+                @include margin(0px, 0px, 3px, 0px);
                 display: flex;
                 align-items: baseline;
                 .shop__place {
@@ -68,6 +75,7 @@
                 }
               }
               .shop__budget {
+                @include margin(0px, 0px, 3px, 0px);
                 span {
                 }
               }

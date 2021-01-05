@@ -112,7 +112,7 @@
               }
             }
           }
-          .other__list.category {
+          .content__list#category {
             h1 {
               @include mobile-ttl;
             }
