@@ -3,9 +3,39 @@
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
   .main__wrapper {
-    .page__index {
+    .page__hd {
     }
     .shop__data {
+      @include margin(30px, 0, 30px, 0);
+      & ul.shop__box {
+        a {
+          @include margin(5px, 5px, 5px, 5px);
+          li {
+            .shop__wrapper {
+              .shop__img {
+                img {
+                  border-radius: 20px 20px 20px 20px;
+                }
+              }
+              .shop__info {
+                &__deco {
+                  .shop__review {
+                    i.fas.fa-star {
+                      @include mobile-fsz;
+                    }
+                    span {
+                      @include mobile-fsz;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &:hover {
+            @include link-hover;
+          }
+        }
+      }
     }
   }
 }

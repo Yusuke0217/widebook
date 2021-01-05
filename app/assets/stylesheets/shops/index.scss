@@ -4,11 +4,97 @@
 @media screen and (max-width: 559px) {
   // Mobile用のレスポンシブ
   .main__wrapper {
-    .page__index {
+    .page__hd {
     }
     .shop__data {
-      display: flex;
-      justify-content: center;
+      & ul.shop__box {
+        @include content-box;
+        display: block;
+        flex-wrap: wrap;
+        overflow: scroll;
+        a {
+          @include link;
+          // @include margin(5px, 5px, 5px, 5px);
+          li {
+            height: 120px;
+            width: 100%;
+            @include margin(0px, 0px, 10px, 0px);
+            .shop__wrapper {
+              @include border-btm;
+              height: 115%;
+              display: flex;
+              .shop__img {
+                height: 120px;
+                @include margin(0, 10px, 0, 10px);
+                img {
+                  border-radius: 20px 20px 20px 20px;
+                  height: 100%;
+                  width: 120px;
+                }
+              }
+              .shop__info {
+                height: 120px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                @include margin(0, auto, 0, auto);
+                @include padding(5px, 5px, 5px, 5px);
+                &__deco {
+                  order: 3;
+                  .shop__review {
+                    i.fas.fa-star {
+                      color: $plum;
+                      @include mobile-fsz;
+                    }
+                    span {
+                      @include mobile-fsz;
+                    }
+                  }
+                  .shop__tag {
+                    i.fas.fa-tag {
+                    }
+                    span {
+                      @include mobile-fsz;
+                    }
+                  }
+                }
+                &__basic {
+                  @include padding(0, 0, 0, 2px);
+                  @include word-el;
+                  order: 1;
+                  .shop__name {
+                    @include padding(0px, 0px, 3px, 0px);
+                    h2 {
+                      font-size: 1rem;
+                    }
+                  }
+                  .shop__about {
+                    display: flex;
+                    .shop__place {
+                      .address {
+                        @include word-el;
+                        span {
+                          @include mobile-fsz;
+                        }
+                      }
+                    }
+                  }
+                  .shop__budget {
+                    i.fas.fa-yen-sign {
+                      @include mobile-fsz;
+                    }
+                    span {
+                      @include mobile-fsz;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .datail__btn {
+      }
     }
   }
 }

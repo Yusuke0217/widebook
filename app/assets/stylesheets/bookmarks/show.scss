@@ -16,7 +16,6 @@
     .favo__list {
       & ul.shop__box {
         @include content-box;
-        justify-content: space-between;
         display: block;
         flex-wrap: wrap;
         overflow: scroll;
@@ -70,7 +69,10 @@
                     }
                   }
                   .shop__tag {
-                    i {
+                    i.fas.fa-tag {
+                    }
+                    span {
+                      @include mobile-fsz;
                     }
                   }
                 }

@@ -17,7 +17,6 @@
     .favo__list {
       @include margin(30px, 0, 30px, 0);
       & ul.shop__box {
-        justify-content: space-between;
         .heart__mark {
           position: relative;
           display: none;
