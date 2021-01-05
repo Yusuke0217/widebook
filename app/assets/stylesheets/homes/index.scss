@@ -152,6 +152,7 @@
         }
       }
       #area {
+        display: none;
         order: 1;
         @include margin(30px, 12px, 30px, 12px);
         h1 {
