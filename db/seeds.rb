@@ -46,10 +46,10 @@ end
   event_data = %W[お祭り 〇〇体験 季節のイベント ]
 
   eat = BussinessType.create(id: 1, name: "グルメ", image: open("./db/fixtures/gurume.jpeg"))
-  shop = BussinessType.create(id: 2, name: "ショッピング", image: open("./db/fixtures/shopping.jpeg"))
-  hotel = BussinessType.create(id: 3, name: "ホテル・宿泊", image: open("./db/fixtures/stayhome.jpeg"))
-  tour = BussinessType.create(id: 4, name: "観光・インスタ映え", image: open("./db/fixtures/ocean-view.jpeg"))
-  event = BussinessType.create(id: 5, name: "イベント", image: open("./db/fixtures/event2.jpeg"))
+  shop = BussinessType.create(id: 2, name: "ショッピング", image: open("./db/fixtures/shop.jpeg"))
+  hotel = BussinessType.create(id: 3, name: "ホテル・宿泊", image: open("./db/fixtures/hotel.jpeg"))
+  tour = BussinessType.create(id: 4, name: "観光・インスタ映え", image: open("./db/fixtures/tour.jpeg"))
+  event = BussinessType.create(id: 5, name: "イベント", image: open("./db/fixtures/event.jpeg"))
   # other = BussinessType.create(name: "その他")
   # some = BussinessType.create(name: "")
 
