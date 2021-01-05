@@ -176,7 +176,7 @@
             .shop__about {
               order: 2;
               display: flex;
-              @include margin(5px, 0px, 0px, 0px);
+              @include margin(10px, 0px, 0px, 0px);
               .shop__review {
                 @include margin(0, 10px, 0, 0);
                 i.fas.fa-star {
@@ -224,7 +224,7 @@
             .shop__address {
               order: 3;
               display: flex;
-              @include margin(5px, 0, 0, 0);
+              @include margin(10px, 0, 0, 0);
               &__ttl {
                 display: flex;
                 i.fas.fa-map-marker-alt {
@@ -252,7 +252,7 @@
             .shop__hours {
               order: 4;
               display: flex;
-              @include margin(5px, 0, 0, 0);
+              @include margin(10px, 0, 0, 0);
               &__ttl {
                 display: flex;
                 i.far.fa-clock {
@@ -267,12 +267,14 @@
               }
               &__import {
                 span {
+                  display: block;
+                  @include padding(3px, 0px, 0px, 0px);
                 }
               }
             }
             .shop__budget {
               order: 5;
-              @include margin(5px, 0, 0, 0);
+              @include margin(10px, 0, 0, 0);
               display: flex;
               i.fas.fa-yen-sign {
                 width: 20px;
@@ -315,8 +317,11 @@
                         width: 20px;
                         color: $darkgray;
                         font-size: 1.3rem;
-                        @include margin(0, 15px, 0, 0)
+                        @include margin(0, 15px, 0, 0);
                         @include padding(2px, 0, 0, 0);
+                      }
+                      p {
+                        @include padding(3px, 0px, 0px, 0px);
                       }
                     }
                     .table__import {
@@ -535,6 +540,7 @@
                 & p {
                   @include mobile-fsz;
                   @include word-el;
+                  @include padding(5px, 0px, 0px, 0px);
                 }
               }
               &__import {
@@ -718,6 +724,7 @@
           p {
             text-align: center;
             @include margin(0, 0, 20px, 0);
+            @include mobile-fsz;
           }
           .ggrmap {
             height: 200px;
