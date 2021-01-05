@@ -53,9 +53,10 @@
           height: 240px;
           width: 95%;
           @include margin(20px, auto, 20px, auto);
-          background-image: url("/assets/bg_image2.jpeg");
-          background-size: contain;
-          border-radius: 20px;
+          // background-image: url("/assets/widebook_bg.jpg");
+          // background-image: url("/assets/day_light.jpg");
+          background-image: url("/assets/bg_koya.jpg");
+          @include mobile-bg-img;
           .main__view__cp {
             @include padding(70px, 0px, 0px, 0px);
             h1 {
@@ -142,8 +143,11 @@
           display: none;
         }
       }
-      #b-type {
+      #category {
         order: 2;
+      }
+      #b-type {
+        order: 1;
         & .move__btn {
           // display: none;
         }
@@ -153,7 +157,7 @@
       }
       #area {
         display: none;
-        order: 1;
+        // order: 3;
         @include margin(30px, 12px, 30px, 12px);
         h1 {
         }
@@ -193,7 +197,7 @@
       }
       #special {
         display: none;
-        order: 3;
+        // order: 4;
         background-color: rgba($darkgray, $alpha: 0.3);
         margin: 0;
         @include padding(0px, 15px, 0px, 15px);

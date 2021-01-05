@@ -11,8 +11,7 @@
           .bg__img.b-type {
             height: 300px;
             width: 100%;
-            background-size: contain;
-            border-radius: 0%;
+            @include mobile-bg-img(0px);
             .main__view__cp {
               padding-top: 90px;
               h1 {

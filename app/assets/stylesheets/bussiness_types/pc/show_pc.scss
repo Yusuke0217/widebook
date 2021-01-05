@@ -11,9 +11,7 @@
         .bg__img.b-type {
           height: 400px;
           width: 100%;
-          background-size: contain;
-          background-repeat: repeat;
-          border-radius: 0%;
+          @include pc-bg-img;
           & .main__view__cp {
             h1 {
               color: $white;

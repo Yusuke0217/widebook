@@ -50,9 +50,10 @@
         margin-bottom: 30px;
         .bg__img.index {
           height: 400px;
-          background-image: url("/assets/bg_image2.jpeg");
-          background-size: cover;
-          background-repeat: repeat;
+          background-image: url("/assets/widebook_bg.jpg");
+          // background-image: url("/assets/day_light.jpg");
+          // background-image: url("/assets/bg_koya.jpg");
+          @include pc-bg-img;
           .main__view__cp {
             h1 {
               color: $white;

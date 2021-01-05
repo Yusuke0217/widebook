@@ -196,6 +196,18 @@
   font-size: $h-size;
 }
 
+@mixin mobile-bg-img($b-radius: 20px) {
+  background-size: cover;
+  border-radius: $b-radius;
+  background-position: top;
+}
+
+@mixin pc-bg-img {
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+}
+
 // @mixin form {
 //   outline: none;
 // }
