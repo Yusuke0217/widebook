@@ -1,0 +1,45 @@
+@import "../main.scss";
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .brand__wrapper {
+    .page__hd {
+      h3 {
+        @include pc-ttl;
+      }
+    }
+    .panel__container {
+      @include margin(20px, 12px, 20px, 12px);
+      ul.panel__box {
+        @include content-box;
+        flex-wrap: wrap;
+        a {
+          @include link;
+          @include margin(10px, 10px, 10px, 10px);
+          li {
+            height: 150px;
+            width: 150px;
+            .panel__wrapper {
+              height: 100%;
+              .panel__img {
+                height: 100%;
+                width: 100%;
+                border-radius: 20px 20px 20px 20px;
+                .panel__cp {
+                  text-align: center;
+                  @include padding(10px, 0, 0px, 0px);
+                  position: relative;
+                  top: 110px;
+                  h3 {
+                    font-size: 1.0rem;
+                    color: $white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

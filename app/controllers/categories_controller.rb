@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
   before_action :find_category, only: [:show]
 
   def index
+    @categories = Category.all.page(params[:page]).per(21)
   end
 
   def show

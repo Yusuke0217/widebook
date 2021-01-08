@@ -7,18 +7,21 @@
     justify-content: center;
     @include padding(10px, 0, 10px, 0);
     & span {
-      @include margin(0, 5px, 0, 5px);
+      @include margin(0, 10px, 0, 10px);
       @include mobile-ttl;
       & a {
         @include link;
+        display: block;
         &:hover {
         }
       }
     }
     span.page {
       order: 2;
+      @include padding(4px, 0, 0, 0);
     }
     span.page.current {
+      @include padding(4px, 0, 0, 0);
       height: 30px;
       width: 31px;
       background-color: $plum;

@@ -1,0 +1,35 @@
+
+
+<%= render 'layouts/header' %>
+<div class="main__wrapper">
+  <div class="brand__wrapper">
+    <div class="page__hd">
+      <h3>カテゴリー一覧</h3>
+    </div>
+    <div class="panel__container">
+      <ul class="panel__box">
+      <% @categories.each do |category| %>
+        <%= link_to category_path(category.id) do %>
+          <li>
+            <div class="panel__wrapper">
+              <div class="panel__img">
+                <style media="screen">
+                  .panel__img { background-image: url("/assets/day_light.jpg"); }
+                  /* .bg__img { background-image: url(<%= category.image %>); } */
+                </style>
+                <div class="panel__cp">
+                  <h3><%= category.name %></h3>
+                </div>
+              </div>
+            </div>
+          </li>
+        <%end%>
+      <%end%>
+      </ul>
+      <div class="detail__btn result__more">
+        <%= paginate @categories %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/footer' %>

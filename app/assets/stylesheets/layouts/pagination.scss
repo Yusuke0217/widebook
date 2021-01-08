@@ -3,6 +3,7 @@
 @media screen and (max-width: 559px) {
   // Mobile用のレスポンシブ
   .pagination {
+    display: none;
     & span {
       & a {
         &:hover {
