@@ -58,19 +58,19 @@ end
   }
 
   shop_data.each.with_index(35) { |a, n|
-    Category.create(id: n, name: a, bussiness_type_id: shop.id, image: open("./db/fixtures/category/shop/#{n}.jpeg"))
+    Category.create(id: n, name: a, bussiness_type_id: shop.id, image: open("./db/fixtures/category/shop/shop_#{n}.jpeg"))
   }
 
   hotel_data.each.with_index(50) { |a, n|
-     Category.create(id: n, name: a, bussiness_type_id: hotel.id, image: open("./db/fixtures/category/hotel/#{n}.jpeg"))
+     Category.create(id: n, name: a, bussiness_type_id: hotel.id, image: open("./db/fixtures/category/hotel/hotel_#{n}.jpeg"))
   }
 
   tour_data.each.with_index(65) { |a, n|
-    Category.create(id: n, name: a, bussiness_type_id: tour.id, image: open("./db/fixtures/category/tour/#{n}.jpeg"))
+    Category.create(id: n, name: a, bussiness_type_id: tour.id, image: open("./db/fixtures/category/tour/tour_#{n}.jpeg"))
   }
  
   event_data.each.with_index(80) { |a, n|
-    Category.create(id: n, name: a, bussiness_type_id: event.id, image: open("./db/fixtures/category/event/#{n}.jpeg"))
+    Category.create(id: n, name: a, bussiness_type_id: event.id, image: open("./db/fixtures/category/event/event_#{n}.jpeg"))
   }
 
   # Category.create(id: 1, name: "インスタ映え")
