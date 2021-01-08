@@ -39,11 +39,11 @@ end
 end
 
 1.times do |n|
-  gurume_data = %W[イタリアン フレンチ 中華 和食 焼肉 カフェ ラーメン お寿司 ステーキ スイーツ バイキング 鍋 カレー とんかつ うどん お好み焼き ハンバーガー 居酒屋 パン ご当地グルメ そば 洋食レストラン  ]
-  hotel_data = %W[シティホテル ビジネスホテル ラグジュアリー 旅館 ゲストハウス ]
-  shop_data = %W[アパレル お土産 雑貨 ショッピングモール 百貨店 お酒 ]
+  gurume_data = %W[イタリアン 中華 焼肉 カフェ 焼き鳥 ラーメン お寿司 ステーキ ご当地グルメ スイーツ 和食 鍋 カレー とんかつ うどん お好み焼き ハンバーガー 居酒屋 パン  そば 洋食レストラン ちゃんぽん ハンバーグ ピザ フレンチ バイキング   ]
+  hotel_data = %W[シティホテル ビジネス ラグジュアリー 旅館 ゲストハウス ]
+  shop_data = %W[アパレル お土産 雑貨 ショッピングモール 百貨店 お酒  ]
   tour_data = %W[美術館 文化遺産 自然 お寺・神社 夜景 温泉 アウトドア   ]
-  event_data = %W[お祭り 〇〇体験 季節のイベント ]
+  event_data = %W[お祭り 体験 季節のイベント ]
 
   eat = BussinessType.create(id: 1, name: "グルメ", image: open("./db/fixtures/gurume.jpeg"))
   shop = BussinessType.create(id: 2, name: "ショッピング", image: open("./db/fixtures/shop.jpeg"))
@@ -54,27 +54,27 @@ end
   # some = BussinessType.create(name: "")
 
   gurume_data.each.with_index(3) { |a, n|
-     Category.create(id: n, name: a, bussiness_type_id: eat.id, image: open("./db/fixtures/category/"))
+     Category.create(id: n, name: a, bussiness_type_id: eat.id, image: open("./db/fixtures/category/gurume/#{n}.jpeg"))
   }
 
-  shop_data.each.with_index(30) { |a, n|
-    Category.create(id: n, name: a, bussiness_type_id: shop.id, image: open("./db/fixtures/category/"))
+  shop_data.each.with_index(35) { |a, n|
+    Category.create(id: n, name: a, bussiness_type_id: shop.id, image: open("./db/fixtures/category/shop/#{n}.jpeg"))
   }
 
-  hotel_data.each.with_index(45) { |a, n|
-     Category.create(id: n, name: a, bussiness_type_id: hotel.id, image: open("./db/fixtures/category/"))
+  hotel_data.each.with_index(50) { |a, n|
+     Category.create(id: n, name: a, bussiness_type_id: hotel.id, image: open("./db/fixtures/category/hotel/#{n}.jpeg"))
   }
 
   tour_data.each.with_index(65) { |a, n|
-    Category.create(id: n, name: a, bussiness_type_id: tour.id, image: open("./db/fixtures/category/"))
+    Category.create(id: n, name: a, bussiness_type_id: tour.id, image: open("./db/fixtures/category/tour/#{n}.jpeg"))
   }
  
   event_data.each.with_index(80) { |a, n|
-    Category.create(id: n, name: a, bussiness_type_id: event.id, image: open("./db/fixtures/category/"))
+    Category.create(id: n, name: a, bussiness_type_id: event.id, image: open("./db/fixtures/category/event/#{n}.jpeg"))
   }
 
-  Category.create(id: 1, name: "インスタ映え")
-  Category.create(id: 99, name: "その他")
+  # Category.create(id: 1, name: "インスタ映え")
+  # Category.create(id: 99, name: "その他")
 
 end
 
