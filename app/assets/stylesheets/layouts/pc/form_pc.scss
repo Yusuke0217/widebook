@@ -17,6 +17,7 @@
       }
     }
     .input__field {
+      @include margin(0, 0, 10px, 0);
       input {
         height: 50px;
         width: 300px;

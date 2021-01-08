@@ -108,6 +108,7 @@
         }
         & ul.post__box {
           @include content-box;
+          @include margin(10px, 0, 10px, 0);
           a {
             @include link;
             @include margin(10px, 5px, 10px, 5px);

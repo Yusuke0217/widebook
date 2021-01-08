@@ -55,81 +55,91 @@
         <% if current_user.nil? %>
         <ul class="common__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to login_path do %>
+            <%= link_to login_path do %>
+              <div class="nav__pic">
+                <i class="fas fa-sign-in-alt"></i>
+              </div>
+              <div class="nav__link">
                 <p>ログイン</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
           <li>
-            <div class="nav__link">
-              <%= link_to signup_path do %>
+            <%= link_to signup_path do %>
+              <div class="nav__pic">
+                <i class="far fa-address-card"></i>
+              </div>
+              <div class="nav__link">
                 <p>登録する</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <ul class="sp__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__pic">
+                <i class="fas fa-info"></i>
+              </div>
+              <div class="nav__link">
                 <p>ヘルプ</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <% else %>
         <ul class="common__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__pic">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="nav__link">
                 <p>トップに戻る</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
           <li>
-            <div class="nav__link">
-              <%= link_to user_path(current_user.id) do %>
+            <%= link_to user_path(current_user.id) do %>
+              <div class="nav__pic">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="nav__link">
                 <p>マイページ</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
           <li>
-            <div class="nav__link">
-              <%= link_to user_bookmarks_path(current_user.id) do %>
+            <%= link_to user_bookmarks_path(current_user.id) do %>
+              <div class="nav__pic">
+                <i class="far fa-heart"></i>
+              </div>
+              <div class="nav__link">
                 <p>お気に入り</p>
-              <% end %>
-            </div>
-          </li>
-          <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
-                <p></p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <ul class="sp__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to logout_path, method: :delete do %>
+            <%= link_to logout_path, method: :delete do %>
+              <div class="nav__pic">
+                <i class="fas fa-sign-out-alt"></i>
+              </div>
+              <div class="nav__link">
                 <p>ログアウト</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__pic">
+                <i class="fas fa-info"></i>
+              </div>
+              <div class="nav__link">
                 <p>ヘルプ</p>
-              <% end %>
-            </div>
-          </li>
-          <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
-                <p></p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <% end %>
@@ -142,53 +152,46 @@
         <% if current_user.nil? %>
         <ul class="common__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__link">
                 <p>トップに戻る</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <ul class="sp__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__link">
                 <p>ヘルプ</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <% else %>
         <ul class="common__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__link">
                 <p>トップに戻る</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__link">
                 <p></p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <ul class="sp__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__link">
                 <p>ヘルプ</p>
-              <% end %>
-            </div>
-          </li>
-          <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
-                <p></p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <% end %>
@@ -201,81 +204,67 @@
         <% if current_user.nil? %>
         <ul class="common__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to login_path do %>
+            <%= link_to login_path do %>
+              <div class="nav__link">
                 <p>ログイン</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
           <li>
-            <div class="nav__link">
-              <%= link_to signup_path do %>
+            <%= link_to signup_path do %>
+              <div class="nav__link">
                 <p>登録する</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <ul class="sp__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__link">
                 <p>ヘルプ</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <% else %>
         <ul class="common__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__link">
                 <p>トップに戻る</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
           <li>
-            <div class="nav__link">
-              <%= link_to user_path(current_user.id) do %>
+            <%= link_to user_path(current_user.id) do %>
+              <div class="nav__link">
                 <p>マイページ</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
           <li>
-            <div class="nav__link">
-              <%= link_to user_bookmarks_path(user_id: current_user.id) do %>
+            <%= link_to user_bookmarks_path(user_id: current_user.id) do %>
+              <div class="nav__link">
                 <p>お気に入り</p>
-              <% end %>
-            </div>
-          </li>
-          <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
-                <p></p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <ul class="sp__nav">
           <li>
-            <div class="nav__link">
-              <%= link_to logout_path, method: :delete do %>
+            <%= link_to logout_path, method: :delete do %>
+              <div class="nav__link">
                 <p>ログアウト</p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
           <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
+            <%= link_to root_path do %>
+              <div class="nav__link">
                 <p>ヘルプ</p>
-              <% end %>
-            </div>
-          </li>
-          <li>
-            <div class="nav__link">
-              <%= link_to root_path do %>
-                <p></p>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </li>
         </ul>
         <% end %>
