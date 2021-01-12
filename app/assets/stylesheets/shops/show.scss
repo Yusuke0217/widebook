@@ -619,6 +619,7 @@
                   height: 200px;
                   width: 250px;
                   .review__header {
+                    @include margin(0, 0, 5px, 0);
                     .user__profile {
                       display: flex;
                       @include padding(0, 0, 5px, 0);
@@ -637,6 +638,7 @@
                         & .user__name {
                           h4 {
                             @include mobile-fsz;
+                            @include margin(0, 0, 5px, 0);
                           }
                         }
                         & .review__date {
@@ -655,6 +657,7 @@
                         font-weight: bold;
                         @include word-el;
                         @include padding(0px, 10px, 0px, 10px);
+                        @include mobile-fsz;
                       }
                     }
                     .review__txt {

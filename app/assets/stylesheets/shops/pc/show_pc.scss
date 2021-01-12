@@ -604,15 +604,17 @@
             overflow: scroll;
             & li {
               @include margin(10px, 5px, 10px, 5px);
-              @include padding(15px, 10px, 20px, 10px);
+              @include padding(15px, 10px, 10px, 10px);
               @include flame;
               .review__wrapper {
                 height: 260px;
                 width: 350px;
                 .review__header {
+                  @include margin(0, 0, 10px, 0);
                   .user__profile {
                     display: flex;
                     &__left {
+                      @include margin(0, 10px, 0px, 0);
                       .user__img {
                         @include margin(0, 20px, 0, 15px);
                         img {
@@ -625,6 +627,7 @@
                     &__right {
                       flex-direction: column;
                       & .user__name {
+                        @include margin(0, 0, 10px, 0);
                         h4 {
                         }
                       }
