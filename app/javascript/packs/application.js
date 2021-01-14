@@ -13,7 +13,8 @@ require("channels")
 
 
 // Original JavaScript for piece file
-require("piece/ggl_map")
+require("piece/move_btn")
+require("piece/scroll_top")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

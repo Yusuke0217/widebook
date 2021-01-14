@@ -40,6 +40,15 @@
           }
         }
       }
+      .detail__btn {
+        @include margin(40px, 0, 0px, 0);
+      }
+      .more__btn {
+        display: none;
+        button {
+          outline: none;
+        }
+      }
     }
   }
 }

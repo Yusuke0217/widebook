@@ -6,7 +6,7 @@
   // PC用のレスポンシブ
   .move__btn {
     @include padding(0, 0, 15px, 0);
-    a {
+    .js-btn {
       height: 44px;
       width: 44px;
       border-radius: 50%;
@@ -15,14 +15,13 @@
       opacity: 0.9;
       color: $white;
       top: 3%;
-      pointer-events: none;
       cursor: pointer;
       i {
         position: absolute;
       }
     }
     .btn--left {
-      a {
+      .js-btn {
         right: 11%;
         i.fas.fa-chevron-left {
           right: 40%;
@@ -31,7 +30,7 @@
       }
     }
     .btn--right {
-      a {
+      .js-btn {
         right: 5%;
         i.fas.fa-chevron-right {
           right: 35%;

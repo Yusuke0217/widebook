@@ -1,9 +1,16 @@
 class CategoriesController < ApplicationController
 
   before_action :find_category, only: [:show]
+  before_action :ua, only: [:index]
 
   def index
-    @categories = Category.all.page(params[:page]).per(21)
+    if(ua.include?('Mobile') || ua.include?('Android'))
+      per = 10
+      @categories = Category.all.page(params[:page]).per(per)
+    else
+      per = 21
+      @categories = Category.all.page(params[:page]).per(per)
+    end
   end
 
   def show
