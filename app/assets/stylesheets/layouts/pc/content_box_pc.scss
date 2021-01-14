@@ -83,6 +83,9 @@
         }
       }
     }
+    ul::-webkit-scrollbar{
+      overflow-x: scroll;
+    }
     & .detail__btn {
     }
   }

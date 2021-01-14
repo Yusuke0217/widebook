@@ -50,8 +50,8 @@
         margin-bottom: 30px;
         .bg__img.index {
           height: 400px;
-          background-image: url("/assets/widebook_bg.jpg");
-          // background-image: url("/assets/day_light.jpg");
+          // background-image: url("/assets/widebook_bg.jpg");
+          background-image: url("/assets/day_light.jpg");
           // background-image: url("/assets/bg_koya.jpg");
           @include pc-bg-img;
           .main__view__cp {
@@ -139,9 +139,6 @@
               @include link-hover;
             }
           }
-        }
-        ul::-webkit-scrollbar {
-          display: none;
         }
       }
       #b-type {

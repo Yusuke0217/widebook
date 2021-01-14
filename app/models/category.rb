@@ -3,6 +3,8 @@ class Category < ApplicationRecord
   has_many :shops, through: :shop_categories
   belongs_to :bussiness_type
 
+  mount_uploader :image, ImageUploader
+
   validates :name, presence: true, uniqueness: true
 
   # ------------名前で検索されたとき-----------

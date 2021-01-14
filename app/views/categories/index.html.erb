@@ -13,10 +13,7 @@
           <li>
             <div class="panel__wrapper">
               <div class="panel__img">
-                <style media="screen">
-                  .panel__img { background-image: url("/assets/day_light.jpg"); }
-                  /* .bg__img { background-image: url(<%= category.image %>); } */
-                </style>
+                <%= image_tag category.image.thumb.url %>
                 <div class="panel__cp">
                   <h3><%= category.name %></h3>
                 </div>
