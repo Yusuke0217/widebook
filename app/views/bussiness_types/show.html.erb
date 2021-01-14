@@ -25,7 +25,7 @@
   <div class="main__content">
     <%= render 'layouts/content_box' %>
     <div class="shop__list pick-up" id="">
-      <h1><%= @b_type.name %>の一覧から探す</h1>
+      <h2><%= @b_type.name %>の一覧から探す</h2>
       <p></p>
       <%= render 'layouts/move_btn' %>
       <ul class="shop__box">
@@ -53,7 +53,7 @@
                   </div>
                 <div class="shop__info__basic">
                   <div class="shop__name">
-                    <h2><%= shop.name %></h2>
+                    <h3><%= shop.name %></h3>
                   </div>
                   <div class="shop__about">
                     <div class="shop__place">
@@ -78,10 +78,6 @@
           <span>すべて表示<i></i></span>
         <% end %>
       </div>
-    </div>
-    <div class="shop__list" id="">
-      <h1></h1>
-      <p></p>
     </div>
   </div>
 </div>

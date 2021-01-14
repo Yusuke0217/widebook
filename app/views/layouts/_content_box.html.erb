@@ -5,7 +5,7 @@
 <% end %>
 
 <div class="content__list" id="category">
-  <h1><%= yield(:text) %></h1>
+  <h2><%= yield(:text) %></h2>
   <p></p>
   <%= render 'layouts/move_btn' %>
   <ul class="content__box" id="js-slide-li">
@@ -21,7 +21,7 @@
           <% end %>
           </div>
           <div class="content__cp">
-            <h2><%= category.name %></h2>
+            <h3><%= category.name %></h3>
             <p></p>
           </div>
         </div>

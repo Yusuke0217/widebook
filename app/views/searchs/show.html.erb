@@ -7,11 +7,12 @@
 <%= render 'layouts/header' %>
 <div class="main__wrapper">
   <div class="ggrmap__wrapper">
-    <h1>マップ</h1>
+    <h2>マップ</h2>
     <p><%= @shop.address %></p>
     <div class="ggrmap-dtl" id="js-map"></div>
   </div>
 </div>
+<%= render 'layouts/footer' %>
 
 <script type="text/javascript">
 (() => {

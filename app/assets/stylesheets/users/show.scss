@@ -12,9 +12,10 @@
         @include margin(10px);
         text-align: center;
         border-bottom: 1px solid $darkgray;
-        h3 {
+        h2 {
           font-size: 1.3rem;
           @include padding(0, 0, 20px, 0);
+          border: none;
         }
       }
       .user__hd {
@@ -52,7 +53,9 @@
         .nav__list {
           .body__ttl {
             @include margin(20px, 0px, 10px, 0px);
-            h3 {
+            h2 {
+              @include mobile-ttl;
+              border: none;
             }
           }
           .menu__view {
@@ -105,7 +108,8 @@
         @include margin(0, 0, 30px, 0);
         .ft__ttl {
           @include margin(20px, 0, 20px, 0);
-          h3 {
+          h2 {
+            border: none;
           }
         }
         .user__ft__nav {

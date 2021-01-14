@@ -7,7 +7,7 @@
 <%= render 'layouts/header' %>
 <div class="main__wrapper">
   <div class="page__hd">
-    <h3><%= @index_type.name %>一覧から探す</h3>
+    <h2><%= @index_type.name %>一覧から探す</h2>
   </div>
   <div class="shop__data">
   <% if @shops.present? %>
@@ -36,7 +36,7 @@
               </div>
               <div class="shop__info__basic">
                 <div class="shop__name">
-                  <h2><%= shop.name %></h2>
+                  <h3><%= shop.name %></h3>
                 </div>
                 <div class="shop__about">
                   <div class="shop__place">

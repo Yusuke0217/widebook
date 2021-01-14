@@ -5,23 +5,6 @@
   .wrapper {
     .main__wrapper {
       padding-top: 80px;
-      .ggrmap__back {
-        display: none;
-        .ggrmap {
-          background-color: $green;
-          height: 600px;
-          form#search-form {
-            .input__area {
-              input {
-              }
-              button {
-                i.fas.fa-search {
-                }
-              }
-            }
-          }
-        }
-      }
       .result__wrapper {
         padding-top: 0px;
         padding-right: 10px;
@@ -49,7 +32,7 @@
             }
           }
           .post__list.result-top {
-            h1 {
+            h2 {
               font-size: 1.5rem;
             }
             p {
@@ -102,7 +85,7 @@
                       &__basic {
                         overflow: hidden;
                         .shop__name {
-                          h2 {
+                          h3 {
                             font-size: 1rem;
                           }
                         }
@@ -137,91 +120,6 @@
             }
             & .move__btn {
               display: none;
-            }
-          }
-          .post__list.result-all {
-            h1 {
-              font-size: 1.5rem;
-            }
-            p {
-            }
-            & .move__btn {
-              display: none;
-            }
-            ul.post__box {
-              @include content-box;
-              display: block;
-              overflow: scroll;
-              a {
-                @include link;
-                margin-top: 10px;
-                margin-right: 5px;
-                margin-bottom: 10px;
-                margin-left: 5px;
-                li {
-                  height: 300px;
-                  width: 350px;
-                  border-radius: 20px;
-                  margin-bottom: 10px;
-                  .post__wrapper {
-                    height: 100%;
-                    .post__img {
-                      height: 65%;
-                      img {
-                        border-radius: 20px 20px 0 0;
-                        height: 100%;
-                        width: 100%;
-                      }
-                    }
-                    .post__info {
-                      &__deco {
-                        display: flex;
-                        .post__review {
-                          i.fas.fa-star {
-                            color: $plum;
-                          }
-                          span {
-                          }
-                        }
-                        .post__tag {
-                          i {
-                          }
-                        }
-                      }
-                      &__basic {
-                        .post__name {
-                          h2 {
-                            font-size: 1.2rem;
-                          }
-                        }
-                        .post__about {
-                          display: flex;
-                          .post__place {
-                            .address {
-                              @include word-el;
-                              span {
-                              }
-                            }
-                          }
-                        }
-                        .post__budget {
-                          span {
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            & .detail__btn {
-              display: none;
-              a.detail {
-                span {
-                  i {
-                  }
-                }
-              }
             }
           }
         }

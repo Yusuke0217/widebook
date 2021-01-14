@@ -9,8 +9,9 @@
       @include padding(20px, 0, 20px, 30px);
       @include border-btm($darkgray)
       .page__index {
-        h3 {
+        h2 {
           @include mobile-ttl;
+          border: none;
         }
       }
     }
@@ -83,7 +84,7 @@
                   order: 1;
                   .shop__name {
                     @include padding(0px, 0px, 3px, 0px);
-                    h2 {
+                    h3 {
                       font-size: 1rem;
                     }
                   }

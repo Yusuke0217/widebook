@@ -46,7 +46,7 @@
             }
           }
           .post__list.result-top {
-            h1 {
+            h2 {
               @include mobile-ttl;
             }
             p {
@@ -132,7 +132,7 @@
             }
           }
           .other__list.category {
-            h1 {
+            h2 {
               @include mobile-ttl;
             }
             p {
@@ -179,7 +179,7 @@
           }
           .post__list.result-all {
             @include margin(20px, 12px, 20px, 12px);
-            h1 {
+            h2 {
               @include mobile-ttl;
             }
             p {

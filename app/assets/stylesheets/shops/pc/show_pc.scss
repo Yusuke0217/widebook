@@ -181,7 +181,7 @@
           .shop__name {
             order: 1;
             @include margin(10px, 0, 15px, 0);
-            h2 {
+            h3 {
               font-size: 1.7rem;
             }
           }
@@ -286,7 +286,7 @@
           @include margin(30px, 0, 0, 0);
           @include padding(0, 0, 20px, 0);
           border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
-          h2 {
+          h3 {
             font-size: 1.5rem;
             @include margin(0, 0, 10px, 0);
           }
@@ -401,7 +401,7 @@
                     .time-info {
                       display: flex;
                       @include margin(0, 0, 15px, 0);
-                      h4 {
+                      p {
                         @include margin(0, 15px, 0, 0);
                       }
                       span {
@@ -410,7 +410,7 @@
                     .rest-info {
                       display: flex;
                       @include margin(0, 0, 5px, 0);
-                      h4 {
+                      p {
                         @include margin(0, 15px, 0, 0);
                       }
                       span {
@@ -466,7 +466,7 @@
           border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
           .shop__cp {
             .shop__ttl {
-              h1 {
+              h2 {
                 font-size: 1.5rem;
                 @include margin(0, 0, 15px, 0);
               }
@@ -628,7 +628,8 @@
                       flex-direction: column;
                       & .user__name {
                         @include margin(0, 0, 10px, 0);
-                        h4 {
+                        h3 {
+                          font-size: 1.0rem;
                         }
                       }
                       & .review__date {
@@ -692,7 +693,7 @@
       }
       .shop__other__info {
         display: none;
-        h1 {
+        h2 {
         }
           div {
           p {
@@ -703,7 +704,7 @@
         @include margin(30px, 0, 0, 0);
         @include padding(0, 0, 40px, 0);
         border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
-        h1 {
+        h2 {
           font-size: 1.5rem;
           @include margin(0, 0, 30px, 0);
         }
@@ -724,7 +725,7 @@
         // .near-event
         display: none;
         @include margin(30px, 0, 0, 0);
-        h1 {
+        h2 {
           font-size: 1.5rem;
         }
         p {

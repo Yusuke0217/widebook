@@ -6,26 +6,6 @@
     .main__wrapper.search_pc {
       padding-top: 100px;
       // display: flex;
-      .ggrmap__back {
-        display: none;
-        width: 40%;
-        order: 3;
-        .ggrmap {
-          height: 700px;
-          width: 100%;
-          background-color: $deepgreen;
-          form#search-form {
-            .input__area {
-              input {
-              }
-              button {
-                i.fas.fa-search {
-                }
-              }
-            }
-          }
-        }
-      }
       .result__wrapper {
         width: 100%;
         order: 2;
@@ -53,7 +33,7 @@
           }
           .post__list {
             @include padding(30px, 0, 0, 0);
-            h1 {
+            h2 {
               font-size: 1.5rem;
             }
             p {
@@ -65,7 +45,7 @@
             }
           }
           .other__list.category {
-            h1 {
+            h2 {
               font-size: 1.5rem;
             }
             p {

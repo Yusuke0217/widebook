@@ -132,7 +132,7 @@
             <% end %>
           </div>
           <div class="shop__name">
-            <h2><%= @shop.name %></h2>
+            <h3><%= @shop.name %></h3>
           </div>
           <div class="shop__ggrmap">
             <div class="ggrmap__link">
@@ -166,7 +166,7 @@
               <p>営業時間:</p>
             </div>
             <div class="shop__hours__import">
-              <span><%= @shop.b_hours_first %> ~ <%= @shop.b_hours_last%></span>
+              <span><%= @shop.b_hours_first %> 〜 <%= @shop.b_hours_last%></span>
               <span></span>
             </div>
           </div>
@@ -185,7 +185,7 @@
     <div class="shop__info sub">
       <div class="shop__info__body">
         <div class="shop__info__summary">
-          <h2>詳細情報</h2>
+          <h3>詳細情報</h3>
           <div class="summary__list">
             <ul class="table">
               <li>
@@ -268,11 +268,11 @@
                   </div>
                   <div class="table__import">
                     <div class="time-info">
-                      <h4>営業時間 : </h4>
+                      <p>営業時間 : </p>
                       <span><%= @shop.b_hours_first %> ~ <%= @shop.b_hours_last%></span>
                     </div>
                     <div class="rest-info">
-                      <h4>定休日 : </h4>
+                      <p>定休日 : </p>
                       <span><%= @shop.holidays %></span>
                     </div>
                   </div>
@@ -311,7 +311,7 @@
         <div class="shop__info__usp">
           <div class="shop__cp">
             <div class="shop__ttl">
-              <h1>個室あり リーズナブルな価格で楽しめるモダンなイタリアンレストラン</h1>
+              <h2>個室あり リーズナブルな価格で楽しめるモダンなイタリアンレストラン</h2>
               <p>この世には、二種類の男しかいない。俺か、俺以外か。</p>
             </div>
             <div class="shop__read">
@@ -348,7 +348,7 @@
           </div>
         </div>
         <div class="shop__info__sns">
-          <h1>お店の関連情報</h1>
+          <h2>お店の関連情報</h2>
           <div class="sns__link">
             <div class="sns__link__ttl">
               <i class="fas fa-home"></i>
@@ -439,7 +439,7 @@
                     </div>
                     <div class="user__profile__right">
                       <div class="user__name">
-                        <h4><%= review.user.name %></h4>
+                        <h3><%= review.user.name %></h3>
                       </div>
                       <div class="review__date">
                         <p><%= review.created_at.strftime("%Y年%m月%d日") %></p>
@@ -473,14 +473,14 @@
       <% end %>
       </div>
       <div class="shop__other__info">
-        <h1>その他の基本情報</h1>
+        <h2>その他の基本情報</h2>
         <div class="">
           <p></p>
           <p></p>
         </div>
       </div>
       <div class="ggrmap__wrapper">
-        <h1>マップ</h1>
+        <h2>マップ</h2>
         <p><%= @shop.address %> <%= @shop.address_building %></p>
         <div class="ggrmap" id="js-map">
         </div>
@@ -539,7 +539,7 @@
         </div>
       </div>
       <div class="other__list" id="">
-        <h1></h1>
+        <h2></h2>
         <p></p>
       </div>
     </div>

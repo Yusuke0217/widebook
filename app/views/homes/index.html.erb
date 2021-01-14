@@ -36,7 +36,7 @@
     </div>
     <div class="main__content">
       <div class="content__list common" id="b-type">
-        <h1>目的から探す</h1>
+        <h2>目的から探す</h2>
         <ul class="post__box">
         <% @b_types.each do |b_type| %>
           <%= link_to bussiness_type_path(b_type.id) do %>
@@ -46,7 +46,7 @@
                   <%= image_tag b_type.image.url %>
                 </div>
                 <div class="post__cp">
-                  <h2><%= b_type.name %></h2>
+                  <h3><%= b_type.name %></h3>
                   <p></p>
                 </div>
               </div>
@@ -57,7 +57,7 @@
       </div>
       <%= render 'layouts/content_box' %>
       <div class="content__list common" id="area">
-        <h1>から探す</h1>
+        <h2>から探す</h2>
         <p></p>
         <%= render 'layouts/move_btn' %>
         <ul class="post__box">
@@ -68,7 +68,7 @@
                   <%= image_tag "/assets/instagram1.jpeg" %>
                 </div>
                 <div class="post__cp">
-                  <h2><%= %></h2>
+                  <h3><%= %></h3>
                   <p></p>
                 </div>
               </div>
@@ -82,7 +82,7 @@
         </div>
       </div>
       <div class="content__list common" id="special">
-        <h1>特集</h1>
+        <h2>特集</h2>
         <p>ガイドブックならではの特集を皆様にお届けします！</p>
         <%= render 'layouts/move_btn' %>
         <ul class="post__box">
@@ -93,7 +93,7 @@
                   <%= image_tag "" %>
                 </div>
                 <div class="post__cp">
-                  <h2>冬の代名詞</h2>
+                  <h3>冬の代名詞</h3>
                 </div>
               </div>
             </li>
@@ -105,7 +105,7 @@
                   <%= image_tag "" %>
                 </div>
                 <div class="post__cp">
-                  <h2>最近キテるラーメン屋さん特集</h2>
+                  <h3>最近キテるラーメン屋さん特集</h3>
                 </div>
               </div>
             </li>

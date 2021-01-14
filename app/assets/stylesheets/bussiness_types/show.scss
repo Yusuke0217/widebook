@@ -35,7 +35,7 @@
         .content__list#category {
           position: relative;
           @include margin(20px, 12px, 20px, 12px);
-          & h1 {
+          & h2 {
             @include mobile-ttl;
           }
           & p {
@@ -68,7 +68,7 @@
                   .content__cp {
                     @include padding(5px, 5px, 5px, 5px);
                     text-align: center;
-                    h2 {
+                    h3 {
                       font-size: 1.0rem;
                     }
                     p {
@@ -84,7 +84,7 @@
         .shop__list {
           position: relative;
           @include margin(20px, 12px, 20px, 12px);
-          & h1 {
+          & h2 {
             @include mobile-ttl;
           }
           & p {
@@ -131,7 +131,7 @@
                     }
                     &__basic {
                       .shop__name {
-                        h2 {
+                        h3 {
                           font-size: 1rem;
                         }
                       }

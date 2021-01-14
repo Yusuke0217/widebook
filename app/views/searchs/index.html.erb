@@ -10,18 +10,6 @@
 <%= render 'layouts/header' %>
 <div class="wrapper">
   <div class="main__wrapper search_pc">
-    <div class="ggrmap__back">
-      <div class="ggrmap">
-        <form id="search-form" action="" method="post">
-          <div class="input__area">
-            <input id="" type="search" name="search" placeholder="キーワード">
-            <button type="submit" form="search-form" name="">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
     <div class="result__wrapper">
       <div class="result__group">
         <div class="result--icon">
@@ -31,7 +19,7 @@
           <p><%= @results.all.count %>件の検索結果</p>
         </div>
         <div class="post__list result-top" id="">
-          <h1></h1>
+          <h2></h2>
           <p></p>
           <%= render 'layouts/move_btn' %>
           <%# 以下は後ほど、shop_listにまとめてrenderする。 %>
@@ -60,7 +48,7 @@
                     </div>
                     <div class="shop__info__basic">
                       <div class="shop__name">
-                        <h2><%= result.name %></h2>
+                        <h3><%= result.name %></h3>
                       </div>
                       <div class="shop__about">
                         <div class="shop__place">
@@ -85,8 +73,6 @@
           </div>
         </div>
         <div class="other__list" id="">
-          <h1></h1>
-          <p></p>
         </div>
       </div>
     </div>

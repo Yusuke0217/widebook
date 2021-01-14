@@ -28,7 +28,7 @@
             }
           }
           .post__list.result-top {
-            h1 {
+            h2 {
               @include mobile-ttl;
             }
             p {
@@ -77,7 +77,7 @@
                       &__basic {
                         overflow: hidden;
                         .shop__name {
-                          h2 {
+                          h3 {
                             font-size: 1rem;
                           }
                         }
@@ -113,7 +113,7 @@
             }
           }
           .content__list#category {
-            h1 {
+            h2 {
               @include mobile-ttl;
             }
             p {
@@ -145,7 +145,7 @@
                     .content__cp {
                       @include padding(5px, 5px, 5px, 5px);
                       text-align: center;
-                      h2 {
+                      h3 {
                         font-size: 1.0rem;
                       }
                       p {
@@ -160,7 +160,7 @@
           }
           .post__list.result-all {
             @include margin(20px, 12px, 20px, 12px);
-            h1 {
+            h2 {
               @include mobile-ttl;
             }
             p {
@@ -208,7 +208,7 @@
                       }
                       &__basic {
                         .post__name {
-                          h2 {
+                          h3 {
                             @include mobile-ttl;
                           }
                         }

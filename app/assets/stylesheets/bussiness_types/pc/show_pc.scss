@@ -36,7 +36,7 @@
       .shop__list {
         position: relative;
         @include margin(20px, 0px, 20px, 0px);
-        & h1 {
+        & h2 {
           @include pc-ttl;
         }
         & p {

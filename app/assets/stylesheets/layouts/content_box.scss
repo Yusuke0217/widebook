@@ -2,34 +2,44 @@
 
 @media screen and (max-width: 559px) {
   // Mobile用のレスポンシブ
-  ul.content__box {
-    @include content-box;
-    overflow: scroll;
-    a {
-      @include link;
-      @include margin(10px, 5px, 10px, 5px);
-      li {
-        height: 200px;
-        width: 200px;
-        @include flame;
-        .content__wrapper {
-          height: 100%;
-          .content__img {
-            height: 70%;
-            img {
-              border-radius: 20px 20px 0 0;
-              height: 100%;
-              width: 100%;
+  .content__list#category {
+    position: relative;
+    @include margin(20px, 12px, 20px, 12px);
+    & h2 {
+      @include mobile-ttl;
+    }
+    & p {
+      color: $darkgray;
+    }
+    ul.content__box {
+      @include content-box;
+      overflow: scroll;
+      a {
+        @include link;
+        @include margin(10px, 5px, 10px, 5px);
+        li {
+          height: 200px;
+          width: 200px;
+          @include flame;
+          .content__wrapper {
+            height: 100%;
+            .content__img {
+              height: 70%;
+              img {
+                border-radius: 20px 20px 0 0;
+                height: 100%;
+                width: 100%;
+              }
             }
-          }
-          .content__cp {
-            padding: 10px;
-            h2 {
-              font-size: 1.1rem;
-            }
-            p {
-              color: $darkgray;
-              padding: 2px;
+            .content__cp {
+              padding: 10px;
+              h3 {
+                font-size: 1.1rem;
+              }
+              p {
+                color: $darkgray;
+                padding: 2px;
+              }
             }
           }
         }
