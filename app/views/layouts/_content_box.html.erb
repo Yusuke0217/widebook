@@ -14,11 +14,7 @@
       <li>
         <div class="content__wrapper">
           <div class="content__img">
-          <% if category.image? %>
             <%= image_tag category.image.url %>
-          <% else %>
-            <%= image_tag "hotel1.jpeg"%>
-          <% end %>
           </div>
           <div class="content__cp">
             <h3><%= category.name %></h3>
