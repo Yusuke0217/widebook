@@ -624,6 +624,7 @@
                       display: flex;
                       @include padding(0, 0, 5px, 0);
                       &__left {
+                        @include margin(0, 5px, 0, 0);
                         .user__img {
                           @include margin(0, 15px, 0, 10px);
                           img {

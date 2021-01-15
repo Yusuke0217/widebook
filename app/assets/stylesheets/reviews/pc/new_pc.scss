@@ -91,6 +91,7 @@
             border: 1px solid rgba($darkgray, $alpha: 0.5);
             @include padding(5px, 5px, 5px, 5px);
             border-radius: 20px;
+            outline: none;
           }
         }
         .text__count {

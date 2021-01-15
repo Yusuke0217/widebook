@@ -630,6 +630,7 @@
                         @include margin(0, 0, 10px, 0);
                         h3 {
                           font-size: 1.0rem;
+                          @include padding(5px, 0, 0, 0);
                         }
                       }
                       & .review__date {
