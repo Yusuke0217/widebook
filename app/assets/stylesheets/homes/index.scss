@@ -66,6 +66,7 @@
             }
             p {
               color: $white;
+              @include mobile-fsz;
             }
           }
           .place__btn {

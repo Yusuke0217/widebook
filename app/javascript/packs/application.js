@@ -14,7 +14,8 @@ require("channels")
 
 // Original JavaScript for piece file
 require("piece/move_btn")
-require("piece/scroll_top")
+// require("piece/scroll_top")
+require("piece/search_word")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

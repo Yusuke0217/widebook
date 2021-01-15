@@ -19,10 +19,9 @@
           <p><%= @results.all.count %>件の検索結果</p>
         </div>
         <div class="post__list result-top" id="">
-          <h2></h2>
+          <h2 id="js-output"></h2>
           <p></p>
           <%= render 'layouts/move_btn' %>
-          <%# 以下は後ほど、shop_listにまとめてrenderする。 %>
           <ul class="shop__box">
           <% @results.each do |result| %>
             <%= link_to shop_path(result) do %>

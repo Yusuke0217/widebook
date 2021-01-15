@@ -5,7 +5,6 @@ class SearchsController < ApplicationController
     @categories = Category.search(params[:search][:name])
     @bussiness_types = BussinessType.search(params[:search][:id]).uniq
     @b_types = BussinessType.k_word(params[:search][:name])
-    
 
     if @bussiness_types.present?
       @results = Shop.where(id: @bussiness_types).page(params[:page]).per(20)

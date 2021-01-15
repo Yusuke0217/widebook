@@ -61,7 +61,7 @@
               @include padding(120px, 0px, 0px, 0px);
             }
             p {
-              @include padding(5px, 5px, 5px, 5px);
+              @include padding(10px, 5px, 5px, 5px);
               color: $white;
             }
           }
