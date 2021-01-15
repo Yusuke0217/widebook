@@ -1,0 +1,36 @@
+@import "../../main.scss";
+
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  #js-loading {
+    height: 100vh;
+    width: 100vw;
+    transition: all 1s;
+    background-color: $plum;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 98;
+    .load__view {
+      width: 100px;
+      height: 100px;
+      @include margin(200px, auto, 200px, auto);
+      background-color: #fff;
+      border-radius: 100%;
+      animation: sk-scaleout 1.0s infinite ease-in-out;
+    }
+  }
+  .loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+  @keyframes sk-scaleout {
+    0% {
+      transform: scale(0);
+    } 100% {
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+}

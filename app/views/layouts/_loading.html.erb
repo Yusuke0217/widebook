@@ -1,0 +1,10 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/layouts/loading', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/tablet/loading_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/pc/loading_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+
+<div id="js-loading">
+  <div class="load__view"></div>
+</div>
