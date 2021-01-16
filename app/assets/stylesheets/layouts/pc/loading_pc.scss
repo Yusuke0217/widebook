@@ -3,7 +3,7 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
-  #js-loading {
+  .load__wrapper {
     height: 100vh;
     width: 100vw;
     transition: all 1s;
@@ -15,7 +15,7 @@
     .load__view {
       width: 100px;
       height: 100px;
-      @include margin(200px, auto, 200px, auto);
+      @include margin(300px, auto, 200px, auto);
       background-color: #fff;
       border-radius: 100%;
       animation: sk-scaleout 1.0s infinite ease-in-out;
