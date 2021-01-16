@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/:id/shops", to: "shops#index", as: "shop_views"
+  get "/privacy", to: "users#privacy"
+  get "/rule", to: "users#rule"
+  get "/help", to: "users#help"
 
   resources :users, only: [:index, :show, :edit, :update, :destroy] do
     resource :bookmarks, only: [:show, :edit, :update]

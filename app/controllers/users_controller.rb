@@ -48,6 +48,12 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
 
+  def privacy
+  end
+
+  def rule
+  end
+
   private
 
   def user_params
