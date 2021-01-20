@@ -2,4 +2,44 @@
 
 @media screen and (max-width: 559px) {
   // Mobile用のレスポンシブ
+  .kiyaku__wrapper {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    .kiyaku__form {
+      & h1 {
+        margin-bottom: 30px;
+        font-size: 1.5rem;
+      }
+      & p {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        & span {
+          padding-right: 10px;
+          padding-left: 10px;
+        }
+      }
+      & h2 {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+      }
+      & ol {
+        margin-bottom: 15px;
+        & li {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          list-style-type: disc;
+          font-size: 0.9rem;
+          & ol {
+            & li {
+            }
+          }
+        }
+      }
+      & p.tR {
+      }
+    }
+  }
 }

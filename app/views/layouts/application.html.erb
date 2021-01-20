@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>Wide</title>
+    <title><%= content_for?(:ttl) ? yield(:ttl) + " | Wide" : "Wide"%></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     

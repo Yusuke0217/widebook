@@ -1,0 +1,371 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/users/help', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/users/tablet/help_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/users/pc/help_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<% content_for(:ttl, 'ヘルプ') %>
+
+<%= render 'layouts/header' %>
+<div class="help__wrapper">
+  <div class="help__top">
+    <h1>何かお探しですか？</h1>
+    <p>についてご不明な点がございましたら、こちらをご覧ください。</p>
+  </div>
+  <div class="tab__wrapper" id="js-tab">
+    <div class="tab__nav">
+      <a href="" class="nav__item" data-nav="0">初めての方へ</a>
+      <a href="" class="nav__item" data-nav="1">アプリの操作</a>
+      <a href="" class="nav__item" data-nav="2">アカウント情報</a>
+      <a href="" class="nav__item" data-nav="3">お店・店舗情報の登録について</a>
+      <a href="" class="nav__item" data-nav="4">よくあるご質問</a>
+    </div>
+    <div class="tab__contents">
+      <div class="tab__contents--item" data-content="0">
+        <div class="accordion__wrapper">
+          <div class="accordion" id="js-ac-0">
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>どのようなアプリなのか？</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                Wideは簡単に言えば、<span><u>和歌山のガイドブック</u></span> です。<br>
+                飲食店や観光スポット、ホテルからショッピングまで、和歌山を楽しむために必要な情報だけを掲載・ご案内するサービスです。<br>
+                </p>
+                <p></p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>Wideを使うメリット</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                様々なサイトがある中で、なぜWideなのか。<br>
+                その理由は3つあります。<br>
+                </p>
+                <ol>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ol>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>基本的な機能</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                Wideの基本的な機能は、以下の通りです。<br>
+                </p>
+                <ol>
+                  <li>お店やスポットの検索機能</li>
+                  <li>ブックマークや口コミ投稿機能</li>
+                  <li>お店を友達に共有する機能</li>
+                </ol>
+                <p>
+                今後も、機能の追加やアップデートを行い、当サービスの向上を目指して精進します。
+                </p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>アプリご利用の流れ</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                和歌山を歩く簡単3ステップ<br>
+                </p>
+                <ol>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="tab__contents--item" data-content="1">
+        <div class="accordion__wrapper">
+          <div class="accordion" id="js-ac-1">
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>ログイン・新規登録</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+        
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>プロフィール</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+        
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>お店やスポットの検索</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+        
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>ホーム</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+        
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>お気に入り・共有</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+        
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>レビュー・口コミ投稿</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab__contents--item" data-content="2">
+        <div class="accordion__wrapper">
+          <div class="accordion" id="js-ac-2">
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>アカウントの作成方法</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>プロフィールの変更</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>アカウントの削除</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>パスワードを忘れてしまいました。</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>メールアドレスを変更したい</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                メールアドレスの変更は、Wideにログイン後、マイページに行き、<br>
+                プロフィール編集ページに進んでいただくことで可能になります。<br>
+                ※パスワードやニックネームも、同じ手順で変更可能です。
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="tab__contents--item" data-content="3">
+        <div class="accordion__wrapper">
+          <div class="accordion" id="js-ac-3">
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>お店はどこで登録できるのですか？</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>お店の情報を編集・更新したいのですが。</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p></p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>お店の登録基準は何ですか？</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                原則として、営業している飲食店やホテル、利用可能な施設やスポットを登録させていただきます。<br>
+                しかし、以下の要素に該当するお店やスポットは、登録を控えさせていただいております。
+                </p>
+                <ol>
+                  <li>
+                    現在営業していないお店（開店前でオープン日が未定、またはすでに閉店している）
+                  </li>
+                  <li>
+                    店舗情報を完全非公開にして営業しているお店
+                  </li>
+                  <li>
+                    住所不詳（または住所が無い）で場所が固定されないお店（お祭りの屋台、移動販売、機内食など）
+                  </li>
+                  <li>
+                    利用ケースにより業態が異なるお店（レンタルスペースなど）
+                  </li>
+                  <li>
+                    人が商品を販売していないお店や施設（自動販売機、無人直売所など）
+                  </li>
+                  <li>
+                    その場では商品を販売していない施設（メーカー本社、製品工場など）
+                  </li>
+                  <li>
+                    キャバクラ、スナック、ホストクラブ、お茶屋、またはそれらに類するお店
+                  </li>
+                  <li>
+                    その他、Wideの趣旨とは異なるもの（病院食、学校給食、料理教室など）
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>お店の情報が間違っている</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                誠に申し訳ございません。<br>
+                今後も、登録されている情報に誤りが見つかった場合、すぐに修正を行ます。<br>
+                あなたの気づきがユーザビリティの向上につながります。<br>
+                今後とも、引き続きWideをご利用いただけると幸いです。<br>
+                本当に、ご迷惑をおかけして申し訳ありませんでした。
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="tab__contents--item" data-content="4">
+        <div class="accordion__wrapper">
+          <div class="accordion" id="js-ac-4">
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>Wideを利用するのに、アカウント登録は必要ですか？</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                  当サービスをご利用いただくのに、アカウント登録は必要ではありません。<br>
+                  ページを開いた瞬間から、すぐにそのままお使いいただけます。
+                </p>
+              </div>
+            </div>
+        
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>どのようなシチュエーションで使えばいいのでしょうか？</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                  ご友人と、和歌山をぶらりと旅するとき。<br>
+                  和歌山の情報をリサーチするためのガイドブックとして。<br>
+                  ゆるっと気軽にお使いいただけます。
+                </p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>Wideは有料なのですか？</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                  いいえ！ご安心を！<br>
+                  当サービスは、いつまでも無料でお使いいただけます。
+                </p>
+              </div>
+            </div>
+
+            <a href="" class="accordion__trigger">
+              <i class="fas fa-chevron-down"></i>
+              <p>和歌山とは、具体的にどこまでなのか？</p>
+            </a>
+            <div class="accordion__content">
+              <div class="answer">
+                <p>
+                「和歌山市」のことです。<br>
+                現在、和歌山市をメインに情報の掲載とお客様へのご案内をさせていただいております。<br>
+                しかし今後のアップデートやお客さまのご要望により、和歌山県の他のエリアの情報も掲載させていただく事があります。
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/footer' %>

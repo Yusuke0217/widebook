@@ -71,11 +71,11 @@
       <ul class="nav__list">
         <li>
           <div class="ft__nav__how nav__link">
-            <a href="">
+            <%= link_to help_path do %>
               <div class="app__info">
-                <p>アプリのご利用方法</p>
+                <p>ヘルプ</p>
               </div>
-            </a>
+            <% end %>
           </div>
         </li>
         <li>
@@ -98,11 +98,11 @@
         </li>
         <li>
           <div class="ft__nav__query nav__link">
-            <a href="">
+            <%= link_to root_path do %>
               <div class="query">
                 <p>お問い合わせ</p>
               </div>
-            </a>
+            <% end %>
           </div>
         </li>
       </ul>

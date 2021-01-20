@@ -2,4 +2,93 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
+  .help__wrapper {
+    height: 100%;
+    width: 100%;
+    @include padding(100px, 0px, 0px, 0px);
+    .help__top {
+      height: 150px;
+      text-align: center;
+      border-bottom: 1px solid rgba($darkgray, $alpha: 0.3);
+      h1 {
+        @include padding(50px, 0px, 20px, 0px);
+        font-size: 1.5rem;
+      }
+      p {
+      }
+    }
+    .tab__wrapper {
+      width: 80%;
+      @include padding(30px, 60px, 30px, 60px);
+      @include margin(0, auto, 0, auto);
+      display: flex;
+      .tab__nav {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid rgba($darkgray, $alpha: 0.3);
+        a.nav__item {
+          @include padding(10px, 10px, 10px, 10px);
+          @include margin(10px, 0px, 10px, 0px);
+          background-color: white;
+          color: black;
+          text-decoration: none;
+          &:hover {
+            border-left: 3px solid $plum;
+          }
+        }
+        a.nav__item.is-active {
+          background-color: $plum;
+          color: white;
+        }
+      }
+      .tab__contents {
+        width: calc(100% - 300px);
+        border: 1px solid $darkgray;
+        @include padding(20px, 20px, 20px, 20px);
+        .tab__contents--item {
+          display: none;
+          .accordion__wrapper {
+            .accordion {
+              a.accordion__trigger {
+                display: flex;
+                text-decoration: none;
+                @include padding(10px, 10px, 10px, 10px);
+                @include margin(0px, 0px, 15px, 0px);
+                &:active {
+                  opacity: 0.7;
+                }
+                i.fas.fa-chevron-down {
+                  color: $plum;
+                }
+                p {
+                  color: black;
+                  @include padding(0px, 0px, 0px, 10px);
+                }
+              }
+              .accordion__content {
+                display: none;
+                @include padding(15px, 10px, 10px, 10px);
+                @include margin(0px, 0px, 20px, 0px);
+                border-bottom: 1px solid gray;
+                .answer {
+                  line-height: 1.3rem;
+                  font-size: 0.9rem;
+                  p {
+                    span {
+                    }
+                  }
+                  ol {
+                    @include padding(5px, 0px, 10px, 30px);
+                    li {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

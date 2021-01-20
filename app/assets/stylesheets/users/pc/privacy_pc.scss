@@ -2,4 +2,40 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
+  .privacy__wrapper {
+    padding-top: 30px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    .privacy__form {
+      & h1 {
+        margin-bottom: 30px;
+      }
+      & p {
+        margin-bottom: 15px;
+        & span {
+          padding-right: 10px;
+          padding-left: 10px;
+        }
+      }
+      & h2 {
+        margin-top: 15px;
+        margin-bottom: 20px;
+      }
+      & ol {
+        margin-bottom: 15px;
+        & li {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          list-style-type: disc;
+          & ol {
+            & li {
+            }
+          }
+        }
+      }
+      & p.tR {
+      }
+    }
+  }
 }
