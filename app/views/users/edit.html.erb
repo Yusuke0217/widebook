@@ -4,22 +4,15 @@
   <%= stylesheet_link_tag '/assets/users/pc/signup_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
+<% provide(:ttl, "プロフィール編集")%>
 <% provide(:btn_text, "更新する")%>
 <% provide(:url, user_path)%>
-<% content_for(:ttl, "プロフィール編集")%>
+<% provide(:top_text, "プロフィール編集")%>
 
 
 <div class="main__wrapper" id="user__wrapper">
   <div class="form__wrapper">
-    <div class="signup__logo">
-      <%= link_to root_path do %>
-        <%= image_tag "widebook_logo.png" %>
-      <% end %>
-    </div>
-    <div class="form__ttl">
-      <h1>プロフィール編集</h1>
-      <p></p>
-    </div>
+    <%= render 'layouts/user_form_head' %>
     <div class="user__info__form">
       <%= render 'layouts/user_form' %>
     </div>

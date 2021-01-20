@@ -4,20 +4,15 @@
   <%= stylesheet_link_tag '/assets/users/pc/signup_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
+<% provide(:ttl, "新規登録")%>
 <% provide(:btn_text, "登録する")%>
+<% provide(:top_text, "サインイン")%>
 <% provide(:url, signup_path)%>
-<% content_for(:ttl, "新規登録")%>
 
 
 <div class="main__wrapper signup__wrapper" id="user__wrapper">
   <div class="form__wrapper">
-    <div class="signup__logo">
-      <%= image_tag "widebook_logo.png" %>
-    </div>
-    <div class="form__ttl">
-      <h1>サインイン</h1>
-      <p></p>
-    </div>
+    <%= render 'layouts/user_form_head' %>
     <div class="user__info__form">
       <%= render 'layouts/user_form' %>
       <div class="announce">

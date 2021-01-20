@@ -19,7 +19,7 @@
         }
         .form__ttl {
           text-align: center;
-          margin-bottom: 15px;
+          @include margin(0px, 0px, 20px, 0px);
           h1 {
             font-size: 1.5rem;
           }
@@ -57,6 +57,21 @@
                 color: $plum;
               }
             }
+            .ps__reset__link {
+              @include margin(20px, 0, 0, 0);
+              p {
+              }
+              .ps__reset__btn {
+                @include margin(10px, 0, 0, 0);
+                a {
+                  @include link;
+                  p {
+                    @include mobile-fsz;
+                    color: $plum;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -65,10 +80,13 @@
       @include margin(0, 0, 50px, 0);
     }
     .login__wrapper {
-      @include padding(80px);
+      @include padding(0px);
     }
     .edit__wrapper {
-      @include padding(80px);
+      @include padding(0px);
+    }
+    .ps-reset__wrapper {
+      @include padding(0px);
     }
   }
 }
