@@ -21,6 +21,31 @@
   })
 })();
 
+(() => {
+  'use strict';
+  document.addEventListener('DOMContentLoaded', () => {
+    let $copyBtn = document.getElementById('js-copy-btn');
+    let $copyStatus = document.getElementById('js-copy-status');
+
+    const copyUrl = () => {
+      let url = decodeURIComponent(location.href);
+      let newEle = document.createElement("div");
+      newEle.innerHTML = url;
+      document.body.appendChild(newEle);
+      let range = document.createRange();
+
+      range.selectNodeContents(newEle);
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      $copyStatus.textContent = 'URLをコピーしました！';
+      newEle.style.display = "none";
+      newEle.remove();
+    };
+
+    $copyBtn.addEventListener('click', copyUrl);
+  });
+})();
+
 
 (() => {
   'use strict';
