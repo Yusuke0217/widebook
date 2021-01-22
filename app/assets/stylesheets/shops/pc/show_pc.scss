@@ -7,6 +7,75 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    .pop__wrapper {
+      display: none;
+      height: 100%;
+      width: 100%;
+      animation: fadeIn 0.2s ease 1 normal;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 190;
+      .pop__bg {
+        height: 100vh;
+        width: 100vw;
+        background-color: $darkgray;
+        opacity: 0.8;
+      }
+      .pop__form {
+        width: 300px;
+        position: absolute;
+        z-index: 999;
+        top: 10%;
+        right: 40%;
+        background-color: #fff;
+        border-radius: 20px;
+        @include padding(15px, 20px, 20px, 20px);
+        .share__close {
+          height: 50px;
+          width: 50px;
+          @include margin(0, 0, 30px, 0);
+          i.fas.fa-times {
+            height: 50px;
+            width: 50px;
+            font-size: 2.3rem;
+            cursor: pointer;
+            color: $darkgray;
+          }
+        }
+        .pop__hd {
+          @include padding(0, 0, 10px, 0);
+          border-bottom: 1px solid rgba(gray, $alpha: 0.3);
+          h3 {
+          }
+        }
+        ul {
+          @include padding(0, 15px, 0px, 15px);
+          @include margin(30px, 0, 30px, 0);
+          list-style: none;
+          a {
+            height: 30px;
+            width: 100%;
+            text-decoration: none;
+            color: $darkgray;
+            li {
+              height: 100%;
+              line-height: 15px;
+              @include margin(0px, 0px, 15px, 0px);
+              @include padding(10px, 0px, 10px, 0px);
+              .share__li {
+                height: 100%;
+                p {
+                }
+              }
+              &:hover {
+                background-color: rgba($darkgray, $alpha: 0.1);
+              }
+            }
+          }
+        }
+      }
+    }
     .shop__view {
       order: 2;
       @include border-btm;

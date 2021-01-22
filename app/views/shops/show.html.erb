@@ -11,6 +11,40 @@
 <%= render 'layouts/header' %>
 <div class="wrapper">
   <div class="main__wrapper shop__page__wrapper">
+    <div class="pop__wrapper" id="js-share-pop">
+      <div class="pop__bg" id="js-menu-back"></div>
+      <div class="pop__form">
+        <div class="share__close" id="js-share-close">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="pop__hd">
+          <h3>あなたのお友達やご家族とシェアしましょう</h3>
+        </div>
+        <ul>
+          <a href="">
+            <li>
+              <div class="share__li">
+                <p>リンクをコピーする</p>
+              </div>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <div class="share__li">
+                <p>Instagramで共有する</p>
+              </div>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <div class="share__li">
+                <p>Twitter</p>
+              </div>
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
     <div class="shop__view">
       <div class="shop__img__list">
         <div class="main__img">
@@ -75,12 +109,12 @@
       </div>
       <div class="shop__event">
         <div class="share__btn">
-          <%= link_to root_path do %>
+          <a href="javascript:void(0)" id="js-share-btn">
             <div class="share__icon">
               <i class="fas fa-upload"></i>
               <span>シェアする</span>
             </div>
-          <% end %>
+          </a>
         </div>
         <div class="like__btn">
         <% unless @shop.bookmarked_by?(current_user) %>
@@ -196,7 +230,7 @@
                     <p>名前</p>
                   </div>
                   <div class="table__import">
-                    <span><%= @shop.name %></span>
+                    <span id="js-shop-name"><%= @shop.name %></span>
                   </div>
                 </div>
               </li>
@@ -329,14 +363,6 @@
         <div class="shop__info__amenity">
           <h2></h2>
           <div class="amenity__detail">
-            <div class="amenity__list">
-              <p></p>
-              <i></i>
-            </div>
-            <div class="amenity__list">
-              <p></p>
-              <i></i>
-            </div>
             <div class="amenity__list">
               <p></p>
               <i></i>

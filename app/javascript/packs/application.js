@@ -18,6 +18,7 @@ require("piece/move_btn")
 require("piece/search_word")
 require("piece/load_view")
 require("piece/help_tab")
+require("piece/share_btn")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
