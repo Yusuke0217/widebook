@@ -1,0 +1,116 @@
+@import "../../main.scss";
+
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  .review__box {
+    @include margin(30px, 0, 0, 0);
+    @include padding(0, 0, 30px, 0);
+    border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+    & .review__count {
+      @include margin(0, 0, 0, 20px);
+      i.fas.fa-star {
+        color: $plum;
+        font-size: 1.4rem;
+        span.star__rate {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    & .review__list {
+      @include margin(20px, 0, 20px, 0);
+      & ul {
+        display: flex;
+        justify-content: space-around;
+        overflow: scroll;
+        & li {
+          @include margin(10px, 5px, 10px, 5px);
+          @include padding(15px, 10px, 10px, 10px);
+          @include flame;
+          .review__wrapper {
+            height: 260px;
+            width: 350px;
+            .review__header {
+              @include margin(0, 0, 10px, 0);
+              .user__profile {
+                display: flex;
+                &__left {
+                  @include margin(0, 10px, 0px, 0);
+                  .user__img {
+                    @include margin(0, 20px, 0, 15px);
+                    img {
+                      height: 50px;
+                      width: 50px;
+                      border-radius: 50%;
+                    }
+                  }
+                }
+                &__right {
+                  flex-direction: column;
+                  & .user__name {
+                    @include margin(0, 0, 10px, 0);
+                    h3 {
+                      font-size: 1.0rem;
+                      @include padding(5px, 0, 0, 0);
+                    }
+                  }
+                  & .review__date {
+                    p {
+                      color: $darkgray;
+                      font-size: 13px;
+                    }
+                  }
+                }
+              }
+            }
+            .review__contents {
+              height: 200px;
+              .review__cp {
+                p {
+                  font-weight: bold;
+                  @include padding(5px, 10px, 5px, 10px);
+                }
+              }
+              .review__txt {
+                word-break: break-all;
+                & p {
+                  height: 180px;
+                  @include padding(5px, 10px, 5px, 10px);
+                  @include artcl-el(7);
+                  line-height: 1.6rem;
+                }
+              }
+              .more__btn {
+                text-align: right;
+                display: none;
+                & a {
+                  color: $darkgray;
+                  & span {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      & ul.no__exist {
+        text-align: center;
+        display: block;
+        & li {
+          border: none;
+          .no__content__msg {
+            h3 {
+            }
+            .review__link {
+              @include padding(5px, 0, 0, 0)
+              a {
+                p {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -93,7 +93,7 @@
             height: 170px;
             width: 300px;
             border: 1px solid rgba($darkgray, $alpha: 0.5);
-            @include padding(5px, 5px, 5px, 5px);
+            @include padding(15px, 5px, 5px, 15px);
             border-radius: 20px;
             outline: none;
           }

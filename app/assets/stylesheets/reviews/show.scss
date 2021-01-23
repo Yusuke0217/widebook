@@ -1,0 +1,119 @@
+@import "../main.scss";
+
+
+@media screen and (max-width: 559px) {
+  // Mobile用のレスポンシブ
+  .review__box {
+    @include margin(30px, 0, 0, 0);
+    @include padding(0, 0, 30px, 0);
+    @include border-btm;
+    & .review__count {
+      @include margin(0, 0, 0, 20px);
+      i.fas.fa-star {
+        color: $plum;
+        span.star__rate {
+        }
+      }
+    }
+    & .review__list {
+      @include margin(20px, 0, 20px, 0);
+      & ul {
+        display: flex;
+        overflow: scroll;
+        & li {
+          @include margin(10px, 5px, 10px, 5px);
+          @include padding(10px, 10px, 10px, 10px);
+          @include flame;
+          .review__wrapper {
+            height: 200px;
+            width: 250px;
+            .review__header {
+              @include margin(0, 0, 5px, 0);
+              .user__profile {
+                display: flex;
+                @include padding(0, 0, 5px, 0);
+                &__left {
+                  @include margin(0, 5px, 0, 0);
+                  .user__img {
+                    @include margin(0, 15px, 0, 10px);
+                    img {
+                      height: 40px;
+                      width: 40px;
+                      border-radius: 50%;
+                    }
+                  }
+                }
+                &__right {
+                  flex-direction: column;
+                  & .user__name {
+                    h3 {
+                      @include mobile-fsz;
+                      @include margin(0, 0, 5px, 0);
+                    }
+                  }
+                  & .review__date {
+                    p {
+                      color: $darkgray;
+                      font-size: 12px;
+                    }
+                  }
+                }
+              }
+            }
+            .review__contents {
+              height: 150px;
+              .review__cp {
+                p {
+                  font-weight: bold;
+                  @include word-el;
+                  @include padding(0px, 10px, 0px, 10px);
+                  @include mobile-fsz;
+                }
+              }
+              .review__txt {
+                word-break: break-all;
+                & p {
+                  height: 130px;
+                  width: 250px;
+                  @include artcl-el(5);
+                  @include padding(5px, 5px, 5px, 5px);
+                  @include mobile-fsz;
+                  line-height: 1.5rem;
+                }
+              }
+              .more__btn {
+                text-align: right;
+                display: none;
+                & a {
+                  color: $darkgray;
+                  & span {
+                    @include mobile-fsz;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      & ul.no__exist {
+        text-align: center;
+        display: block;
+        & li {
+          border: none;
+          .no__content__msg {
+            h3 {
+            }
+            .review__link {
+              @include padding(5px, 0, 0, 0)
+              a {
+                p {
+                  @include mobile-fsz;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

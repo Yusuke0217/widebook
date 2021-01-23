@@ -45,20 +45,3 @@
     $copyBtn.addEventListener('click', copyUrl);
   });
 })();
-
-
-(() => {
-  'use strict';
-  document.addEventListener('DOMContentLoaded', () => {
-    let $shareBtn = document.querySelector('#js-share-btn');
-    let $shopName = document.getElementById('js-shop-name');
-
-    const shareData = {
-      title: '和歌山のガイドブック Wide',
-      text: `お店の詳細ページ: ${$shopName.textContent}`,
-      url: decodeURIComponent(location.href),
-    };
-
-    $shareBtn.addEventListener('click', shareAction);
-  });
-})();

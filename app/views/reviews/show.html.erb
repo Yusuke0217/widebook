@@ -1,1 +1,13 @@
-<h2>hoge</h2>
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/reviews/show', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/reviews/tablet/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/reviews/pc/show_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<% content_for(:ttl, 'レビュー一覧') %>
+
+<%= render 'layouts/header' %>
+<div class="main__wrapper">
+  <%= render 'layouts/review_list' %>
+</div>
+<%= render 'layouts/footer' %>
