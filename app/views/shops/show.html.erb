@@ -428,54 +428,16 @@
         </div>
       </div>
       <div class="review__box">
-      <% if @reviews.present? %>
-        <div class="review__count">
-          <i class="fas fa-star"></i>
-          <span class="star__rate"><%= @avg %></span>
-          <span><%= @reviews.count %>件のレビュー</span>
-        </div>
-        <div class="review__list">
-          <ul>
-          <% @reviews.each do |review| %>
-            <li>
-              <div class="review__wrapper">
-                <div class="review__header">
-                  <div class="user__profile">
-                    <div class="user__profile__left">
-                      <div class="user__img">
-                      <% if review.user.image? %>
-                        <%= image_tag review.user.image.url %>
-                      <% else %>
-                        <%= image_tag "/assets/user_icon.jpg"%>
-                      <% end %>
-                      </div>
-                    </div>
-                    <div class="user__profile__right">
-                      <div class="user__name">
-                        <h3><%= review.user.name %></h3>
-                      </div>
-                      <div class="review__date">
-                        <p><%= review.created_at.strftime("%Y年%m月%d日") %></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="review__contents">
-                  <div class="review__cp">
-                    <p><%= review.title %></p>
-                  </div>
-                  <div class="review__txt">
-                    <p><%= review.content.truncate(140) %></p>
-                  </div>
-                  <div class="more__btn">
-                    <a href=""><span>続きを読む</span></a>
-                  </div>
-                </div>
-              </div>
-            </li>
+        <div class="review__btn">
+          <%= link_to new_shop_reviews_path(@shop) do %>
+            <div class="review__icon">
+              <i class="fas fa-edit"></i>
+              <span>レビューを投稿</span>
+            </div>
           <% end %>
-          </ul>
         </div>
+      <% if @reviews.present? %>
+        <%= render 'layouts/review_list' %>
         <div class="detail__btn rev__more">
           <%= link_to shop_reviews_path(@shop.id) ,class: "detail" do %>
             <span>レビューをすべて表示</span>

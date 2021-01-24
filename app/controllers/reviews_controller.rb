@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @reviews = Review.all
+    @reviews = Review.all.order(created_at: :desc)
   end
 
   def new

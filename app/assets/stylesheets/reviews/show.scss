@@ -3,7 +3,7 @@
 
 @media screen and (max-width: 559px) {
   // Mobile用のレスポンシブ
-  .review__box {
+  .review__all__view {
     @include margin(30px, 0, 0, 0);
     @include padding(0, 0, 30px, 0);
     @include border-btm;
@@ -18,10 +18,9 @@
     & .review__list {
       @include margin(20px, 0, 20px, 0);
       & ul {
-        display: flex;
         overflow: scroll;
         & li {
-          @include margin(10px, 5px, 10px, 5px);
+          @include margin(15px, 5px, 15px, 5px);
           @include padding(10px, 10px, 10px, 10px);
           @include flame;
           .review__wrapper {

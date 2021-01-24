@@ -20,9 +20,8 @@
       <div class="post__list result-top" id="">
         <h2><%= @category.name %></h2>
         <p></p>
-        <%= render 'layouts/move_btn' %>
         <ul class="shop__box">
-        <% @shops.page(params[:page]).per(20).each do |shop| %>
+        <% @shops.page(params[:page]).per(10).each do |shop| %>
           <%= link_to shop_path(shop.id) do %>
             <li>
               <div class="shop__wrapper">

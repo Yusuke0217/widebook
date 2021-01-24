@@ -42,6 +42,12 @@
         & p {
           color: $darkgray;
         }
+        & ul.shop__box {
+          @include content-box;
+          flex-wrap: nowrap;
+          overflow: scroll;
+          justify-content: start;
+        }
         .detail__btn {
           // display: none;
         }

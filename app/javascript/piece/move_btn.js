@@ -1,15 +1,16 @@
 (function() {
   'use strict';
   document.addEventListener('DOMContentLoaded', () => {
-    let prev = document.getElementById('js-prev');
-    let next = document.getElementById('js-next');
+    let $prev = document.querySelector('.js-prev');
+    let $next = document.querySelector('.js-next');
+    let $ul = document.getElementById('js-slide-li');
     
-    prev.addEventListener('click', () => {
-      document.getElementById('js-slide-li').scrollBy(-120, 0);
+    $prev.addEventListener('click', () => {
+      $ul.scrollBy({top: 0, left: -145, behavior: "smooth"});
     });
   
-    next.addEventListener('click', () => {
-      document.getElementById('js-slide-li').scrollBy(120, 0);
+    $next.addEventListener('click', () => {
+      $ul.scrollBy({top: 0, left: 145, behavior: "smooth"});
     });
-  })
+  });
 })();

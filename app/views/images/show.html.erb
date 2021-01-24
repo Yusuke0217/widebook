@@ -4,8 +4,9 @@
   <%= stylesheet_link_tag '/assets/images/pc/show_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
+<%= render 'layouts/header' %>
 <div class="main__wrapper">
-  <div class="img__list">
+  <div class="img__tank">
     <%= render 'layouts/move_btn' %>
     <ul>
       <% @images.each do |img| %>
@@ -18,3 +19,4 @@
     </ul>
   </div>
 </div>
+<%= render 'layouts/footer' %>

@@ -16,6 +16,7 @@ class CategoriesController < ApplicationController
   def show
     @shop_categories = ShopCategory.where(category_id: params[:id]).pluck(:shop_id)
     @shops = Shop.where(id: @shop_categories)
+    
     # other_category
     @categories = Category.where(bussiness_type_id: @category.bussiness_type_id).where.not(id: @category)
   end
