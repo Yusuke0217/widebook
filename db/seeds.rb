@@ -45,32 +45,32 @@ end
   tour_data = %W[美術館 文化遺産 自然 お寺・神社 夜景 温泉 アウトドア   ]
   event_data = %W[お祭り 体験 季節のイベント ]
 
-  eat = BussinessType.create(id: 1, name: "グルメ", image: open("/assets/gurume.jpeg"))
-  shop = BussinessType.create(id: 2, name: "ショッピング", image: open("/assets/shop.jpeg"))
-  hotel = BussinessType.create(id: 3, name: "ホテル・宿泊", image: open("/assets/hotel.jpeg"))
-  tour = BussinessType.create(id: 4, name: "観光・インスタ映え", image: open("/assets/tour.jpeg"))
-  event = BussinessType.create(id: 5, name: "イベント", image: open("/assets/event.jpeg"))
+  eat = BussinessType.create(id: 1, name: "グルメ", image: open("./app/assets/images/gurume.jpeg"))
+  shop = BussinessType.create(id: 2, name: "ショッピング", image: open("./app/assets/images/shop.jpeg"))
+  hotel = BussinessType.create(id: 3, name: "ホテル・宿泊", image: open("./app/assets/images/hotel.jpeg"))
+  tour = BussinessType.create(id: 4, name: "観光・インスタ映え", image: open("./app/assets/images/tour.jpeg"))
+  event = BussinessType.create(id: 5, name: "イベント", image: open("./app/assets/images/event.jpeg"))
   # other = BussinessType.create(name: "その他")
   # some = BussinessType.create(name: "")
 
   gurume_data.each.with_index(1) { |a, n|
-     Category.create(id: n, name: a, bussiness_type_id: eat.id, image: open("/assets/category/gurume/#{n}.jpeg"))
+     Category.create(id: n, name: a, bussiness_type_id: eat.id, image: open("./app/assets/images/category/gurume/#{n}.jpeg"))
   }
 
   shop_data.each.with_index(35) { |a, n|
-    Category.create(id: n, name: a, bussiness_type_id: shop.id, image: open("/assets/category/shop/shop_#{n}.jpeg"))
+    Category.create(id: n, name: a, bussiness_type_id: shop.id, image: open("./app/assets/images/category/shop/shop_#{n}.jpeg"))
   }
 
   hotel_data.each.with_index(50) { |a, n|
-     Category.create(id: n, name: a, bussiness_type_id: hotel.id, image: open("/assets/category/hotel/hotel_#{n}.jpeg"))
+     Category.create(id: n, name: a, bussiness_type_id: hotel.id, image: open("./app/assets/images/category/hotel/hotel_#{n}.jpeg"))
   }
 
   tour_data.each.with_index(65) { |a, n|
-    Category.create(id: n, name: a, bussiness_type_id: tour.id, image: open("/assets/category/tour/tour_#{n}.jpeg"))
+    Category.create(id: n, name: a, bussiness_type_id: tour.id, image: open("./app/assets/images/category/tour/tour_#{n}.jpeg"))
   }
  
   event_data.each.with_index(80) { |a, n|
-    Category.create(id: n, name: a, bussiness_type_id: event.id, image: open("/assets/category/event/event_#{n}.jpeg"))
+    Category.create(id: n, name: a, bussiness_type_id: event.id, image: open("./app/assets/images/category/event/event_#{n}.jpeg"))
   }
 
   # Category.create(id: 98, name: "インスタ映え")
