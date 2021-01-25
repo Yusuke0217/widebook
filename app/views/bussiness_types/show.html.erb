@@ -28,7 +28,7 @@
       <h2><%= @b_type.name %>の一覧から探す</h2>
       <p></p>
       <%= render 'layouts/move_btn' %>
-      <ul class="shop__box">
+      <ul class="shop__box" id="js-shop-li">
       <% @ex_shops.each do |shop| %>
         <%= link_to shop_path(shop.id) do %>
           <li>

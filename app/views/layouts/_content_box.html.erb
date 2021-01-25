@@ -8,7 +8,7 @@
   <h2><%= yield(:text) %></h2>
   <p></p>
   <%= render 'layouts/move_btn' %>
-  <ul class="content__box" id="js-slide-li">
+  <ul class="content__box" id="js-content-li">
   <% @categories.each do |category| %>
     <%= link_to category_path(category.id) do %>
       <li>

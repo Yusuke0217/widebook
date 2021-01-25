@@ -158,6 +158,9 @@
               }
             }
           }
+          .other__list {
+            display: none;
+          }
           .post__list.result-all {
             @include margin(20px, 12px, 20px, 12px);
             h2 {

@@ -5,7 +5,7 @@
 <% end %>
 
 
-<ul class="shop__box">
+<ul class="shop__box" id="js-shop-li">
 <% yield(:objects).each do |obj| %>
   <%= link_to yield(:url) do %>
     <li>
