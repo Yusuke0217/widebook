@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('turbolinks:load', () => {
     let $prev = document.querySelectorAll('.js-prev');
     let $next = document.querySelectorAll('.js-next');
     let $contents = document.getElementById('js-content-li');

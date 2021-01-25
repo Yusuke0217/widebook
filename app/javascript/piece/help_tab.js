@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('turbolinks:load', () => {
     let $tab = document.getElementById('js-tab');
     let $nav = document.querySelectorAll('[data-nav]');
     let $content = document.querySelectorAll('[data-content]');
@@ -46,7 +46,7 @@
   'use strict';
   class Accordion {
     constructor(obj) {
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('turbolinks:load', () => {
         let $elm = document.querySelector(obj.hookName);
         let $trigger = $elm.getElementsByTagName(obj.tagName);
         let triggerLen = $trigger.length;

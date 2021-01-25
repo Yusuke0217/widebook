@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('turbolinks:load', () => {
     let $shareBtn = document.getElementById('js-share-btn');
     let $shareMenu = document.getElementById('js-share-pop');
     let $backGround = document.getElementById('js-menu-back');
@@ -23,7 +23,7 @@
 
 (() => {
   'use strict';
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('turbolinks:load', () => {
     let $copyBtn = document.getElementById('js-copy-btn');
     let $copyStatus = document.getElementById('js-copy-status');
 
