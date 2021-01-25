@@ -40,7 +40,11 @@
               outline: none;
               @include padding(0px, 0px, 0px, 20px);
               &:hover {
-                background-color: rgba($darkgray, $alpha: 0.3);
+                background-color: $plum;
+                color: $white;
+                &::placeholder {
+                  color: $white;
+                }
                 // border-radius: 50px 0px 0px 50px;
               }
             }
@@ -53,8 +57,10 @@
               width: 27%;
               outline: none;
               @include padding(0px, 0, 0px, 20px);
+              color: rgba($color: $darkgray, $alpha: 0.8);
               &:hover {
-                background-color: rgba($darkgray, $alpha: 0.3);
+                background-color: $plum;
+                color: $white;
                 border-radius: 50px 0px 0px 50px;
               }
             }
@@ -207,7 +213,8 @@
         }
         label.user__open {
           @include margin(0, 20px, 0, 20px);
-          i.fas.fa-user-alt {
+          // i.fas.fa-user-alt {
+          i.fas.fa-bars {
             color: $darkgray;
             @include awesome;
             font-size: 3rem;
