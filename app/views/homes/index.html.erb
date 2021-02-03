@@ -56,6 +56,61 @@
         </ul>
       </div>
       <%= render 'layouts/content_box' %>
+      <div class="shop__list pick-up" id="">
+        <h2>グルメの一覧から探す</h2>
+        <p></p>
+        <%= render 'layouts/move_btn' %>
+        <ul class="shop__box" id="js-shop-li">
+        <% @shops.each do |shop| %>
+          <%= link_to shop_path(shop.id) do %>
+            <li>
+              <div class="shop__wrapper">
+                <div class="shop__img">
+                  <% if shop.images.first.present? %>
+                    <%= image_tag shop.images.first.image.url %>
+                  <% else %>
+                    <%= image_tag "wait.jpeg" %>
+                  <% end %>
+                </div>
+                <div class="shop__info">
+                  <div class="shop__info__deco">
+                    <div class="shop__review">
+                      <i class="fas fa-star"></i>
+                      <span><%= shop.reviews.average(:score) %></span>
+                    </div>
+                    <div class="shop__tag">
+                      <i class="fas fa-tag"></i>
+                      <span><%= shop.categories.first.name %></span>
+                    </div>
+                  </div>
+                  <div class="shop__info__basic">
+                    <div class="shop__name">
+                      <h3><%= shop.name %></h3>
+                    </div>
+                    <div class="shop__about">
+                      <div class="shop__place">
+                        <div class="address">
+                          <span><%= shop.address %></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="shop__budget">
+                      <i class="fas fa-yen-sign"></i>
+                      <span><%= shop.budget %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+        </ul>
+        <div class="detail__btn shop__more">
+          <%= link_to shops_path(detail: 'shop'), class:"detail" do %>
+            <span>すべて表示<i></i></span>
+          <% end %>
+        </div>
+      </div>
       <div class="content__list common" id="area">
         <h2>から探す</h2>
         <p></p>

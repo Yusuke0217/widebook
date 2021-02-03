@@ -4,5 +4,6 @@ class HomesController < ApplicationController
     @areas = Area.all
     @categories = Category.all.page(params[:page]).per(15)
     @b_types = BussinessType.all
+    @shops = Shop.all
   end
 end

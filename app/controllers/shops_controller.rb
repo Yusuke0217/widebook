@@ -4,15 +4,15 @@ class ShopsController < ApplicationController
   before_action :find_shop, only: [:edit, :update, :show, :destroy]
 
   def index
-    @c_shops = Shop.c_shops(params[:id])
-    @b_shops = Shop.b_shops(params[:id])
+    @c_shops = Shop.c_shops(params[:num])
+    @b_shops = Shop.b_shops(params[:num])
     
     if params[:detail] == 'category'
       @shops = Shop.where(id: @c_shops).page(params[:page]).per(20)
-      @index_type = Category.find_by(id: params[:id])
     elsif params[:detail] == 'b_type'
       @shops = Shop.where(id: @b_shops).page(params[:page]).per(20)
-      @index_type = BussinessType.find_by(id: params[:id])
+    elsif params[:detail] == 'shop'
+      @shops = Shop.all.page(params[:page]).per(20)
     end
   end
 
