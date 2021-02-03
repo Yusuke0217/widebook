@@ -9,6 +9,9 @@ class Shop < ApplicationRecord
   accepts_nested_attributes_for :images
   has_many :mediums, dependent: :destroy
   accepts_nested_attributes_for :mediums
+  has_many :shop_purposes
+  has_many :purposes, through: :shop_purposes, dependent: :destroy
+  accepts_nested_attributes_for :purposes
   has_many :shop_cards
   has_many :pay_cards, through: :shop_cards, dependent: :destroy
   belongs_to :user
@@ -53,10 +56,10 @@ class Shop < ApplicationRecord
   # ---------------------------------------
 
   # ------------B-typeのshop_indexページ用---------------
-  scope :join_b, -> { eager_load(shop_categories: :category) }
-  scope :where_b_id, -> (params_id) { where(categories: { bussiness_type_id: params_id }) }
+  scope :join_p, -> { eager_load(shop_purposes: :purpose) }
+  scope :where_p_id, -> (params_id) { where(shop_purposes: { purpose_id: params_id }) }
 
-  scope :b_shops, -> (params_id) { self.join_b.where_b_id(params_id).shops_ary}
+  scope :p_shops, -> (params_id) { self.join_p.where_p_id(params_id).shops_ary}
   # ---------------------------------------
 
   

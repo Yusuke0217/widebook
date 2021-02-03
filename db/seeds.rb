@@ -41,16 +41,16 @@ end
 1.times do |n|
   gurume_data = %W[イタリアン 中華 焼肉 カフェ 焼き鳥 ラーメン お寿司 ステーキ ご当地グルメ スイーツ 和食 鍋 カレー とんかつ うどん お好み焼き ハンバーガー 居酒屋 パン  そば 洋食レストラン ちゃんぽん ハンバーグ ピザ フレンチ バイキング   ]
 
-  eat = BussinessType.create(id: 1, name: "店内飲食", image: open("./db/fixtures/gurume.jpeg"))
-  solo = BussinessType.create(id: 2, name: "お一人様", image: open("./db/fixtures/solo.jpeg"))
-  takeout = BussinessType.create(id: 3, name: "テイクアウト", image: open("./db/fixtures/takeout.jpeg"))
-  date = BussinessType.create(id: 4, name: "デート", image: open("./db/fixtures/date.jpeg"))
-  deliver = BussinessType.create(id: 5, name: "デリバリー・宅配", image: open("./db/fixtures/deliver.jpeg"))
-  # other = BussinessType.create(name: "その他")
-  # some = BussinessType.create(name: "")
+  eat = Purpose.create(id: 1, name: "店内飲食", image: open("./db/fixtures/gurume.jpeg"))
+  takeout = Purpose.create(id: 2, name: "テイクアウト", image: open("./db/fixtures/takeout.jpeg"))
+  deliver = Purpose.create(id: 3, name: "デリバリー・宅配", image: open("./db/fixtures/deliver.jpeg"))
+  # solo = Purpose.create(id: 4, name: "お一人様", image: open("./db/fixtures/solo.jpeg"))
+  # date = Purpose.create(id: 5, name: "デート", image: open("./db/fixtures/date.jpeg"))
+  # other = Purpose.create(name: "その他")
+  # some = Purpose.create(name: "")
 
   gurume_data.each.with_index(1) { |a, n|
-     Category.create(id: n, name: a, bussiness_type_id: eat.id, image: open("./db/fixtures/category/gurume/#{n}.jpeg"))
+     Category.create(id: n, name: a, image: open("./db/fixtures/category/gurume/#{n}.jpeg"))
   }
 
 end

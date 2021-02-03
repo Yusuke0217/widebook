@@ -5,12 +5,12 @@ class ShopsController < ApplicationController
 
   def index
     @c_shops = Shop.c_shops(params[:num])
-    @b_shops = Shop.b_shops(params[:num])
+    @p_shops = Shop.p_shops(params[:num])
     
     if params[:detail] == 'category'
       @shops = Shop.where(id: @c_shops).page(params[:page]).per(20)
-    elsif params[:detail] == 'b_type'
-      @shops = Shop.where(id: @b_shops).page(params[:page]).per(20)
+    elsif params[:detail] == 'purpose'
+      @shops = Shop.where(id: @p_shops).page(params[:page]).per(20)
     elsif params[:detail] == 'shop'
       @shops = Shop.all.page(params[:page]).per(20)
     end
@@ -67,7 +67,7 @@ class ShopsController < ApplicationController
   private
 
     def shop_params
-      params.require(:shop).permit(:name, :address, :address_building, :phone_number, :content, :booking, :area_id, :budget, :holidays, :b_hours_first, :b_hours_last, { category_ids: [] }, { pay_card_ids: [] }, images_attributes: [:image, :id], mediums_attributes: [:home_page, :facebook, :instagram, :twitter] )
+      params.require(:shop).permit(:name, :address, :address_building, :phone_number, :content, :booking, :area_id, :budget, :holidays, :b_hours_first, :b_hours_last, { category_ids: [] }, { purpose_ids: [] }, { pay_card_ids: [] }, images_attributes: [:image, :id], mediums_attributes: [:home_page, :facebook, :instagram, :twitter])
     end
 
     def find_shop

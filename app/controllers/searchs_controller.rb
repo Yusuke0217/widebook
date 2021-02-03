@@ -3,13 +3,13 @@ class SearchsController < ApplicationController
   def index
     @shops = Shop.search(params[:search][:name])
     @categories = Category.search(params[:search][:name])
-    @bussiness_types = BussinessType.search(params[:search][:id]).uniq
-    @b_types = BussinessType.k_word(params[:search][:name])
+    @purposes = Purpose.search(params[:search][:id]).uniq
+    @p_words = Purpose.k_word(params[:search][:name])
 
     if @bussiness_types.present?
-      @results = Shop.where(id: @bussiness_types).page(params[:page]).per(20)
+      @results = Shop.where(id: @purposes).page(params[:page]).per(20)
     elsif @b_types.present?
-      @results = Shop.where(id: @b_types).page(params[:page]).per(20)
+      @results = Shop.where(id: @p_words).page(params[:page]).per(20)
     elsif @categories.present?
       @results = Shop.where(id: @categories).page(params[:page]).per(20)
     elsif @shops.present?

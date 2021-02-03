@@ -35,18 +35,18 @@
       </div>
     </div>
     <div class="main__content">
-      <div class="content__list common" id="b-type">
+      <div class="content__list common" id="purpose">
         <h2>目的から探す</h2>
         <ul class="post__box">
-        <% @b_types.each do |b_type| %>
-          <%= link_to bussiness_type_path(b_type.id) do %>
+        <% @purposes.each do |purpose| %>
+          <%= link_to purpose_path(purpose.id) do %>
             <li>
               <div class="post__wrapper">
                 <div class="post__img">
-                  <%= image_tag b_type.image.url %>
+                  <%= image_tag purpose.image.url %>
                 </div>
                 <div class="post__cp">
-                  <h3><%= b_type.name %></h3>
+                  <h3><%= purpose.name %></h3>
                   <p></p>
                 </div>
               </div>

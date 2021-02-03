@@ -16,7 +16,7 @@
       <%= form_with(scope: :search, url: searchs_path, class: "", id: "js-form", method: "get", local: true) do |f| %>
       <div class="search__form">
         <%= f.text_field :mame, placeholder: "エリア・駅", class: "area__form" %>
-        <%= f.collection_select :id, BussinessType.all, :id, :name, { include_hidden: false, include_blank: "選択してください", class: "b-type__form" } %>
+        <%= f.collection_select :id, Purpose.all, :id, :name, { include_hidden: false, include_blank: "選択してください", class: "b-type__form" } %>
         <%= f.text_field :name, value: params[:name], placeholder: "キーワード", class: "keyword__form" %>
         <%= f.date_field :calendar, class: "date__form"%>
       </div>

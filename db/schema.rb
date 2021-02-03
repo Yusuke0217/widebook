@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_021744) do
+ActiveRecord::Schema.define(version: 2021_02_03_094158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,15 @@ ActiveRecord::Schema.define(version: 2021_02_03_021744) do
     t.index ["shop_id"], name: "index_shop_categories_on_shop_id"
   end
 
+  create_table "shop_purposes", force: :cascade do |t|
+    t.bigint "purpose_id"
+    t.bigint "shop_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["purpose_id"], name: "index_shop_purposes_on_purpose_id"
+    t.index ["shop_id"], name: "index_shop_purposes_on_shop_id"
+  end
+
   create_table "shops", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -151,6 +160,8 @@ ActiveRecord::Schema.define(version: 2021_02_03_021744) do
   add_foreign_key "shop_cards", "shops"
   add_foreign_key "shop_categories", "categories"
   add_foreign_key "shop_categories", "shops"
+  add_foreign_key "shop_purposes", "purposes"
+  add_foreign_key "shop_purposes", "shops"
   add_foreign_key "shops", "areas"
   add_foreign_key "shops", "users"
 end

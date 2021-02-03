@@ -17,6 +17,17 @@
         <%= f.collection_select :area_id, Area.all, :id, :name, { include_blank: "選択してください" } %>
       </div>
     </div>
+    <div class="purpose__field shop__form">
+      <div class="input__ttl">
+        <i class="fas fa-asterisk"></i>
+        <%= f.label "目的"%>
+      </div>
+      <div class="purpose__form">
+        <%= f.collection_check_boxes(:purpose_ids, Purpose.all, :id, :name, include_hidden: false) do |p| %>
+          <%= p.label { p.check_box + p.text} %>
+        <% end %>
+      </div>
+    </div>
     <div class="base__field shop__form">
       <div class="input__ttl">
         <i class="fas fa-asterisk"></i>

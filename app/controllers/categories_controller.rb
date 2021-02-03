@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
     @shops = Shop.where(id: @shop_categories)
     
     # other_category
-    @categories = Category.where(bussiness_type_id: @category.bussiness_type_id).where.not(id: @category)
+    @categories = Category.where.not(id: @category)
   end
 
   private
