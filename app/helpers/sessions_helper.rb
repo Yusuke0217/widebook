@@ -50,4 +50,14 @@ module SessionsHelper
     redirect_to(session[:sending_url] || default)
     session.delete(:sending_url)
   end
+
+  def takeout?(shop)
+    @shop = shop
+    @shop.purposes.pluck(:name).include?("テイクアウト")
+  end
+
+  def delivery?(shop)
+    @shop = shop
+    @shop.purposes.pluck(:name).include?("デリバリー・宅配")
+  end
 end

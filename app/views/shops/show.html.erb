@@ -329,16 +329,44 @@
             </ul>
           </div>
         </div>
-        <div class="shop__info__usp">
-          <div class="shop__cp">
-            <div class="shop__ttl">
-              <h2>個室あり リーズナブルな価格で楽しめるモダンなイタリアンレストラン</h2>
-              <p>この世には、二種類の男しかいない。俺か、俺以外か。</p>
-            </div>
-            <div class="shop__read">
-              <p></p>
-              <p></p>
-            </div>
+        <div class="shop__info__opt">
+          <div class="shop__opt__li">
+            <ul class="opt__table">
+              <li>
+                <div class="table__force takeout">
+                  <div class="table__ttl">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>テイクアウト</p>
+                  </div>
+                  <div class="table__import">
+                    <span>
+                      <% if takeout?(@shop) == true %>
+                        <span>テイクアウト可能</span>
+                      <% else %>
+                        <span>テイクアウト不可</span>
+                      <% end %>
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="table__force delivery">
+                  <div class="table__ttl">
+                    <i class="fas fa-truck"></i>
+                    <p>デリバリー</p>
+                  </div>
+                  <div class="table__import">
+                    <span>
+                      <% if delivery?(@shop) == true %>
+                        <span>配達可能</span>
+                      <% else %>
+                        <span>配達不可</span>
+                      <% end %>
+                    </span>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
           <div class="detail__btn shop__more">
             <%= link_to root_path, class:"detail" do %>

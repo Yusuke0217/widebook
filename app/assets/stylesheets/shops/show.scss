@@ -402,6 +402,12 @@
                     }
                     .table__import {
                       width: 60%;
+                      span {
+                        @include padding(3px, 0, 0, 0);
+                      }
+                      p {
+                        @include padding(2px, 0, 0, 0);
+                      }
                     }
                     p,span {
                       @include mobile-fsz;
@@ -453,6 +459,7 @@
                     }
                     & .table__import {
                       & span {
+                        @include padding(0, 0, 0, 0);
                       }
                     }
                   }
@@ -496,6 +503,7 @@
                           @include mobile-fsz;
                         }
                         span {
+                          @include padding(1px, 0, 0, 0);
                         }
                       }
                       .rest-info {
@@ -506,6 +514,7 @@
                           @include mobile-fsz;
                         }
                         span {
+                          @include padding(2px, 0, 0, 0);
                         }
                       }
                     }
@@ -551,22 +560,56 @@
               }
             }
           }
-          .shop__info__usp {
-            display: none;
+          .shop__info__opt {
             @include margin(30px, 0, 0, 0);
             @include padding(0, 0, 20px, 0);
             border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
-            .shop__cp {
-              .shop__ttl {
-                h3 {
-                  font-size: 1.5rem;
-                  @include margin(0, 0, 15px, 0);
-                }
-                p {
-                }
-              }
-              .shop__read {
-                p {
+            .shop__opt__li {
+              ul.opt__table {
+                & li {
+                  @include margin(20px, 0, 20px, 0);
+                  .table__force {
+                    display: flex;
+                    .table__ttl {
+                      display: flex;
+                      width: 40%;
+                      i {
+                        width: 20px;
+                        color: $darkgray;
+                        font-size: 1.3rem;
+                        @include margin(0, 15px, 0, 0);
+                        @include padding(2px, 0, 0, 0);
+                      }
+                      p {
+                        @include padding(3px, 0px, 0px, 0px);
+                      }
+                    }
+                    .table__import {
+                      width: 60%;
+                      span {
+                        @include padding(1.5px, 0, 0, 0);
+                      }
+                      p {
+                        @include padding(2px, 0, 0, 0);
+                      }
+                    }
+                    p,span {
+                      @include mobile-fsz;
+                      @include word-el;
+                    }
+                  }
+                  .table__force.takeout {
+                    .table__ttl {
+                      i.fas.fa-shopping-bag {
+                      }
+                    }
+                  }
+                  .table__force.delivery {
+                    .table__ttl {
+                      i.fas.fa-truck {
+                      }
+                    }
+                  }
                 }
               }
             }
