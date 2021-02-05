@@ -614,19 +614,27 @@
               }
             }
           }
-          .shop__info__amenity {
-            display: none;
+          .shop__info__menu {
             @include margin(20px, 0, 0, 0);
             @include padding(0, 0, 20px, 0);
             border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
             h2 {
-              font-size: 1.3rem;
             }
-            .amenity__detail {
-              .amenity__list {
-                p {
-                }
-                i {
+            .menu__trigger {
+              a {
+              }
+            }
+            .menu__wrapper {
+              .menu__list {
+                ul {
+                  li {
+                    .menu__item {
+                      p {
+                      }
+                      span {
+                      }
+                    }
+                  }
                 }
               }
             }

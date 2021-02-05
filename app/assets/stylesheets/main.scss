@@ -211,6 +211,14 @@ h2 {
   border-bottom: 1px solid rgba($color, $alpha: $opct);
 }
 
+@mixin tbl-icon {
+  width: 20px;
+  color: #544C59;
+  font-size: 1.5rem;
+  @include padding(2px, 0, 0, 0);
+  @include margin(0, 25px, 0, 0);
+}
+
 @mixin link-hover($opct: 0.8) {
   opacity: $opct;
 }

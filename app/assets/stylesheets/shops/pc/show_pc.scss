@@ -354,7 +354,7 @@
           @include margin(30px, 0, 0, 0);
           @include padding(0, 0, 20px, 0);
           border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
-          h3 {
+          h2 {
             font-size: 1.5rem;
             @include margin(0, 0, 10px, 0);
           }
@@ -368,11 +368,7 @@
                     display: flex;
                     width: 50%;
                     i {
-                      width: 20px;
-                      color: $darkgray;
-                      font-size: 1.5rem;
-                      margin-right: 25px;
-                      @include padding(2px, 0, 0, 0);
+                      @include tbl-icon;
                     }
                     p {
                       @include padding(5px, 0px, 0px, 0px);
@@ -585,21 +581,82 @@
             }
           }
         }
-        .shop__info__amenity {
-          display: none;
-          @include margin(20px, 0, 0, 0);
+        .shop__info__menu {
+          @include margin(30px, 0, 0, 0);
           @include padding(0, 0, 20px, 0);
           border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
           h2 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            @include margin(0, 0, 10px, 0);
           }
-          .amenity__detail {
-            .amenity__list {
-              p {
+          .menu__wrapper {
+            .menu__trigger {
+              display: flex;
+              justify-content: center;
+              a {
+                width: 250px;
+                @include padding(10px, 10px, 10px, 10px);
+                @include margin(10px, 10px, 0px, 10px);
+                display: inline-block;
+                background-color: white;
+                color: black;
+                text-decoration: none;
+                text-align: center;
+                a:before {
+                  color: $darkgray;
+                  font-size: 1rem;
+                  margin-right: 10px;
+                  @include padding(2px, 0, 0, 0);
+                }
+                &:hover {
+                  opacity: 0.8;
+                }
               }
-              i {
+              .is-active {
+                background-color: $plum;
+                color: #fff;
+                border-radius: 5px 5px 0 0;
               }
             }
+            .menu__content {
+              .menu__list {
+                border: 1px solid $darkgray;
+                border-radius: 20px;
+                display: none;
+                & ul {
+                  @include padding(10px, 10px, 10px, 10px);
+                  & li {
+                    display: flex;
+                    @include margin(15px, 0, 15px, 0);
+                    .menu__item__name {
+                      width: 50%;
+                      display: flex;
+                      i.fas.fa-utensils {
+                        @include tbl-icon;
+                      }
+                      p {
+                        @include padding(5px, 0, 0, 0);
+                        @include word-el;
+                        font-size: 1.1rem;
+                      }
+                    }
+                    .menu__item__price {
+                      display: flex;
+                      i.fas.fa-yen-sign {
+                        @include tbl-icon;
+                      }
+                      span {
+                        @include padding(5px, 0, 0, 0);
+                        font-size: 1.1rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .detail__btn {
+            display: none;
           }
         }
         .shop__info__sns {
