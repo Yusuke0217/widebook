@@ -219,6 +219,14 @@ h2 {
   @include margin(0, 25px, 0, 0);
 }
 
+@mixin tbl-icon-mb {
+  width: 20px;
+  color: #544C59;
+  font-size: 1.3rem;
+  @include padding(2px, 0, 0, 0);
+  @include margin(0, 15px, 0, 0);
+}
+
 @mixin link-hover($opct: 0.8) {
   opacity: $opct;
 }
