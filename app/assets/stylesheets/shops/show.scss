@@ -624,8 +624,9 @@
                 display: flex;
                 justify-content: center;
                 a {
-                  // width: 250px;
-                  @include padding(10px, 10px, 10px, 10px);
+                  width: 120px;
+                  @include mobile-fsz;
+                  @include padding(10px, 5px, 10px, 5px);
                   @include margin(10px, 10px, 0px, 10px);
                   display: inline-block;
                   background-color: white;
