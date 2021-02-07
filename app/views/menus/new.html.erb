@@ -1,0 +1,36 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/layouts/shop_form', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/tablet/shop_form_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/pc/shop_form_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<div class="menu__builder">
+  <%= form_with model: @shop, local: true do |f| %>
+    <div class="m-type__field menu__form">
+      <div class="input__ttl">
+        <i class="fas fa-asterisk"></i>
+        <%= f.label "メニューのタイプ"%>
+      </div>
+      <div class="m-type__form">
+        <%= f.fields_for :menus do |t| %>
+          <%= t.check_box(:menu_type_id, true, false) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="menu__field menu__form">
+      <div class="input__ttl">
+        <i class="fas fa-asterisk"></i>
+        <%= f.label "メニュー"%>
+      </div>
+      <div class="menu__form">
+        <%= f.fields_for :menus do |m| %>
+          <li>
+            <%= m.label "メニュー" %>
+            <%= m.text_field :name %>
+            <%= m.number_field :price %>
+          </li>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

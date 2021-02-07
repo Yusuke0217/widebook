@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :shops, only: [:index, :new, :show, :edit, :create, :update, :destroy] do
     resource :bookmarks, only: [:create, :destroy]
     resource :reviews, only: [:show, :new, :create]
+    resource :menus, only: [:show, :new, :edit, :create, :update, :destroy]
   end
 
   resources :searchs, only: [:index, :show]

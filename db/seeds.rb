@@ -7,6 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # require 'faker'
 
+1.times do |n|
+  menu_types = %W(料理 ドリンク )
+
+  menu_types.each do |t|
+    MenuType.create(name: t)
+  end
+end
+
 User.create!(
   id: 1,
   # id: ENV['ID'],

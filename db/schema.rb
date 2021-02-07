@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_094158) do
+ActiveRecord::Schema.define(version: 2021_02_06_112537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,23 @@ ActiveRecord::Schema.define(version: 2021_02_03_094158) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["shop_id"], name: "index_media_on_shop_id"
+  end
+
+  create_table "menu_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.bigint "menu_type_id"
+    t.bigint "shop_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_type_id"], name: "index_menus_on_menu_type_id"
+    t.index ["shop_id"], name: "index_menus_on_shop_id"
   end
 
   create_table "pay_cards", force: :cascade do |t|
@@ -154,6 +171,8 @@ ActiveRecord::Schema.define(version: 2021_02_03_094158) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "images", "shops"
   add_foreign_key "media", "shops"
+  add_foreign_key "menus", "menu_types"
+  add_foreign_key "menus", "shops"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
   add_foreign_key "shop_cards", "pay_cards"

@@ -14,6 +14,8 @@ class Shop < ApplicationRecord
   accepts_nested_attributes_for :purposes
   has_many :shop_cards
   has_many :pay_cards, through: :shop_cards, dependent: :destroy
+  has_many :menus, dependent: :destroy
+  accepts_nested_attributes_for :menus
   belongs_to :user
   belongs_to :area
   validates :user_id, presence: true
