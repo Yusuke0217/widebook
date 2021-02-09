@@ -1,17 +1,28 @@
 class MenusController < ApplicationController
   before_action :logged_in_user, only: [:new, :edit, :create, :destroy, :update]
   before_action :admin_user, only: [:new, :edit, :create, :destroy, :update]
+  before_action :find_shop, only: [:new, :create]
 
   def show
   end
 
   def new
+    # @menu = @shop.menus.build
+    @form = Form::MenuCollection.new
   end
 
   def edit
   end
 
   def create
+    @form = Form::MenuCollection.new(menu_params)
+    if @form.save
+      flash[:success] = "メニューを投稿しました。"
+      redirect_to root_path
+      # redirect_to shop_menus_path(shop_id: @shop.id)
+    else
+      render "new"
+    end
   end
 
   def destroy
@@ -21,4 +32,12 @@ class MenusController < ApplicationController
   end
 
   private
+
+    def menu_params
+      params.require(:form_menu_collection).permit(menus_attributes: [:name, :price, :menu_type_id, :availability, :shop_id])
+    end
+
+    def find_shop
+      @shop = Shop.find_by(id: params[:shop_id])
+    end
 end

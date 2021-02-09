@@ -164,6 +164,7 @@
             <div class="shop__action">
             <% if current_user.present? %>
               <% if current_user.admin? && current_user?(@shop.user) %>
+                <%= link_to "メニューを投稿", new_shop_menus_path(@shop.id), method: :get %>
                 <%= link_to "お店を編集", edit_shop_path(@shop), method: :get %>
                 <%= link_to "お店を削除", @shop, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
               <% end %>

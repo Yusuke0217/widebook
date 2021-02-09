@@ -5,18 +5,8 @@
 <% end %>
 
 <div class="menu__builder">
-  <%= form_with model: @shop, local: true do |f| %>
-    <div class="m-type__field menu__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "メニューのタイプ"%>
-      </div>
-      <div class="m-type__form">
-        <%= f.fields_for :menus do |t| %>
-          <%= t.check_box(:menu_type_id, true, false) %>
-        <% end %>
-      </div>
-    </div>
+  <%= form_with model: @form, url: shop_menus_path, method: :post, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
     <div class="menu__field menu__form">
       <div class="input__ttl">
         <i class="fas fa-asterisk"></i>
@@ -25,12 +15,16 @@
       <div class="menu__form">
         <%= f.fields_for :menus do |m| %>
           <li>
+            <%= m.hidden_field :shop_id, value: @shop.id %>
+            <%= m.check_box :availability %>
+            <%= m.collection_select(:menu_type_id, MenuType.all, :id, :name, prompt: "選択してください") %>
             <%= m.label "メニュー" %>
             <%= m.text_field :name %>
-            <%= m.number_field :price %>
+            <%= m.number_field :price, step: "100" %>
           </li>
         <% end %>
       </div>
     </div>
+    <%= f.submit :submit, class: "submit", id: "", value: "登録する" %>
   <% end %>
 </div>
