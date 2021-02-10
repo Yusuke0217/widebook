@@ -1,30 +1,4 @@
-<% content_for :css do %>
-  <%= stylesheet_link_tag '/assets/layouts/shop_form', media: "screen and (max-width: 559px)" %>
-  <%= stylesheet_link_tag '/assets/layouts/tablet/shop_form_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
-  <%= stylesheet_link_tag '/assets/layouts/pc/shop_form_pc', media: "screen and (min-width: 960px)" %>
-<% end %>
+<% provide(:btn_text, "登録する")%>
+<% provide(:url, shop_menus_path)%>
 
-<div class="menu__builder">
-  <%= form_with model: @form, url: shop_menus_path, method: :post, local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
-    <div class="menu__field menu__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "メニュー"%>
-      </div>
-      <div class="menu__form">
-        <%= f.fields_for :menus do |m| %>
-          <li>
-            <%= m.hidden_field :shop_id, value: @shop.id %>
-            <%= m.check_box :availability %>
-            <%= m.collection_select(:menu_type_id, MenuType.all, :id, :name, prompt: "選択してください") %>
-            <%= m.label "メニュー" %>
-            <%= m.text_field :name %>
-            <%= m.number_field :price, step: "100" %>
-          </li>
-        <% end %>
-      </div>
-    </div>
-    <%= f.submit :submit, class: "submit", id: "", value: "登録する" %>
-  <% end %>
-</div>
+<%= render 'layouts/menu_form' %>

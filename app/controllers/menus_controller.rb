@@ -7,7 +7,6 @@ class MenusController < ApplicationController
   end
 
   def new
-    # @menu = @shop.menus.build
     @form = Form::MenuCollection.new
   end
 
@@ -18,8 +17,7 @@ class MenusController < ApplicationController
     @form = Form::MenuCollection.new(menu_params)
     if @form.save
       flash[:success] = "メニューを投稿しました。"
-      redirect_to root_path
-      # redirect_to shop_menus_path(shop_id: @shop.id)
+      redirect_to shop_path(id: @shop.id)
     else
       render "new"
     end

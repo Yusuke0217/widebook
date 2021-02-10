@@ -1,0 +1,41 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/layouts/menu_form', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/tablet/menu_form_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/layouts/pc/menu_form_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<div class="menu__builder">
+  <%= form_with model: @form, url: yield(:url), method: :post, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="menu__field menu__form">
+      <div class="input__ttl">
+        <i class="fas fa-asterisk"></i>
+        <%= f.label "メニュー"%>
+      </div>
+      <div class="menu__tbl">
+        <table>
+          <thead>
+            <tr>
+              <th>登録</th>
+              <th>メニュータイプ</th>
+              <th>商品名</th>
+              <th>価格</th>
+            </tr>
+          </thead>
+          <tbody>
+          <%= f.fields_for :menus do |m| %>
+            <tr>
+              <%= m.hidden_field :shop_id, value: @shop.id %>
+              <td><%= m.check_box :availability %></td>
+              <td><%= m.collection_select(:menu_type_id, MenuType.all, :id, :name, prompt: "選択してください") %></td>
+              <td><%= m.text_field :name %></td>
+              <td><%= m.number_field :price %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <%= f.submit :submit, class: "submit", id: "", value: yield(:btn_text) %>
+  <% end %>
+</div>

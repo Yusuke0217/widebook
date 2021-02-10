@@ -1,0 +1,56 @@
+@import "../../main.scss";
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  .menu__builder {
+    .menu__field {
+      .input__ttl {
+        i.fas.fa-asterisk {
+        }
+      }
+      .menu__tbl {
+        table {
+          width: 100%;
+          border-collapse:separate;
+          border-spacing: 0;
+          thead {
+            tr {
+              th {
+                text-align: center;
+                color:white;
+                background-color: $plum;
+                border-left: 1px solid #3c6690;
+                border-top: 1px solid #3c6690;
+                border-bottom: 1px solid #3c6690;
+                box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+                width: 25%;
+                padding: 10px 0;
+              }
+            }
+          }
+          tbody {
+            tr {
+              td {
+                border: 1px solid rgba($darkgray, $alpha: 0.3);
+                select {
+                }
+                input {
+                }
+                label {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    input.submit {
+      height: 40px;
+      width: 100px;
+      @include margin(30px, 0, 0px, 0);
+      background-color: $plum;
+      color: $white;
+      border-radius: 10px;
+    }
+  }
+}

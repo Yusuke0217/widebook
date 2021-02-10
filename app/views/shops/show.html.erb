@@ -375,49 +375,47 @@
           <div class="menu__wrapper" id="js-nav-tab">
             <div class="menu__trigger">
               <a href="" class="fas fa-chevron-down" data-menu="0">
-                <%= %>のメニューを見る
+                <%= "料理" %>のメニューを見る
               </a>
               <a href="" class="fas fa-chevron-down" data-menu="1">
-                <%= %>のメニューを見る
+                <%= "ドリンク" %>のメニューを見る
               </a>
             </div>
             <div class="menu__content">
               <div class="menu__list" data-content="0">
                 <ul>
-                  <li>
-                    <div class="menu__item__name">
-                      <i class="fas fa-utensils"></i>
-                      <p><%= %></p>
-                    </div>
-                    <div class="menu__item__price">
-                      <i class="fas fa-yen-sign"></i>
-                      <span><%= %></span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="menu__item__name">
-                      <i class="fas fa-utensils"></i>
-                      <p><%= %></p>
-                    </div>
-                    <div class="menu__item__price">
-                      <i class="fas fa-yen-sign"></i>
-                      <span><%= %></span>
-                    </div>
-                  </li>
+                <% if @f_menus.present? %>
+                  <% @f_menus.each do |f_menu| %>
+                    <li>
+                      <div class="menu__item__name">
+                        <i class="fas fa-utensils"></i>
+                        <p><%= f_menu.name %></p>
+                      </div>
+                      <div class="menu__item__price">
+                        <i class="fas fa-yen-sign"></i>
+                        <span><%= f_menu.price %> (税抜)</span>
+                      </div>
+                    </li>
+                  <% end %>
+                <% end %>
                 </ul>
               </div>
               <div class="menu__list" data-content="1">
                 <ul>
-                  <li>
-                    <div class="menu__item__name">
-                      <i class="fas fa-utensils"></i>
-                      <p><%= %></p>
-                    </div>
-                    <div class="menu__item__price">
-                      <i class="fas fa-yen-sign"></i>
-                      <span><%= %></span>
-                    </div>
-                  </li>
+                <% if @d_menus.present? %>
+                  <% @d_menus.each do |d_menu| %>
+                    <li>
+                      <div class="menu__item__name">
+                        <i class="fas fa-utensils"></i>
+                        <p><%= d_menu.name %></p>
+                      </div>
+                      <div class="menu__item__price">
+                        <i class="fas fa-yen-sign"></i>
+                        <span><%= d_menu.price %> (税抜)</span>
+                      </div>
+                    </li>
+                  <% end %>
+                <% end %>
                 </ul>
               </div>
             </div>
