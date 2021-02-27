@@ -1,4 +1,3 @@
-<%# 検索結果のページ&ビジネスタイプ>カテゴリのページ %>
 <% content_for :css do %>
   <%= stylesheet_link_tag '/assets/areas/show', media: "screen and (max-width: 559px)" %>
   <%= stylesheet_link_tag '/assets/areas/tablet/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
@@ -78,33 +77,6 @@
             <% end %>
             </ul>
             <div class="detail__btn shop__more">
-              <%= link_to root_path, class:"detail" do %>
-                <span>すべて表示<i></i></span>
-              <% end %>
-            </div>
-          </div>
-          <div class="other__list category" id="">
-            <h2>目的から探す</h2>
-            <p></p>
-            <%= render 'layouts/move_btn' %>
-            <ul class="content__box">
-            <% @b_types.each do |b_type| %>
-              <%= link_to bussiness_type_path(b_type.id) do %>
-                <li>
-                  <div class="content__wrapper">
-                    <div class="content__img">
-                      <%= image_tag b_type.image.url %>
-                    </div>
-                    <div class="content__cp">
-                      <h2><%= b_type.name %></h2>
-                      <p></p>
-                    </div>
-                  </div>
-                </li>
-              <%end%>
-            <% end %>
-            </ul>
-            <div class="detail__btn cate__more">
               <%= link_to root_path, class:"detail" do %>
                 <span>すべて表示<i></i></span>
               <% end %>

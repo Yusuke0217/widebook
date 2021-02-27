@@ -71,7 +71,6 @@
           }
           .place__btn {
             @include padding(30px, 0px, 0px, 0px);
-            display: none;
             a {
               height: 30px;
               width: 50%;

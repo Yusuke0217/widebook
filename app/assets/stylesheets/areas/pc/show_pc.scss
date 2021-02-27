@@ -1,0 +1,76 @@
+@import "../../main.scss";
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  .wrapper {
+    .main__wrapper.search_pc {
+      padding-top: 100px;
+      .ggrmap__back {
+        width: 40%;
+        order: 3;
+        .ggrmap {
+          height: 700px;
+          width: 100%;
+          background-color: $deepgreen;
+          form#search-form {
+            .input__area {
+              input {
+              }
+              button {
+                i.fas.fa-search {
+                }
+              }
+            }
+          }
+        }
+      }
+      .result__wrapper {
+        width: 100%;
+        order: 2;
+        .result__group {
+          background-color: $white;
+          z-index: 3;
+          margin-bottom: 50px;
+          .result--icon {
+            height: 30px;
+            text-align: center;
+            i.fas.fa-angle-down {
+            }
+          }
+          .result__export {
+            height: 50px;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+            margin-bottom: 20px;
+            p {
+              width: 300px;
+              display: inline-block;
+              padding-bottom: 20px;
+              border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+            }
+          }
+          .post__list {
+            h2 {
+              font-size: 1.5rem;
+            }
+            p {
+            }
+          }
+          .post__list.result__top {
+            h2 {
+            }
+            p {
+            }
+          }
+          .other__list.category {
+            h2 {
+              font-size: 1.5rem;
+            }
+            p {
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,9 @@
 class AreasController < ApplicationController
 
+  def index
+    @shops = Shop.all
+  end
+
   def show
     @area = Area.find_by(id: params[:id])
     @shops = Shop.where(area_id: @area.id)
