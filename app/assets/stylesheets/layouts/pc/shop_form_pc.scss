@@ -10,13 +10,14 @@
           background-color: $plum;
           color: white;
           height: 50px;
-          width: 100px;
+          width: 130px;
           .input__ttl {
             @include padding(10px, 0px, 10px, 0px);
             i.fas.fa-asterisk {
               color: white;
             }
             label {
+              font-size: 1.1rem;
             }
           }
         }
@@ -227,9 +228,9 @@
     }
   }
   input.submit {
-    height: 40px;
-    width: 100px;
-    @include margin(30px, 0, 0px, 0);
+    height: 50px;
+    width: 150px;
+    @include margin(30px, 0, 30px, 0);
     background-color: $plum;
     color: $white;
     border-radius: 10px;
