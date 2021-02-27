@@ -7,150 +7,252 @@
 <div class="shop__flame">
   <%= form_with model: @shop, url: yield(:url), class: "", id: "", local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
+    <table class="shop__form">
+      <tr>
+        <th>項目</th>
+        <th>フォーム</th>
+      </tr>
+      <tr class="area__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "エリア"%>
+          </div>
+        </td>
+        <td>
+          <div class="area__form">
+            <%= f.collection_select :area_id, Area.all, :id, :name, { include_blank: "選択してください" } %>
+          </div>
+        </td>
+      </tr>
+      <tr class="purpose__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "店舗形態(複数選択可)"%>
+          </div>
+        </td>
+        <td>
+          <div class="purpose__form">
+            <%= f.collection_check_boxes(:purpose_ids, Purpose.all, :id, :name, include_hidden: false) do |p| %>
+              <%= p.label { p.check_box + p.text} %>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+      <tr class="name__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "お店の名前"%>
+          </div>
+        </td>
+        <td>
+          <div class="base__form">
+            <%= f.text_field :name, id: "", placeholder: "名前"%>
+          </div>
+        </td>
+      </tr>
+      <tr class="address__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "住所"%>
+          </div>
+        </td>
+        <td>
+          <div class="base__form">
+            <%= f.text_field :address, id: "", placeholder: "住所"%>
+          </div>
+        </td>
+      </tr>
+      <tr class="phone__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "電話番号"%>
+          </div>
+        </td>
+        <td>
+          <div class="base__form">
+            <%= f.text_field :phone_number, placeholder: "電話番号" %>
+          </div>
+        </td>
+      </tr>
+      <tr class="building__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "建物名"%>
+          </div>
+        </td>
+        <td>
+          <div class="base__form">
+            <%= f.text_field :address_building, id: "", placeholder: "建物名など"%>
+          </div>
+        </td>
+      </tr>
+      <tr class="cate__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "お店のカテゴリ(3つまで選択可能)"%>
+          </div>
+        </td>
+        <td>
+          <div class="cate__form">
+            <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, include_hidden: false) do |c| %>
+              <%= c.label { c.check_box + c.text} %>
+            <%end%>
+          </div>
+        </td>
+      </tr>
+      <tr class="booking__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "予約可否"%>
+          </div>
+        </td>
+        <td>
+          <div class="booking__form">
+            <%= f.check_box :booking, checked_value: true, unchecked_value: false, :as => :boolean %>
+            <%= f.label :booking, "予約可能"%>
+          </div>
+        </td>
+      </tr>
+      <tr class="budget__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "予算"%>
+          </div>
+        </td>
+        <td>
+          <div class="budget__form">
+            <%= f.text_field :budget, placeholder: "平均予算" %>
+          </div>
+        </td>
+      </tr>
+      <tr class="b_time__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "営業時間"%>
+          </div>
+        </td>
+        <td>
+          <div class="b_time__form">
+            <%= f.label "Open: "%>
+            <%= f.text_field :b_hours_first, placeholder: "営業時間-open" %>
+          </div>
+          <div class="b_time__form">
+            <%= f.label "Close: "%>
+            <%= f.text_field :b_hours_last, placeholder: "営業時間-close" %>
+          </div>
+        </td>
+      </tr>
+      <tr class="holidays__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "定休日"%>
+          </div>
+        </td>
+        <td>
+          <div class="holidays__form">
+            <%= f.text_field :holidays, placeholder: "定休日" %>
+          </div>
+        </td>
+      </tr>
 
-    <div class="area__field shop__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "エリア"%>
-      </div>
-      <div class="area__form">
-        <%= f.collection_select :area_id, Area.all, :id, :name, { include_blank: "選択してください" } %>
-      </div>
-    </div>
-    <div class="purpose__field shop__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "目的"%>
-      </div>
-      <div class="purpose__form">
-        <%= f.collection_check_boxes(:purpose_ids, Purpose.all, :id, :name, include_hidden: false) do |p| %>
-          <%= p.label { p.check_box + p.text} %>
-        <% end %>
-      </div>
-    </div>
-    <div class="base__field shop__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "お店の名前"%>
-      </div>
-      <div class="base__form">
-        <%= f.text_field :name, id: "", placeholder: "名前"%>
-      </div>
+      <%= f.fields_for :mediums do |m| %>
+      <tr class="hp__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= m.label "ホームページ"%>
+          </div>
+        </td>
+        <td>
+          <div class="sns__form">
+            <%= m.text_field :home_page, placeholder: "ホームページURL" %>
+          </div>
+        </td>
+      </tr>
+      <tr class="fb__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= m.label "Facebook"%>
+          </div>
+        </td>
+        <td>
+          <div class="sns__form">
+            <%= m.text_field :facebook, placeholder: "Facebook" %>
+          </div>
+        </td>
+      </tr>
+      <tr class="instagram__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= m.label "Instagram"%>
+          </div>
+        </td>
+        <td>
+          <div class="sns__form">
+            <%= m.text_field :instagram, placeholder: "Instagram" %>
+          </div>
+        </td>
+      </tr>
+      <tr class="twitter__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= m.label "Twitter"%>
+          </div>
+        </td>
+        <td>
+          <div class="sns__form">
+            <%= m.text_field :twitter, placeholder: "Twitter" %>
+          </div>
+        </td>
+      </tr>
+      <% end %>
 
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "住所"%>
-      </div>
-      <div class="base__form">
-        <%= f.text_field :address, id: "", placeholder: "住所"%>
-      </div>
-
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "電話番号"%>
-      </div>
-      <div class="base__form">
-        <%= f.text_field :phone_number, placeholder: "電話番号" %>
-      </div>
-
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "建物名"%>
-      </div>
-      <div class="base__form">
-        <%= f.text_field :address_building, id: "", placeholder: "建物名など"%>
-      </div>
-    </div>
-    <div class="cate__list shop__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "お店のカテゴリ"%>
-      </div>
-      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name, include_hidden: false) do |c| %>
-        <%= c.label { c.check_box + c.text} %>
-      <%end%>
-    </div>
-    <div class="amend__field shop__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "予約可否"%>
-      </div>
-      <div class="amend__form">
-        <%= f.check_box :booking, checked_value: true, unchecked_value: false, :as => :boolean %>
-      </div>
-
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "予算"%>
-      </div>
-      <div class="amend__form">
-        <%= f.text_field :budget, placeholder: "平均予算" %>
-      </div>
-
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "営業時間"%>
-      </div>
-      <div class="amend__form">
-        <%= f.label "Open"%>
-        <%= f.text_field :b_hours_first, placeholder: "営業時間-open" %>
-      </div>
-      <div class="amend__form">
-        <%= f.label "Close"%>
-        <%= f.text_field :b_hours_last, placeholder: "営業時間-close" %>
-      </div>
-
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "定休日"%>
-      </div>
-      <div class="amend__form">
-        <%= f.text_field :holidays, placeholder: "定休日" %>
-      </div>
-    </div>
-    <div class="sns__field shop__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "SNS"%>
-      </div>
-      <div class="sns__form">
-        <%= f.fields_for :mediums do |m| %>
-          <%= m.label "ホームページ"%>
-          <%= m.text_field :home_page, placeholder: "ホームページURL" %>
-
-          <%= m.label "Facebook"%>
-          <%= m.text_field :facebook, placeholder: "Facebook" %>
-
-          <%= m.label "Instagram"%>
-          <%= m.text_field :instagram, placeholder: "Instagram" %>
-
-          <%= m.label "Twitter"%>
-          <%= m.text_field :twitter, placeholder: "Twitter" %>
-        <% end %>
-      </div>
-    </div>
-    <div class="card__field shop__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "対応カード"%>
-      </div>
-      <div class="card__form">
-        <%= f.collection_check_boxes(:pay_card_ids, PayCard.all, :id, :name, include_hidden: false) do |p| %>
-          <%= p.label { p.check_box + p.text} %>
-        <%end%>
-      </div>
-    </div>
-    <div class="img__field shop__form">
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label "写真"%>
-      </div>
-      <div class="img__form">
-        <%= f.fields_for :images do |i| %>
-          <%= i.file_field :image, accept: "image/*" %>
-        <% end %>
-      </div>
-    </div>
+      <tr class="card__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "対応カード"%>
+          </div>
+        </td>
+        <td>
+          <div class="card__form">
+            <%= f.collection_check_boxes(:pay_card_ids, PayCard.all, :id, :name, include_hidden: false) do |p| %>
+              <%= p.label { p.check_box + p.text} %>
+            <%end%>
+          </div>
+        </td>
+      </tr>
+      <tr class="img__field">
+        <td>
+          <div class="input__ttl">
+            <i class="fas fa-asterisk"></i>
+            <%= f.label "写真"%>
+          </div>
+        </td>
+        <td>
+          <div class="img__form">
+            <%= f.fields_for :images do |i| %>
+              <%= i.file_field :image, accept: "image/*" %>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    </table>
+    
     <%= f.submit :submit, class: "submit", id: "", value: "#{yield(:btn_text)}" %>
   <% end %>
 </div>

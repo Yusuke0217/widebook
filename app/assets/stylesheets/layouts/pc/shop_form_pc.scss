@@ -2,35 +2,239 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
-  .shop__flame {
-    .shop__form {
-      text-align: center;
-      input {
-      }
-      select {
-      }
-      .input__ttl {
-        i.fas.fa-asterisk {
+  table.shop__form {
+    tbody {
+      tr {
+        height: 50px;
+        td:first-child {
+          background-color: $plum;
+          color: white;
+          height: 50px;
+          width: 100px;
+          .input__ttl {
+            @include padding(10px, 0px, 10px, 0px);
+            i.fas.fa-asterisk {
+              color: white;
+            }
+            label {
+            }
+          }
+        }
+        td:last-child {
+          input[type="text"], select {
+            height: 50px;
+            width: 500px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            @include padding(10px, 0px, 10px, 10px);
+          }
         }
       }
-      label {
+      tr {
+        th {
+        }
+        th:first-child {
+          border: 1px solid black;
+        }
+        th:last-child {
+          border: 1px solid black;
+          border-left: 0;
+        }
+      }
+      tr.area__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .area__form {
+          }
+        }
+      }
+      tr.purpose__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .purpose__form {
+          }
+        }
+      }
+      tr.name__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .base__form {
+          }
+        }
+      }
+      tr.address__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .base__form {
+          }
+        }
+      }
+      tr.phone__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .base__form {
+          }
+        }
+      }
+      tr.building__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .base__form {
+          }
+        }
+      }
+      tr.cate__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .cate__form {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            label {
+            }
+          }
+        }
+      }
+      tr.booking__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .booking__form {
+          }
+        }
+      }
+      tr.budget__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .budget__form {
+          }
+        }
+      }
+      tr.b_time__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .b_time__form {
+            label {
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+      }
+      tr.holidays__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .holidays__form {
+          }
+        }
+      }
+      tr.hp__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .sns__form {
+          }
+        }
+      }
+      tr.fb__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .sns__form {
+          }
+        }
+      }
+      tr.instagram__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .sns__form {
+          }
+        }
+      }
+      tr.twitter__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .sns__form {
+          }
+        }
+      }
+      tr.card__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .card__form {
+          }
+        }
+      }
+      tr.img__field {
+        td {
+          .input__ttl {
+            i.fas.fa-asterisk {
+            }
+          }
+          .img__form {
+            display: flex;
+            flex-direction: column;
+            input {
+            }
+          }
+        }
       }
     }
-    .area__field {
-    }
-    .base__field {
-    }
-    .cate__list {
-    }
-    .amend__field {
-    }
-    .sns__field {
-      .sns__form {
-      }
-    }
-    .card__field {
-    }
-    .img__field {
+  }
+  input.submit {
+    height: 40px;
+    width: 100px;
+    @include margin(30px, 0, 0px, 0);
+    background-color: $plum;
+    color: $white;
+    border-radius: 10px;
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

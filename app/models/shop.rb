@@ -28,6 +28,7 @@ class Shop < ApplicationRecord
   validates :b_hours_last, presence: true
   validates :budget, presence: true
   validate :tag_size
+  validate :what_purpose
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
@@ -72,6 +73,12 @@ class Shop < ApplicationRecord
         errors.add(:categories, "は、最大3つまでです。")
       elsif self.categories.blank?
         errors.add(:categories, "を選んでください。")
+      end
+    end
+
+    def what_purpose
+      if self.purposes.blank?
+        errors.add(:purposes, "を選んでください。")
       end
     end
 
