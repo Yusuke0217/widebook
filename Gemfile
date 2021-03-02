@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem "kaminari"
 gem 'kaminari-bootstrap'
 
+gem 'gon'
 gem "geocoder"
 
 gem 'dotenv-rails'

@@ -13,10 +13,10 @@ require("channels")
 
 
 // Original JavaScript for piece file
+require("piece/load_view")
 require("piece/move_btn")
 // require("piece/scroll_top")
 require("piece/search_word")
-require("piece/load_view")
 require("piece/help_tab")
 require("piece/share_btn")
 require("piece/menu_tab")

@@ -1,28 +1,31 @@
 <% content_for :css do %>
-  <%= stylesheet_link_tag '/assets/areas/show', media: "screen and (max-width: 559px)" %>
-  <%= stylesheet_link_tag '/assets/areas/tablet/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
-  <%= stylesheet_link_tag '/assets/areas/pc/show_pc', media: "screen and (min-width: 960px)" %>
+  <%= stylesheet_link_tag '/assets/areas/index', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/areas/tablet/index_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/areas/pc/index_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
 <%= render 'layouts/header' %>
   <div class="wrapper">
     <div class="main__wrapper search_pc">
       <div class="ggrmap__back">
-        <div class="ggrmap">
-          <form id="search-form" action="" method="post">
+        <div class="ggrmap" id="js-map">
+          <%# <form id="search-form" action="" method="post">
             <div class="input__area">
               <input id="" type="search" name="search" placeholder="キーワード">
               <button type="submit" form="search-form" name="">
                 <i class="fas fa-search"></i>
               </button>
             </div>
-          </form>
+          </form> %>
         </div>
       </div>
       <div class="result__wrapper">
         <div class="result__group">
           <div class="result--icon">
             <i class="fas fa-angle-down"></i>
+          </div>
+          <div class="position__btn">
+            <button id="js-map-btn">この近くを検索</button>
           </div>
           <div class="result__export">
             <p><%= @shops.count %>件の検索結果</p>
@@ -87,3 +90,72 @@
     </div>
   </div>
 <%= render 'layouts/footer' %>
+<script type="text/javascript">
+  let map;
+  let marker = []; // マーカーを複数表示させたいので、配列化
+  let infoWindow = []; // 吹き出しを複数表示させたいので、配列化
+  const shops = gon.shops; // コントローラーで定義したインスタンス変数を変数に代入
+
+  function initMap(){
+    // 現在位置の特定
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+      // LatLngに位置座標を代入
+        LatLng = new google.maps.LatLng(
+          position.coords.latitude,
+          position.coords.longitude
+        );
+
+        // mapの初期位置設定
+        map = new google.maps.Map(document.getElementById('js-map'), {
+          center: LatLng,
+          // 倍率はお好みで
+          zoom: 9
+        });
+        // map.setCenterで地図が初期位置に移動
+        map.setCenter(LatLng);
+
+      // forは繰り返し処理
+      // 変数iを0と定義し、
+      // その後gonで定義したshops分繰り返し加える処理を行う
+        for (let i = 0; i < shops.length; i++){
+          // shops[i]は変数iのユーザーを取得している
+          marker[i] = new google.maps.Marker({
+            map: map,
+            position: {
+              // DBに保存してある、緯度・経度を呼び出す
+              lat: shops[i].latitude,
+              lng: shops[i].longitude
+            }
+          });
+
+          // 変数iを変数idに代入
+          let id = shops[i]['id'];
+
+          // infoWindowは吹き出し
+          infoWindow[i] = new google.maps.InfoWindow({
+            // contentで中身を指定
+            // 今回は文字にリンクを貼り付けた形で表示
+            content: `<a href='/shops/${id}'>${shops[i].name}</a>`
+          });
+          // markerがクリックされた時、
+          marker[i].addListener("click", () => {
+            // infoWindowを表示
+            infoWindow[i].open(map, marker[i]);
+          });
+        }
+      },
+      function (error) {
+        alert('ご使用中のブラウザは現在地検索に対応されておりません。')
+        console.log("だめ");
+        dfd.reject();
+      },
+      {timeout: 10000}
+    );
+  }
+  
+  window.onload = function () {
+    initMap();
+  }
+
+</script>

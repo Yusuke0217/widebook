@@ -6,12 +6,11 @@
     .main__wrapper.search_pc {
       padding-top: 100px;
       .ggrmap__back {
-        width: 40%;
+        width: 100%;
         order: 3;
         .ggrmap {
-          height: 700px;
+          height: 400px;
           width: 100%;
-          background-color: $deepgreen;
           form#search-form {
             .input__area {
               input {

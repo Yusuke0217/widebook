@@ -2,6 +2,7 @@ class AreasController < ApplicationController
 
   def index
     @shops = Shop.all
+    gon.shops = @shops
   end
 
   def show
@@ -9,4 +10,5 @@ class AreasController < ApplicationController
     @shops = Shop.where(area_id: @area.id)
     @b_types = BussinessType.all
   end
+
 end
