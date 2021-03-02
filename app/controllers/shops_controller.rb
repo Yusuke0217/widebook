@@ -29,6 +29,7 @@ class ShopsController < ApplicationController
     @categories = ShopCategory.where(shop_id: @shop.id)
     @f_menus = Menu.f_menu(params[:id]).page(params[:page]).per(10)
     @d_menus = Menu.d_menu(params[:id]).page(params[:page]).per(10)
+    gon.shop = @shop
   end
   
   def create
