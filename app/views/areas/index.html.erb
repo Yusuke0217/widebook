@@ -148,9 +148,11 @@
       function (error) {
         alert('ご使用中のブラウザは現在地検索に対応されておりません。')
         console.log("だめ");
-        dfd.reject();
       },
-      {timeout: 10000}
+      {
+        enableHighAccuracy: true, //位置情報の精度を高く
+        timeout: 10000, //10秒でタイムアウト
+      }
     );
   }
   
