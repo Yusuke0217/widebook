@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <%= yield :css %>
     <%= favicon_link_tag('widebook_logo.png') %>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>" ></script>
   </head>
 
   <body>
@@ -26,5 +25,6 @@
       <%= render 'layouts/loading' %>
       <%= yield %>
     </div>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>" ></script>
   </body>
 </html>
