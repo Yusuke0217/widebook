@@ -9,10 +9,6 @@
       let map = new google.maps.Map(document.getElementById('js-map'), {
         zoom: 14, 
         center: place
-        // center: { 
-        //   lat: Number(shop.latitude),
-        //   lng: Number(shop.longitude)
-        // }
       });
       let transitLayer = new google.maps.TransitLayer();
       transitLayer.setMap(map);
@@ -25,7 +21,6 @@
       // Map上の指定した位置にピンを挿して表示する
       let marker = new google.maps.Marker({
         position: place,
-        // position: { lat: Number(shop.latitude), lng: Number(shop.longitude) },
         map: map,
         title: contentString
       });
