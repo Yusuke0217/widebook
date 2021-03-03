@@ -9,8 +9,8 @@
       zoom: 14, 
       // center: {lat: 35.18, lng: 136.906}
       center: { 
-        lat: parseFloat(shop.latitude),
-        lng: parseFloat(shop.longitude)
+        lat: Number.parseFloat(shop.latitude),
+        lng: Number.parseFloat(shop.longitude)
       }
     });
     let transitLayer = new google.maps.TransitLayer();
@@ -24,7 +24,7 @@
     // Map上の指定した位置にピンを挿して表示する
     let marker = new google.maps.Marker({
       // position: {lat: 35.18, lng: 136.906},
-      position: place,
+      position: { lat: parseFloat(shop.latitude), lng: parseFloat(shop.longitude) },
       map: map,
       title: contentString
     });
