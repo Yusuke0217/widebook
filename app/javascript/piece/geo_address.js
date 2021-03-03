@@ -8,7 +8,10 @@
     let map = new google.maps.Map(document.getElementById('js-map'), {
       zoom: 14, 
       // center: {lat: 35.18, lng: 136.906}
-      center: { lat: parseFloat(shop.latitude), lng: parseFloat(shop.longitude) }
+      center: { 
+        lat: Number(shop.latitude),
+        lng: Number(shop.longitude)
+      }
     });
     let transitLayer = new google.maps.TransitLayer();
     transitLayer.setMap(map);
