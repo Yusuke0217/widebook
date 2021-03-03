@@ -9,8 +9,8 @@
       zoom: 14, 
       // center: {lat: 35.18, lng: 136.906}
       center: { 
-        lat: Number(shop.latitude),
-        lng: Number(shop.longitude)
+        lat: parseFloat(shop.latitude),
+        lng: parseFloat(shop.longitude)
       }
     });
     let transitLayer = new google.maps.TransitLayer();
