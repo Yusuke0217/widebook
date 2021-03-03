@@ -610,7 +610,7 @@
     // Map上の指定した位置にピンを挿して表示する
     let marker = new google.maps.Marker({
       // position: {lat: 35.18, lng: 136.906},
-      position: place,
+      position: { lat: parseFloat(shop.latitude), lng: parseFloat(shop.longitude) },
       map: map,
       title: contentString
     });
