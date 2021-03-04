@@ -103,7 +103,6 @@
               }
             }
             & .detail__btn {
-              display: none;
               a.detail {
                 span {
                   i {
@@ -160,90 +159,6 @@
           }
           .other__list {
             display: none;
-          }
-          .post__list.result-all {
-            @include margin(20px, 12px, 20px, 12px);
-            h2 {
-              @include mobile-ttl;
-            }
-            p {
-            }
-            & .move__btn {
-              display: none;
-            }
-            ul.post__box {
-              @include content-box;
-              @include margin(10px, 0, 20px, 0);
-              display: block;
-              overflow: scroll;
-              a {
-                @include link;
-                @include margin(10px, 5px, 10px, 5px);
-                li {
-                  height: 250px;
-                  width: 250px;
-                  border-radius: 20px;
-                  margin-bottom: 10px;
-                  .post__wrapper {
-                    height: 100%;
-                    .post__img {
-                      height: 65%;
-                      img {
-                        border-radius: 20px 20px 0 0;
-                        height: 100%;
-                        width: 100%;
-                      }
-                    }
-                    .post__info {
-                      &__deco {
-                        display: flex;
-                        .post__review {
-                          i.fas.fa-star {
-                            color: $plum;
-                          }
-                          span {
-                          }
-                        }
-                        .post__tag {
-                          i {
-                          }
-                        }
-                      }
-                      &__basic {
-                        .post__name {
-                          h3 {
-                            @include mobile-ttl;
-                          }
-                        }
-                        .post__about {
-                          display: flex;
-                          .post__place {
-                            .address {
-                              @include word-el;
-                              span {
-                              }
-                            }
-                          }
-                        }
-                        .post__budget {
-                          span {
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            & .detail__btn {
-              display: none;
-              a.detail {
-                span {
-                  i {
-                  }
-                }
-              }
-            }
           }
         }
       }

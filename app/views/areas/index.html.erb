@@ -4,19 +4,13 @@
   <%= stylesheet_link_tag '/assets/areas/pc/index_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
+<% content_for(:ttl, "現在地から探す")%>
+
 <%= render 'layouts/header' %>
   <div class="wrapper">
     <div class="main__wrapper search_pc">
       <div class="ggrmap__back">
-        <div class="ggrmap" id="js-map">
-          <%# <form id="search-form" action="" method="post">
-            <div class="input__area">
-              <input id="" type="search" name="search" placeholder="キーワード">
-              <button type="submit" form="search-form" name="">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </form> %>
+        <div class="ggrmap" id="js-nav-map">
         </div>
       </div>
       <div class="result__wrapper">
@@ -56,7 +50,7 @@
                       </div>
                       <div class="shop__info__basic">
                         <div class="shop__name">
-                          <h2><%= shop.name %></h2>
+                          <h3><%= shop.name %></h3>
                         </div>
                         <div class="shop__about">
                           <div class="shop__place">
@@ -77,7 +71,7 @@
             <% end %>
             </ul>
             <div class="detail__btn shop__more">
-              <%= link_to root_path, class:"detail" do %>
+              <%= link_to shops_path(detail: 'shop'), class:"detail" do %>
                 <span>すべて表示<i></i></span>
               <% end %>
             </div>

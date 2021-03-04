@@ -7,18 +7,7 @@
       padding-top: 80px;
       .ggrmap__back {
         .ggrmap {
-          background-color: $green;
           height: 400px;
-          form#search-form {
-            .input__area {
-              input {
-              }
-              button {
-                i.fas.fa-search {
-                }
-              }
-            }
-          }
         }
       }
       .result__wrapper {
@@ -121,7 +110,6 @@
               }
             }
             & .detail__btn {
-              display: none;
               a.detail {
                 span {
                   i {

@@ -18,10 +18,10 @@
           );
   
           // mapの初期位置設定
-          map = new google.maps.Map(document.getElementById('js-map'), {
+          map = new google.maps.Map(document.getElementById('js-nav-map'), {
             center: LatLng,
             // 倍率はお好みで
-            zoom: 12
+            zoom: 13
           });
           // map.setCenterで地図が初期位置に移動
           map.setCenter(LatLng);
