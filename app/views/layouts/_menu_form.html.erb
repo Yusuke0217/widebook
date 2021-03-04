@@ -29,7 +29,7 @@
               <td><%= m.check_box :availability %></td>
               <td><%= m.collection_select(:menu_type_id, MenuType.all, :id, :name, prompt: "選択してください") %></td>
               <td><%= m.text_field :name %></td>
-              <td><%= m.number_field :price %></td>
+              <td><%= m.number_field :price, placeholder: "金額を入力してください" %></td>
             </tr>
           <% end %>
           </tbody>

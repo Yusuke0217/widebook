@@ -317,6 +317,7 @@
               & a {
                 color: $darkgray;
                 .shop__address__import {
+                  @include padding(3px, 0px, 0px, 0px);
                   span {
                     width: 250px;
                     @include word-el;

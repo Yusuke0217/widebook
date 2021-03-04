@@ -35,6 +35,8 @@
                 select {
                 }
                 input {
+                  height: 40px;
+                  @include padding(10px, 10px, 10px, 10px);
                 }
                 label {
                 }
