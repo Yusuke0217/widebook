@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_050806) do
+ActiveRecord::Schema.define(version: 2021_03_05_050139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(version: 2021_02_09_050806) do
     t.index ["shop_id"], name: "index_menus_on_shop_id"
   end
 
+  create_table "owners", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_digest"
+    t.string "phone_number", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "pay_cards", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -130,11 +139,10 @@ ActiveRecord::Schema.define(version: 2021_02_09_050806) do
   end
 
   create_table "shops", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
+    t.string "name", null: false
+    t.string "address", null: false
     t.string "phone_number"
     t.text "content"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "address_building"
@@ -146,14 +154,15 @@ ActiveRecord::Schema.define(version: 2021_02_09_050806) do
     t.string "budget"
     t.string "b_hours_first"
     t.string "b_hours_last"
+    t.bigint "owner_id"
     t.index ["area_id"], name: "index_shops_on_area_id"
     t.index ["name"], name: "index_shops_on_name"
-    t.index ["user_id"], name: "index_shops_on_user_id"
+    t.index ["owner_id"], name: "index_shops_on_owner_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
+    t.string "name", null: false
+    t.string "email", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
@@ -183,5 +192,5 @@ ActiveRecord::Schema.define(version: 2021_02_09_050806) do
   add_foreign_key "shop_purposes", "purposes"
   add_foreign_key "shop_purposes", "shops"
   add_foreign_key "shops", "areas"
-  add_foreign_key "shops", "users"
+  add_foreign_key "shops", "owners"
 end

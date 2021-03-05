@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
+  get "/signup_owner", to: "owners#new"
+  post "/signup_owner", to: "owners#create"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
     resource :menus, only: [:show, :new, :edit, :create, :update, :destroy]
   end
 
+  resources :owners, only: [:index, :show, :edit, :update, :destroy]
   resources :searchs, only: [:index, :show]
   resources :images, only: [:show]
   resources :bookmarks, only: [:index]

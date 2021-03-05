@@ -33,8 +33,8 @@ class ShopsController < ApplicationController
   end
   
   def create
-    @user = User.find(current_user.id)
-    @shop = @user.shops.build(shop_params)
+    @owner = Owner.find(current_user.id)
+    @shop = @owner.shops.build(shop_params)
     if @shop.save
       flash[:success] = "お店を登録しました。"
       redirect_to shop_url(@shop)

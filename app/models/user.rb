@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :bookmark_shops, through: :bookmarks, dependent: :destroy, source: :shop
   has_many :reviews
   has_many :review_shops, through: :reviews, source: :shop
-  has_many :shops
   before_save :downcase_email
   before_create :create_activation_digest
   VALID_EMAIL_REGEX = %r{\A[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\z}.freeze
@@ -47,10 +46,6 @@ class User < ApplicationRecord
 
   def activate
     self.update_columns(activated: true, activated_at: Time.zone.now)
-  end
-
-  def downcase_email
-    self.email = email.downcase
   end
 
   def create_activation_digest
