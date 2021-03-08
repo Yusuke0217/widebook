@@ -35,9 +35,15 @@
       <div class="other__form__link">
         <p>まだアカウントをお持ちではありませんか？</p>
         <div class="jump__btn">
+        <% if params[:agent] == 'user' %>
           <%= link_to signup_path do %>
             <p>サインイン</p>
           <% end %>
+        <% elsif params[:agent] == 'owner' %>
+          <%= link_to signup_owner_path do %>
+            <p>サインイン</p>
+          <% end %>
+        <% end %>
         </div>
         <div class="ps__reset__link">
           <p>パスワードをお忘れですか？</p>

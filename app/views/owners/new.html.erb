@@ -4,15 +4,15 @@
   <%= stylesheet_link_tag '/assets/users/pc/signup_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-<% provide(:ttl, "新規登録/事業者様")%>
+<% provide(:ttl, "新規登録|事業者様")%>
 <% provide(:btn_text, "登録する")%>
 <% provide(:top_text, "サインイン")%>
 <% provide(:url, signup_owner_path)%>
 
-<div class="main__wrapper">
+<div class="main__wrapper signup__wrapper" id="user__wrapper">
   <div class="form__wrapper">
     <%= render 'layouts/user_form_head' %>
-    <div class="owner__info__form">
+    <div class="user__info__form">
       <%= render 'layouts/owner_form' %>
       <div class="announce">
         <i class="fas fa-exclamation-circle"></i>
@@ -24,7 +24,7 @@
       <div class="other__form__link">
         <p>すでにアカウントをお持ちですか？</p>
         <div class="jump__btn">
-          <%= link_to login_path do %>
+          <%= link_to login_path(agent: 'owner') do %>
             <p>ログイン</p>
           <% end %>
         </div>

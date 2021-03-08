@@ -9,7 +9,7 @@
     <%= f.label :name, "Name"%>
   </div>
   <div class="input__field">
-    <%= f.text_field :name, id: "", placeholder: "ニックネーム"%>
+    <%= f.text_field :name, id: "", placeholder: "お名前"%>
   </div>
   <div class="input__ttl">
     <i class="fas fa-asterisk"></i>
@@ -20,24 +20,19 @@
   </div>
   <div class="input__ttl">
     <i class="fas fa-asterisk"></i>
+    <%= f.label :phone_number, "Phone" %>
+  </div>
+  <div class="input__field">
+    <%= f.text_field :phone_number, id: "", placeholder: "電話番号"%>
+  </div>
+  <div class="input__ttl">
+    <i class="fas fa-asterisk"></i>
     <%= f.label :password, "Password" %>
   </div>
   <div class="input__field">
     <%= f.password_field :password, id: "", placeholder: "パスワード" %>
   </div>
-  <div class="input__ttl">
-    <i class="fas fa-asterisk"></i>
-    <%= f.label "Image" %>
-  </div>
-  <div class="input__field">
-    <%= f.file_field :image, class: "img_field", id: "user_image" %>
-    <div class="image__icon">
-      <%= f.label :image, class: "" do %>
-        <%= image_tag "/assets/user_icon.jpeg"%>
-        <i class="fas fa-plus"></i>
-      <% end %>
-    </div>
-  </div>
+
   <div class="input__field">
     <%= f.submit :submit, class: "submit", id: "", value: "#{yield(:btn_text)}" %>
   </div>

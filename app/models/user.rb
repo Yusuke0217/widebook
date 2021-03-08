@@ -28,7 +28,7 @@ class User < ApplicationRecord
   end
 
   # 永続セッションのためにユーザーをデータベースに記憶する
-  def remember
+  def remember_me
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
   end
@@ -38,6 +38,10 @@ class User < ApplicationRecord
     digest = self.send("#{attribute}_digest")
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(local_token)
+  end
+
+  def downcase_email
+    self.email = email.downcase
   end
 
   def send_activation_email

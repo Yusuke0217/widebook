@@ -3,6 +3,10 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
+  def owner_log_in(owner)
+    session[:owner_id] = owner.id
+  end
+
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
@@ -15,18 +19,44 @@ module SessionsHelper
     end
   end
 
+  def current_owner
+    if (owner_id = session[:owner_id])
+      @current_owner ||= Owner.find_by(id: owner_id)
+    elsif (owner_id = cookies.signed[:owner_id])
+      owner = Owner.find_by(id: owner_id)
+      if owner&.authenticated?(:remember, cookies[:remember_token])
+        log_in(owner)
+        @current_owner = owner
+      end
+    end
+  end
+
   def remember(user)
-    user.remember
+    user.remember_me
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
+  end
+
+  def remember_owner(owner)
+    owner.remember_me
+    cookies.permanent.signed[:owner_id] = owner.id
+    cookies.permanent[:remember_token] = owner.remember_token
   end
 
   def logged_in?
     !current_user.nil?
   end
 
+  def owner_logged_in?
+    !current_owner.nil?
+  end
+
   def current_user?(user)
     user == current_user
+  end
+
+  def current_owner?(owner)
+    owner == current_owner
   end
 
   def forget(user)
@@ -35,10 +65,22 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
+  def owner_forget(owner)
+    owner.update_attribute(:remember_digest, nil)
+    cookies.delete(:owner_id)
+    cookies.delete(:remember_token)
+  end
+
   def log_out
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil
+  end
+
+  def owner_log_out
+    owner_forget(current_owner)
+    session.delete(:owner_id)
+    @current_owner = nil
   end
 
   # アクセスしようとしたURLを覚えておく
