@@ -1,0 +1,10 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/owners/show', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/owners/tablet/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/owners/pc/show_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<% provide(:ttl, "オーナーマイページ")%>
+
+<%= render 'layouts/header' %>
+<%= render 'layouts/footer' %>

@@ -4,6 +4,88 @@
   <%= stylesheet_link_tag '/assets/layouts/pc/header_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
+<% if controller.controller_name == "owners" || controller.controller_name == "dashbords" %>
+<%# ownerページ用のheader %>
+<header>
+  <div class="hd__wrapper">
+    <div class="hd__left">
+      <div class="main__menu">
+        <i class="fas fa-ellipsis-v"></i>
+      </div>
+      <div class="home__btn">
+        <%= link_to owner_dashbords_path(@owner) do %>
+          <span>Home</span>
+        <% end %>
+      </div>
+    </div>
+    <div class="hd__nav">
+      <div class="user__icon">
+        <% if @owner.image? %>
+        <%= link_to image_tag(@owner.image.url, class: ""), owner_path(@owner) %>
+        <% else %>
+        <%= link_to image_tag("/assets/user_icon.jpeg", class: ""), owner_path(@owner) %>
+        <% end %>
+      </div>
+      <div class="other__menu">
+        <i class="fas fa-bars" id="js-nav-open"></i>
+      </div>
+      <div class="nav__back"></div>
+      <nav class="nav--bar">
+        <div class="bar__close">
+          <i class="fas fa-times" id="js-nav-close"></i>
+        </div>
+        <% if current_user.nil? %>
+        <ul class="pub__nav">
+          <li>
+            <%= link_to root_path do %>
+              <div class="nav__link">
+                <p>トップに戻る</p>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+        <ul class="sub__nav">
+          <li>
+            <%= link_to help_path do %>
+              <div class="nav__link">
+                <p>ヘルプ</p>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+        <% else %>
+        <ul class="pub__nav">
+          <li>
+            <%= link_to root_path do %>
+              <div class="nav__link">
+                <p>トップに戻る</p>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path do %>
+              <div class="nav__link">
+                <p></p>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+        <ul class="sub__nav">
+          <li>
+            <%= link_to help_path do %>
+              <div class="nav__link">
+                <p>ヘルプ</p>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+        <% end %>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<% else %>
 <%# トプページのheader %>
 <header>
   <div class="hd__wrapper" id="js-head">
@@ -273,6 +355,7 @@
     </div>
   </div>
 </header>
+<% end %>
 
 <%# カテゴリで検索している時のheader
 <header>

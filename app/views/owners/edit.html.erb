@@ -1,0 +1,20 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/users/signup', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/users/tablet/signup_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/users/pc/signup_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<% provide(:ttl, "プロフィール編集")%>
+<% provide(:btn_text, "更新する")%>
+<% provide(:url, owner_path)%>
+<% provide(:top_text, "プロフィール編集")%>
+
+
+<div class="main__wrapper" id="user__wrapper">
+  <div class="form__wrapper">
+    <%= render 'layouts/user_form_head' %>
+    <div class="user__info__form">
+      <%= render 'layouts/owner_form' %>
+    </div>
+  </div>
+</div>

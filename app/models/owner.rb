@@ -11,6 +11,7 @@ class Owner < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
   validates :phone_number, presence: true
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  mount_uploader :image, ImageUploader
 
   def downcase_email
     self.email = email.downcase

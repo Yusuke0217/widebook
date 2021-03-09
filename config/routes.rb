@@ -23,7 +23,9 @@ Rails.application.routes.draw do
     resource :menus, only: [:show, :new, :edit, :create, :update, :destroy]
   end
 
-  resources :owners, only: [:index, :show, :edit, :update, :destroy]
+  resources :owners, only: [:index, :show, :edit, :update, :destroy] do
+    resource :dashbords, only: [:show]
+  end
   resources :searchs, only: [:index, :show]
   resources :images, only: [:show]
   resources :bookmarks, only: [:index]

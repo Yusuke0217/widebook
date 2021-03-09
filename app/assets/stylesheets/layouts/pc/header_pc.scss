@@ -235,7 +235,7 @@
           background-color: $white;
           top: 100%;
           border-radius: 15px;
-          border: 1px solid $darkgray;
+          box-shadow: 0px 0px 5px 0px;
           label.user__close {
             height: 50px;
             width: 50px;
@@ -285,6 +285,154 @@
           ul.sp__nav {
           }
         } 
+      }
+    }
+  }
+
+  // owner用のheader_scss
+  header {
+    .hd__wrapper {
+      height: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      z-index: 90;
+      box-shadow: 0px 0px 3px 0px #544C59;
+      background-color: $white;
+      .hd__left {
+        display: flex;
+        @include padding(25px, 0px, 25px, 0px);
+        .main__menu {
+          @include margin(0px, 70px, 0px, 60px);
+          i.fas.fa-ellipsis-v {
+            color: $darkgray;
+            @include awesome;
+            font-size: 3rem;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+        .home__btn {
+          line-height: 3rem;
+          a {
+            text-decoration: none;
+            span {
+              color: $plum;
+              font-size: 1.3rem;
+            }
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+      .hd__nav {
+        display: flex;
+        .user__icon {
+          height: 50px;
+          width: 50px;
+          @include margin(10px, 50px, 0px, 0px);
+          a {
+            img {
+              height: 100%;
+              width: 100%;
+              border-radius: 50%;
+            }
+          }
+        }
+        .other__menu {
+          @include margin(0px, 50px, 0px, 0px);
+          i.fas.fa-bars {
+            color: $darkgray;
+            @include awesome;
+            font-size: 3rem;
+            cursor: pointer;
+          }
+        }
+        .nav__back {
+          display: none;
+          height: 100vh;
+          width: 100vw;
+          position: absolute;
+          right: 0%;
+          opacity: 0;
+          background-color: white;
+        }
+        .nav--bar {
+          display: none;
+          height: 400px;
+          width: 15%;
+          position: absolute;
+          transition: all 0s;
+          right: 2%;
+          background-color: $white;
+          top: 100%;
+          border-radius: 15px;
+          box-shadow: 0px 0px 5px 0px;
+          .bar__close {
+            height: 50px;
+            width: 50px;
+            display: flex;
+            @include margin(0, 0, 30px, 0);
+            i.fas.fa-times {
+              cursor: pointer;
+              height: 50px;
+              width: 50px;
+              text-align: center;
+              line-height: 50px;
+              display: inline-block;
+              outline: none;
+              color: $darkgray;
+              font-size: 2.3rem;
+            }
+          }
+          ul {
+            display: flex;
+            flex-direction: column;
+            @include margin(0, 0, 30px, 0);
+            li {
+              @include margin(0px, 0, 30px, 0px);
+              @include padding(0px, 0, 0, 30px);
+              height: 30px;
+              line-height: 30px;
+              .nav__link {
+                height: 100%;
+                a {
+                  height: 100%;
+                  @include link($darkgray);
+                  display: inline-block;
+                  p {
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+          }
+          ul.pub__nav {
+            border-bottom: 1px solid rgba($darkgray, $alpha: 0.8);
+            li {
+              a {
+                .nav__link {
+                  p {
+                  }
+                }
+              }
+            }
+          }
+          ul.sub__nav {
+            li {
+              a {
+                .nav__link {
+                  p {
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
