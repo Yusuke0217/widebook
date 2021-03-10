@@ -172,27 +172,30 @@
           ul {
             display: flex;
             flex-direction: column;
-            @include margin(0, 0, 30px, 0);
+            @include margin(0, 10px, 20px, 10px);
             li {
-              @include margin(0px, 0, 30px, 0px);
-              @include padding(0px, 0, 0, 30px);
+              @include margin(0px, 0, 20px, 0px);
+              @include padding(0px, 0, 0, 10px);
               height: 30px;
               line-height: 30px;
-              .nav__link {
+              a {
                 height: 100%;
-                a {
+                @include link($darkgray);
+                display: inline-block;
+                .nav__link {
                   height: 100%;
-                  @include link($darkgray);
-                  display: inline-block;
                   p {
                     font-weight: bold;
                   }
+                }
+                &:hover {
+                  opacity: 0.8;
                 }
               }
             }
           }
           ul.common__nav {
-            border-bottom: 1px solid rgba($darkgray, $alpha: 0.8)
+            border-bottom: 1px solid rgba($darkgray, $alpha: 0.3)
           }
           ul.sp__nav {
           }
@@ -240,7 +243,10 @@
             height: 50px;
             width: 50px;
             display: flex;
-            @include margin(0, 0, 30px, 0);
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 15px;
+            margin-left: 0px;
             i.fas.fa-times {
               cursor: pointer;
               height: 50px;
@@ -256,15 +262,14 @@
           ul {
             display: flex;
             flex-direction: column;
-            @include margin(0, 0, 30px, 0);
-            @include padding(0, 15px, 0, 15px);
+            @include margin(0, 10px, 20px, 10px);
             li {
-              @include margin(0px, 0, 15px, 0px);
+              @include margin(0px, 0, 20px, 0px);
+              @include padding(0px, 0, 0, 10px);
               height: 30px;
               line-height: 30px;
               a {
                 height: 100%;
-                width: 100%;
                 @include link($darkgray);
                 display: inline-block;
                 .nav__link {
@@ -272,9 +277,6 @@
                   p {
                     font-weight: bold;
                   }
-                }
-                &:hover {
-                  background-color: rgba($darkgray, $alpha: 0.1);
                 }
               }
             }
@@ -304,7 +306,8 @@
         display: flex;
         @include padding(25px, 0px, 25px, 0px);
         .main__menu {
-          @include margin(0px, 70px, 0px, 60px);
+          @include margin(0px, 70px, 0px, 0px);
+          display: none;
           i.fas.fa-ellipsis-v {
             color: $darkgray;
             @include awesome;
@@ -316,11 +319,12 @@
           }
         }
         .home__btn {
+          @include margin(0px, 0px, 0px, 60px);
           line-height: 3rem;
           a {
             text-decoration: none;
             span {
-              color: $plum;
+              color: $darkgray;
               font-size: 1.3rem;
             }
             &:hover {
@@ -331,27 +335,6 @@
       }
       .hd__nav {
         display: flex;
-        .user__icon {
-          height: 50px;
-          width: 50px;
-          @include margin(10px, 50px, 0px, 0px);
-          a {
-            img {
-              height: 100%;
-              width: 100%;
-              border-radius: 50%;
-            }
-          }
-        }
-        .other__menu {
-          @include margin(0px, 50px, 0px, 0px);
-          i.fas.fa-bars {
-            color: $darkgray;
-            @include awesome;
-            font-size: 3rem;
-            cursor: pointer;
-          }
-        }
         .nav__back {
           display: none;
           height: 100vh;
@@ -362,21 +345,27 @@
           background-color: white;
         }
         .nav--bar {
-          display: none;
-          height: 400px;
-          width: 15%;
-          position: absolute;
-          transition: all 0s;
-          right: 2%;
-          background-color: $white;
-          top: 100%;
-          border-radius: 15px;
-          box-shadow: 0px 0px 5px 0px;
+          height: 50px;
+          width: 45px;
+          display: flex;
+          @include margin(25px, 50px, 0px, 0px);
+          i.fas.fa-bars {
+            color: $darkgray;
+            @include awesome;
+            font-size: 3rem;
+            cursor: pointer;
+          }
+        }
+        // common--nav--css---
+        nav {
           .bar__close {
             height: 50px;
             width: 50px;
             display: flex;
-            @include margin(0, 0, 30px, 0);
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 15px;
+            margin-left: 0px;
             i.fas.fa-times {
               cursor: pointer;
               height: 50px;
@@ -392,27 +381,76 @@
           ul {
             display: flex;
             flex-direction: column;
-            @include margin(0, 0, 30px, 0);
+            @include margin(0, 10px, 20px, 10px);
             li {
-              @include margin(0px, 0, 30px, 0px);
-              @include padding(0px, 0, 0, 30px);
+              @include margin(0px, 0, 20px, 0px);
+              @include padding(0px, 0, 0, 10px);
               height: 30px;
               line-height: 30px;
-              .nav__link {
+              a {
                 height: 100%;
-                a {
+                @include link($darkgray);
+                display: inline-block;
+                .nav__link {
                   height: 100%;
-                  @include link($darkgray);
-                  display: inline-block;
                   p {
                     font-weight: bold;
+                  }
+                }
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
+            }
+          }
+        }
+        nav.user__nav {
+          display: none;
+          height: 350px;
+          width: 300px;
+          position: absolute;
+          transition: all 0s;
+          right: 2%;
+          background-color: $white;
+          top: 100%;
+          border-radius: 15px;
+          box-shadow: 0px 0px 5px 0px;
+          ul.account__nav {
+            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+            & li {
+              @include padding(0px, 0px, 0px, 0px);
+              height: 30px;
+              .user__info {
+                display: flex;
+                .profile__icon {
+                  height: 40px;
+                  width: 40px;
+                  img {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                  }
+                }
+                .profile__info {
+                  line-height: 20px;
+                  @include padding(0px, 5px, 0px, 5px);
+                  .name {
+                    p {
+                      font-size: 0.8rem;
+                    }
+                  }
+                  .email {
+                    span {
+                      font-size: 0.8rem;
+                      color: gray;
+                    }
                   }
                 }
               }
             }
           }
           ul.pub__nav {
-            border-bottom: 1px solid rgba($darkgray, $alpha: 0.8);
+            border-bottom: 1px solid rgba($darkgray, $alpha: 0.3);
             li {
               a {
                 .nav__link {

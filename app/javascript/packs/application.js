@@ -22,7 +22,7 @@ require("piece/share_btn")
 require("piece/menu_tab")
 require("piece/geo_address")
 // require("piece/geo_location")
-require("piece/hamburger_menu")
+require("piece/hd-nav_menu")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -9,9 +9,9 @@
 <header>
   <div class="hd__wrapper">
     <div class="hd__left">
-      <div class="main__menu">
+      <%# <div class="main__menu">
         <i class="fas fa-ellipsis-v"></i>
-      </div>
+      </div> %>
       <div class="home__btn">
         <%= link_to owner_dashbords_path(@owner) do %>
           <span>Home</span>
@@ -19,27 +19,40 @@
       </div>
     </div>
     <div class="hd__nav">
-      <div class="user__icon">
-        <% if @owner.image? %>
-        <%= link_to image_tag(@owner.image.url, class: ""), owner_path(@owner) %>
-        <% else %>
-        <%= link_to image_tag("/assets/user_icon.jpeg", class: ""), owner_path(@owner) %>
-        <% end %>
-      </div>
-      <div class="other__menu">
-        <i class="fas fa-bars" id="js-nav-open"></i>
-      </div>
       <div class="nav__back"></div>
-      <nav class="nav--bar">
+      <div class="nav--bar" data-trg="0">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav class="user__nav" data-nav="0">
         <div class="bar__close">
-          <i class="fas fa-times" id="js-nav-close"></i>
+          <i class="fas fa-times js-nav-close"></i>
         </div>
-        <% if current_user.nil? %>
+        <ul class="account__nav">
+          <li>
+            <div class="user__info">
+              <div class="profile__icon">
+                <% if @owner.image? %>
+                <%= image_tag @owner.image.url, class: "", id: "" %>
+                <% else %>
+                <%= image_tag "/assets/user_icon.jpeg", class: "", id: "" %>
+                <% end %>
+              </div>
+              <div class="profile__info">
+                <div class="name">
+                  <p><%= @owner.name %></p>
+                </div>
+                <div class="email">
+                  <span><%= @owner.email %></span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
         <ul class="pub__nav">
           <li>
-            <%= link_to root_path do %>
+            <%= link_to owner_path(@owner) do %>
               <div class="nav__link">
-                <p>トップに戻る</p>
+                <p>マイページ</p>
               </div>
             <% end %>
           </li>
@@ -52,34 +65,14 @@
               </div>
             <% end %>
           </li>
-        </ul>
-        <% else %>
-        <ul class="pub__nav">
           <li>
             <%= link_to root_path do %>
               <div class="nav__link">
-                <p>トップに戻る</p>
-              </div>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to root_path do %>
-              <div class="nav__link">
-                <p></p>
+                <p>ログアウト</p>
               </div>
             <% end %>
           </li>
         </ul>
-        <ul class="sub__nav">
-          <li>
-            <%= link_to help_path do %>
-              <div class="nav__link">
-                <p>ヘルプ</p>
-              </div>
-            <% end %>
-          </li>
-        </ul>
-        <% end %>
       </nav>
     </div>
   </div>
