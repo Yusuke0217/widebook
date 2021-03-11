@@ -1,0 +1,69 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/dashboards/show', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/dashboards/tablet/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/dashboards/pc/show_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<% provide(:ttl, "ダッシュボード")%>
+
+<%= render 'layouts/header' %>
+<div class="main__wrapper">
+  <div class="dashboard__wrapper">
+    <div class="side__container">
+      <div class="side__bar__logo">
+        <div class="app__logo">
+          <img src="/assets/widebook_logo.png" alt="">
+        </div>
+        <div class="app__name">
+          <p>Wide</p>
+        </div>
+      </div>
+      <div class="side__bar__user__info">
+        <div class="profile__icon">
+          <% if @owner.image? %>
+          <%= image_tag @owner.image.url, class: "" %>
+          <% else %>
+          <%= image_tag "/assets/user_icon.jpeg", class: "" %>
+          <% end %>
+        </div>
+        <div class="profile__info">
+          <div class="user__name">
+            <p><%= @owner.name %></p>
+          </div>
+        </div>
+      </div>
+      <nav class="side__menu">
+        <ul>
+          <li>
+            <%= link_to root_path do %>
+              <div class="nav__link">
+                <div class="nav__icon">
+                  <i class="far fa-comment-alt"></i>
+                </div>
+                <div class="nav__name">
+                  <p>レビューを見る</p>
+                </div>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path do %>
+              <div class="nav__link">
+                <div class="nav__icon">
+                  <i class=""></i>
+                </div>
+                <div class="nav__name">
+                  <p></p>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main__container">
+      <div class="chart"></div>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/footer' %>

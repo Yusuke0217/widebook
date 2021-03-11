@@ -4,10 +4,10 @@
   <%= stylesheet_link_tag '/assets/users/pc/signup_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-<% provide(:ttl, "新規登録|事業者様")%>
+<% provide(:ttl, "サインアップ | 事業者様")%>
 <% provide(:btn_text, "登録する")%>
-<% provide(:top_text, "サインイン")%>
-<% provide(:url, signup_owner_path)%>
+<% provide(:top_text, "サインイン: 事業者様")%>
+<% provide(:url, owner_signup_path)%>
 
 <div class="main__wrapper signup__wrapper" id="user__wrapper">
   <div class="form__wrapper">
@@ -24,7 +24,7 @@
       <div class="other__form__link">
         <p>すでにアカウントをお持ちですか？</p>
         <div class="jump__btn">
-          <%= link_to login_path(agent: 'owner') do %>
+          <%= link_to owner_login_path do %>
             <p>ログイン</p>
           <% end %>
         </div>

@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
-  root 'homes#index'
 
-  get "/signup", to: "users#new"
-  post "/signup", to: "users#create"
-  get "/signup_owner", to: "owners#new"
-  post "/signup_owner", to: "owners#create"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
+  root 'homes#index'
   get "/privacy", to: "users#privacy"
   get "/rule", to: "users#rule"
   get "/help", to: "users#help"
+  get "/signup", to: "users#new"
+  post "/signup", to: "users#create"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+  
+  namespace :owner do 
+    get "/signup", to: "owners#new"
+    post "/signup", to: "owners#create"
+    get "/login", to: "sessions#new"
+    post "/login", to: "sessions#create"
+    delete "/logout", to: "sessions#destroy"
+  end
 
   resources :users, only: [:index, :show, :edit, :update, :destroy] do
     resource :bookmarks, only: [:show, :edit, :update]
@@ -24,8 +30,11 @@ Rails.application.routes.draw do
   end
 
   resources :owners, only: [:index, :show, :edit, :update, :destroy] do
-    resource :dashbords, only: [:show]
+    member do 
+      resource :dashboards, only: [:show]
+    end
   end
+
   resources :searchs, only: [:index, :show]
   resources :images, only: [:show]
   resources :bookmarks, only: [:index]

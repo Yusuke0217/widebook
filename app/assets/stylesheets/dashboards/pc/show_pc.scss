@@ -1,0 +1,74 @@
+@import "../../main.scss";
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブ
+  .dashboard__wrapper {
+    .side__container {
+      max-width: 250px;
+      background-color: $darkgray;
+      position: absolute;
+      left: 0;
+      .side__bar__logo {
+        height: 70px;
+        width: 100%;
+        display: flex;
+        @include padding(15px, 15px, 15px, 15px);
+        .app__logo {
+          height: 40px;
+          width: 40px;
+          img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+        .app__name {
+          @include margin(0px, 0px, 0px, 30px);
+          p {
+            color: white;
+            font-size: 1.3rem;
+          }
+        }
+      }
+      .side__bar__user__info {
+        .profile__icon {
+          img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+        .profile__info {
+          .user__name {
+            p {
+            }
+          }
+        }
+      }
+      nav.side__menu {
+        ul {
+          li {
+            .nav__link {
+              .nav__icon {
+                i.far.fa-comment-alt {
+                }
+              }
+              .nav__name {
+                p {
+                }
+                i {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .main__container {
+      height: 1000px;
+      width: 100%;
+      .chart {
+      }
+    }
+  }
+}

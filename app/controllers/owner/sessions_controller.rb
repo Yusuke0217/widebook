@@ -1,14 +1,15 @@
-class SessionsController < ApplicationController
+class Owner::SessionsController < Owner::BaseController
+  
   def new
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      if user.activated?
-        log_in(user)
-        remember(user)
-        redirect_back_or(user)
+    owner = Owner.find_by(email: params[:session][:email].downcase)
+    if owner && owner.authenticate(params[:session][:password])
+      if owner.activated?
+        owner_log_in(owner)
+        remember_owner(owner)
+        redirect_back_or(owner)
       else
         message = "アカウントが有効化されていません。"
         message += "メールを確認してください。"
@@ -22,10 +23,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if logged_in?
-      log_out
+    if owner_logged_in?
+      owner_log_out
     end
     redirect_to root_url
   end
-
 end

@@ -10,6 +10,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def logged_in_owner
+    unless owner_logged_in?
+      url_location
+      flash[:danger] = 'ログインしてください'
+      redirect_to owner_login_url
+    end
+  end
+
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end
@@ -17,6 +25,11 @@ class ApplicationController < ActionController::Base
   def correct_user
     @user = User.find(params[:id]) || User.find_by(id: current_user.id)
     redirect_to root_url unless @user == current_user
+  end
+
+  def correct_owner
+    @owner = Owner.find(params[:id]) || Owner.find_by(id: current_owner.id)
+    redirect_to root_url unless @owner == current_owner
   end
 
   def ua

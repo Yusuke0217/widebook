@@ -4,7 +4,7 @@
   <%= stylesheet_link_tag '/assets/layouts/pc/header_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-<% if controller.controller_name == "owners" || controller.controller_name == "dashbords" %>
+<% if controller.controller_name == "owners" || controller.controller_name == "dashboards" %>
 <%# ownerページ用のheader %>
 <header>
   <div class="hd__wrapper">
@@ -29,7 +29,7 @@
         </div>
         <ul class="account__nav">
           <li>
-            <div class="user__info">
+            <div class="hd__user__info">
               <div class="profile__icon">
                 <% if @owner.image? %>
                 <%= image_tag @owner.image.url, class: "", id: "" %>
@@ -66,7 +66,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to root_path do %>
+            <%= link_to owner_logout_path do %>
               <div class="nav__link">
                 <p>ログアウト</p>
               </div>
