@@ -11,36 +11,48 @@
       .side__bar__logo {
         height: 70px;
         width: 100%;
-        display: flex;
         @include padding(15px, 15px, 15px, 15px);
-        .app__logo {
-          height: 40px;
-          width: 40px;
-          img {
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
+        a {
+          display: flex;
+          @include link;
+          .app__logo {
+            height: 40px;
+            width: 40px;
+            img {
+              height: 100%;
+              width: 100%;
+              border-radius: 50%;
+            }
           }
-        }
-        .app__name {
-          @include margin(0px, 0px, 0px, 30px);
-          p {
-            color: white;
-            font-size: 1.3rem;
+          .app__name {
+            @include margin(0px, 0px, 0px, 30px);
+            line-height: 40px;
+            p {
+              color: white;
+              font-size: 1.3rem;
+            }
           }
         }
       }
       .side__bar__user__info {
-        .profile__icon {
-          img {
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
+        height: 70px;
+        width: 100%;
+        @include padding(15px, 15px, 15px, 15px);
+        a {
+          display: flex;
+          .profile__icon {
+            height: 40px;
+            width: 40px;
+            img {
+              height: 100%;
+              width: 100%;
+              border-radius: 50%;
+            }
           }
-        }
-        .profile__info {
-          .user__name {
-            p {
+          .profile__info {
+            .user__name {
+              p {
+              }
             }
           }
         }

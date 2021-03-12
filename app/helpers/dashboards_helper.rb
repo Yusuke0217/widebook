@@ -1,2 +1,2 @@
-module DashbordsHelper
+module DashboardsHelper
 end

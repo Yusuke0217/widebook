@@ -11,26 +11,30 @@
   <div class="dashboard__wrapper">
     <div class="side__container">
       <div class="side__bar__logo">
-        <div class="app__logo">
-          <img src="/assets/widebook_logo.png" alt="">
-        </div>
-        <div class="app__name">
-          <p>Wide</p>
-        </div>
+        <%= link_to dashboards_path(@owner) do %>
+          <div class="app__logo">
+            <img src="/assets/widebook_logo.png" alt="">
+          </div>
+          <div class="app__name">
+            <p>Wide</p>
+          </div>
+        <% end %>
       </div>
       <div class="side__bar__user__info">
-        <div class="profile__icon">
-          <% if @owner.image? %>
-          <%= image_tag @owner.image.url, class: "" %>
-          <% else %>
-          <%= image_tag "/assets/user_icon.jpeg", class: "" %>
-          <% end %>
-        </div>
-        <div class="profile__info">
-          <div class="user__name">
-            <p><%= @owner.name %></p>
+        <%= link_to owner_path(@owner) do %>
+          <div class="profile__icon">
+            <% if @owner.image? %>
+            <%= image_tag @owner.image.url, class: "" %>
+            <% else %>
+            <%= image_tag "/assets/user_icon.jpeg", class: "" %>
+            <% end %>
           </div>
-        </div>
+          <div class="profile__info">
+            <div class="user__name">
+              <p><%= @owner.name %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
       <nav class="side__menu">
         <ul>

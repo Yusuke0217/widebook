@@ -8,7 +8,7 @@ class Owner::OwnersController < Owner::BaseController
     @owner = Owner.new(owner_params)
     if @owner.save
       flash[:success] = "メールを確認し、アカウントの有効化を行ってください。"
-      redirect_to owner_dashboards_path(@owner)
+      redirect_to dashboards_path(@owner)
     else
       render "new"
     end
