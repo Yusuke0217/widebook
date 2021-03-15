@@ -7,8 +7,10 @@ class Owner::OwnersController < Owner::BaseController
   def create
     @owner = Owner.new(owner_params)
     if @owner.save
+      Owner::UserMailer.account_activation(@owner).deliver_now
       flash[:success] = "メールを確認し、アカウントの有効化を行ってください。"
-      redirect_to dashboards_path(@owner)
+      # redirect_to dashboards_path(@owner)
+      redirect_to root_path
     else
       render "new"
     end

@@ -1,11 +1,13 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
+ 
+  before_save :downcase_email
+  before_create :create_activation_digest
+
   has_many :bookmarks
   has_many :bookmark_shops, through: :bookmarks, dependent: :destroy, source: :shop
   has_many :reviews
   has_many :review_shops, through: :reviews, source: :shop
-  before_save :downcase_email
-  before_create :create_activation_digest
   VALID_EMAIL_REGEX = %r{\A[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\z}.freeze
   has_secure_password
   validates :name, presence: true, length: { maximum: 50 }
@@ -51,25 +53,14 @@ class User < ApplicationRecord
   def activate
     self.update_columns(activated: true, activated_at: Time.zone.now)
   end
-
-  def create_activation_digest
-    self.activation_token = User.new_token
-    self.activation_digest = User.digest(activation_token)
-  end
-
-  def create_reset_digest
-    self.reset_token = User.new_token
-    update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
-  end
-
+  
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
   end
-
+  
   def pasword_reset_expired
     reset_sent_at < 2.hours.ago
   end
-
 
   # ----------------------------------------
   scope :reviewer_table, -> { joins(:reviews) }
@@ -80,5 +71,17 @@ class User < ApplicationRecord
     self.reviewer_table.choice_clm.user_ary
   end
   # -----------------------------------------
+
+  private
+    
+    def create_activation_digest
+      self.activation_token = User.new_token
+      self.activation_digest = User.digest(activation_token)
+    end
+
+    def create_reset_digest
+      self.reset_token = User.new_token
+      update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
+    end
 
 end

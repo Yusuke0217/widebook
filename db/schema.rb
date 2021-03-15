@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_030552) do
+ActiveRecord::Schema.define(version: 2021_03_12_053652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,9 @@ ActiveRecord::Schema.define(version: 2021_03_09_030552) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_digest"
     t.string "image"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
   end
 
   create_table "pay_cards", force: :cascade do |t|

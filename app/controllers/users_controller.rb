@@ -24,8 +24,10 @@ class UsersController < ApplicationController
       # @user.send_activation_email
       @user.activate
       
-      flash[:info] = 'メールを確認し、アカウントを有効化してください。'
-      redirect_to root_url
+      # flash[:info] = 'メールを確認し、アカウントを有効化してください。'
+      # redirect_to root_url
+      flash[:info] = 'アカウントを作成しました！'
+      redirect_to user_path(@user)
     else
       render 'new'
     end

@@ -1,6 +1,10 @@
 class Owner < ApplicationRecord
 
   attr_accessor :remember_token, :activation_token, :reset_token
+
+  before_save :downcase_email
+  before_create :create_activation_digest
+  
   has_many :shops
 
   before_save :downcase_email
@@ -39,5 +43,13 @@ class Owner < ApplicationRecord
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(local_token)
   end
+
+  private
+
+    def create_activation_digest
+      self.activation_token = Owner.new_token
+      self.activation_digest = Owner.digest(activation_token)
+    end
+
 
 end
