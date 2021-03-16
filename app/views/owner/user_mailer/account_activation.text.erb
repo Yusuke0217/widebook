@@ -1,7 +1,9 @@
-<%= @greeting %>, <%= @owner.name %>さん！
+<%= @greeting %>, <%= @owner.name %>！
 
-ようこそ、Wideへ。
-下のリンクをクリックして、アカウントを有効化してください。
+<%# ようこそ、Wideへ。
+下のリンクをクリックして、アカウントを有効化してください。 %>
 
-アカウントを有効化する
+Welcome to Dubai!
+
+<%# アカウントを有効化する %>
 <%= edit_owner_account_activation_url(@owner.activation_token, email: @owner.email) %>

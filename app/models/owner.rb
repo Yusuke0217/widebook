@@ -4,10 +4,9 @@ class Owner < ApplicationRecord
 
   before_save :downcase_email
   before_create :create_activation_digest
-  
+
   has_many :shops
 
-  before_save :downcase_email
   VALID_EMAIL_REGEX = %r{\A[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\z}.freeze
   has_secure_password
 
@@ -39,17 +38,26 @@ class Owner < ApplicationRecord
     update_attribute(:remember_digest, Owner.digest(remember_token))
   end
 
-  def authenticated?(local_token)
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(local_token)
+  def authenticated?(attribute, local_token)
+    digest = self.send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(local_token)
   end
 
-  private
+  def activate
+    self.update_columns(activated: true, activated_at: Time.zone.now)
+  end
 
+  def send_activation_email
+    Owner::UserMailer.account_activation(self).deliver_now
+  end
+  
+
+  private
+  
     def create_activation_digest
       self.activation_token = Owner.new_token
       self.activation_digest = Owner.digest(activation_token)
     end
-
 
 end

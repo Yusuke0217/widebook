@@ -2,9 +2,9 @@
 <h1>Sample</h1>
 
 <p>
-  こんにちは、<%= @owner.name %> さん。
+  hello、<%= @owner.name %> !
 </p>
 
-<p>ようこそ、Wideへ！ 下のURLをクリックして、アカウントを有効化してください！</p>
+<%# <p>ようこそ、Wideへ！ 下のURLをクリックして、アカウントを有効化してください！</p> %>
 
-<%= link_to "アカウントを有効化する", edit_owner_account_activation_url(@owner.activation_token, email: @owner.email) %>
+<%= link_to "account-activation", edit_owner_account_activation_url(@owner.activation_token, email: @owner.email) %>

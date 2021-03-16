@@ -2,6 +2,7 @@ class OwnersController < ApplicationController
   before_action :find_owner, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_owner, only: [:show, :edit, :update, :destroy]
   before_action :correct_owner, only: [:show, :edit, :update, :destroy]
+  before_action :active_owner, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -32,6 +33,12 @@ class OwnersController < ApplicationController
 
     def find_owner
       @owner = Owner.find_by(id: params[:id])
+    end
+
+    def active_owner
+      unless @owner.activated?
+        redirect_to root_path
+      end
     end
 
 end
