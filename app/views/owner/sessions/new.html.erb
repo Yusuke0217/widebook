@@ -4,10 +4,10 @@
   <%= stylesheet_link_tag '/assets/users/pc/signup_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-<% provide(:ttl, "ログイン | 事業者様")%>
-<% provide(:btn_text, "ログインする")%>
-<% provide(:top_text, "ログイン: 事業者様")%>
-<% provide(:url, owner_login_path)%>
+<% content_for(:ttl, "ログイン | 事業者様")%>
+<% content_for(:btn_text, "ログインする")%>
+<% content_for(:top_text, "ログイン: 事業者様")%>
+<% content_for(:url, owner_login_path)%>
 
 <div class="main__wrapper login__wrapper" id="user__wrapper">
   <div class="form__wrapper">
@@ -42,7 +42,7 @@
         <div class="ps__reset__link">
           <p>パスワードをお忘れですか？</p>
           <div class="ps__reset__btn">
-            <%= link_to new_password_reset_path do %>
+            <%= link_to new_owner_password_reset_path do %>
               <p>パスワードを忘れた場合</p>
             <% end %>
           </div>

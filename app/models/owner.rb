@@ -51,6 +51,15 @@ class Owner < ApplicationRecord
   def send_activation_email
     Owner::UserMailer.account_activation(self).deliver_now
   end
+
+  def create_reset_digest
+    self.reset_token = Owner.new_token
+    update_columns(reset_digest: Owner.digest(reset_token), reset_sent_at: Time.zone.now)
+  end
+
+  def send_password_reset_email
+    Owner::UserMailer.password_reset(self).deliver_now
+  end
   
 
   private

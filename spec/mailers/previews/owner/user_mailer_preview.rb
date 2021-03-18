@@ -8,9 +8,11 @@ class Owner::UserMailerPreview < ActionMailer::Preview
     Owner::UserMailer.account_activation(owner)
   end
 
-  # Preview this email at http://localhost:3000/rails/mailers/owner/user_mailer/passwod_reset
-  def passwod_reset
-    Owner::UserMailer.passwod_reset
+  # Preview this email at http://localhost:3000/rails/mailers/owner/user_mailer/password_reset
+  def password_reset
+    owner = Owner.first
+    owner.reset_token = Owner.new_token
+    Owner::UserMailer.password_reset(owner)
   end
 
 end

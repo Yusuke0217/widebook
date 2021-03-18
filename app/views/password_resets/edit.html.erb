@@ -4,9 +4,9 @@
   <%= stylesheet_link_tag '/assets/password_resets/pc/password_resets_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-<% provide(:ttl, "パスワード再設定")%>
-<% provide(:url, password_reset_path(params[:id]))%>
-<% provide(:top_text, "パスワード再設定")%>
+<% content_for(:ttl, "パスワードをお忘れの場合")%>
+<% content_for(:url, password_reset_path(params[:id]))%>
+<% content_for(:top_text, "パスワード再設定用メールの送信")%>
 
 <div class="main__wrapper ps-reset__wrapper" id="user__wrapper">
   <div class="form__wrapper">
