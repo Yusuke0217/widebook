@@ -75,7 +75,7 @@
       }
       .hd__nav {
         line-height: 6.5rem;
-        @include margin(0, auto, 0, auto)
+        @include margin(0, auto, 0, auto);
         input#menu {
           position: absolute;
           left: -50vw;
@@ -131,10 +131,10 @@
           ul {
             display: flex;
             flex-direction: column;
-            @include margin(0, 0, 30px, 0);
+            @include margin(0, 10px, 20px, 10px);
             li {
-              @include margin(0px, 0, 30px, 0px);
-              @include padding(0px, 0, 0, 20px);
+              @include margin(0px, 0, 20px, 0px);
+              @include padding(0px, 0, 0, 10px);
               height: 30px;
               line-height: 30px;
               a {
@@ -160,10 +160,44 @@
               }
             }
           }
-          ul.common__nav {
-            border-bottom: 1px solid rgba($darkgray, $alpha: 0.8)
+          ul.account__nav {
+            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+            & li {
+              @include padding(0px, 0px, 0px, 0px);
+              height: 30px;
+              .hd__user__info {
+                display: flex;
+                .profile__icon {
+                  height: 40px;
+                  width: 40px;
+                  img {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                  }
+                }
+                .profile__info {
+                  line-height: 20px;
+                  @include padding(0px, 5px, 0px, 5px);
+                  .name {
+                    p {
+                      font-size: 0.8rem;
+                    }
+                  }
+                  .email {
+                    span {
+                      font-size: 0.8rem;
+                      color: gray;
+                    }
+                  }
+                }
+              }
+            }
           }
-          ul.sp__nav {
+          ul.pub__nav {
+            border-bottom: 1px solid rgba($darkgray, $alpha: 0.3)
+          }
+          ul.sub__nav {
           }
         }
         input#bar_menu {
@@ -202,28 +236,12 @@
               }
             }
           }
-          ul.common__nav {
+          ul.account__nav {
+          }
+          ul.pub__nav {
             border-bottom: 1px solid rgba($darkgray, $alpha: 0.8)
           }
-          ul.sp__nav {
-          }
-        }
-        input#user_menu {
-          display: none;
-        }
-        label.user__open {
-          @include margin(0, 30px, 0, 30px);
-          display: none;
-          i.fas.fa-user-alt {
-            font-size: 3rem;
-          }
-        }
-        label.user__back {
-          display: none;
-        }
-        nav.pc__nav--user {
-          display: none;
-          label.user__close {
+          ul.sub__nav {
           }
         }
       }

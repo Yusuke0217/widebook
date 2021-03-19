@@ -12,6 +12,7 @@
       z-index: 90;
       box-shadow: 0px 0px 3px 0px #544C59;
       background-color: $white;
+      @include padding(0px, 30px, 0px, 30px);
       .hd__logo {
         width: 100px;
         @include margin(10px, 30px, 10px, 30px);
@@ -135,78 +136,14 @@
         nav.mobile__nav {
           display: none;
         }
+
         input#bar_menu {
-          display: none;
           position: absolute;
           left: -50vw;
           &:checked ~ nav.pc__nav--bar {
-          right: 0px;
-          }
-          &:checked ~ .bar__back {
-            position: absolute;
-            height: 100vh;
-            width: 100%;
-            right: 0%;
-            background-color: $white;
-            opacity: 0.8;
-            transition: all 0.2s;
-          }
-        }
-        label.bar__open {
-          display: none;
-          @include margin(0, 20px, 0, 20px);
-          i.fas.fa-bars {
-            color: $darkgray;
-            @include awesome;
-            font-size: 3rem;
-            cursor: pointer;
-          }
-        }
-        label.bar__back {
-          display: none;
-        }
-        nav.pc__nav--bar {
-          display: none;
-          label.bar__close {
-          }
-          ul {
-            display: flex;
-            flex-direction: column;
-            @include margin(0, 10px, 20px, 10px);
-            li {
-              @include margin(0px, 0, 20px, 0px);
-              @include padding(0px, 0, 0, 10px);
-              height: 30px;
-              line-height: 30px;
-              a {
-                height: 100%;
-                @include link($darkgray);
-                display: inline-block;
-                .nav__link {
-                  height: 100%;
-                  p {
-                    font-weight: bold;
-                  }
-                }
-                &:hover {
-                  opacity: 0.8;
-                }
-              }
-            }
-          }
-          ul.common__nav {
-            border-bottom: 1px solid rgba($darkgray, $alpha: 0.3)
-          }
-          ul.sp__nav {
-          }
-        }
-        input#user_menu {
-          position: absolute;
-          left: -50vw;
-          &:checked ~ nav.pc__nav--user {
             right: 30px;
             }
-            &:checked ~ .user__back {
+            &:checked ~ .bar__back {
               position: absolute;
               height: 100vh;
               width: 100%;
@@ -214,9 +151,8 @@
               transition: all 0.1s;
             }
         }
-        label.user__open {
+        label.bar__open {
           @include margin(0, 20px, 0, 20px);
-          // i.fas.fa-user-alt {
           i.fas.fa-bars {
             color: $darkgray;
             @include awesome;
@@ -227,11 +163,11 @@
             }
           }
         }
-        label.user__back {
+        label.bar__back {
         }
-        nav.pc__nav--user {
+        nav.pc__nav--bar {
           height: 400px;
-          width: 15%;
+          width: 20%;
           position: absolute;
           transition: all 0s;
           right: -100vw;
@@ -239,7 +175,7 @@
           top: 100%;
           border-radius: 15px;
           box-shadow: 0px 0px 5px 0px;
-          label.user__close {
+          label.bar__close {
             height: 50px;
             width: 50px;
             display: flex;
@@ -281,10 +217,44 @@
               }
             }
           }
-          ul.common__nav {
-            border-bottom: 1px solid rgba($darkgray, $alpha: 0.8)
+          ul.account__nav {
+            border-bottom: 1px solid rgba($color: $darkgray, $alpha: 0.3);
+            & li {
+              @include padding(0px, 0px, 0px, 0px);
+              height: 30px;
+              .hd__user__info {
+                display: flex;
+                .profile__icon {
+                  height: 40px;
+                  width: 40px;
+                  img {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                  }
+                }
+                .profile__info {
+                  line-height: 20px;
+                  @include padding(0px, 5px, 0px, 5px);
+                  .name {
+                    p {
+                      font-size: 0.8rem;
+                    }
+                  }
+                  .email {
+                    span {
+                      font-size: 0.8rem;
+                      color: gray;
+                    }
+                  }
+                }
+              }
+            }
           }
-          ul.sp__nav {
+          ul.pub__nav {
+            border-bottom: 1px solid rgba($darkgray, $alpha: 0.3)
+          }
+          ul.sub__nav {
           }
         } 
       }
@@ -302,6 +272,7 @@
       z-index: 90;
       box-shadow: 0px 0px 3px 0px #544C59;
       background-color: $white;
+      @include padding(0px, 30px, 0px, 30px);
       .hd__left {
         display: flex;
         @include padding(25px, 0px, 25px, 0px);
@@ -433,7 +404,7 @@
                 }
                 .profile__info {
                   line-height: 20px;
-                  @include padding(0px, 5px, 0px, 5px);
+                  @include padding(0px, 15px, 0px, 15px);
                   .name {
                     p {
                       font-size: 0.8rem;

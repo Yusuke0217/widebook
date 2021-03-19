@@ -4,82 +4,7 @@
   <%= stylesheet_link_tag '/assets/layouts/pc/header_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-<% if controller.controller_name == "owners" || controller.controller_name == "dashboards" %>
-<%# ownerページ用のheader %>
-<header>
-  <div class="hd__wrapper">
-    <div class="hd__left">
-      <%# <div class="main__menu">
-        <i class="fas fa-ellipsis-v"></i>
-      </div> %>
-      <div class="home__btn">
-        <%= link_to dashboards_path(@owner) do %>
-          <span>Home</span>
-        <% end %>
-      </div>
-    </div>
-    <div class="hd__nav">
-      <div class="nav__back"></div>
-      <div class="nav--bar" data-trg="0">
-        <i class="fas fa-bars"></i>
-      </div>
-      <nav class="user__nav" data-nav="0">
-        <div class="bar__close">
-          <i class="fas fa-times js-nav-close"></i>
-        </div>
-        <ul class="account__nav">
-          <li>
-            <div class="hd__user__info">
-              <div class="profile__icon">
-                <% if @owner.image? %>
-                <%= image_tag @owner.image.url, class: "", id: "" %>
-                <% else %>
-                <%= image_tag "/assets/user_icon.jpeg", class: "", id: "" %>
-                <% end %>
-              </div>
-              <div class="profile__info">
-                <div class="name">
-                  <p><%= @owner.name %></p>
-                </div>
-                <div class="email">
-                  <span><%= @owner.email %></span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <ul class="pub__nav">
-          <li>
-            <%= link_to owner_path(@owner) do %>
-              <div class="nav__link">
-                <p>マイページ</p>
-              </div>
-            <% end %>
-          </li>
-        </ul>
-        <ul class="sub__nav">
-          <li>
-            <%= link_to help_path do %>
-              <div class="nav__link">
-                <p>ヘルプ</p>
-              </div>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to owner_logout_path, method: :delete do %>
-              <div class="nav__link">
-                <p>ログアウト</p>
-              </div>
-            <% end %>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<% else %>
-<%# トプページのheader %>
+<%# トップページのheader %>
 <header>
   <div class="hd__wrapper" id="js-head">
     <div class="hd__logo">
@@ -112,24 +37,34 @@
       <label for="menu" class="back"></label>
 
       <input id="bar_menu" type="checkbox">
-      <label for="menu" class="bar__open">
+      <label for="bar_menu" class="bar__open">
         <i class="fas fa-bars"></i>
       </label>
-      <label for="menu" class="bar__back"></label>
-
-      <input id="user_menu" type="checkbox">
-      <label for="user_menu" class="user__open">
-        <%# <i class="fas fa-user-alt"></i> %>
-        <i class="fas fa-bars"></i>
-      </label>
-      <label for="user_menu" class="user__back"></label>
+      <label for="bar_menu" class="bar__back"></label>
 
       <nav class="mobile__nav">
         <label for="menu" class="close">
           <i class="fas fa-times"></i>
         </label>
         <% if current_user.nil? %>
-        <ul class="common__nav">
+        <ul class="account__nav">
+          <li>
+            <div class="hd__user__info">
+              <div class="profile__icon">
+                <%= image_tag "/assets/user_icon.jpeg", class: "", id: "" %>
+              </div>
+              <div class="profile__info">
+                <div class="name">
+                  <p>Unknown</p>
+                </div>
+                <div class="email">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="pub__nav">
           <li>
             <%= link_to login_path do %>
               <div class="nav__pic">
@@ -151,7 +86,7 @@
             <% end %>
           </li>
         </ul>
-        <ul class="sp__nav">
+        <ul class="sub__nav">
           <li>
             <%= link_to help_path do %>
               <div class="nav__pic">
@@ -164,7 +99,28 @@
           </li>
         </ul>
         <% else %>
-        <ul class="common__nav">
+        <ul class="account__nav">
+          <li>
+            <div class="hd__user__info">
+              <div class="profile__icon">
+                <% if @user.image? %>
+                <%= image_tag @user.image.url, class: "", id: "" %>
+                <% else %>
+                <%= image_tag "/assets/user_icon.jpeg", class: "", id: "" %>
+                <% end %>
+              </div>
+              <div class="profile__info">
+                <div class="name">
+                  <p><%= @user.name %></p>
+                </div>
+                <div class="email">
+                  <span><%= @user.email %></span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="pub__nav">
           <li>
             <%= link_to root_path do %>
               <div class="nav__pic">
@@ -196,7 +152,7 @@
             <% end %>
           </li>
         </ul>
-        <ul class="sp__nav">
+        <ul class="sub__nav">
           <li>
             <%= link_to logout_path, method: :delete do %>
               <div class="nav__pic">
@@ -226,59 +182,24 @@
           <i class="fas fa-times"></i>
         </label>
         <% if current_user.nil? %>
-        <ul class="common__nav">
+        <ul class="account__nav">
           <li>
-            <%= link_to root_path do %>
-              <div class="nav__link">
-                <p>トップに戻る</p>
+            <div class="hd__user__info">
+              <div class="profile__icon">
+                <%= image_tag "/assets/user_icon.jpeg", class: "", id: "" %>
               </div>
-            <% end %>
+              <div class="profile__info">
+                <div class="name">
+                  <p>Unknown</p>
+                </div>
+                <div class="email">
+                  <span></span>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
-        <ul class="sp__nav">
-          <li>
-            <%= link_to help_path do %>
-              <div class="nav__link">
-                <p>ヘルプ</p>
-              </div>
-            <% end %>
-          </li>
-        </ul>
-        <% else %>
-        <ul class="common__nav">
-          <li>
-            <%= link_to root_path do %>
-              <div class="nav__link">
-                <p>トップに戻る</p>
-              </div>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to root_path do %>
-              <div class="nav__link">
-                <p></p>
-              </div>
-            <% end %>
-          </li>
-        </ul>
-        <ul class="sp__nav">
-          <li>
-            <%= link_to help_path do %>
-              <div class="nav__link">
-                <p>ヘルプ</p>
-              </div>
-            <% end %>
-          </li>
-        </ul>
-        <% end %>
-      </nav>
-
-      <nav class="pc__nav--user">
-        <label for="user_menu" class="user__close">
-          <i class="fas fa-times"></i>
-        </label>
-        <% if current_user.nil? %>
-        <ul class="common__nav">
+        <ul class="pub__nav">
           <li>
             <%= link_to login_path do %>
               <div class="nav__link">
@@ -294,7 +215,7 @@
             <% end %>
           </li>
         </ul>
-        <ul class="sp__nav">
+        <ul class="sub__nav">
           <li>
             <%= link_to help_path do %>
               <div class="nav__link">
@@ -304,7 +225,28 @@
           </li>
         </ul>
         <% else %>
-        <ul class="common__nav">
+        <ul class="account__nav">
+          <li>
+            <div class="hd__user__info">
+              <div class="profile__icon">
+                <% if @user.image? %>
+                <%= image_tag @user.image.url, class: "", id: "" %>
+                <% else %>
+                <%= image_tag "/assets/user_icon.jpeg", class: "", id: "" %>
+                <% end %>
+              </div>
+              <div class="profile__info">
+                <div class="name">
+                  <p><%= @user.name %></p>
+                </div>
+                <div class="email">
+                  <span><%= @user.email %></span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="pub__nav">
           <li>
             <%= link_to root_path do %>
               <div class="nav__link">
@@ -322,12 +264,12 @@
           <li>
             <%= link_to user_bookmarks_path(user_id: current_user.id) do %>
               <div class="nav__link">
-                <p>お気に入り</p>
+                <p>お気に入りのお店</p>
               </div>
             <% end %>
           </li>
         </ul>
-        <ul class="sp__nav">
+        <ul class="sub__nav">
           <li>
             <%= link_to logout_path, method: :delete do %>
               <div class="nav__link">
@@ -348,7 +290,6 @@
     </div>
   </div>
 </header>
-<% end %>
 
 <%# カテゴリで検索している時のheader
 <header>
