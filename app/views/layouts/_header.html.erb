@@ -103,18 +103,18 @@
           <li>
             <div class="hd__user__info">
               <div class="profile__icon">
-                <% if @user.image? %>
-                <%= image_tag @user.image.url, class: "", id: "" %>
+                <% if current_user.image? %>
+                <%= image_tag current_user.image.url, class: "", id: "" %>
                 <% else %>
                 <%= image_tag "/assets/user_icon.jpeg", class: "", id: "" %>
                 <% end %>
               </div>
               <div class="profile__info">
                 <div class="name">
-                  <p><%= @user.name %></p>
+                  <p><%= current_user.name %></p>
                 </div>
                 <div class="email">
-                  <span><%= @user.email %></span>
+                  <span><%= current_user.email %></span>
                 </div>
               </div>
             </div>
@@ -229,18 +229,18 @@
           <li>
             <div class="hd__user__info">
               <div class="profile__icon">
-                <% if @user.image? %>
-                <%= image_tag @user.image.url, class: "", id: "" %>
+                <% if current_user.image? %>
+                <%= image_tag current_user.image.url, class: "", id: "" %>
                 <% else %>
                 <%= image_tag "/assets/user_icon.jpeg", class: "", id: "" %>
                 <% end %>
               </div>
               <div class="profile__info">
                 <div class="name">
-                  <p><%= @user.name %></p>
+                  <p><%= current_user.name %></p>
                 </div>
                 <div class="email">
-                  <span><%= @user.email %></span>
+                  <span><%= current_user.email %></span>
                 </div>
               </div>
             </div>
