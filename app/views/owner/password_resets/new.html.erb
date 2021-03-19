@@ -11,20 +11,6 @@
 <div class="main__wrapper ps-reset__wrapper" id="user__wrapper">
   <div class="form__wrapper">
     <%= render 'layouts/user_form_head' %>
-    <div class="user__info__form">
-    <%= form_with scope: :password_reset, url: yield(:url), class: "", id: "", local: true do |f| %>
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label :email, "Email" %>
-      </div>
-      <div class="input__field">
-        <%= f.email_field :email, id: "", placeholder: "メールアドレス"%>
-      </div>
-
-      <div class="input__field">
-        <%= f.submit :submit, class: "submit", id: "", value: "再設定メールを送信" %>
-      </div>
-    <% end %>
-    </div>
+    <%= render 'layouts/password_reset_email_form' %>
   </div>
 </div>

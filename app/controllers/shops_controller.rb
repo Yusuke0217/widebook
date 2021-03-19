@@ -1,6 +1,7 @@
 class ShopsController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :destroy]
-  before_action :admin_user, only: [:new, :edit, :create, :update, :destroy]
+
+  before_action :logged_in_owner, only: [:new, :edit, :update, :destroy]
+  # before_action :admin_user, only: [:new, :edit, :create, :update, :destroy]
   before_action :find_shop, only: [:edit, :update, :show, :destroy]
 
   def index
@@ -33,7 +34,7 @@ class ShopsController < ApplicationController
   end
   
   def create
-    @owner = Owner.find(current_user.id)
+    @owner = Owner.find_by(id: current_owner.id)
     @shop = @owner.shops.build(shop_params)
     if @shop.save
       flash[:success] = "お店を登録しました。"

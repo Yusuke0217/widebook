@@ -1,10 +1,10 @@
-
+<% content_for(:pg_hd, "カテゴリー一覧")%>
 
 <%= render 'layouts/header' %>
 <div class="main__wrapper">
   <div class="brand__wrapper">
     <div class="page__hd">
-      <h2>カテゴリー一覧</h2>
+      <h2><%= yield(:pg_hd) %></h2>
     </div>
     <div class="panel__container">
       <ul class="panel__box">

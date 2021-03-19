@@ -4,27 +4,13 @@
   <%= stylesheet_link_tag '/assets/password_resets/pc/password_resets_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-<% content_for(:ttl, "パスワード再設定")%>
-<% content_for(:url, password_resets_path)%>
-<% content_for(:top_text, "パスワード再設定")%>
+<% provide(:ttl, "パスワード再設定")%>
+<% provide(:url, password_resets_path)%>
+<% provide(:top_text, "パスワード再設定")%>
 
 <div class="main__wrapper ps-reset__wrapper" id="user__wrapper">
   <div class="form__wrapper">
     <%= render 'layouts/user_form_head' %>
-    <div class="user__info__form">
-    <%= form_with scope: :password_reset, url: yield(:url), class: "", id: "", local: true do |f| %>
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label :email, "Email" %>
-      </div>
-      <div class="input__field">
-        <%= f.email_field :email, id: "", placeholder: "メールアドレス"%>
-      </div>
-
-      <div class="input__field">
-        <%= f.submit :submit, class: "submit", id: "", value: "再設定メールを送信" %>
-      </div>
-    <% end %>
-    </div>
+    <%= render 'layouts/password_reset_email_form' %>
   </div>
 </div>

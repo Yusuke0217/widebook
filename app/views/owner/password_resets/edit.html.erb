@@ -7,25 +7,26 @@
 <% content_for(:ttl, "パスワードをお忘れの場合")%>
 <% content_for(:url, owner_password_reset_path(params[:id]))%>
 <% content_for(:top_text, "パスワード再設定用メールの送信")%>
+<% content_for(:model_email, @owner.email) %>
 
 <div class="main__wrapper ps-reset__wrapper" id="user__wrapper">
   <div class="form__wrapper">
     <%= render 'layouts/user_form_head' %>
     <div class="user__info__form">
-    <%= form_with model: @owner, url: yield(:url), class: "", id: "", local: true do |f| %>
-      <%= hidden_field_tag :email, @owner.email %>
+      <%= form_with model: @owner, url: yield(:url), class: "", id: "", local: true do |f| %>
+        <%= hidden_field_tag :email, yield(:model_email) %>
 
-      <div class="input__ttl">
-        <i class="fas fa-asterisk"></i>
-        <%= f.label :password, "Password" %>
-      </div>
-      <div class="input__field">
-        <%= f.password_field :password, id: "", placeholder: "パスワード" %>
-      </div>
-      <div class="input__field">
-        <%= f.submit :submit, class: "submit", id: "", value: "送信" %>
-      </div>
-    <% end %>
+        <div class="input__ttl">
+          <i class="fas fa-asterisk"></i>
+          <%= f.label :password, "Password" %>
+        </div>
+        <div class="input__field">
+          <%= f.password_field :password, id: "", placeholder: "パスワード" %>
+        </div>
+        <div class="input__field">
+          <%= f.submit :submit, class: "submit", id: "", value: "送信" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

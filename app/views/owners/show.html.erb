@@ -7,4 +7,112 @@
 <% provide(:ttl, "オーナーマイページ")%>
 
 <%= render 'layouts/header' %>
+<div class="main__wrapper user__mypg">
+  <div class="mypg__ttl">
+    <h2>プロフィール</h2>
+  </div>
+  <div class="user__hd">
+    <div class="user__img">
+      <% if @owner.image? %>
+      <%= link_to image_tag( @owner.image.url, class: ""), owner_path(@owner.id) %>
+      <% else %>
+      <%= link_to image_tag("/assets/user_icon.jpeg", class: ""), owner_path(@owner.id) %>
+      <% end %>
+    </div>
+    <div class="user__info">
+      <div class="user__name">
+        <p><%= @owner.name %></p>
+        <span><%= @owner.email %></span>
+      </div>
+      <div class="profile__link">
+      </div>
+    </div>
+  </div>
+  <div class="user__body">
+    <div class="nav__list">
+      <div class="body__ttl">
+        <h2>アカウントの設定</h2>
+      </div>
+      <div class="menu__view">
+        <ul>
+          <%= link_to edit_owner_path(@owner) do %>
+            <li>
+              <div class="info__wrapper">
+                <div class="info__index">
+                  <h3>プロフィールを編集</h3>
+                </div>
+                <div class="info__link">
+                  <div class="info__mark">
+                    <i class="fas fa-user-edit"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        <% if current_owner?(@owner) %>
+          <%= link_to new_shop_path do %>
+            <li>
+              <div class="info__wrapper">
+                <div class="info__index">
+                  <h3>お店を投稿する</h3>
+                </div>
+                <div class="info__link">
+                  <div class="info__mark">
+                    <i class="fas fa-folder-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+          <%= link_to owner_shop_path(@owner) do %>
+            <li>
+              <div class="info__wrapper">
+                <div class="info__index">
+                  <h3>あなたのお店</h3>
+                </div>
+                <div class="info__link">
+                  <div class="info__mark">
+                    <i class="fas fa-address-card"></i>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="user__ft">
+    <div class="ft__ttl">
+      <h2>その他</h2>
+    </div>
+    <div class="user__ft__nav">
+      <div class="user__rule">
+        <%= link_to rule_path do %>
+          <div class="rule__index">
+            <h3>利用規約</h3>
+          </div>
+          <div class="rule__link">
+            <div class="rule__mark">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="logout__btn">
+        <%= link_to owner_logout_path, method: :delete do %>
+          <div class="logout__index">
+            <h3>ログアウト</h3>
+          </div>
+          <div class="logout__link">
+            <div class="logout__mark">
+              <i class="fas fa-sign-out-alt"></i>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 <%= render 'layouts/footer' %>

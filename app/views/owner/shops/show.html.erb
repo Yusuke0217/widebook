@@ -4,8 +4,8 @@
   <%= stylesheet_link_tag '/assets/shops/pc/index_pc', media: "screen and (min-width: 960px)" %>
 <% end %>
 
-<% content_for(:ttl, "お店一覧")%>
-<% content_for(:pg_hd, "お店の一覧から探す")%>
+<% content_for(:ttl, "登録したお店一覧")%>
+<% content_for(:pg_hd, "登録したお店一覧")%>
 
 <%= render 'layouts/header' %>
 <div class="main__wrapper">
@@ -63,7 +63,10 @@
       <%= paginate @shops %>
     </div>
   <% else %>
-    <%= render 'no_content' %>
+    <%= render 'shops/no_content' %>
   <% end %>
   </div>
 </div>
+<%= render 'layouts/footer' %>
+
+

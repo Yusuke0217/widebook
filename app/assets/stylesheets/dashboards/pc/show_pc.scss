@@ -2,84 +2,95 @@
 
 @media screen and (min-width: 960px) {
   // PC用のレスポンシブ
-  .dashboard__wrapper {
-    .side__container {
-      max-width: 250px;
-      background-color: $darkgray;
-      position: absolute;
-      left: 0;
-      .side__bar__logo {
-        height: 70px;
-        width: 100%;
-        @include padding(15px, 15px, 15px, 15px);
-        a {
-          display: flex;
-          @include link;
-          .app__logo {
-            height: 40px;
-            width: 40px;
-            img {
-              height: 100%;
-              width: 100%;
-              border-radius: 50%;
+  .main__wrapper.dashboard {
+    @include padding(100px, 20px, 50px, 20px);
+    .dashboard__wrapper {
+      display: flex;
+      .side__container {
+        max-width: 250px;
+        height: 100%;
+        background-color: $darkgray;
+        position: absolute;
+        left: 0;
+        .side__bar__logo {
+          height: 70px;
+          width: 100%;
+          @include padding(15px, 15px, 15px, 15px);
+          a {
+            display: flex;
+            @include link;
+            .app__logo {
+              height: 40px;
+              width: 40px;
+              img {
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+              }
             }
-          }
-          .app__name {
-            @include margin(0px, 0px, 0px, 30px);
-            line-height: 40px;
-            p {
-              color: white;
-              font-size: 1.3rem;
-            }
-          }
-        }
-      }
-      .side__bar__user__info {
-        height: 70px;
-        width: 100%;
-        @include padding(15px, 15px, 15px, 15px);
-        a {
-          display: flex;
-          .profile__icon {
-            height: 40px;
-            width: 40px;
-            img {
-              height: 100%;
-              width: 100%;
-              border-radius: 50%;
-            }
-          }
-          .profile__info {
-            .user__name {
+            .app__name {
+              @include margin(0px, 0px, 0px, 30px);
+              line-height: 40px;
               p {
+                color: white;
+                font-size: 1.3rem;
               }
             }
           }
         }
-      }
-      nav.side__menu {
-        ul {
-          li {
-            .nav__link {
-              .nav__icon {
-                i.far.fa-comment-alt {
-                }
+        .side__bar__user__info {
+          height: 70px;
+          width: 100%;
+          @include padding(15px, 15px, 15px, 15px);
+          a {
+            display: flex;
+            @include link;
+            .profile__icon {
+              height: 40px;
+              width: 40px;
+              img {
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
               }
-              .nav__name {
+            }
+            .profile__info {
+              .user__name {
+                @include margin(0px, 0px, 0px, 30px);
+                line-height: 40px;
                 p {
+                  color: white;
+                  font-size: 1.1rem;
                 }
-                i {
+              }
+            }
+          }
+        }
+        nav.side__menu {
+          ul {
+            li {
+              .nav__link {
+                .nav__icon {
+                  i.far.fa-comment-alt {
+                  }
+                }
+                .nav__name {
+                  p {
+                  }
+                  i {
+                  }
                 }
               }
             }
           }
         }
       }
-    }
-    .main__container {
-      height: 1000px;
-      width: 100%;
-      .chart {
+      .main__container {
+        height: 1000px;
+        width: 100%;
+        @include margin(0px, 0px, 0px, 250px);
+        .chart {
+        }
       }
     }
   }
