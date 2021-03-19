@@ -6,6 +6,7 @@
 
 <% content_for(:ttl, "登録したお店一覧")%>
 <% content_for(:pg_hd, "登録したお店一覧")%>
+<% content_for(:content_name, "お店")%>
 
 <%= render 'layouts/header' %>
 <div class="main__wrapper">
@@ -63,7 +64,7 @@
       <%= paginate @shops %>
     </div>
   <% else %>
-    <%= render 'shops/no_content' %>
+    <%= render 'layouts/no_content' %>
   <% end %>
   </div>
 </div>

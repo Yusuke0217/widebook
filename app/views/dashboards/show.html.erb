@@ -5,6 +5,7 @@
 <% end %>
 
 <% provide(:ttl, "ダッシュボード")%>
+<% provide(:page_hd, "ダッシュボード")%>
 
 <%= render 'layouts/header' %>
 <div class="main__wrapper dashboard">
@@ -45,7 +46,7 @@
                   <i class="far fa-comment-alt"></i>
                 </div>
                 <div class="nav__name">
-                  <p>レビューを見る</p>
+                  <p></p>
                 </div>
               </div>
             <% end %>
@@ -66,7 +67,12 @@
       </nav>
     </div>
     <div class="main__container">
-      <div class="chart"></div>
+      <div class="main__hd">
+        <h3><%= yield(:page_hd) %></h3>
+      </div>
+      <div class="chart__wrapper">
+        <div class="chart"></div>
+      </div>
     </div>
   </div>
 </div>
