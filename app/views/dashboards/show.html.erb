@@ -71,7 +71,9 @@
         <h3><%= yield(:page_hd) %></h3>
       </div>
       <div class="chart__wrapper">
-        <div class="chart"></div>
+        <div class="chart">
+          <%= @shop.impressionist_count %>
+        </div>
       </div>
     </div>
   </div>

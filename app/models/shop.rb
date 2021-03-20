@@ -1,4 +1,5 @@
 class Shop < ApplicationRecord
+  
   has_many :bookmarks
   has_many :bookmark_users, through: :bookmarks, dependent: :destroy, source: :user
   has_many :shop_categories 
@@ -31,6 +32,8 @@ class Shop < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+  is_impressionable
 
   TAG_MAX = 3
 
