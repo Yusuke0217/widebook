@@ -1,5 +1,5 @@
 class Shop < ApplicationRecord
-  
+
   has_many :bookmarks
   has_many :bookmark_users, through: :bookmarks, dependent: :destroy, source: :user
   has_many :shop_categories 
@@ -67,6 +67,14 @@ class Shop < ApplicationRecord
   scope :p_shops, -> (params_id) { self.join_p.where_p_id(params_id).shops_ary}
   # ---------------------------------------
 
+  # -------お店のPV数を出す---------
+  # scope :eager, -> { eager_load(:owner, :impressions) }
+  # scope :name, -> (owner_id) { where(owner_id: owner_id)}
+  # scope :name, -> { where(:attibute => value)}
+  # scope :name, -> { where(:attibute => value)}
+  # scope :name, -> { where(:attibute => value)}
+
+  # ---------------------------------------
   
   private
 

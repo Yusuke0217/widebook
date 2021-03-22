@@ -70,9 +70,14 @@
       <div class="main__hd">
         <h3><%= yield(:page_hd) %></h3>
       </div>
+      <label class="chart__summary">
+        <% @shops.each do |shop| %>
+        <span><%= shop.name %>を閲覧したユーザーの数: <%= shop.impressionist_count %>人</span>
+        <% end %>
+      </label>
       <div class="chart__wrapper">
         <div class="chart">
-          <%= @shop.impressionist_count %>
+          <%= line_chart @data, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数" %>
         </div>
       </div>
     </div>

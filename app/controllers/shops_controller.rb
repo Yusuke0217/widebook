@@ -4,8 +4,6 @@ class ShopsController < ApplicationController
   # before_action :admin_user, only: [:new, :edit, :create, :update, :destroy]
   before_action :find_shop, only: [:edit, :update, :show, :destroy]
 
-  impressionist :actions=> [:show], unique: [:session_hash]
-
   def index
     @c_shops = Shop.c_shops(params[:num])
     @p_shops = Shop.p_shops(params[:num])
@@ -33,6 +31,8 @@ class ShopsController < ApplicationController
     @f_menus = Menu.f_menu(params[:id]).page(params[:page]).per(10)
     @d_menus = Menu.d_menu(params[:id]).page(params[:page]).per(10)
     gon.shop = @shop
+
+    impressionist(@shop, nil, unique: [:session_hash])
   end
   
   def create

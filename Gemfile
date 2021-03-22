@@ -20,6 +20,10 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'impressionist'
 
+gem "chartkick"
+
+gem 'groupdate'
+
 gem "kaminari"
 gem 'kaminari-bootstrap'
 

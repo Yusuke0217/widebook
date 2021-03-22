@@ -103,6 +103,7 @@
           .chart {
             height: 500px;
             width: 100%;
+            @include padding(30px, 30px, 0px, 20px);
             border: 1px solid rgba($darkgray, $alpha: 0.3);
             border-radius: 20px;
           }
