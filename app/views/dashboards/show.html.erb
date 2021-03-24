@@ -101,13 +101,13 @@
       <div class="chart__wrapper">
         <div class="chart">
           <div class="impression__chart" data-pv-graph="0">
-            <%= line_chart @data, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数" %>
+            <%= line_chart @data, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数", messages: {empty: "まだお店が登録されていません。"} %>
           </div>
           <div class="impression__chart" data-pv-graph="1">
-            <%= line_chart @data_week, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数" %>
+            <%= line_chart @data_week, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数", messages: {empty: "まだお店が登録されていません。"} %>
           </div>
           <div class="impression__chart" data-pv-graph="2">
-            <%= line_chart @data_month, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数" %>
+            <%= line_chart @data_month, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数", messages: {empty: "まだお店が登録されていません。"} %>
           </div>
         </div>
       </div>
