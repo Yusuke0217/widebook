@@ -38,27 +38,44 @@
         <% end %>
       </div>
       <nav class="side__menu">
-        <ul>
+        <a href="" class="nav__title">
+          <i class="fas fa-chart-line"></i>
+          <span>集客</span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+        <ul class="">
           <li>
-            <%= link_to root_path do %>
+            <%= link_to "", data: { impression: "0"} do %>
               <div class="nav__link">
                 <div class="nav__icon">
-                  <i class="far fa-comment-alt"></i>
+                  <i class="fas fa-calendar-day"></i>
                 </div>
                 <div class="nav__name">
-                  <p></p>
+                  <p>一日ごとのデータ</p>
                 </div>
               </div>
             <% end %>
           </li>
           <li>
-            <%= link_to root_path do %>
+            <%= link_to "", data: { impression: "1"} do %>
               <div class="nav__link">
                 <div class="nav__icon">
-                  <i class=""></i>
+                  <i class="fas fa-calendar-week"></i>
                 </div>
                 <div class="nav__name">
-                  <p></p>
+                  <p>一週間ごとのデータ</p>
+                </div>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "", data: { impression: "2"} do %>
+              <div class="nav__link">
+                <div class="nav__icon">
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="nav__name">
+                  <p>1ヶ月ごとのデータ</p>
                 </div>
               </div>
             <% end %>
@@ -68,16 +85,30 @@
     </div>
     <div class="main__container">
       <div class="main__hd">
-        <h3><%= yield(:page_hd) %></h3>
+        <div class="page__title">
+          <h3><%= yield(:page_hd) %></h3>
+        </div>
+        <div class="chart__summary">
+          <% @shops.each do |shop| %>
+          <div class="info">
+            <p class="user__count">Total Users</p>
+            <label class=""><%= shop.name %></label>
+            <p class="pv__sum"><%= shop.impressionist_count %></p>
+          </div>
+          <% end %>
+        </div>
       </div>
-      <label class="chart__summary">
-        <% @shops.each do |shop| %>
-        <span><%= shop.name %>を閲覧したユーザーの数: <%= shop.impressionist_count %>人</span>
-        <% end %>
-      </label>
       <div class="chart__wrapper">
         <div class="chart">
-          <%= line_chart @data, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数" %>
+          <div class="impression__chart" data-pv-graph="0">
+            <%= line_chart @data, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数" %>
+          </div>
+          <div class="impression__chart" data-pv-graph="1">
+            <%= line_chart @data_week, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数" %>
+          </div>
+          <div class="impression__chart" data-pv-graph="2">
+            <%= line_chart @data_month, height: "450px", colors: ["#E9A368", "#5A734F"], xtitle: "日付", ytitle: "PV数" %>
+          </div>
         </div>
       </div>
     </div>

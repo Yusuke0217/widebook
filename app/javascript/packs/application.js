@@ -23,6 +23,7 @@ require("piece/menu_tab")
 require("piece/geo_address")
 // require("piece/geo_location")
 require("piece/hd-nav_menu")
+require("piece/impression_chart")
 
 require("chartkick")
 require("chart.js")
