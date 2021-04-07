@@ -6,6 +6,7 @@ class Owner::OwnersController < Owner::BaseController
 
   def create
     @owner = Owner.new(owner_params)
+    @payment = @owner.build_payment(owner_params)
     if @owner.save
       # @owner.send_activation_email
       # flash[:success] = "メールを確認し、アカウントの有効化を行ってください。"

@@ -24,6 +24,8 @@ gem "chartkick"
 
 gem 'groupdate'
 
+gem 'stripe'
+
 gem "kaminari"
 gem 'kaminari-bootstrap'
 

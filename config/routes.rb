@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/payments/create_subscription", to: "payments#create_subscription"
+  get "/payments/subscription_error", to: "payments#error"
   
   namespace :owner do 
     get "/signup", to: "owners#new"
@@ -47,5 +49,6 @@ Rails.application.routes.draw do
   resources :purposes, only: [:show]
   resources :reviews, only: [:index, :edit, :update, :destroy]
   resources :password_resets, only: [:new, :edit, :create, :update]
+  resources :payments, only: [:new, :create, :destroy]
 
 end

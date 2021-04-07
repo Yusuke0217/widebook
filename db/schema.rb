@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_065529) do
+ActiveRecord::Schema.define(version: 2021_04_06_101539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,17 @@ ActiveRecord::Schema.define(version: 2021_03_19_065529) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.string "stripe_plan_id"
+    t.string "stripe_customer_id"
+    t.datetime "active_until", null: false
+    t.string "stripe_subscription_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "owner_id"
+    t.index ["owner_id"], name: "index_payments_on_owner_id"
+  end
+
   create_table "purposes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -216,6 +227,7 @@ ActiveRecord::Schema.define(version: 2021_03_19_065529) do
   add_foreign_key "media", "shops"
   add_foreign_key "menus", "menu_types"
   add_foreign_key "menus", "shops"
+  add_foreign_key "payments", "owners"
   add_foreign_key "reviews", "shops"
   add_foreign_key "reviews", "users"
   add_foreign_key "shop_cards", "pay_cards"

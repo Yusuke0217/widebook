@@ -102,4 +102,5 @@ module SessionsHelper
     @shop = shop
     @shop.purposes.pluck(:name).include?("デリバリー・宅配")
   end
+  
 end

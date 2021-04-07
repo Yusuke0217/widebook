@@ -4,8 +4,12 @@ class Owner < ApplicationRecord
 
   before_save :downcase_email
   before_create :create_activation_digest
+  # before_validation :create_stripe_customer, if: :new_record?
+  # before_validation :create_stripe_customer_and_subscription, if: :new_record?
+  # before_validation :create_stripe_customer_card, if: :new_record?
 
   has_many :shops
+  has_one :payment
 
   VALID_EMAIL_REGEX = %r{\A[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\z}.freeze
   has_secure_password
@@ -65,12 +69,11 @@ class Owner < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
-
   private
   
     def create_activation_digest
       self.activation_token = Owner.new_token
       self.activation_digest = Owner.digest(activation_token)
-    end
-
+    end  
+      
 end

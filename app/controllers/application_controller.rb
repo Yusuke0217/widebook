@@ -2,6 +2,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
+  def subscription_member
+    @owner = current_owner
+    if @owner.payment.nil?
+      flash[:danger] = 'こちらは有料会員限定です。有料会員に登録してください'
+      redirect_to new_payment_path
+    end
+  end
+
+
   def logged_in_user
     unless logged_in?
       url_location
