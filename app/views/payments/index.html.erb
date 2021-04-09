@@ -1,0 +1,14 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/payments/index', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/payments/tablet/index_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/payments/pc/index_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<% content_for(:pg_hd, "a")%>
+<% content_for(:ttl, "a")%>
+
+
+<%= render 'layouts/owner_header' %>
+<div class="main__wrapper">
+</div>
+<%= render 'layouts/footer' %>

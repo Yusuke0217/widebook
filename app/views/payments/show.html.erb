@@ -1,0 +1,80 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag '/assets/payments/show', media: "screen and (max-width: 559px)" %>
+  <%= stylesheet_link_tag '/assets/payments/tablet/show_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
+  <%= stylesheet_link_tag '/assets/payments/pc/show_pc', media: "screen and (min-width: 960px)" %>
+<% end %>
+
+<% content_for(:pg_hd, "お支払い情報")%>
+<% content_for(:ttl, "お支払い情報")%>
+
+<%= render 'layouts/owner_header' %>
+<div class="main__wrapper">
+  <div class="payment__wrapper">
+    <div class="page__hd">
+      <h2><%= yield(:pg_hd) %></h2>
+    </div>
+    <div class="payment__container">
+      <div class="payment__menu">
+      <% if @owner.payment.nil? %>
+        <div class="pay__info">
+          <section>
+            <div class="payment__option">
+              <h3>有料プランに登録する</h3>
+              <p>Wideの有料会員に登録して、あなたのお店を知ってもらいましょう。</p>
+            </div>
+          </section>
+          <div class="payment__link">
+            <%= link_to new_payment_path do %>
+              <p>有料プランに登録する</p>
+            <% end %>
+          </div>
+        </div>
+      <% elsif !@owner.payment.nil? && @owner.payment.stripe_subscription_status != 'canseled' %>
+        <div class="pay__info">
+          <section>
+            <div class="payment__option">
+              <h3>有料プランを解約する</h3>
+              <p>Wideの有料プランを退会します。</p>
+            </div>
+          </section>
+          <div class="payment__link">
+            <%= link_to payment_path, method: :delete, data: { confirm: '解約してもよろしいですか?(お店のデータは削除されてしまいます)' } do %>
+              <p>有料プランを解約する</p>
+            <% end %>
+          </div>
+        </div>
+      <% elsif @owner.payment.stripe_subscription_status == 'canseled' %>
+        <div class="pay__info">
+          <section>
+            <div class="payment__option">
+              <h3>有料プランに登録する</h3>
+              <p>Wideの有料会員に登録して、あなたのお店を知ってもらいましょう。</p>
+            </div>
+          </section>
+          <div class="payment__link">
+            <%= link_to edit_payment_path(@owner) do %>
+              <p>有料プランに登録する</p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+        <div class="plan__mode">
+          <% if @owner.payment.present? %>
+            <p>現在のプラン: <%= @owner.payment.stripe_subscription_status %></p>
+          <% else %>
+            <p>現在のプラン: 未加入</p>
+          <% end %>
+        </div>
+      </div>
+      <div class="payment__rule">
+        <div class="rure__exp">
+          <h3>お支払いに関するポリシー</h3>
+          <%= link_to sctl_path do %>
+            <p>特定商取引法に基づく表示</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/footer' %>

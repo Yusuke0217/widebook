@@ -1,9 +1,3 @@
-<% content_for :css do %>
-  <%= stylesheet_link_tag '/assets/payments/new', media: "screen and (max-width: 559px)" %>
-  <%= stylesheet_link_tag '/assets/payments/tablet/new_tab', media: "screen and (min-width: 560px) and (max-width: 959px)" %>
-  <%= stylesheet_link_tag '/assets/payments/pc/new_pc', media: "screen and (min-width: 960px)" %>
-<% end %>
-
 <% content_for(:ttl, "有料会員登録ページ")%>
 
 <script src="https://js.stripe.com/v3"></script>

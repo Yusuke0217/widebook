@@ -1,0 +1,66 @@
+@import "../../main.scss";
+
+
+@media screen and (min-width: 960px) {
+  // PC用のレスポンシブデザイン
+  .payment__wrapper {
+    .page__hd {
+      h2 {
+      }
+    }
+    .payment__container {
+      display: flex;
+      justify-content: space-around;
+      .payment__menu {
+        @include padding(50px, 0px, 0px, 0px);
+        .pay__info {
+          @include padding(0px, 0px, 30px, 0px);
+          section {
+            .payment__option {
+              h3 {
+                font-size: 1.3rem;
+                @include padding(0px, 0px, 10px, 0px);
+              }
+              p {
+                line-height: 1.2rem;
+              }
+            }
+          }
+          .payment__link {
+            a {
+              height: 50px;
+              width: 300px;
+              @include link(white);
+              display: inline-block;
+              margin-top: 15px;
+              margin-right: 0;
+              margin-bottom: 15px;
+              margin-left: 0;
+              background-color: #E9A368;
+              border-radius: 10px;
+              p {
+                text-align: center;
+                line-height: 3rem;
+              }
+            }
+          }
+        }
+      }
+      .payment__rule {
+        @include padding(50px, 0px, 0px, 0px);
+        .rure__exp {
+          h3 {
+            font-size: 1.2rem;
+            @include padding(0px, 0px, 10px, 0px);
+          }
+          a {
+            text-decoration: none;
+            p {
+              line-height: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
