@@ -95,5 +95,9 @@
     hookName: '#js-ac-4',
     tagName: 'a'
   });
+  const ac5 = new Accordion({
+    hookName: '#js-ac-5',
+    tagName: 'a'
+  });
 
 })();

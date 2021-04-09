@@ -47,7 +47,8 @@
         }
       }
       .payment__rule {
-        @include padding(50px, 0px, 0px, 0px);
+        @include padding(50px, 20px, 20px, 20px);
+        border: 1px solid gray;
         .rure__exp {
           h3 {
             font-size: 1.2rem;

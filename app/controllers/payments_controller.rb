@@ -30,6 +30,9 @@ class PaymentsController < ApplicationController
     Stripe::Subscription.update(
       @stripe_subscription.id,
       trial_end: Time.zone.now.next_day(60).to_i,
+      metadata: {
+        date: Time.zone.now,
+      },
     )
     @payment = Payment.new(
       owner_id: @owner.id,
