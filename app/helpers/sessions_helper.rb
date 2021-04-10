@@ -102,5 +102,9 @@ module SessionsHelper
     @shop = shop
     @shop.purposes.pluck(:name).include?("デリバリー・宅配")
   end
+
+  def shop_owner?(owner)
+    @shop.owner == owner
+  end
   
 end

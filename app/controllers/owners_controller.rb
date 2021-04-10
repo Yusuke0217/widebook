@@ -4,9 +4,6 @@ class OwnersController < ApplicationController
   before_action :correct_owner, only: [:show, :edit, :update, :destroy]
   before_action :active_owner, only: [:show, :edit, :update, :destroy]
 
-  def index
-  end
-
   def show
   end
 

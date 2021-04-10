@@ -107,13 +107,34 @@
         </li>
         <li>
           <div class="ft__nav__query nav__link">
-            <%= link_to payments_path do %>
-              <div class="payment_method">
-                <p>有料会員</p>
+            <%= link_to root_path do %>
+              <div class="move__top">
+                <p>ユーザートップページ</p>
               </div>
             <% end %>
           </div>
         </li>
+        <% if current_owner.nil? %>
+        <li>
+          <div class="ft__nav__query nav__link">
+            <%= link_to owner_login_path do %>
+              <div class="owner__login">
+                <p>事業者様ログイン</p>
+              </div>
+            <% end %>
+          </div>
+        </li>
+        <% else %>
+        <li>
+          <div class="ft__nav__query nav__link">
+            <%= link_to dashboards_path(current_owner) do %>
+              <div class="move__top">
+                <p>オーナートップページ</p>
+              </div>
+            <% end %>
+          </div>
+        </li>
+        <% end %>
       </ul>
       <div class="copy__write">
         <p>2020 nil inc ©️</p>

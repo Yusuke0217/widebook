@@ -12,6 +12,7 @@ class Owner::OwnersController < Owner::BaseController
       # flash[:success] = "メールを確認し、アカウントの有効化を行ってください。"
       # redirect_to root_path
       @owner.activate
+      owner_log_in(@owner)
       flash[:success] = "アカウントを作成しました。"
       redirect_to dashboards_path(@owner)
     else

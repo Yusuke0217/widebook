@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     @owner = current_owner
     if @owner.payment.nil? || @owner.payment.stripe_subscription_status == "canseled"
       flash[:danger] = 'こちらは有料会員限定です。有料会員に登録してください'
-      redirect_to payments_path
+      redirect_to payment_path(@owner)
     end
   end
 
@@ -43,8 +43,8 @@ class ApplicationController < ActionController::Base
   end
 
   def correct_owner
-    @owner = Owner.find_by(id: current_owner.id) || Owner.find(params[:id])
-    # @owner =  Owner.find(params[:id]) || Owner.find_by(id: current_owner.id)
+    # @owner = Owner.find_by(id: current_owner.id) || Owner.find(params[:id])
+    @owner =  Owner.find(params[:id]) || Owner.find_by(id: current_owner.id)
     redirect_to root_url unless @owner == current_owner
   end
 

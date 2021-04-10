@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   before_action :logged_in_owner, only: [:index, :new, :show, :edit, :update, :create_subscription, :destroy]
-  before_action :correct_owner, only: [:index, :show, :new, :edit, :create_subscription, :update, :destroy]
+  # before_action :correct_owner, only: [:index, :show, :new, :edit, :create_subscription, :update, :destroy]
+  before_action :find_owner, only: [:index, :show, :new, :edit, :create_subscription, :update, :destroy]
   before_action :owner_payment, only: [:edit, :update, :destroy]
   before_action :subscription_restart, only: [:new]
 
@@ -104,6 +105,11 @@ class PaymentsController < ApplicationController
   end
 
   private
+
+    def find_owner
+      @owner = Owner.find_by(id: current_owner.id) || Owner.find(params[:id])
+      redirect_to root_url unless @owner == current_owner
+    end
 
     def owner_payment
       @payment = Payment.find_by(owner_id: @owner.id)

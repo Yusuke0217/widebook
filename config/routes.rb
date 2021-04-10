@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resource :menus, only: [:show, :new, :edit, :create, :update, :destroy]
   end
 
-  resources :owners, only: [:index, :show, :edit, :update, :destroy] do
+  resources :owners, only: [:show, :edit, :update, :destroy] do
     member do 
       resource :dashboards, only: [:show]
     end

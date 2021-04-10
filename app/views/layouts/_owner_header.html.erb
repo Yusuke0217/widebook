@@ -49,6 +49,13 @@
         </ul>
         <ul class="pub__nav">
           <li>
+            <%= link_to dashboards_path(@owner) do %>
+              <div class="nav__link">
+                <p>ダッシュボードに戻る</p>
+              </div>
+            <% end %>
+          </li>
+          <li>
             <%= link_to owner_path(@owner) do %>
               <div class="nav__link">
                 <p>マイページ</p>

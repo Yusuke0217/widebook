@@ -2,6 +2,7 @@ class MenusController < ApplicationController
 
   before_action :logged_in_owner, only: [:new, :edit, :create, :destroy, :update]
   # before_action :admin_user, only: [:new, :edit, :create, :destroy, :update]
+  before_action :subscription_member, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_shop, only: [:new, :create]
 
   def show
