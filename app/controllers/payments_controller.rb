@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
     @session = Stripe::Checkout::Session.create({
       payment_method_types: ['card'],
       line_items: [{
-        price: 'price_1IbFDRKq0R2J2RtxpxRyhU0N',
+        price: 'price_1IfI1vKq0R2J2Rtx0WpE8StY',
         quantity: 1,
       }],
       mode: 'subscription',
@@ -38,7 +38,7 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(
       owner_id: @owner.id,
       stripe_customer_id: @session.customer,
-      stripe_plan_id: 'price_1IbFDRKq0R2J2RtxpxRyhU0N',
+      stripe_plan_id: 'price_1IfI1vKq0R2J2Rtx0WpE8StY',
       stripe_subscription_id: @session.subscription,
       stripe_subscription_status: @stripe_subscription.status,
       active_until: Time.zone.at(@stripe_subscription.current_period_end),
@@ -57,7 +57,7 @@ class PaymentsController < ApplicationController
     @session = Stripe::Checkout::Session.create({
       payment_method_types: ['card'],
       line_items: [{
-        price: 'price_1IbFDRKq0R2J2RtxpxRyhU0N',
+        price: 'price_1IfI1vKq0R2J2Rtx0WpE8StY',
         quantity: 1,
       }],
       mode: 'subscription',

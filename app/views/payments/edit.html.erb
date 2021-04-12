@@ -3,7 +3,7 @@
 <script src="https://js.stripe.com/v3"></script>
 
 <script>
-  var stripe = Stripe('pk_test_51IYh0GKq0R2J2Rtx9jLUuUvWWbQuE9oQD4ftekIay75PEbRetPksBInGwSTp5L0vgLuep7ntyhYc5UuF1ceXDJIn00vEnoIoPb');
+  var stripe = Stripe('pk_live_51IYh0GKq0R2J2RtxUvq6ulNDGoR1Yz8u2xzmaE6PZMqEmZKV8oqmT7uNMEr8yBZtkuLN8GaogBULfS1341O4Ck8T00tjsWUpHH');
   stripe.redirectToCheckout({
   sessionId: '<%= @session.id %>'    //session_idには、customer_idやsubscription_idなどの情報が入っている。
   }).then(function (result) {
