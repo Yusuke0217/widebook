@@ -4,6 +4,7 @@ class PaymentsController < ApplicationController
   before_action :find_owner, only: [:index, :show, :new, :edit, :create_subscription, :update, :destroy]
   before_action :owner_payment, only: [:edit, :update, :destroy]
   before_action :subscription_restart, only: [:new]
+  before_action :price_id, only: [:new, :edit, :create_subscription]
 
   def index
   end
@@ -16,7 +17,7 @@ class PaymentsController < ApplicationController
     @session = Stripe::Checkout::Session.create({
       payment_method_types: ['card'],
       line_items: [{
-        price: 'price_1IfI1vKq0R2J2Rtx0WpE8StY',
+        price: @price,
         quantity: 1,
       }],
       mode: 'subscription',
@@ -38,7 +39,7 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(
       owner_id: @owner.id,
       stripe_customer_id: @session.customer,
-      stripe_plan_id: 'price_1IfI1vKq0R2J2Rtx0WpE8StY',
+      stripe_plan_id: @price,
       stripe_subscription_id: @session.subscription,
       stripe_subscription_status: @stripe_subscription.status,
       active_until: Time.zone.at(@stripe_subscription.current_period_end),
@@ -57,7 +58,7 @@ class PaymentsController < ApplicationController
     @session = Stripe::Checkout::Session.create({
       payment_method_types: ['card'],
       line_items: [{
-        price: 'price_1IfI1vKq0R2J2Rtx0WpE8StY',
+        price: @price,
         quantity: 1,
       }],
       mode: 'subscription',
@@ -113,6 +114,10 @@ class PaymentsController < ApplicationController
 
     def owner_payment
       @payment = Payment.find_by(owner_id: @owner.id)
+    end
+
+    def price_id
+      @price = "price_1IfI1vKq0R2J2Rtx0WpE8StY"
     end
 
 end
